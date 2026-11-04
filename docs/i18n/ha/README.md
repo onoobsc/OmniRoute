@@ -21,19 +21,19 @@
 
 <div align="center">
 
-## 💰 ~1.62B Alamomi / Wata a Dukkan Matakan Kyauta na Masu Samarwa na Waje
+## 💰 ~ 1.62B Tokens / Watan Faɗakar da Ƙungiyoyin Kyauta na Ƙungiyoyi na uku
 
 </div>
 
-> **Zo da asusun masu samarwa naka.** Wannan kimantawa ce ta jimilla daga matakan kyauta daban-daban na masu samarwa na waje da suka cancanta, ba kyautar alamomi daga OmniRoute ba. Yi rajista, samo bayanan izini inda ake bukata, kuma haɗa masu samarwa da zaka iya amfani da su; kowanne mai samarwa yana da ikon sarrafa iyakokinsa, samuwa, da sharuɗɗansa.
+> **Kawo asusun mai bada naka.** Wannan kiyasin jimillar jimillar ƙwararrun matakai na kyauta na ɓangare na uku ne, ba kyauta ta alama daga OmniRoute ba. Yi rajista, sami takaddun shaida a inda ake buƙata, kuma haɗa masu samar da za ku iya amfani da su; kowane mai bayarwa yana sarrafa iyakoki, samuwa, da sharuɗɗansa.
 >
-> Tara matakan kyauta da hannu yana da wahala — SDK da dama, iyakokin amfani da dama, kuma ba ka san adadin da kake da shi ba. OmniRoute ta tattara **485 shigar matakin kyauta a cikin 34 mabuɗan tafki masu maimaituwa** kuma tana ƙididdige jimillar alamomi daga **17 tafkuna masu kasafin wata na alamomi da aka wallafa da kuma ƙarin iyaka guda biyar na Groq ga kowanne samfur**, an cire maimaitawa ta hanyar tafki ɗaya. Iyakokin da ke buɗewa ne kawai bayan tantance asalin yanki (yanzu: ModelScope) ana nuna su a gefe, +~6M bayan tantance asalin yanki, kuma ba a taɓa haɗa su cikin jimillar ba. Sakamakon yana nan a dashboard (`/dashboard/free-tiers`).
+> Tsara matakan kyauta da hannu yana da zafi — zunzurutun SDKs, da yawa na iyaka, kuma ba ku san nawa kuke da shi ba. OmniRoute kataloji** 484 shigarwar matakin kyauta a cikin maɓallan tafkin mai maimaita 34** kuma yana ƙididdige kanun labaran alamar daga** Tafkunan ruwa 17 tare da ingantaccen kasafin kuɗi na wata-wata tare da ƙima guda biyar na kowane nau'in Groq** , cirewa ta wurin ruwa mai raba. Ƙididdigar da kawai ke buɗewa bayan binciken tantance asalin yanki (yau: ModelScope) ana nuna su daban, +~ 6M a bayan tabbatar da asalin yanki, kuma ba a taƙaita su cikin kanun labarai ba. Sakamakon yana kasancewa a bayyane akan dashboard (`/dashboard/free-tiers`).
 
-<img src="./docs/diagrams/free-tier-budget.svg" width="100%" alt="Katin kasafin matakin kyauta na OmniRoute: ~1.62B alamomi kyauta a kowane wata, har zuwa ~2.22B a watan farko da alamomin rajista, daga mabuɗan tafki 34 da aka rubuta suna rufe shigar matakin kyauta 485 a bayan hanya guda. Lissafi mai gaskiya ba tare da maimaitawa ba — kowanne tafki da aka raba an ƙirga sau ɗaya, ciki har da tafkuna 17 masu kasafin wata na alamomi da aka wallafa da kuma ƙarin iyaka guda biyar na Groq ga kowanne samfur; masu samarwa 12 an saka su a matsayin guje a cikin kundin sharuɗɗan haɗari don kai ka yanke shawara. Sandar kasafi ta haɗa da Mistral 1B, Nara 210M, LLM7 150M, xKiro 150M, Groq 30M (iyaka guda biyar ga kowanne samfur) da ƙananan tafkuna, da kuma alamomin rajista na watan farko da masu samarwa da ba su da iyakar alamomi da aka fito da su daban don kada su ƙara jimillar. Ana nuna adadin da aka yi amfani da shi/da ya rage kai tsaye a /dashboard/free-tiers."/>
+<img src="./docs/diagrams/free-tier-budget.svg" width="100%" alt="OmniRoute free-tier budget card: ~1.62B free tokens per month steady, up to ~2.22B in the first month with signup credits, from 34 documented recurring pool keys covering 484 cataloged free-tier entries behind one endpoint. Honest pool-deduped math — each shared pool counted once, including 17 recurring pools with a published positive monthly token budget plus five per-model Groq caps; 12 providers are marked avoid in the terms-risk catalog so you decide. Budget bar includes Mistral 1B, Nara 210M, LLM7 150M, xKiro 150M, Groq 30M (five per-model caps) and smaller pools, plus first-month signup credits and permanently-free no-token-cap providers surfaced separately so they never inflate the headline. Live used/remaining on /dashboard/free-tiers."/>
 
-> Faifan hoto mai motsi na shafin `/dashboard/free-tiers` kai tsaye. Cikakken hanyar aiki (cire maimaitawa, matakan bashi, sharuɗɗan masu samarwa): **[docs/reference/FREE_TIERS.md](docs/reference/FREE_TIERS.md)**.
+> Takaitaccen ra'ayi na shafin `/dashboard/free-tiers` kai tsaye. Cikakkun hanyoyin fasaha (waɗanda aka cire, matakin kiredit, sharuɗɗan masu bayarwa):** [docs/reference/FREE_TIERS.md](docs/reference/FREE_TIERS.md)** .
 >
-> <sub>Wadannan adadi ana sake duba su kowane mako biyu daidai da kundin kai tsaye kuma **zai iya ƙaruwa ko raguwa** — idan mai samarwa ya dakatar da matakin kyauta adadin zai ragu; idan an ƙara sabo zai ƙaru. Muna wallafa abin da kundin ke ƙididdige wa, ba mafi kyawun hasashe da aka zagaye ba.</sub>
+> <sub> Ana sake duba waɗannan alkalumman kowane mako biyu bisa ga kasidar da ke gudana kuma** motsa hanyoyi biyu** — mai bayarwa ya ƙare matakin kyauta kuma lambar ta ragu; wata sabuwa kuma ta hau. Muna buga abin da kasidar ke ƙididdigewa a zahiri, ba mafi kyawun abin da aka tattara ba.</sub>
 
 <br/>
 
@@ -41,29 +41,23 @@
 
 <h3>
 
-⭐ Yi tauraro ga repo idan OMNIROUTE ta taimaka maka ka ajiye kudi kuma ta sauƙaƙa aikinka.
+⭐ Tauraron repo idan OMNIROUTE ya taimaka muku wajen adana kuɗi da sauƙaƙe aikinku.
 
 </h3>
 
-[![Stars](https://img.shields.io/github/stars/diegosouzapw/OmniRoute?style=social)](https://github.com/diegosouzapw/OmniRoute)
+[![Stars](https://img.shields.io/github/stars/diegosouzapw/OmniRoute?style=social) ](https://github.com/diegosouzapw/OmniRoute)
 <a href="https://trendshift.io/repositories/23589" target="_blank"><img src="https://trendshift.io/api/badge/repositories/23589" alt="diegosouzapw%2FOmniRoute | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
-[![Star History Rank](https://api.star-history.com/badge?repo=diegosouzapw/OmniRoute&theme=dark)](https://www.star-history.com/diegosouzapw/omniroute)
-[![olud.ai](https://olud.ai/badge.php?tool=diegosouzapw-omniroute)](https://olud.ai/project/diegosouzapw-omniroute.html)
+[![Star History Rank](https://api.star-history.com/badge?repo=diegosouzapw/OmniRoute&theme=dark) ](https://www.star-history.com/diegosouzapw/omniroute) [![olud.ai](https://olud.ai/badge.php?tool=diegosouzapw-omniroute) ](https://olud.ai/project/diegosouzapw-omniroute.html)
 
-### 💬 Shiga al'umma
+### 💬 Shiga cikin al'umma
 
-**👋 Bi mai kula — sami sabbin masu samarwa, sabbin sigogi & shawarwari da wuri:**
+**👋 Bi mai kula — sami sababbin masu samarwa, sakewa & tukwici tukuna:**
 
-[![Follow Diego on LinkedIn](https://img.shields.io/badge/Follow_Diego_on-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/diegosouzapw/)
-[![Follow @diegosouzapw on GitHub](https://img.shields.io/github/followers/diegosouzapw?style=for-the-badge&logo=github&logoColor=white&label=Follow%20on%20GitHub&color=181717)](https://github.com/diegosouzapw)
+[![Follow Diego on LinkedIn](https://img.shields.io/badge/Follow_Diego_on-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white) ](https://www.linkedin.com/in/diegosouzapw/) [![Follow @diegosouzapw on GitHub](https://img.shields.io/github/followers/diegosouzapw?style=for-the-badge&logo=github&logoColor=white&label=Follow%20on%20GitHub&color=181717) ](https://github.com/diegosouzapw)
 
-[![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/U47eFqAXCn)
-[![Telegram](https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/omnirouteOficial)
-[![WhatsApp Global](https://img.shields.io/badge/WhatsApp_Global-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/FvuCbrpZmQ6I85n2vW5QIC?s=cl&p=a&mlu=4)
-[![WhatsApp Brasil](https://img.shields.io/badge/WhatsApp_Brasil-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/KWgatljAjmbELQory59Oti?s=cl&p=a&mlu=4)
-[![Website](https://img.shields.io/badge/Website-omniroute.online-blue?logo=google-chrome&logoColor=white)](https://omniroute.online)
+[![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/U47eFqAXCn) [![Telegram](https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/omnirouteOficial) [![WhatsApp Global](https://img.shields.io/badge/WhatsApp_Global-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/FvuCbrpZmQ6I85n2vW5QIC?s=cl&p=a&mlu=4) [![WhatsApp Brasil](https://img.shields.io/badge/WhatsApp_Brasil-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/KWgatljAjmbELQory59Oti?s=cl&p=a&mlu=4) [![Website](https://img.shields.io/badge/Website-omniroute.online-blue?logo=google-chrome&logoColor=white)](https://omniroute.online)
 
-**Tambayoyi, shawarwari kan masu samarwa, taswirar hanya & tallafi → [Discord](https://discord.gg/U47eFqAXCn) · [Telegram](https://t.me/omnirouteOficial) · WhatsApp [🌍 Duniya](https://chat.whatsapp.com/FvuCbrpZmQ6I85n2vW5QIC?s=cl&p=a&mlu=4) / [🇧🇷 Brazil](https://chat.whatsapp.com/KWgatljAjmbELQory59Oti?s=cl&p=a&mlu=4) / [Portal](https://portal.sthub.com.br/communities/groups/st-hub/channels/Omniroute-World-8kRjmK)**
+**Tambayoyi, shawarwarin masu bayarwa, taswirar hanya & goyan bayan → [Discord](https://discord.gg/U47eFqAXCn) · [Telegram](https://t.me/omnirouteOficial) · WhatsApp [🌍 Global](https://chat.whatsapp.com/FvuCbrpZmQ6I85n2vW5QIC?s=cl&p=a&mlu=4) / [🇧🇷 Brasil](https://chat.whatsapp.com/KWgatljAjmbELQory59Oti?s=cl&p=a&mlu=4) / [Portal](https://portal.sthub.com.br/communities/groups/st-hub/channels/Omniroute-World-8kRjmK)**
 
 <br/>
 
@@ -1285,135 +1279,135 @@ Ma'aunai na asali a 2026-10-18: **bidiyoyi na musamman 1.976** · **sanannun kal
 <br/>
 <div align="center">
 
-## 🛠️ Tarin Fasaha
+## 🛠️ Tech Stack
 
 </div>
 
 <table>
   <tr><th align="left">Layer</th><th align="left">Fasaha</th></tr>
   <tr><td nowrap><b>Lokacin gudu</b></td><td>Node.js 22.x / 24.x LTS — <code>&gt;=22.22.2 &lt;23 || &gt;=24.0.0 &lt;27</code></td></tr>
-  <tr><td nowrap><b>Harshen shirye-shirye</b></td><td>TypeScript 6.0 — <b>TypeScript 100%</b> a cikin <code>src/</code> da <code>open-sse/</code> (babu <code>any</code> ko ɗaya a cikin ginshiƙi tun v2.0)</td></tr>
-  <tr><td nowrap><b>Tsarin aiki</b></td><td>Next.js 16 + React 19 + Tailwind CSS 4</td></tr>
-  <tr><td nowrap><b>Ma’ajiyar bayanai</b></td><td>better-sqlite3 (SQLite, rajistar WAL) + LowDB (JSON na gado) — kayayyakin yanki 147, ƙaura 222</td></tr>
-  <tr><td nowrap><b>Ƙwaƙwalwa</b></td><td>Cikakken rubutu na SQLite FTS5 + embeddings na vector da aka ƙididdige su zuwa int8, lalacewa mai nau’i</td></tr>
-  <tr><td nowrap><b>Tsare-tsare</b></td><td>Zod 4 — ingantaccen MCP tool I/O + kwangilolin API</td></tr>
-  <tr><td nowrap><b>Ka’idoji</b></td><td>MCP (stdio / HTTP / SSE) + A2A v0.3 (JSON-RPC 2.0 + SSE)</td></tr>
-  <tr><td nowrap><b>Yawo</b></td><td>Abubuwan da uwar garke ke aika (SSE) + gadar WebSocket (<code>/v1/ws</code>)</td></tr>
-  <tr><td nowrap><b>Matsewa</b></td><td>Bututun injuna 12 — RTK, Caveman, LLMLingua-2 (MobileBERT ONNX), GCF, OmniGlyph</td></tr>
-  <tr><td nowrap><b>Tabbatarwa &amp; tsaro</b></td><td>OAuth 2.0 (PKCE) + JWT + API Keys + ingantaccen MCP mai iyakantaccen yanki · AES-256-GCM a lokacin ajiya · DOMPurify</td></tr>
-  <tr><td nowrap><b>Ɓoyewa</b></td><td>wreq-js — kwaikwayon tambarin yatsar TLS na JA3 / JA4, wakili mai matakai 3</td></tr>
-  <tr><td nowrap><b>Juriya</b></td><td>Mai katse da’ira, koma-baya mai ƙaruwa a hankali, rigakafin cunkoson buƙatu, gyaran-kai ta auto-combo</td></tr>
-  <tr><td nowrap><b>Rajista</b></td><td>pino — rajistan JSON tsararre tare da mahallin buƙata</td></tr>
-  <tr><td nowrap><b>Gwaji</b></td><td>Mai gudanar da gwajin Node.js + Vitest — <b>sanarwar gwaji ta tsaye sama da 60,000</b> a cikin fayilolin gwaji sama da 8,400 da aka bi diddigi (naúra, haɗewa, E2E, tsaro, tsarin muhalli)</td></tr>
-  <tr><td nowrap><b>Dandamali</b></td><td>Kwamfuta (Electron) · Android (Termux) · PWA (kowane burauza)</td></tr>
-  <tr><td nowrap><b>CI/CD</b></td><td>GitHub Actions — wallafa npm ta atomatik + Docker Hub yayin fitarwa</td></tr>
-  <tr><td nowrap><b>Hanyoyin haɗi</b></td><td><a href="https://omniroute.online">Yanar gizo</a> · <a href="https://www.npmjs.com/package/omniroute">npm</a> · <a href="https://hub.docker.com/r/diegosouzapw/omniroute">Docker Hub</a></td></tr>
+  <tr><td nowrap><b>Harshe</b></td><td>TypeScript 6.0 — <b>100% TypeScript</b> a fadin <code>src/</code> da <code>open-sse/</code> (sifili <code>any</code> a cikin ainihin tun v2.0)</td></tr>
+  <tr><td nowrap><b>Tsarin tsari</b></td><td>Next.js 16 + React 19 + Tailwind CSS 4</td></tr>
+  <tr><td nowrap><b>Database</b></td><td>better-sqlite3 (SQLite, WAL journaling) + LowDB (JSON legacy) — 147 domain modules, 222 migrations</td></tr>
+  <tr><td nowrap><b>Ƙwaƙwalwar ajiya</b></td><td>SQLite FTS5 cikakken-rubutu + int8-quantized vector embeddings, ruɓaɓɓen rubutu</td></tr>
+  <tr><td nowrap><b>Tsare-tsare</b></td><td>Zod 4 — MCP kayan aiki I/O ingantattun kwangilolin + API</td></tr>
+  <tr><td nowrap><b>Ka'idoji</b></td><td>MCP (stdio / HTTP / SSE) + A2A v0.3 (JSON-RPC 2.0 + SSE)</td></tr>
+  <tr><td nowrap><b>Yawo</b></td><td>Abubuwan da Aka Aika Sabar (SSE) WebSocket + (<code>/v1/ws</code>)</td></tr>
+  <tr><td nowrap><b>Matsi</b></td><td>12-inji bututun — RTK, Caveman, LLMLingua-2 (MobileBERT ONNX), GCF, OmniGlyph</td></tr>
+  <tr><td nowrap><b>Auth &amp; tsaro</b></td><td>OAuth 2.0 (PKCE) + JWT + API Keys + MCP scoped auth · AES-256-GCM a hutawa · DOMPurify</td></tr>
+  <tr><td nowrap><b>Steelth</b></td><td>wreq-js — JA3 / JA4 TLS alamar yatsa, wakili na matakin 3</td></tr>
+  <tr><td nowrap><b>Juriya</b></td><td>Mai watsewar kewayawa, koma bayan fage, anti-thundering-garken, auto-combo mai warkarwa</td></tr>
+  <tr><td nowrap><b>Shiga</b></td><td>pino — tsarin rajistan ayyukan JSON tare da mahallin buƙatar</td></tr>
+  <tr><td nowrap><b>Gwaji</b></td><td>Node.js test runner + Vitest — <b>60,000 + shedar gwaji a tsaye</b> a fadin fayilolin gwaji 8,400 + (naúrar, haɗin kai, E2E, tsaro, yanayin muhalli)</td></tr>
+  <tr><td nowrap><b>Dandalin</b></td><td>Desktop (Electron) · Android (Termux) · PWA (kowane mai bincike)</td></tr>
+  <tr><td nowrap><b>CI/CD</b></td><td>GitHub Ayyuka — auto npm buga + Docker Hub akan saki</td></tr>
+  <tr><td nowrap><b>Hanyoyin haɗi</b></td><td><a href="https://omniroute.online">Yanar Gizo</a> · <a href="https://www.npmjs.com/package/omniroute">npm</a> · <a href="https://hub.docker.com/r/diegosouzapw/omniroute">Docker Hub</a></td></tr>
 </table>
 
 <div align="center">
 
 <br/>
 
-## 📖 Takardun Bayani
+## 📖
 
 </div>
 
-### 📘 Fara Aiki
+### 📘 Farawa
 
 <table>
-  <tr><th align="left">Takarda</th><th align="left">Bayani</th></tr>
-  <tr><td nowrap><b><a href="docs/guides/USER_GUIDE.md">Jagorar Mai Amfani</a></b></td><td>Masu samarwa, haɗe-haɗe, haɗin CLI, turawa</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/SETUP_GUIDE.md">Jagorar Saita</a></b></td><td>Cikakkun hanyoyin girkawa, saitunan kayan aikin CLI, saitin ladabi, daidaita lokacin ƙarewa</td></tr>
-  <tr><td nowrap><b><a href="docs/reference/CLI-TOOLS.md">Jagorar Kayan Aikin CLI</a></b></td><td>Saita kowane kayan aiki na Claude Code, Codex, Cursor, Cline, OpenClaw, Kilo, Copilot</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/REMOTE-MODE.md">Yanayin Nesa</a></b></td><td>Sarrafa OmniRoute na nesa (VPS) daga CLI na kwamfutar tafi-da-gidanka ta amfani da alamomin samun dama masu iyakantaccen yanki</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/CLAUDE-CODE-CONFIGURATION.md">Saitin Claude Code</a></b></td><td>Nuna Claude Code zuwa OmniRoute (na gida/na nesa) tare da <code>launch</code> + bayanan martaba na kowane samfurin</td></tr>
-  <tr><td nowrap><b><a href="README.md#-quick-start">Fara Aiki Cikin Sauri</a></b></td><td>Matakai 3 na girkawa → haɗawa → saitawa</td></tr>
+  <tr><th align="left">Takardu</th><th align="left">Bayani</th></tr>
+  <tr><td nowrap><b><a href="docs/guides/USER_GUIDE.md">Jagorar Mai Amfani</a></b></td><td>Masu bayarwa, combos, haɗin CLI, turawa</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/SETUP_GUIDE.md">Jagorar Saita</a></b></td><td>Cikakkun hanyoyin shigarwa, saitunan kayan aikin CLI, saitin yarjejeniya, daidaita lokacin ƙarewa</td></tr>
+  <tr><td nowrap><b><a href="docs/reference/CLI-TOOLS.md">CLI Tools Guide</a></b></td><td>Saitin kowane kayan aiki don lambar Claude, Codex, Cursor, Cline, OpenClaw, Kilo, Copilot</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/REMOTE-MODE.md">Yanayin Nisa</a></b></td><td>Fitar da OmniRoute (VPS) mai nisa daga kwamfutar tafi-da-gidanka CLI ta hanyar alamomin samun dama</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/CLAUDE-CODE-CONFIGURATION.md">Claude Code Config</a></b></td><td>Nuna lambar Claude a OmniRoute (local/remote) tare da bayanin martabar <code>launch</code> + kowane-iri-iri</td></tr>
+  <tr><td nowrap><b><a href="README.md#-quick-start">Saurin Farawa</a></b></td><td>3-mataki shigar → connect → configure</td></tr>
 </table>
 
-### 🔧 Ayyuka da Turawa
+### 🔧 Ayyuka & Ƙaddamarwa
 
 <table>
-  <tr><th align="left">Takarda</th><th align="left">Bayani</th></tr>
-  <tr><td nowrap><b><a href="docs/guides/DOCKER_GUIDE.md">Jagorar Docker</a></b></td><td>Gudanar da Docker, bayanan martaba na Compose, HTTPS na Caddy, tunnels, alamun image</td></tr>
-  <tr><td nowrap><b><a href="contrib/podman/README.md">Jagorar Podman</a></b></td><td>Haɗin Quadlet da systemd, podman-compose, SELinux</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/VM_DEPLOYMENT_GUIDE.md">Turawar VM</a></b></td><td>Cikakkiyar jagora: saitin VM + nginx + Cloudflare</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/FLY_IO_DEPLOYMENT_GUIDE.md">Turawa zuwa Fly.io</a></b></td><td>Turawa zuwa Fly.io tare da ma'ajiyar bayanai mai ɗorewa</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/TERMUX_GUIDE.md">Jagorar Termux</a></b></td><td>Gudanar da OmniRoute a Android ta hanyar Termux</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/PWA_GUIDE.md">Jagorar PWA</a></b></td><td>Girkawa, adana bayanai a cache, da gine-ginen Progressive Web App</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/UNINSTALL.md">Jagorar Cirewa</a></b></td><td>Cirewa mai tsafta ga duk hanyoyin girkawa</td></tr>
-  <tr><td nowrap><b><a href="docs/reference/ENVIRONMENT.md">Saitin Muhalli</a></b></td><td>Cikakkun canje-canjen <code>.env</code> da bayanan tunani</td></tr>
+  <tr><th align="left">Takardu</th><th align="left">Bayani</th></tr>
+  <tr><td nowrap><b><a href="docs/guides/DOCKER_GUIDE.md">Docker Guide</a></b></td><td>gudu Docker, Rubuta bayanan martaba, Caddy HTTPS, tunnels, alamun hoto</td></tr>
+  <tr><td nowrap><b><a href="contrib/podman/README.md">Jagoran Podman</a></b></td><td>Haɗin tsarin Quadlet, podman-compose, SELinux</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/VM_DEPLOYMENT_GUIDE.md">VM turawa</a></b></td><td>Cikakken jagora: VM + nginx + Cloudflare saitin</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/FLY_IO_DEPLOYMENT_GUIDE.md">Aiwatar da Fly.io</a></b></td><td>Aika zuwa Fly.io tare da ma'ajiya mai tsayi</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/TERMUX_GUIDE.md">Jagorar Termux</a></b></td><td>Gudun OmniRoute akan Android ta Termux</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/PWA_GUIDE.md">PWA Guide</a></b></td><td>Sabunta App na Yanar Gizo mai ci gaba, caching, gine-gine</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/UNINSTALL.md">Cire Jagora</a></b></td><td>Tsaftace cirewa don duk hanyoyin shigarwa</td></tr>
+  <tr><td nowrap><b><a href="docs/reference/ENVIRONMENT.md">Tsarin Muhalli</a></b></td><td>Cikakkun masu canjin <code>.env</code> da nassoshi</td></tr>
 </table>
 
-### 🧠 Fasaloli da Gine-gine
+### 🧠 Features & Architecture
 
 <table>
-  <tr><th align="left">Takarda</th><th align="left">Bayani</th></tr>
-  <tr><td nowrap><b><a href="docs/architecture/ARCHITECTURE.md">Gine-ginen Tsari</a></b></td><td>Gine-ginen tsarin, kwararar bayanai, da abubuwan cikin gida</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_GUIDE.md">Jagorar Matsewa</a></b></td><td>Bututun zaɓuɓɓuka 7: off / lite / standard / aggressive / ultra / RTK / stacked</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/RTK_COMPRESSION.md">Matsewar RTK</a></b></td><td>Matse fitowar umarni, matattara, amincewa, tabbatarwa, dawo da ɗanyen fitarwa</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_ENGINES.md">Injinan Matsewa</a></b></td><td>Caveman, RTK, bututun stacked, bangarorin dashboard/API/MCP</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_RULES_FORMAT.md">Tsarin Dokokin Matsewa</a></b></td><td>Tsare-tsaren JSON na fakitin dokoki don matattarar Caveman da RTK</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_LANGUAGE_PACKS.md">Fakitan Harsunan Matsewa</a></b></td><td>Gano harshe da rubuta fakitin dokokin Caveman</td></tr>
-  <tr><td nowrap><b><a href="docs/architecture/RESILIENCE_GUIDE.md">Jagorar Juriyar Tsari</a></b></td><td>Masu katse da'ira, lokutan sanyaya, layin jira, hana cunkoson buƙatu, kwaikwayon TLS</td></tr>
-  <tr><td nowrap><b><a href="docs/routing/AUTO-COMBO.md">Injin Auto-Combo</a></b></td><td>Ƙididdigar abubuwa 16, fakitin yanayi, gyaran kai</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/PROXY_GUIDE.md">Jagorar Proxy</a></b></td><td>Tsarin proxy mai matakai 3, kasuwar 1proxy, CRUD na rajista</td></tr>
-  <tr><td nowrap><b><a href="docs/reference/FREE_TIERS.md">Matakan Kyauta</a></b></td><td>Haɗaɗɗen kundin adireshi: wuraren tarawa 34 da aka rubuta / shigarwar matakin kyauta 485 da aka jera</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/FEATURES.md">Hoton Fasaloli</a></b></td><td>Yawon shakatawa na dashboard na gani tare da hotunan allo</td></tr>
-  <tr><td nowrap><b><a href="docs/architecture/CODEBASE_DOCUMENTATION.md">Takardun Codebase</a></b></td><td>Bayani kan codebase mai sauƙin fahimta ga masu farawa</td></tr>
+  <tr><th align="left">Takardu</th><th align="left">Bayani</th></tr>
+  <tr><td nowrap><b><a href="docs/architecture/ARCHITECTURE.md">Gine-gine</a></b></td><td>Tsarin gine-gine, kwararar bayanai, da na ciki</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_GUIDE.md">Jagorar matsawa</a></b></td><td>7-zaɓi bututun: kashe / Lite / misali / m / matsananci / RTK / stacked</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/RTK_COMPRESSION.md">RTK matsawa</a></b></td><td>Matsawar umarni-fitarwa, tacewa, amincewa, tabbatarwa, dawo da ɗanyen fitarwa</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_ENGINES.md">Injin matsawa</a></b></td><td>Caveman, RTK, bututun da aka tattara, saman dashboard/API/MCP</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_RULES_FORMAT.md">Tsarin Dokokin Matsi</a></b></td><td>tsarin tsarin fakitin JSON don Caveman da tace RTK</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_LANGUAGE_PACKS.md">Fakitin Harshe Matsi</a></b></td><td>Gano harshe da mawallafin fakitin dokokin Caveman</td></tr>
+  <tr><td nowrap><b><a href="docs/architecture/RESILIENCE_GUIDE.md">Jagoran Juriya</a></b></td><td>Masu watsewar kewayawa, sanyin sanyi, jerin gwano, garke mai hana tsawa, TLS</td></tr>
+  <tr><td nowrap><b><a href="docs/routing/AUTO-COMBO.md">Injin Combo Auto</a></b></td><td>Maki 16-factor, fakitin yanayi, warkar da kai</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/PROXY_GUIDE.md">Jagoran wakili</a></b></td><td>Tsarin wakili na 3, 1 wakili kasuwa, rajista CRUD</td></tr>
+  <tr><td nowrap><b><a href="docs/reference/FREE_TIERS.md">Tiers kyauta</a></b></td><td>Kundin kundin adireshi: 34 rubuce-rubucen wuraren tafki masu maimaitawa / 484 kundin shigarwar matakin kyauta</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/FEATURES.md">Fasali Gallery</a></b></td><td>Ziyarar dashboard na gani tare da hotunan kariyar kwamfuta</td></tr>
+  <tr><td nowrap><b><a href="docs/architecture/CODEBASE_DOCUMENTATION.md">Takardun Codebase</a></b></td><td>Mafari-friendly codebase tafiya</td></tr>
 </table>
 
-### 🤖 Ladabai da APIs
+### 🤖 Protocols & APIs
 
 <table>
-  <tr><th align="left">Takarda</th><th align="left">Bayani</th></tr>
-  <tr><td nowrap><b><a href="docs/reference/API_REFERENCE.md">Bayanan API</a></b></td><td>Duk endpoints tare da misalai</td></tr>
-  <tr><td nowrap><b><a href="docs/openapi.yaml">Bayanin OpenAPI</a></b></td><td>Bayanin OpenAPI 3.0</td></tr>
-  <tr><td nowrap><b><a href="open-sse/mcp-server/README.md">Sabar MCP</a></b></td><td>Kayan aikin MCP 110, saitunan IDE, abokan ciniki na Python/TS/Go</td></tr>
-  <tr><td nowrap><b><a href="docs/frameworks/MCP-SERVER.md">Jagorar Sabar MCP</a></b></td><td>Girkawar MCP, hanyoyin jigilar bayanai, da bayanan kayan aiki</td></tr>
-  <tr><td nowrap><b><a href="src/lib/a2a/README.md">Sabar A2A</a></b></td><td>Ladabin JSON-RPC 2.0, ƙwarewa, watsa bayanai kai tsaye, sarrafa ayyuka</td></tr>
-  <tr><td nowrap><b><a href="docs/frameworks/A2A-SERVER.md">Jagorar Sabar A2A</a></b></td><td>Katin wakilin A2A, ayyuka, ƙwarewa, da watsa bayanai kai tsaye</td></tr>
+  <tr><th align="left">Takardu</th><th align="left">Bayani</th></tr>
+  <tr><td nowrap><b><a href="docs/reference/API_REFERENCE.md">API Reference</a></b></td><td>Duk ƙarshen ƙarshen tare da misalai</td></tr>
+  <tr><td nowrap><b><a href="docs/openapi.yaml">OpenAPI Spec</a></b></td><td>OpenAPI 3.0 bayani dalla-dalla</td></tr>
+  <tr><td nowrap><b><a href="open-sse/mcp-server/README.md">MCP garke</a></b></td><td>110 MCP kayan aikin, IDE configs, Python/TS/Go abokan ciniki</td></tr>
+  <tr><td nowrap><b><a href="docs/frameworks/MCP-SERVER.md">MCP Jagora</a></b></td><td>shigarwa MCP, sufuri, da kuma nunin kayan aiki</td></tr>
+  <tr><td nowrap><b><a href="src/lib/a2a/README.md">A2A garke</a></b></td><td>JSON-RPC 2.0 yarjejeniya, basira, yawo, aiki mgmt</td></tr>
+  <tr><td nowrap><b><a href="docs/frameworks/A2A-SERVER.md">A2A Jagora</a></b></td><td>katin wakili A2A, ayyuka, ƙwarewa, da yawo</td></tr>
 </table>
 
-### 📋 Aikin da Inganci
+### 📋 Project & Quality
 
 <table>
-  <tr><th align="left">Takarda</th><th align="left">Bayani</th></tr>
-  <tr><td nowrap><b><a href="CONTRIBUTING.md">Ba da gudummawa</a></b></td><td>Saita muhalli da ƙa'idojin haɓakawa</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/BRANCHING_MODEL.md">Tsarin Rassa da Saki</a></b></td><td>Inda PRs ke nufi (<code>release/*</code>), da ma'anar <code>main</code> da tags</td></tr>
-  <tr><td nowrap><b><a href="CHANGELOG.md">Tarihin canje-canje</a></b></td><td>Cikakken tarihin sakin kowane sigar</td></tr>
-  <tr><td nowrap><b><a href="SECURITY.md">Manufar tsaro</a></b></td><td>Rahoton raunin tsaro da hanyoyin tsaro</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/I18N.md">Jagorar i18n</a></b></td><td>Taimakon harsuna 67, tsarin aikin fassara, RTL</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/RELEASE_CHECKLIST.md">Jerin duba sakin</a></b></td><td>Matakan tabbatarwa kafin saki</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/COVERAGE_PLAN.md">Tsarin rufe gwaji</a></b></td><td>Dabarar rufe gwaji don bayanan gwaji na tsaye sama da 60,000 a cikin fayilolin gwaji sama da 8,400 da ake bibiyarsu</td></tr>
+  <tr><th align="left">Takardu</th><th align="left">Bayani</th></tr>
+  <tr><td nowrap><b><a href="CONTRIBUTING.md">Gudunmawa</a></b></td><td>Saitin haɓakawa da jagororin</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/BRANCHING_MODEL.md">Samfuran Reshe & Saki</a></b></td><td>Inda PRs manufa (<code>release/*</code>), abin da <code>main</code> da tags ke nufi</td></tr>
+  <tr><td nowrap><b><a href="CHANGELOG.md">Canji</a></b></td><td>Cikakken tarihin sakin kowane nau'i</td></tr>
+  <tr><td nowrap><b><a href="SECURITY.md">Manufar Tsaro</a></b></td><td>Rahoton raunin rauni da ayyukan tsaro</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/I18N.md">i18n Jagora</a></b></td><td>Tallafin harshe 67, aikin fassara, RTL</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/RELEASE_CHECKLIST.md">Jerin abubuwan dubawa</a></b></td><td>Matakan tabbatarwa kafin-saki</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/COVERAGE_PLAN.md">Shirin Rufewa</a></b></td><td>Gwajin dabarun ɗaukar hoto don 60,000 + shelar gwajin a tsaye a cikin fayilolin gwaji 8,400 +</td></tr>
 </table>
 
 <br/>
 
 <div align="center">
 
-# ⭐ Manyan masu ba da gudummawa
+# ⭐ Manyan Masu Taimakawa
 
-> Al'ummar buɗaɗɗen tushe mai kishin aiki ce ta tsara OmniRoute. Waɗannan mutane sun bayar da gagarumar gudummawa wadda ta shafi inganci, daidaiton aiki, da yaɗuwar aikin kai tsaye. **Mun gode.**
+> OmniRoute tana da siffa ta hanyar buɗaɗɗen tushen al'umma. Waɗannan mutane sun ba da gudummawa na musamman waɗanda ke tasiri kai tsaye ga inganci, kwanciyar hankali, da isar da aikin.** Na gode.**
 
-### Masu ba da gudummawa na waje bisa ga pull requests da aka haɗa
+### Masu ba da gudummawa na waje ta hanyar buƙatun ja da aka haɗa
 
 <table>
-  <tr><th align="center">Matsayi</th><th align="left">Mai ba da gudummawa</th><th align="center">PRs da aka haɗa</th><th align="right">Layukan da aka canza ~</th></tr>
+  <tr><th align="center">Daraja</th><th align="left">Mai ba da gudummawa</th><th align="center">Ya hade PRs</th><th align="right">~ Canza layi</th></tr>
   <tr><td align="center">1</td><td align="left"><a href="https://github.com/maxmad64bis"><b>maxmad64bis</b></a></td><td align="center">418</td><td align="right">25,367,739</td></tr>
   <tr><td align="center">2</td><td align="left"><a href="https://github.com/HouMinXi"><b>HouMinXi</b></a></td><td align="center">295</td><td align="right">13,557,796</td></tr>
   <tr><td align="center">3</td><td align="left"><a href="https://github.com/pacocartones"><b>pacocartones</b></a></td><td align="center">222</td><td align="right">81,551</td></tr>
   <tr><td align="center">4</td><td align="left"><a href="https://github.com/backryun"><b>backryun</b></a></td><td align="center">210</td><td align="right">270,562</td></tr>
   <tr><td align="center">5</td><td align="left"><a href="https://github.com/JxnLexn"><b>JxnLexn</b></a></td><td align="center">198</td><td align="right">3,570,623</td></tr>
-  <tr><td align="center">6</td><td align="left"><a href="https://github.com/oyi77"><b>oyi77</b></a></td><td align="center">190</td><td align="right">411,243</td></tr>
+  <tr><td align="center">6</td><td align="left"><a href="https://github.com/oyi77"><b>yayi 77</b></a></td><td align="center">190</td><td align="right">411,243</td></tr>
   <tr><td align="center">7</td><td align="left"><a href="https://github.com/KooshaPari"><b>KooshaPari</b></a></td><td align="center">151</td><td align="right">5,972,314</td></tr>
   <tr><td align="center">8</td><td align="left"><a href="https://github.com/rdself"><b>rdself</b></a></td><td align="center">145</td><td align="right">80,663</td></tr>
   <tr><td align="center">9</td><td align="left"><a href="https://github.com/RaviTharuma"><b>RaviTharuma</b></a></td><td align="center">123</td><td align="right">500,065</td></tr>
   <tr><td align="center">10</td><td align="left"><a href="https://github.com/herjarsa"><b>herjarsa</b></a></td><td align="center">88</td><td align="right">230,872</td></tr>
   <tr><td align="center">11</td><td align="left"><a href="https://github.com/hartmark"><b>hartmark</b></a></td><td align="center">85</td><td align="right">2,849,623</td></tr>
   <tr><td align="center">12</td><td align="left"><a href="https://github.com/jonlwheat2-gif"><b>jonlwheat2-gif</b></a></td><td align="center">68</td><td align="right">69,097</td></tr>
-  <tr><td align="center">13</td><td align="left"><a href="https://github.com/artickc"><b>artickc</b></a></td><td align="center">62</td><td align="right">43,502</td></tr>
-  <tr><td align="center">14</td><td align="left"><a href="https://github.com/xiaoyaner0201"><b>xiaoyaner0201</b></a></td><td align="center">59</td><td align="right">126,220</td></tr>
-  <tr><td align="center">15</td><td align="left"><a href="https://github.com/chirag127"><b>chirag127</b></a></td><td align="center">52</td><td align="right">6,661</td></tr>
+  <tr><td align="center">13</td><td align="left"><a href="https://github.com/artickc"><b>artcc</b></a></td><td align="center">62</td><td align="right">43,502</td></tr>
+  <tr><td align="center">14</td><td align="left"><a href="https://github.com/xiaoyaner0201"><b>xiyaoyaner0201</b></a></td><td align="center">59</td><td align="right">126,220</td></tr>
+  <tr><td align="center">15</td><td align="left"><a href="https://github.com/chirag127"><b>zafi 127</b></a></td><td align="center">52</td><td align="right">6,661</td></tr>
   <tr><td align="center">16</td><td align="left"><a href="https://github.com/xz-dev"><b>xz-dev</b></a></td><td align="center">50</td><td align="right">245,976</td></tr>
   <tr><td align="center">17</td><td align="left"><a href="https://github.com/woodsonl"><b>woodsonl</b></a></td><td align="center">48</td><td align="right">811,771</td></tr>
   <tr><td align="center">18</td><td align="left"><a href="https://github.com/rqzbeh"><b>rqzbeh</b></a></td><td align="center">46</td><td align="right">151,229</td></tr>
@@ -1421,9 +1415,9 @@ Ma'aunai na asali a 2026-10-18: **bidiyoyi na musamman 1.976** · **sanannun kal
   <tr><td align="center">19</td><td align="left"><a href="https://github.com/QuangBlue"><b>QuangBlue</b></a></td><td align="center">43</td><td align="right">13,112</td></tr>
 </table>
 
-<sub>An gudanar da ƙidayar a 2026-11-03 03:01:19 UTC tare da live <code>release/v3.8.53</code> tip <code>05bc048d6c</code>. Ƙidayar GitHub GraphQL mai shafuka ta ƙunshi PRs 9,947 da aka haɗa: 4,130 daga mai aikin, 240 daga Dependabot, 6 daga wasu bots/apps, da <b>PRs 5,571 na waje daga masu ba da gudummawa 883 daban-daban</b>. “Layukan da aka canza” su ne ƙarin layuka + gogewar layuka na GitHub, kuma sun haɗa da fayilolin da aka samar ta atomatik, lockfiles, kundin bayanai, fassarori da takardu; sauyin aiki ne, ba LOC da marubuci ya rubuta ba. PRs 53 sun bayar da rahoton bambance-bambancen GitHub da suka haura layuka 500,000 (misali #13399, ƙarin provider guda ɗaya, yana jera fayiloli 2,347 da aka canza), wanda ya ƙara wasu jimloli da ke sama. Ana sanya waɗanda suka yi kunnen doki a matsayi ɗaya.</sub>
+<sub>Ƙidaya da aka ɗauka 2026-11-03 03:01:19 UTC tare da <code>release/v3.8.53</code> tip <code>05bc048d6c</code> kai tsaye. Ƙididdiga na GitHub GraphQL da aka buga ya ƙunshi 9,947 haɗe PRs: 4,130 ta mai wurin ajiya, 240 ta Dependabot, 6 ta wasu bots/apps, da <b>5,571 PRs na waje daga masu ba da gudummawa daban-daban 883</b>. "Layukan da aka canza" shine ƙarar GitHub gogewar + kuma ya haɗa da fayilolin da aka ƙirƙira, fayilolin kulle-kulle, kasida, fassarori da takaddun bayanai; yana churn, ba marubucin LOC ba. Rahoton PRs 53 GitHub ya bambanta sama da layukan 500,000 (misali #13399, ƙari na mai bada guda ɗaya, ya lissafa fayiloli 2,347 da aka canza), wanda ke haɓaka jimloli da yawa a sama. An jera alaƙa tare.</sub>
 
-### Commit na GitHub ya danganta su
+### GitHub da aka danganta
 
 <table>
   <tr>
@@ -1432,42 +1426,42 @@ Ma'aunai na asali a 2026-10-18: **bidiyoyi na musamman 1.976** · **sanannun kal
         <img src="https://github.com/maxmad64bis.png" width="40" style="border-radius:50%" alt="Dizzle"/><br/>
         <b>Dizzle</b>
       </a><br/>
-      <sub>🥇 Ƙaddamarwa 418 da GitHub ya danganta</sub>
+      <sub>🥇 418 GitHub-wanda aka danganta aikata</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/HouMinXi">
         <img src="https://github.com/HouMinXi.png" width="40" style="border-radius:50%" alt="Bob.Hou"/><br/>
         <b>Bob.Hou</b>
       </a><br/>
-      <sub>🥈 Ƙaddamarwa 294 da GitHub ya danganta</sub>
+      <sub>🥈 294 GitHub-wanda aka danganta aikata</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/oyi77">
         <img src="https://github.com/oyi77.png" width="40" style="border-radius:50%" alt="Paijo"/><br/>
         <b>Paijo</b>
       </a><br/>
-      <sub>🥉 Ƙaddamarwa 229 da GitHub ya danganta</sub>
+      <sub>🥉 229 GitHub-wanda aka danganta aikata</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/pacocartones">
         <img src="https://github.com/pacocartones.png" width="40" style="border-radius:50%" alt="Paco Cartones"/><br/>
         <b>Paco Cartones</b>
       </a><br/>
-      <sub>🏅 Ƙaddamarwa 222 da GitHub ya danganta</sub>
+      <sub>🏅 222 GitHub-wanda aka danganta aikata</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/backryun">
         <img src="https://github.com/backryun.png" width="40" style="border-radius:50%" alt="backryun"/><br/>
         <b>backryun</b>
       </a><br/>
-      <sub>🏅 Ƙaddamarwa 202 da GitHub ya danganta</sub>
+      <sub>🏅 202 GitHub-wanda aka danganta aikata</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/JxnLexn">
         <img src="https://github.com/JxnLexn.png" width="40" style="border-radius:50%" alt="Jan Leon"/><br/>
         <b>Jan Leon</b>
       </a><br/>
-      <sub>🏅 Ƙaddamarwa 134 da GitHub ya danganta</sub>
+      <sub>🏅 134 GitHub-wanda aka danganta aikata</sub>
     </td>
   </tr>
   <tr>
@@ -1476,49 +1470,49 @@ Ma'aunai na asali a 2026-10-18: **bidiyoyi na musamman 1.976** · **sanannun kal
         <img src="https://github.com/RaviTharuma.png" width="40" style="border-radius:50%" alt="Ravi Tharuma"/><br/>
         <b>Ravi Tharuma</b>
       </a><br/>
-      <sub>🏅 Ƙaddamarwa 126 da GitHub ya danganta</sub>
+      <sub>🏅 126 GitHub-wanda aka danganta aikata</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/hartmark">
         <img src="https://github.com/hartmark.png" width="40" style="border-radius:50%" alt="Markus Hartung"/><br/>
         <b>Markus Hartung</b>
       </a><br/>
-      <sub>🏅 Ƙaddamarwa 115 da GitHub ya danganta</sub>
+      <sub>🏅 115 GitHub-wanda aka danganta aikata</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/rdself">
         <img src="https://github.com/rdself.png" width="40" style="border-radius:50%" alt="Randi"/><br/>
         <b>Randi</b>
       </a><br/>
-      <sub>🏅 Ƙaddamarwa 108 da GitHub ya danganta</sub>
+      <sub>🏅 108 GitHub-wanda aka danganta aikata</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/christopher-s">
         <img src="https://github.com/christopher-s.png" width="40" style="border-radius:50%" alt="Chris"/><br/>
         <b>Chris</b>
       </a><br/>
-      <sub>🏅 Ƙaddamarwa 70 da GitHub ya danganta</sub>
+      <sub>🏅 70 GitHub-wanda aka danganta aikata</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/jonlwheat2-gif">
         <img src="https://github.com/jonlwheat2-gif.png" width="40" style="border-radius:50%" alt="WebPerson"/><br/>
         <b>WebPerson</b>
       </a><br/>
-      <sub>🏅 Ƙaddamarwa 68 da GitHub ya danganta</sub>
+      <sub>🏅 68 GitHub-wanda aka danganta aikata</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/KooshaPari">
         <img src="https://github.com/KooshaPari.png" width="40" style="border-radius:50%" alt="Koosha Paridehpour"/><br/>
         <b>Koosha Paridehpour</b>
       </a><br/>
-      <sub>🏅 Ƙaddamarwa 68 da GitHub ya danganta</sub>
+      <sub>🏅 68 GitHub-wanda aka danganta aikata</sub>
     </td>
   </tr>
 </table>
 
-<sub>An sake dubawa a 2026-11-03 02:09:16 UTC: Ƙaddamarwar da GitHub ya danganta, waɗanda API ɗin Contributors na ma'ajiyar ya bayar, daga reshen tsoho na <code>release/v3.8.53</code>. API ɗin ya dawo da mutane 903 (masu amfani 429, bots 2, da waɗanda ba a tantance ba 472); wannan teburin ya cire mai kula, bots da waɗanda ba a tantance ba, kuma ya kiyaye waɗanda suka yi kunnen doki. Ya bambanta da matsayi na PR da aka haɗa a sama da kuma ƙidayar metadata ta Git da ke ƙasa.</sub>
+<sub>An sake duba shi a 2026-11-03 02:09:16 UTC: GitHub-angananta aikatawa sun ruwaito ta hanyar ma'ajin masu ba da gudummawa API don reshe na asali na <code>release/v3.8.53</code>. API ya dawo da bayanan 903 (masu amfani da 429, bots 2, 472 ba a san su ba); wannan tebur ɗin ya keɓance mai kula da, bots da bayanan da ba a san su ba kuma yana riƙe alaƙar gasa. Ya bambanta da duka haɗin-PR na sama da ƙididdigar Git-metadata da ke ƙasa.</sub>
 
-> 🙏 Fasalulluka, gyaran kurakurai, da inganta kayan more rayuwa da waɗannan masu ba da gudummawa suka yi, **muhimmin ginshiƙi ne** na abin da ke sa OmniRoute ya zama abin dogaro kuma mai cike da fasalulluka. Kowace pull request, kowace shaidar gwaji, da kowane fayil ɗin fassarar i18n suna da muhimmanci. Mutane irinsu ne ke gina buɗaɗɗen tushe.
+> 🙏 Waɗannan fasalulluka na masu ba da gudummawa, gyare-gyaren kwaro, da haɓaka abubuwan more rayuwa sune a** core part** na abin da ya sa OmniRoute ya zama abin dogaro kuma mai siffa. Kowane buƙatun ja, kowane shari'ar gwaji, da kowane fayil ɗin fassarar i18n yana da mahimmanci. Mutane irin su ne suka gina tushen buɗe ido.
 
 </div>
 

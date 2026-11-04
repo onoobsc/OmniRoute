@@ -13,120 +13,59 @@ OmniRoute සතුව සෑම API ඉල්ලීමක්ම පාලනය
 
 > මූලාශ්රය: [diagrams/authz-pipeline.mmd](../diagrams/authz-pipeline.mmd)
 
-## සත්යාපන ආකාර දෙකක්
+## Aut Modes දෙකක්
 
-### 1. API යතුර (Bearer)
+### 1. API යතුර (දරන්නා)
 
-OpenAI/Anthropic/Gemini-අනුකූල සේවාලාභී API සහ යතුරට `manage` විෂය පථය ඇති විට කළමනාකරණ මාර්ග කිහිපයක් සඳහා භාවිත කරයි.
+යතුරට `manage` විෂය පථය ඇති විට OpenAI/Anthropic/Gemini-compatible සේවාලාභියා APIs සහ කළමනාකරණ මාර්ග කිහිපයක් සඳහා භාවිතා වේ.
 
 ```
 Authorization: Bearer <api-key>
 ```
 
-`src/sse/services/auth.ts` තුළ ඇති `isValidApiKey()` / `extractApiKey()` මඟින් වලංගු කර, `src/shared/utils/apiAuth.ts` හරහා නැවත නිර්යාත කරයි. වලංගුකාරකය ස්ථිර passthrough යතුරු ලෙස `OMNIROUTE_API_KEY` / `ROUTER_API_KEY` පරිසර විචල්ය ද පිළිගනී (ගැටලුව #1350).
+`src/sse/services/auth.ts` හි `isValidApiKey()` / `extractApiKey()` මගින් වලංගු කර `src/shared/utils/apiAuth.ts` හරහා ප්‍රති අපනයනය කෙරේ. වලංගුකාරකය `OMNIROUTE_API_KEY` / `ROUTER_API_KEY` env vars ස්ථීර පාස්ත්‍රෝ යතුරු ලෙස ද පිළිගනී (නිකුතුව #1350).
 
 ### 2. උපකරණ පුවරු සැසිය (auth_token කුකිය)
 
-උපකරණ පුවරු පිටු සහ පරිපාලක මෙහෙයුම් සඳහාය.
+උපකරණ පුවරු පිටු සහ පරිපාලක මෙහෙයුම් සඳහා.
 
 ```
 Cookie: auth_token=<JWT signed with JWT_SECRET>
 ```
 
-JWT එක සත්යාපනය වී **සහ** `authenticated: true` අඩංගු වන විට පමණක් කුකියක් සැසියක් වේ
-(`src/shared/utils/dashboardSessionToken.ts` → `verifyDashboardSessionToken`). කුකිය භාවිත කරන සෑම
-අංගයක්ම (උපකරණ පුවරු මාර්ග ආරක්ෂකය (`isDashboardSessionAuthenticated()`), authz නලමාර්ග නැවුම් කිරීම, WebSocket අතට-අත දීම, සජීවී
-සේවාදායකය, `/api/settings/require-login`, `/api/auth/status`) එම උපකාරකය හරහා යයි.
-`JWT_SECRET` සමඟ අත්සන් කළ වෙනත් JWT ද පවතී — Cursor CLI passthrough එක යතුරු හිමියන් සඳහා
-`iss "omniroute" / aud "cursor-cli"` ටෝකන නිකුත් කරයි — ඒවා කිසි විටෙකත් සැසි නොවේ
-(#13298).
+කුකියක් සැසියක් වන්නේ JWT සත්‍යාපනය කරන විට පමණි** සහ** `authenticated: true` (`src/shared/utils/dashboardSessionToken.ts` → `verifyDashboardSessionToken`) දරයි. කුකියේ සෑම පාරිභෝගිකයෙක්ම (උපකරණ පුවරුවේ මාර්ග ආරක්ෂකයා (`isDashboardSessionAuthenticated()`), authz නල මාර්ග නැවුම් කිරීම, WebSocket අතට අත දීම, සජීවී සේවාදායකය, `/api/settings/require-login`, `/api/auth/status`) එම සහායකයා හරහා ගමන් කරයි. `JWT_SECRET` සමඟ අත්සන් කර ඇති අනෙකුත් JWTs පවතිනුයේ — Cursor CLI passthrough mints `iss "omniroute" / aud "cursor-cli"` යතුරු දරන්නන් සඳහා — ටෝකන වන අතර ඒවා කිසිදා සැසි නොවේ (#13298).
 
-`src/shared/utils/apiAuth.ts` තුළ ඇති `isDashboardSessionAuthenticated()` මඟින් සත්යාපනය කරයි. JWT එකේ දින 30ක ආයු කාලයෙන් ඉතිරිව ඇත්තේ දින 7කට අඩු නම් නලමාර්ගය එය ස්වයංක්රීයව නැවුම් කරයි.
+`src/shared/utils/apiAuth.ts` හි `isDashboardSessionAuthenticated()` මගින් සත්‍යාපනය කර ඇත. එහි දින 30ක ආයු කාලය තුළ දින 7කට වඩා අඩු කාලයක් ඉතිරිව ඇති විට නල මාර්ගය JWT ස්වයංක්‍රීයව නැවුම් කරයි.
 
-සෑම නිකුත්කරුවෙකුම `mintDashboardSessionToken` හරහා යන නිසා (නිකුත් කළ වේලාවක් `iat` සහ හැඳුනුම්කාරකයක් `jti`) සහ සත්යාපකය සැකසුම් දෙකක් පරීක්ෂා කරන නිසා, සැසියක් එහි දින 30 සම්පූර්ණ වීමට පෙරද අවසන් විය හැක: මුරපදය වෙනස් කිරීමකදී සකසන `sessionsValidAfter`, එමඟින් ඊට පෙර නිකුත් කළ සෑම සැසියක්ම තවදුරටත් සත්යාපනය නොවේ (මුරපදය වෙනස් කළ බ්රවුසරයට නව කුකියක් ලැබේ), සහ `POST /api/auth/logout` විසින් වරනය වූ සැසියේ `jti` එක එක් කරන `revokedDashboardSessions`. පැරණි නිකුතුවකින් නිකුත් කළ සැසිවල මෙම ක්ලේම් දෙකෙන් එකක්වත් නොමැති අතර, පළමු මුරපද වෙනස් කිරීම දක්වා ඒවා වලංගුව පවතී. සැකසුම් කියවිය නොහැකි නම්, සැසිය විශ්වාස නොකරයි.
+සැසියක් එහි දින 30 අවසන් වීමට පෙර අවසන් විය හැක, මන්ද සෑම minter එකක්ම `mintDashboardSessionToken` (නිකුත් කිරීමේ වේලාවක් `iat` සහ id `jti`) හරහා යන නිසා සහ සත්‍යාපකය විසින් සිටුවම් දෙකක් පරීක්ෂා කරයි: `sessionsValidAfter`, මුරපද වෙනස් කිරීමකින් සකසා ඇති නිසා එය සත්‍යාපනය කිරීම නැවැත්වීමට පෙර නිකුත් කරන ලද සෑම සැසියකටම (මුරපදය වෙනස් කළ බ්‍රවුසරයට නැවුම් කුකියක් ලැබේ), සහ `revokedDashboardSessions` අත්සන් කළ සැසිය `jti` කිරීමට `POST /api/auth/logout` පැරණි නිකුතුවක් මඟින් සකස් කරන ලද සැසිවලට හිමිකම් පෑමක් සිදු නොවන අතර පළමු මුරපදය වෙනස් වන තෙක් වලංගු වේ. සැකසුම් කියවිය නොහැකි නම්, සැසිය විශ්වාස නොවේ.
 
-සමහර කළමනාකරණ මාර්ග **ආකාර දෙකෙන් ඕනෑම එකක්** පිළිගනී: කුකිය හෝ API යතුරට `manage` (හෝ `admin`) විෂය පථය ඇති විට `Bearer <key>`. v3.8 හි එක් කළ "API ඇමතුම් හරහා වින්යාස කළ හැකි" කාර්ය ප්රවාහය සක්රීය කරන්නේ මෙයයි.
+සමහර කළමනාකරණ මාර්ග පිළිගනී** එක්කෝ** මාදිලිය: API යතුරෙහි `manage` (හෝ `admin`) විෂය පථය ඇති විට කුකී OR `Bearer <key>`. v3.8 හි එකතු කරන ලද " API ඇමතුම් හරහා වින්‍යාසගත කළ හැකි" කාර්ය ප්‍රවාහය සක්‍රීය කරන්නේ මෙයයි.
 
-#### විකල්ප OIDC පිවිසුම් ද්වාරය (#6973)
+#### විකල්ප OIDC පිවිසුම් දොරටුව (#6973)
 
-උපකරණ පුවරුවේ පරිපාලක පිවිසුම පෙරනිමි මුරපද පිවිසුම සමඟ **තෝරා සක්රීය කළ හැකි** OIDC (OpenID Connect) ප්රවාහයකට ද සහාය දක්වයි — මුරපද පිවිසුම කිසි විටෙකත් ඉවත් නොකරන අතර, එයට අතිරේකයක් ලෙස පමණක් මෙය සපයයි:
+උපකරණ පුවරු පරිපාලක පිවිසුම ද සහාය දක්වයි** තේරීම** OIDC (OpenID Connect) ප්‍රවාහය පෙරනිමි මුරපද ලොගින් — මුරපද ප්‍රවිෂ්ටය කිසිවිටක ඉවත් නොකෙරේ, පරිපූරක පමණි:
 
-- `settings.oidcEnabled === true` **වීමත්** `oidcIssuer` /
-  `oidcClientId` / `oidcClientSecret` සියල්ල වින්යාස කර තිබීමත් (Settings → Auth)
-  සිදු නොවන්නේ නම් අක්රිය කර ඇත. එසේ නොමැති විට
-  `GET /api/auth/oidc/login` විසින් `400` ආපසු ලබා දෙයි.
-- `GET /api/auth/oidc/login` විසින් නිකුත් කරන්නාගේ
-  `/.well-known/openid-configuration` වෙතින් `authorization_endpoint` සොයා ගනී
-  (`<issuer>/authorize` වෙත පසුබසී), ලැබෙන ඉල්ලීමෙන් යළි-යොමු කිරීමේ URI එක
-  සාදයි (`x-forwarded-proto` පිළිබඳ දැනුවත්), සහ `httpOnly` `oidc_state` කුකියක
-  ගබඩා කළ අහඹු `state` අගයක් සමඟ IdP වෙත යළි යොමු කරයි.
-- `GET /api/auth/oidc/callback` විසින් `state` වලංගු කර, අවසර දීමේ කේතය
-  හුවමාරු කර, `issuer`/`audience` පරීක්ෂා සමඟ නිකුත් කරන්නාගේ JWKS හරහා
-  (`jose` හි `createRemoteJWKSet`, එක් එක් JWKS URI සඳහා හැඹිලිගත කර ඇත)
-  ID ටෝකනයේ අත්සන සත්යාපනය කරයි. උපකරණ පුවරුවට ඇතුළත් වීමට හිස් නොවන
-  `oidcAllowedSubjects` ලැයිස්තුවක්, `oidcAdmissionClaim` ප්රතිපත්තියක්, හෝ
-  දෙකම අවශ්ය වේ. විෂය ලැයිස්තුව `sub` හෝ `email` සමඟ ගැළපෙන්නේ
-  `email_verified === true` වූ විට පමණි. විකල්ප claim ප්රතිපත්තිය තිත් මඟින්
-  වෙන් කළ ID-ටෝකන claim මාර්ගයක් (උදාහරණයක් ලෙස, `realm_access.roles`) සහ
-  පිළිගත් අගයන්ගෙන් යුත් අරාවක් ගනී; නිරාකරණය කළ claim එක අවම වශයෙන් එක්
-  පිළිගත් අගයක්වත් අඩංගු තන්තු අරාවක් විය යුතුය. ප්රතිපත්ති දෙකම වින්යාස
-  කර ඇත්නම්, දෙකම සමත් විය යුතුය. නොමැති/විකෘති claim ආරක්ෂිත ලෙස අසමත් වන
-  අතර, ප්රතිපත්ති දෙකෙන් එකක්වත් නොමැති විට callback එක ප්රවිෂ්ට වීම
-  ප්රතික්ෂේප කරයි (`not_configured`). දැනට පවතින විෂය-පමණක් වින්යාස
-  වෙනසක් නොමැතිව දිගටම ක්රියා කරයි.
-- Keycloak සාමාන්යයෙන් realm භූමිකා ID ටෝකනවලට නොව access token තුළට සිතියම්ගත
-  කරයි. `admin` realm භූමිකාව අවශ්ය කිරීමට, මෙම client සඳහා එහි **ID
-  ටෝකනයට** `realm_access.roles` ඇතුළත් කරන protocol mapper එකක් වින්යාස කර,
-  ඉන්පසු `oidcAdmissionClaim` එක
-  `{ "path": "realm_access.roles", "values": ["admin"] }` ලෙස සකසන්න.
-  භූමිකාව-පමණක් ඇතුළත් කිරීම සක්රිය කිරීමට පෙර මෙම client සඳහා සැබෑ ID-ටෝකන
-  claim එක පරීක්ෂා කරන්න; යෙදුම access-token භූමිකා කියවන්නේ නැත. IdP පාර්ශ්වයේ
-  ටෝකන ප්රතික්ෂේප කිරීමෙන් මෙයට අමතර ආරක්ෂාවක් සැපයිය හැකි නමුත්, මෙම යෙදුම්
-  පාර්ශ්වීය පරීක්ෂාව එයින් ප්රතිස්ථාපනය නොවේ.
-- සාර්ථක වූ විට, මුරපද ප්රවිෂ්ට වීම නිකුත් කරන **හරියටම එම** දින 30ක
-  `auth_token` JWT එකම එය නිර්මාණය කරයි
-  (`src/app/api/auth/login/route.ts`), එබැවින් උපකරණ පුවරුවේ සැසි නලමාර්ගයේ
-  ඉතිරි කොටස (ස්වයංක්රීය නැවුම් කිරීම, කුකි සලකුණු) වෙනස් නොවේ — OIDC මඟින්
-  ප්රතිස්ථාපනය වන්නේ කුකිය නිර්මාණය කරන ආකාරය පමණක් මිස එයින් ලබා දෙන
-  අවසර නොවේ. IdP භූමිකා/කණ්ඩායම්වල වෙනස්කම් දැනට පවතින OmniRoute සැසි අවලංගු
-  නොකරයි; ඒවායේ ආයු කාලය තවදුරටත් පාලනය කරන්නේ ඉවත් වීම, මුරපද මාරු කිරීම,
-  හෝ සැසි කල් ඉකුත් වීමයි.
-- සෑම `oidc*` සැකසුමක්ම (`oidcEnabled`, `oidcDisablePasswordLogin`,
-  `oidcIssuer`, `oidcClientId`, `oidcClientSecret`, `oidcAllowedSubjects`,
-  `oidcAdmissionClaim`, `oidcRedirectPath`, `oidcScopes`)
-  `SECURITY_IMPACTING_SETTINGS_KEYS` තුළ ඇත
-  (`src/shared/constants/securityImpactingSettings.ts`): body එකේ කළමනාකරණ
-  මුරපදය `currentPassword` ලෙස නොමැති නම් `PATCH /api/settings` විසින්
-  `400 PASSWORD_REQUIRED` පිළිතුරු දෙයි (එය වැරදි නම්
-  `401 PASSWORD_MISMATCH`). `oidcDisablePasswordLogin` මුරපද _ප්රවිෂ්ට වීම_
-  (`POST /api/auth/login`) ප්රතික්ෂේප කරන නමුත් ගබඩා කළ මුරපද hash එක තබා ගනී,
-  තවද නැවත සත්යාපනයේදී තවමත් `currentPassword` එයට එරෙහිව පරීක්ෂා කරයි.
-- `corsOrigins` සහ `bruteForceProtection` ද `SECURITY_IMPACTING_SETTINGS_KEYS`
-  තුළ ඇත: දෙකෙන් එකක් හෝ ලිහිල් කිරීම ප්රවිෂ්ට වීමේ ආරක්ෂණ දුර්වල කරන බැවින්,
-  ඒවාටත් එම `currentPassword` නැවත සත්යාපනය අවශ්ය වේ (Security ටැබය එය
-  ඉල්ලා සිටී), JSON ආයාතය ඒවා ඉවත් කරයි.
-- සෑම ආරක්ෂක-ප්රතිපත්ති යතුරක්ම — `SECURITY_IMPACTING_SETTINGS_KEYS` ඇතුළත්
-  කිරීම්, සෑම `oidc*` යතුරක්ම සහ උපකරණ පුවරුවේ සැසි තත්ත්වය — `PATCH
-/api/settings` හි **ක්රියාකරුට පමණක්** සීමා වේ: නිවැරදි
-  `currentPassword` යැවූ විට පවා manage විෂය පථයක් සහිත API යතුරක් හෝ `oma_`
-  access token එකක් `403` සමඟ ප්රතික්ෂේප කරන අතර, එම ප්රතික්ෂේප කිරීම
-  `reason: OPERATOR_REQUIRED` සමඟ `settings.update_failed` ලෙස විගණනය කෙරේ
-  (`src/lib/api/operatorCredential.ts` හි `requireOperatorCredential()`).
-  සාමාන්ය සැකසුම් (තේමාව, දර්ශන අභිරුචි) `manage` යතුරකට හෝ `admin` access
-  token එකකට ලිවිය හැකිව පවතී. `/api/settings` හිම (සහ
-  `/api/settings/require-login` හි) සෑම වෙනස් කිරීමකටම `admin` access-token
-  විෂය පථයද අවශ්ය වේ (`src/server/authz/accessScopes.ts` හි
-  `ADMIN_MUTATION_EXACT_PATHS`, නිශ්චිත-මාර්ග ගැළපීම); `GET` සඳහා `read`
-  එලෙසම පවතින අතර, අනෙකුත් `/api/settings/*` උප-මාර්ග (proxies, combo
-  defaults, model aliases, compression, purges…) ක්රමයෙන් අනුමාන කළ `write`
-  විෂය පථය තබා ගනී.
-- `POST /api/settings/import-json` එම නැවත සත්යාපනය මඟ හරින බැවින්, ලිවීමට
-  පෙර `IMPORT_STRIPPED_SETTINGS_KEYS` හි (එම ගොනුවේ) සෑම යතුරක්ම ඉවත් කරයි:
-  මුරපදය සහ `currentPassword`, සෑම `SECURITY_IMPACTING_SETTINGS_KEYS`
-  ඇතුළත් කිරීමක්ම, සහ උපකරණ පුවරුවේ සැසි තත්ත්වය (`sessionsValidAfter`,
-  `revokedDashboardSessions`). එබැවින් පැරණි උපස්ථයක් ආයාත කිරීමෙන්, මුරපද
-  වෙනස් කිරීමකින් හෝ ඉවත් වීමකින් දැනටමත් අවසන් කළ සැසියක් නැවත සක්රිය කළ
-  නොහැක.
+- `settings.oidcEnabled === true` හැර අබල කර ඇත** සහ** `oidcIssuer` / `oidcClientId` / `oidcClientSecret` සියල්ල වින්‍යාස කර ඇත (සැකසීම් → Auth). `GET /api/auth/oidc/login` වෙනත් ආකාරයකින් `400` ලබා දෙයි.
+- `GET /api/auth/oidc/login` නිකුත් කරන්නාගේ `/.well-known/openid-configuration` වෙතින් `authorization_endpoint` සොයා ගනී (ආපසු `<issuer>/authorize` වෙත වැටේ), ලැබෙන ඉල්ලීමෙන් (`x-forwarded-proto` -aware) යළි-යොමුවීම් URI ගොඩනඟයි, සහ `httpOnly` `oidc_state` කුකියක ගබඩා කර ඇති අහඹු `state` සමඟ IdP වෙත යළි-යොමු කරයි.
+- `GET /api/auth/oidc/callback` `state` වලංගු කරයි, අවසර කේතය හුවමාරු කරයි, සහ `issuer`/`audience` චෙක්පත් සමඟ නිකුත් කරන්නාගේ JWKS (`jose`'s `createRemoteJWKSet`, JWKS URI සඳහා හැඹිලිගත කර ඇත) හරහා ID ටෝකනයේ අත්සන සත්‍යාපනය කරයි. උපකරණ පුවරු ඇතුළත් කිරීම සඳහා හිස් නොවන `oidcAllowedSubjects` ලැයිස්තුවක්, `oidcAdmissionClaim` ප්‍රතිපත්තියක් හෝ දෙකම අවශ්‍ය වේ. විෂය ලැයිස්තුව `sub` හෝ `email` සමඟ ගැළපෙන්නේ `email_verified === true` විට පමණි. විකල්ප හිමිකම් ප්‍රතිපත්තිය තිත්-වෙන් වූ ID-ටෝකන හිමිකම් මාර්ගයක් (උදාහරණයක් ලෙස, `realm_access.roles`) සහ පිළිගත් අගයන් අරාවක් ගනී; විසඳන ලද හිමිකම් පෑම අවම වශයෙන් එක් පිළිගත් අගයක් අඩංගු තන්තු මාලාවක් විය යුතුය. ප්‍රතිපත්ති දෙකම වින්‍යාස කර ඇත්නම්, දෙකම සමත් විය යුතුය. Missing/malformed හිමිකම් අසාර්ථක වන අතර, ප්‍රතිපත්ති දෙකකින් තොරව ආපසු ඇමතුම ප්‍රතික්ෂේප කරයි (`not_configured`). පවතින විෂය-පමණි වින්‍යාසයන් නොවෙනස්ව පවතී.
+- Keycloak සාමාන්‍යයෙන් ක්ෂේත්‍ර භූමිකාවන් ප්‍රවේශ ටෝකන බවට සිතියම්ගත කරයි, අවශ්‍යයෙන්ම ID ටෝකන නොවේ. ප්‍රදේශයේ භූමිකාව `admin` අවශ්‍ය කිරීමට, මෙම සේවාදායකයා සඳහා එහි `realm_access.roles` ඇතුළත් ප්‍රොටෝකෝල සිතියම්කරුවෙකු වින්‍යාස කරන්න**ID ටෝකනය** , ඉන්පසු `oidcAdmissionClaim` `{ "path": "realm_access.roles", "values": ["admin"] }` ලෙස සකසන්න. භූමිකාව-පමණි ඇතුළත් කිරීම සබල කිරීමට පෙර මෙම සේවාදායකයා සඳහා සැබෑ ID-ටෝකන හිමිකම් පෑම පරීක්ෂා කරන්න; යෙදුම ප්‍රවේශ-ටෝකන් භූමිකාවන් කියවන්නේ නැත. IdP-පාර්ශවීය ටෝකන් ප්‍රතික්ෂේප කිරීම අතිරේක කළ හැකි නමුත් මෙම යෙදුම-පැති පරීක්ෂාව ප්‍රතිස්ථාපනය නොකරයි.
+- සාර්ථකත්වය මත එය mints the** හරියටම සමාන** දින 30 `auth_token` JWT මුරපද පිවිසුම් ගැටළු (`src/app/api/auth/login/route.ts`), එබැවින් උපකරණ පුවරුවේ සැසි නල මාර්ගයේ ඉතිරි කොටස (ස්වයං-නැවුම්, කුකී කොඩි) නොවෙනස්ව පවතී — OIDC ප්‍රතිස්ථාපනය කරන්නේ කුකිය මින්ට් කරන ආකාරය මිස එය ලබා දෙන දේ නොවේ. IdP roles/groups හි වෙනස්කම් පවතින OmniRoute සැසි අවලංගු නොකරයි; පිටවීම, මුරපද භ්‍රමණය හෝ සැසිය කල් ඉකුත්වීම තවමත් ඔවුන්ගේ ජීවිත කාලය පාලනය කරයි.
+- සෑම `oidc*` සැකසුමක්ම (`oidcEnabled`, `oidcDisablePasswordLogin`, `oidcIssuer`, `oidcClientId`, `oidcClientSecret`, `oidcAllowedSubjects`, `oidcAdmissionClaim`, `oidcRedirectPath`, `oidcScopes`) `SECURITY_IMPACTING_SETTINGS_KEYS` හි ඇත (`src/shared/constants/securityImpactingSettings.ts`): `PATCH /api/settings` `400 PASSWORD_REQUIRED` පිළිතුරු දෙයි, එය කළමනාකාරීත්වය වැරදි ලෙස ශරීරය රැගෙන ගියහොත් මිස ( `currentPassword` `401 PASSWORD_MISMATCH` ). `oidcDisablePasswordLogin` මුරපදය _login_ ප්‍රතික්ෂේප කරයි (`POST /api/auth/login`) නමුත් ගබඩා කර ඇති මුරපද හැෂ් තබා ගන්නා අතර නැවත සත්‍යාපනය තවමත් එයට එරෙහිව `currentPassword` පරීක්ෂා කරයි.
+- `corsOrigins` සහ `bruteForceProtection` `SECURITY_IMPACTING_SETTINGS_KEYS` හි ද ඇත: ලිහිල් කිරීම එක්කෝ පිවිසුම් ආරක්‍ෂාව දුර්වල කරයි, එබැවින් ඔවුන් එකම `currentPassword` නැවත සත්‍යාපනය ලබා ගනී (ආරක්ෂක පටිත්ත එය ඉල්ලයි) සහ JSON ආයාත කිරීම ඒවා පහත හෙළයි.
+- සෑම ආරක්ෂක-ප්‍රතිපත්ති යතුරක්ම — `SECURITY_IMPACTING_SETTINGS_KEYS` ඇතුළත් කිරීම්, සෑම `oidc*` යතුරක්ම සහ උපකරණ පුවරු සැසි රාජ්‍ය — වේ** ක්රියාකරු-පමණි** `PATCH /api/settings` මත : කළමනාකරණය-පථය සහිත API යතුරක් හෝ `oma_` ප්‍රවේශ ටෝකනයක් එය නිවැරදි `currentPassword` යවන විට පවා `403` සමඟ ප්‍රතික්ෂේප කරනු ලබන අතර, ප්‍රතික්ෂේප කිරීම `reason: OPERATOR_REQUIRED` සමඟ `settings.update_failed` ලෙස විගණනය කරනු ලැබේ ( `src/lib/api/operatorCredential.ts` හි`requireOperatorCredential()` ). සාමාන්‍ය සැකසුම් (තේමාව, සංදර්ශක මනාප) `manage` යතුරක් හෝ `admin` ප්‍රවේශ ටෝකනයක් සඳහා ලිවිය හැකිව පවතී. `/api/settings` හි සෑම විකෘතියකටම (සහ `/api/settings/require-login` හි) `admin` ප්‍රවේශ-ටෝකන විෂය පථය ද අවශ්‍ය වේ ( `src/server/authz/accessScopes.ts` හි`ADMIN_MUTATION_EXACT_PATHS`, නියම-මාර්ග ගැලපීම); `GET` රැඳී සිටින්නේ `read`, සහ අනෙකුත් `/api/settings/*` උප මාර්ග (ප්‍රොක්සි, කොම්බෝ පෙරනිමි, ආකෘති අන්වර්ථ, සම්පීඩනය, පවිත්‍ර කිරීම්...) ක්‍රම-අනුමාන කළ `write` විෂය පථය තබා ගන්න.
+- `POST /api/settings/import-json` එම නැවත සත්‍යාපනය මඟ හරියි, එබැවින් එය ලිවීමට පෙර `IMPORT_STRIPPED_SETTINGS_KEYS` (එකම ගොනුව) හි සෑම යතුරක්ම පහත දමයි: මුරපදය සහ `currentPassword`, සෑම `SECURITY_IMPACTING_SETTINGS_KEYS` ප්‍රවේශයක්ම සහ උපකරණ පුවරු සැසි තත්ත්වය (`sessionsValidAfter`, `revokedDashboardSessions`). පැරණි උපස්ථයක් ආයාත කිරීමෙන් මුරපදය වෙනස් කිරීමක් හෝ වරනයක් දැනටමත් අවසන් වී ඇති සැසියක් නැවත පණ ගැන්වීමට නොහැක.
+
+#### විකල්ප TOTP ද්වි-සාධක පිවිසුම (#16619)
+
+සැකසීම් → ආරක්‍ෂාවෙන් ලියාපදිංචි විය; ක්‍රියාකරු එය ක්‍රියාත්මක කරන තුරු අක්‍රිය කරන්න (`src/server/auth/dashboardMfa.ts`).
+
+- **එය ආවරණය කරන දේ:** මුරපද පිවිසුම (`POST /api/auth/login`, එවිට `POST /api/auth/mfa/verify` අවශ්‍ය වේ) සහ `omniroute connect` (`POST /api/cli/connect`, මුරපදය පමණක් හුවමාරු කිරීම ප්‍රතික්ෂේප කරන අතර කේතය `totp` ලෙස ගනී).
+- **එය ආවරණය නොකරන දේ:** OIDC / SSO පුරනය වීම (`/api/auth/oidc/callback`) OmniRoute TOTP ඉල්ලන්නේ නැත. එය අනන්‍යතා සපයන්නාගේම දෙවන සාධකය මත රඳා පවතී, එබැවින් OIDC සක්‍රීය කර ඇත්නම් IdP තුළ MFA බලාත්මක කරන්න.
+- **ප්රකෘතිමත් වීම** (අහිමි වූ උපාංගය, ප්‍රතිසාධන කේත ඉතිරිව නැත, හෝ තවදුරටත් සත්‍යාපනය කළ නොහැකි සාධකයක්, උදාහරණයක් ලෙස `STORAGE_ENCRYPTION_KEY` වෙනස් වූ පසු):
+  1. `OMNIROUTE_DISABLE_MFA=true` සමඟ සේවාදායකය නැවත ආරම්භ කරන්න.
+  2. ධාරකයේදීම (loopback peer සහ loopback `Host`, `http://localhost:20128` වැනි), මුරපදය සමඟින් පුරනය වන්න. දෙවන සාධකය මඟ හැරෙන්නේ එම සම්භවය සඳහා පමණි; අනෙක් සෑම සම්භවයක්ම තවමත් කේතය අවශ්‍ය වේ.
+  3. සැකසීම් තුළ → Security → Disable, මුරපදය ඇතුළත් කර කේතය හිස්ව තබන්න. `POST /api/auth/mfa/disable` `code` නොමැති ශරීරයක් පිළිගනු ලබන්නේ විචල්‍යය සකසා ඇති අතර ඉල්ලීම සත්කාරකයෙන් ලැබෙන විට පමණි; එයට තවමත් උපකරණ පුවරුවේ සැසිය සහ වත්මන් මුරපදය අවශ්‍ය වන අතර `auth.mfa.disabled` ලෙස විගණනය කෙරේ `secondFactor: "recovery_switch"`.
+  4. `OMNIROUTE_DISABLE_MFA` සැකසීම ඉවත් කරන්න, නැවත ආරම්භ කරන්න, සහ අවශ්‍ය නම් නැවත ලියාපදිංචි වන්න.
 
 ## මාර්ග පන්ති
 
@@ -174,27 +113,25 @@ JWT එක සත්යාපනය වී **සහ** `authenticated: true` අ�
 
 `src/shared/constants/publicApiRoutes.ts` යනු පැහැදිලි අවසර ලැයිස්තුවයි:
 
-ලැයිස්තුව **හැඩය** අනුව බෙදා ඇති අතර, එම බෙදීම අත්යවශ්ය වේ (GHSA-74g9-q8f6-793h): උපසර්ගයක්
-`startsWith()` මඟින් ගැළපෙන බැවින්, එහි ආරම්භක අක්ෂර බෙදාගන්නා යාබද සෑම මාර්ගයක්ම ද එයට ගැළපේ.
-උපසර්ගයක් ලෙස `/api/usage/om-usage` භාවිත කිරීමෙන් `/api/usage/om-usage<anything>` PUBLIC ලෙස සලකුණු වූ අතර, Next විසින්
-එය `/api/usage/[connectionId]` වෙත නිරාකරණය කරයි — එය තමන්ගේම සත්යාපනයක් නොමැති හසුරුවනයකි.
+ලැයිස්තුව බෙදී ඇත** හැඩය** , සහ බෙදීම බර දරයි (GHSA-74g9-q8f6-793h): උපසර්ගයක් `startsWith()` සමඟ ගැලපේ, එබැවින් එය එහි ප්‍රමුඛ අක්ෂර බෙදා ගන්නා සෑම යාබද මාර්ගයකටම ගැලපේ. `/api/usage/om-usage` උපසර්ගයක් ලෙස `/api/usage/om-usage<anything>` PUBLIC ලෙස සලකුණු කර ඇති අතර, මීලඟට තමන්ගේම සත්‍යාපනයක් නොමැති හසුරුවන්නක් `/api/usage/[connectionId]` — ලෙස විසඳයි.
 
 ```ts
-// සැබෑ උපවෘක්ෂ. සෑම ඇතුළත් කිරීමක්ම "/" අක්ෂරයෙන් අවසන් විය යුතුය (ඒකක පරීක්ෂණයකින් තහවුරු කර ඇත).
+// Genuine subtrees. Every entry MUST end in "/" (asserted by a unit test).
 PUBLIC_API_ROUTE_PREFIXES = [
   "/api/auth/oidc/",
-  "/api/v1/", // classify තුළ CLIENT_API ලෙස සලකයි, "no-auth public" ලෙස නොවේ
+  "/api/v1/", // treated as CLIENT_API in classify, not as "no-auth public"
   "/api/oauth/",
   "/api/codex/connect/",
   "/api/telegram/",
   "/api/cursor-cli/",
 ];
 
-// තනි මාර්ග, හරියටම ගැළපේ (අවසානයේ slash එකක් තිබුණත් නැතත්).
+// Single routes, matched EXACTLY (with or without a trailing slash).
 PUBLIC_API_ROUTES_EXACT = new Set([
   "/api/auth/login",
   "/api/auth/logout",
   "/api/auth/status",
+  "/api/auth/mfa/verify", // login step 2 for opt-in TOTP; needs the MFA-pending cookie
   "/api/init",
   "/api/sync/bundle",
   "/api/cli/connect",
@@ -202,20 +139,20 @@ PUBLIC_API_ROUTES_EXACT = new Set([
   "/api/skills/collect/chaos",
 ]);
 
-// CORS origin ලිහිල් කිරීම ද ලබන, කියවීමට පමණක් වූ තනි මාර්ග.
+// Read-only single routes that also take the CORS origin relaxation.
 PUBLIC_READONLY_CORS_API_ROUTES = [
   "/api/health/ping",
   "/api/monitoring/health",
   "/api/settings/require-login",
 ];
 
-// CORS ලිහිල් කිරීම නොමැති, කියවීමට පමණක් වූ තනි මාර්ගය.
+// Read-only single route WITHOUT the CORS relaxation.
 PUBLIC_READONLY_API_ROUTES_EXACT = new Set(["/api/health"]);
 
 PUBLIC_READONLY_METHODS = new Set(["GET", "HEAD", "OPTIONS"]);
 ```
 
-කියවීමට පමණක් වූ මාර්ග පොදු වන්නේ ආරක්ෂිත ක්රම සඳහා **පමණි**. සටහන: `classifyRoute()` විසින් `/api/v1/*` සහ `/api/v1beta/*` PUBLIC පසුබැසීමෙන් බැහැර කරයි — Bearer යතුරු ප්රතිපත්තිය තවදුරටත් අදාළ වන පරිදි ඒවා සැමවිටම `CLIENT_API` වේ.
+කියවීමට පමණක් මාර්ග පොදු වේ** පමණි** ආරක්ෂිත ක්රම සඳහා. සටහන: `classifyRoute()` `/api/v1/*` සහ `/api/v1beta/*` PUBLIC drop-through — වෙතින් බැහැර කරයි, ඒවා සැමවිටම `CLIENT_API` වේ, එබැවින් Bearer-key ප්‍රතිපත්තිය තවමත් අදාළ වේ.
 
 ## නව මාර්ගයක් එක් කිරීම
 

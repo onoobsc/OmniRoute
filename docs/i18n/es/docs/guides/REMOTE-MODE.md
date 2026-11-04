@@ -44,37 +44,35 @@ tu portátil                              OmniRoute remoto (VPS)
 
 ---
 
-## Conexión
+## Conectando
 
-### Con la contraseña de gestión (configuración inicial)
+### Con la contraseña de gestión (bootstrap)
 
 ```bash
 omniroute connect 192.168.0.15
-# Contraseña de gestión para http://192.168.0.15:20128: ********
-# ✔ Conectado a http://192.168.0.15:20128 — contexto '192.168.0.15' (alcance: admin)
+# Management password for http://192.168.0.15:20128: ********
+# ✔ Connected to http://192.168.0.15:20128 — context '192.168.0.15' (scope: admin)
 ```
 
-El flujo con contraseña emite de forma predeterminada un token **admin** (si tienes la contraseña,
-ya dispones de control total). Reduce el alcance con `--scope`:
+El flujo de contraseñas genera un** administración** token de forma predeterminada (usted tiene la contraseña, por lo que ya tiene control total). Downscope con `--scope`:
 
 ```bash
 omniroute connect 192.168.0.15 --scope write
 ```
 
-Opciones: `--port <p>` (cuando el host no incluye uno), `--name <ctx>` (nombre del contexto),
-`--scope read|write|admin`. Una URL completa se respeta tal cual:
-`omniroute connect https://omni.example.com`.
+Opciones: `--port <p>` (cuando el host no tiene ninguno), `--name <ctx>` (nombre de contexto), `--scope read|write|admin`. Un URL completo se respeta tal cual: `omniroute connect https://omni.example.com`.
 
-### Con un token generado previamente
+Cuando el servidor tiene habilitada la autenticación de dos factores del panel (Configuración → Seguridad), solo se rechaza la contraseña: el CLI luego solicita el código de la aplicación de autenticación (o un código de recuperación). Páselo por adelantado con `--totp <code>` para uso no interactivo.
 
-Genera un token con alcance limitado en el panel de control (o con `omniroute tokens create`) y
-pégalo; no se necesita contraseña:
+### Con un token pregenerado
+
+Genere un token con alcance en el panel (o con `omniroute tokens create`) y péguelo — sin necesidad de contraseña:
 
 ```bash
 omniroute connect 192.168.0.15 --key oma_live_xxxxxxxx
 ```
 
-La CLI lo valida mediante `GET /api/cli/whoami` y lo guarda como contexto activo.
+El CLI lo valida a través de `GET /api/cli/whoami` y lo guarda como contexto activo.
 
 ---
 
@@ -453,14 +451,14 @@ omniroute contexts remove 192-168-0-15 --yes   # elimina el contexto local (aunq
 
 ---
 
-## Endpoints de la API (referencia)
+## puntos finales API (referencia)
 
-| Método | Ruta                  | Autenticación         | Ámbito                                |
-| ------ | --------------------- | --------------------- | ------------------------------------- |
-| POST   | `/api/cli/connect`    | contraseña de gestión | — (público, protegido por contraseña) |
-| GET    | `/api/cli/whoami`     | token de acceso       | lectura                               |
-| GET    | `/api/cli/tokens`     | token de acceso       | administración                        |
-| POST   | `/api/cli/tokens`     | token de acceso       | administración                        |
-| DELETE | `/api/cli/tokens/:id` | token de acceso       | administración                        |
+| Método | Ruta                  | autenticación                    | Alcance                                |
+| ------ | --------------------- | -------------------------------- | -------------------------------------- |
+| POST   | `/api/cli/connect`    | contraseña; 2FA si está activado | — (público, controlado por contraseña) |
+| GET    | `/api/cli/whoami`     | token de acceso                  | leer                                   |
+| GET    | `/api/cli/tokens`     | token de acceso                  | administración                         |
+| POST   | `/api/cli/tokens`     | token de acceso                  | administración                         |
+| DELETE | `/api/cli/tokens/:id` | token de acceso                  | administración                         |
 
-Consulta [openapi.yaml](../openapi.yaml) para ver los esquemas completos.
+Consulte [openapi.yaml](../openapi.yaml) para conocer los esquemas completos.

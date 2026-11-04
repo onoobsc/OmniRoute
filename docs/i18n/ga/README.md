@@ -21,19 +21,19 @@
 
 <div align="center">
 
-## 💰 ~1.62B Tócan / Mí ar Fhóirdheontais Saortha Tríú Páirtí
+## 💰 ~ 1.62B Comharthaí / Míosa Trasna Sraitheanna Saor in Aisce Tríú Páirtí
 
 </div>
 
-> **Tabhair do chuntais soláthraí féin leat.** Is meastachán comhiomlán é seo ar fhóirdheontais shaortha tríú páirtí atá incháilithe ar leithligh, ní deontas tócan ó OmniRoute. Cláraigh, faigh dintiúir nuair is gá, agus ceangail na soláthraithe is féidir leat a úsáid; rialóidh gach soláthraí a theorainneacha, a infhaighteacht, agus a théarmaí féin.
+> **Beir leat do chuntais sholáthraí féin.** Is comhiomlán measta é seo thar chiseal saor ó thríú páirtí atá incháilithe go leithleach, ní deontas comhartha ó OmniRoute. Cláraigh, faigh dintiúir nuair is gá, agus ceangail na soláthraithe is féidir leat a úsáid; rialaíonn gach soláthraí a theorainneacha, infhaighteacht, agus téarmaí.
 >
-> Tá sé pianmhar fóirdheontais shaortha a chruachadh de láimh — dosaen SDKanna, dosaen teorainneacha ráta, agus gan aon tuairim cé mhéad atá agat i ndáiríre. Déanann OmniRoute catalógú ar **485 iontráil saortha thar 34 eochair linn athfhillteach** agus ríomhann sé an ceannlíne tócan ó na **17 linn le buiséad míosúil dearfach foilsithe móide cúig uasteorainn Groq in aghaidh an mhúnla**, dí-dúbláilte de réir linn roinnte. Taispeántar cuótaí a osclaítear ach amháin tar éis fíoraithe aitheantais réigiúnaigh (inniu: ModelScope) ar leith, +~6M taobh thiar de fhíorú aitheantais réigiúnaigh, agus ní chuirtear le chéile iad sa cheannlíne riamh. Fanann an toradh le feiceáil ar an dashboard (`/dashboard/free-tiers`).
+> Tá sé pianmhar na sraitheanna saor in aisce a chruachadh de láimh — mórán de SDKs, an iliomad teorainneacha rátaí, agus gan smaoineamh ar an méid atá agat i ndáiríre. Catalóg OmniRoute** 484 iontráil saorshraith thar 34 eochair linne athfhillteacha** agus ríomhann sé an ceannlíne chomhartha ó na** 17 linn le buiséad míosúil dearfach foilsithe chomh maith le cúig caipín Groq in aghaidh an mhúnla** , dí-dhúbailte ag linn comhroinnte. Taispeántar cuótaí nach n-osclaíonn ach amháin tar éis seiceáil aitheantais réigiúnach (lá atá inniu ann: ModelScope) óna chéile, +~ 6M taobh thiar de fhíorú aitheantais réigiúnach, agus níor tugadh achoimre orthu sa cheannlíne riamh. Fanann an toradh le feiceáil ar an deais (`/dashboard/free-tiers`).
 
-<img src="./docs/diagrams/free-tier-budget.svg" width="100%" alt="Cárta buiséid saortha OmniRoute: ~1.62B tócan saor in aisce sa mhí go seasta, suas le ~2.22B sa chéad mhí le creidmheasanna clárúcháin, ó 34 eochair linn athfhillteach doiciméadaithe a chlúdaíonn 485 iontráil saortha catalógaithe taobh thiar de chríochphointe amháin. Matamaitic fhírinneach dí-dúbláilte linn — comhaireamh gach linn roinnte uair amháin, lena n-áirítear 17 linn athfhillteach le buiséad míosúil dearfach foilsithe móide cúig uasteorainn Groq in aghaidh an mhúnla; tá 12 soláthraí marcáilte seachain sa chatalóg riosca téarmaí ionas gur féidir leat cinneadh a dhéanamh. Áirítear sa bharra buiséid Mistral 1B, Nara 210M, LLM7 150M, xKiro 150M, Groq 30M (cúig uasteorainn in aghaidh an mhúnla) agus linnte níos lú, móide creidmheasanna clárúcháin don chéad mhí agus soláthraithe buan-saor gan uasteorainn tócan a thaispeántar ar leith ionas nach méadaíonn siad an ceannlíne riamh. Úsáidte/fágtha beo ar /dashboard/free-tiers."/>
+<img src="./docs/diagrams/free-tier-budget.svg" width="100%" alt="OmniRoute free-tier budget card: ~1.62B free tokens per month steady, up to ~2.22B in the first month with signup credits, from 34 documented recurring pool keys covering 484 cataloged free-tier entries behind one endpoint. Honest pool-deduped math — each shared pool counted once, including 17 recurring pools with a published positive monthly token budget plus five per-model Groq caps; 12 providers are marked avoid in the terms-risk catalog so you decide. Budget bar includes Mistral 1B, Nara 210M, LLM7 150M, xKiro 150M, Groq 30M (five per-model caps) and smaller pools, plus first-month signup credits and permanently-free no-token-cap providers surfaced separately so they never inflate the headline. Live used/remaining on /dashboard/free-tiers."/>
 
-> Achoimre bheo ar an leathanach beo `/dashboard/free-tiers`. Modheolaíocht iomlán (dí-dúbláil linn, leibhéil creidmheasa, téarmaí soláthraí): **[docs/reference/FREE_TIERS.md](docs/reference/FREE_TIERS.md)**.
+> Achoimre bheoga ar an leathanach `/dashboard/free-tiers` beo. Modheolaíocht iomlán (asbhaint linn, sraitheanna creidmheasa, téarmaí soláthraithe):** [docs/reference/FREE_TIERS.md](docs/reference/FREE_TIERS.md)** .
 >
-> <sub>Déanann muid athiniúchadh ar na figiúirí seo gach coicís i gcoinne na catalóige beo agus **bogann siad an dá bhealach** — críochnaíonn soláthraí fóirdheontas saor agus titeann an uimhir; tagann ceann nua agus ardaíonn sí. Foilsímid an méid a ríomhann an chatalóg i ndáiríre, riamh an cás is fearr cruinnithe.</sub>
+> <sub> Déantar na figiúirí seo a ath-iniúchadh gach coicís in aghaidh na catalóige beo agus** bogadh an dá bhealach** — cuireann soláthraí deireadh le sraith shaor agus titeann an uimhir; tagann ceann nua i dtír agus ardaíonn sé. Foilsímid an méid a ríomhann an chatalóg i ndáiríre, nach sárchás riamh é.</sub>
 
 <br/>
 
@@ -41,29 +41,23 @@
 
 <h3>
 
-⭐ Cuir réalta ar an repo má chuidigh OMNIROUTE leat airgead a shábháil agus do chuid oibre a dhéanamh níos éasca.
+⭐ Star the repo má chabhraigh OMNIROUTE leat airgead a shábháil agus do chuid oibre a dhéanamh níos éasca.
 
 </h3>
 
-[![Stars](https://img.shields.io/github/stars/diegosouzapw/OmniRoute?style=social)](https://github.com/diegosouzapw/OmniRoute)
+[![ Réaltaí](https://img.shields.io/github/stars/diegosouzapw/OmniRoute?style=social) ](https://github.com/diegosouzapw/OmniRoute)
 <a href="https://trendshift.io/repositories/23589" target="_blank"><img src="https://trendshift.io/api/badge/repositories/23589" alt="diegosouzapw%2FOmniRoute | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
-[![Star History Rank](https://api.star-history.com/badge?repo=diegosouzapw/OmniRoute&theme=dark)](https://www.star-history.com/diegosouzapw/omniroute)
-[![olud.ai](https://olud.ai/badge.php?tool=diegosouzapw-omniroute)](https://olud.ai/project/diegosouzapw-omniroute.html)
+[![ Rang Stair na Réalta](https://api.star-history.com/badge?repo=diegosouzapw/OmniRoute&theme=dark) ](https://www.star-history.com/diegosouzapw/omniroute) [![olud.ai](https://olud.ai/badge.php?tool=diegosouzapw-omniroute) ](https://olud.ai/project/diegosouzapw-omniroute.html)
 
-### 💬 Bí páirteach sa phobal
+### 💬 Bí sa phobal
 
-**👋 Lean an cothaitheoir — faigh soláthraithe nua, eisiúintí & leideanna ar dtús:**
+**👋 Lean an cothaitheoir — faigh soláthraithe, eisiúintí agus leideanna nua ar dtús:**
 
-[![Follow Diego on LinkedIn](https://img.shields.io/badge/Follow_Diego_on-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/diegosouzapw/)
-[![Follow @diegosouzapw on GitHub](https://img.shields.io/github/followers/diegosouzapw?style=for-the-badge&logo=github&logoColor=white&label=Follow%20on%20GitHub&color=181717)](https://github.com/diegosouzapw)
+[![Lean Diego ar LinkedIn](https://img.shields.io/badge/Follow_Diego_on-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white) ](https://www.linkedin.com/in/diegosouzapw/) [![ Lean @diegosouzapw ar GitHub](https://img.shields.io/github/followers/diegosouzapw?style=for-the-badge&logo=github&logoColor=white&label=Follow%20on%20GitHub&color=181717) ](https://github.com/diegosouzapw)
 
-[![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/U47eFqAXCn)
-[![Telegram](https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/omnirouteOficial)
-[![WhatsApp Global](https://img.shields.io/badge/WhatsApp_Global-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/FvuCbrpZmQ6I85n2vW5QIC?s=cl&p=a&mlu=4)
-[![WhatsApp Brasil](https://img.shields.io/badge/WhatsApp_Brasil-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/KWgatljAjmbELQory59Oti?s=cl&p=a&mlu=4)
-[![Website](https://img.shields.io/badge/Website-omniroute.online-blue?logo=google-chrome&logoColor=white)](https://omniroute.online)
+[![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white) ](https://discord.gg/U47eFqAXCn) [![Telegram](https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white) ](https://t.me/omnirouteOficial) [![WhatsApp Global](https://img.shields.io/badge/WhatsApp_Global-25D366?style=for-the-badge&logo=whatsapp&logoColor=white) ](https://chat.whatsapp.com/FvuCbrpZmQ6I85n2vW5QIC?s=cl&p=a&mlu=4) [![WhatsApp Brasil](https://img.shields.io/badge/WhatsApp_Brasil-25D366?style=for-the-badge&logo=whatsapp&logoColor=white) ](https://chat.whatsapp.com/KWgatljAjmbELQory59Oti?s=cl&p=a&mlu=4) [![ Láithreán Gréasáin](https://img.shields.io/badge/Website-omniroute.online-blue?logo=google-chrome&logoColor=white) ](https://omniroute.online)
 
-**Ceisteanna, leideanna soláthraí, mapa bóthair & tacaíocht → [Discord](https://discord.gg/U47eFqAXCn) · [Telegram](https://t.me/omnirouteOficial) · WhatsApp [🌍 Domhanda](https://chat.whatsapp.com/FvuCbrpZmQ6I85n2vW5QIC?s=cl&p=a&mlu=4) / [🇧🇷 Brasil](https://chat.whatsapp.com/KWgatljAjmbELQory59Oti?s=cl&p=a&mlu=4) / [Tairseach](https://portal.sthub.com.br/communities/groups/st-hub/channels/Omniroute-World-8kRjmK)**
+**Ceisteanna, leideanna soláthraithe, treochlár & tacaíocht → [Discord](https://discord.gg/U47eFqAXCn) · [Telegram](https://t.me/omnirouteOficial) · WhatsApp [🌍 Global](https://chat.whatsapp.com/FvuCbrpZmQ6I85n2vW5QIC?s=cl&p=a&mlu=4) / [🇧🇷 Brasil](https://chat.whatsapp.com/KWgatljAjmbELQory59Oti?s=cl&p=a&mlu=4) / [Portal](https://portal.sthub.com.br/communities/groups/st-hub/channels/Omniroute-World-8kRjmK)**
 
 <br/>
 
@@ -1294,29 +1288,29 @@ Méadrachtaí canónacha ar 2026-10-18: **1.976 físeán uathúil** · **20.220.
 <br/>
 <div align="center">
 
-## 🛠️ Cruach Teicneolaíochta
+## 🛠️ Tech Stack
 
 </div>
 
 <table>
   <tr><th align="left">Ciseal</th><th align="left">Teicneolaíocht</th></tr>
   <tr><td nowrap><b>Am rite</b></td><td>Node.js 22.x / 24.x LTS — <code>&gt;=22.22.2 &lt;23 || &gt;=24.0.0 &lt;27</code></td></tr>
-  <tr><td nowrap><b>Teanga</b></td><td>TypeScript 6.0 — <b>100% TypeScript</b> ar fud <code>src/</code> agus <code>open-sse/</code> (gan <code>any</code> ar bith sa chroí ó v2.0 i leith)</td></tr>
-  <tr><td nowrap><b>Creat</b></td><td>Next.js 16 + React 19 + Tailwind CSS 4</td></tr>
-  <tr><td nowrap><b>Bunachar sonraí</b></td><td>better-sqlite3 (SQLite, logáil WAL) + LowDB (JSON oidhreachta) — 147 modúl fearainn, 222 imirce</td></tr>
-  <tr><td nowrap><b>Cuimhne</b></td><td>Téacs iomlán SQLite FTS5 + leabuithe veicteora cainníochtaithe int8, meath clóscríofa</td></tr>
-  <tr><td nowrap><b>Scéimeanna</b></td><td>Zod 4 — bailíochtú ionchuir/aschuir uirlisí MCP + conarthaí API</td></tr>
+  <tr><td nowrap><b>Teanga</b></td><td>TypeScript 6.0 — <b>100% TypeScript</b> trasna <code>src/</code> agus <code>open-sse/</code> (náid <code>any</code> sa chroí ó v2.0)</td></tr>
+  <tr><td nowrap><b>Creatlach</b></td><td>Next.js 16 + React 19 + Tailwind CSS 4</td></tr>
+  <tr><td nowrap><b>Bunachar Sonraí</b></td><td>better-sqlite3 (SQLite, iriseoireacht WAL ) + LowDB ( oidhreacht JSON ) — 147 modúl fearainn, 222 ascnamh</td></tr>
+  <tr><td nowrap><b>Cuimhne</b></td><td>SQLite FTS5 téacs iomlán leabaithe veicteora + int8-quantized, lobhadh clóscríofa</td></tr>
+  <tr><td nowrap><b>Scéimeanna</b></td><td>Zod 4 — MCP tool I/O bailíochtú conarthaí + API</td></tr>
   <tr><td nowrap><b>Prótacail</b></td><td>MCP (stdio / HTTP / SSE) + A2A v0.3 (JSON-RPC 2.0 + SSE)</td></tr>
-  <tr><td nowrap><b>Sruthú</b></td><td>Imeachtaí Seolta ag an bhFreastalaí (SSE) + droichead WebSocket (<code>/v1/ws</code>)</td></tr>
-  <tr><td nowrap><b>Comhbhrú</b></td><td>Tuile 12 inneall — RTK, Caveman, LLMLingua-2 (MobileBERT ONNX), GCF, OmniGlyph</td></tr>
-  <tr><td nowrap><b>Fíordheimhniú &amp; slándáil</b></td><td>OAuth 2.0 (PKCE) + JWT + Eochracha API + fíordheimhniú MCP le raon feidhme · AES-256-GCM ar fos · DOMPurify</td></tr>
-  <tr><td nowrap><b>Ceilt</b></td><td>wreq-js — pearsanú méarlorg TLS JA3 / JA4, seachfhreastalaí 3 leibhéal</td></tr>
-  <tr><td nowrap><b>Athléimneacht</b></td><td>Briseadh ciorcaid, cúltaca easpónantúil, frith-thruailliú slua, féinleigheas uathoibríoch teaglama</td></tr>
-  <tr><td nowrap><b>Logáil</b></td><td>pino — logaí JSON struchtúrtha le comhthéacs iarratais</td></tr>
-  <tr><td nowrap><b>Tástáil</b></td><td>Rithire tástála Node.js + Vitest — <b>níos mó ná 60,000 dearbhú tástála statacha</b> ar fud níos mó ná 8,400 comhad tástála rianaithe (aonaid, comhtháthú, E2E, slándáil, éiceachóras)</td></tr>
-  <tr><td nowrap><b>Ardáin</b></td><td>Deasc (Electron) · Android (Termux) · PWA (brabhsálaí ar bith)</td></tr>
-  <tr><td nowrap><b>CI/CD</b></td><td>GitHub Actions — foilsiú uathoibríoch npm + Docker Hub ag an scaoileadh</td></tr>
-  <tr><td nowrap><b>Naisc</b></td><td><a href="https://omniroute.online">Suíomh Gréasáin</a> · <a href="https://www.npmjs.com/package/omniroute">npm</a> · <a href="https://hub.docker.com/r/diegosouzapw/omniroute">Docker Hub</a></td></tr>
+  <tr><td nowrap><b>Sruthú</b></td><td>Imeachtaí Seolta Freastalaí (SSE) + WebSocket bridge (<code>/v1/ws</code>)</td></tr>
+  <tr><td nowrap><b>Comhbhrú</b></td><td>píblíne 12-inneall — RTK, Caveman, LLMLingua-2 (MobileBERT ONNX), GCF, OmniGlyph</td></tr>
+  <tr><td nowrap><b>Údar &amp; slándála</b></td><td>OAuth 2.0 (PKCE) + JWT + API Eochracha + MCP scoped auth · AES-256-GCM ar fos · DOMPurify</td></tr>
+  <tr><td nowrap><b>Stealth</b></td><td>pearsanú méarloirg wreq-js — JA3 / JA4 TLS, seachfhreastalaí 3-leibhéal</td></tr>
+  <tr><td nowrap><b>Athléimneacht</b></td><td>Scoradán ciorcaid, cúlú easpónantúil, tréad frith-thundering, féinchleachtadh teaglama féin</td></tr>
+  <tr><td nowrap><b>Logáil</b></td><td>logs JSON struchtúrtha pino — le comhthéacs iarratais</td></tr>
+  <tr><td nowrap><b>Tástáil</b></td><td>Node.js tástála + Vitest — <b>60,000 + dearbhú tástála statach</b> thar 8,400 comhad tástála rianaithe + (aonad, comhtháthú, E2E, slándáil, éiceachóras)</td></tr>
+  <tr><td nowrap><b>Ardáin</b></td><td>Deasc (Electron) · Android (Termux) · PWA (aon bhrabhsálaí)</td></tr>
+  <tr><td nowrap><b>CI/CD</b></td><td>GitHub Gníomhartha — auto npm foilsigh + Docker Hub ar scaoileadh</td></tr>
+  <tr><td nowrap><b>Naisc</b></td><td><a href="https://omniroute.online">Suíomh Gréasáin</a> · <a href="https://www.npmjs.com/package/omniroute">npm</a> · <a href="https://hub.docker.com/r/diegosouzapw/omniroute">Docker</a></td></tr>
 </table>
 
 <div align="center">
@@ -1327,156 +1321,156 @@ Méadrachtaí canónacha ar 2026-10-18: **1.976 físeán uathúil** · **20.220.
 
 </div>
 
-### 📘 Tús a Chur
+### 📘 Tús a chur leis
 
 <table>
   <tr><th align="left">Doiciméad</th><th align="left">Cur síos</th></tr>
-  <tr><td nowrap><b><a href="docs/guides/USER_GUIDE.md">Treoir Úsáideora</a></b></td><td>Soláthraithe, teaglamaí, comhtháthú CLI, imlonnú</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/SETUP_GUIDE.md">Treoir Socraithe</a></b></td><td>Modhanna iomlána suiteála, cumraíochtaí uirlisí CLI, socrú prótacail, tiúnadh teorainneacha ama</td></tr>
-  <tr><td nowrap><b><a href="docs/reference/CLI-TOOLS.md">Treoir Uirlisí CLI</a></b></td><td>Socrú uirlis ar leith do Claude Code, Codex, Cursor, Cline, OpenClaw, Kilo, Copilot</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/REMOTE-MODE.md">Mód Cianda</a></b></td><td>OmniRoute cianda (VPS) a rialú ó CLI do ríomhaire glúine trí chomharthaí rochtana raonaithe</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/CLAUDE-CODE-CONFIGURATION.md">Cumraíocht Claude Code</a></b></td><td>Claude Code a dhíriú ar OmniRoute (áitiúil/cianda) le <code>launch</code> + próifílí in aghaidh an mhúnla</td></tr>
-  <tr><td nowrap><b><a href="README.md#-quick-start">Tús Tapa</a></b></td><td>Suiteáil 3 chéim → ceangal → cumraigh</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/USER_GUIDE.md">Treoir Úsáideora</a></b></td><td>Soláthraithe, combos, comhtháthú CLI, imscaradh</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/SETUP_GUIDE.md">Treoir Socraithe</a></b></td><td>Modhanna suiteála iomlána, cumraíochtaí uirlisí CLI, socrú prótacail, tiúnadh teorainn ama</td></tr>
+  <tr><td nowrap><b><a href="docs/reference/CLI-TOOLS.md">Treoir Uirlisí CLI</a></b></td><td>Socrú in aghaidh an uirlis le haghaidh Cód Claude, Codex, Cursor, Cline, OpenClaw, Kilo, Copilot</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/REMOTE-MODE.md">Mód cianda</a></b></td><td>Tiomáint cianda OmniRoute (VPS) ó do ríomhaire glúine CLI trí chomharthaí rochtana scóipe</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/CLAUDE-CODE-CONFIGURATION.md">Claude Cód cumraíochta</a></b></td><td>Pointe Claude Cód ag OmniRoute (local/remote) le próifílí <code>launch</code> + in aghaidh an tsamhail</td></tr>
+  <tr><td nowrap><b><a href="README.md#-quick-start">Tús Tapa</a></b></td><td>Suiteáil 3-chéim → connect → cumrú</td></tr>
 </table>
 
-### 🔧 Oibríochtaí agus Imlonnú
+### 🔧 Oibríochtaí & Imscaradh
 
 <table>
   <tr><th align="left">Doiciméad</th><th align="left">Cur síos</th></tr>
-  <tr><td nowrap><b><a href="docs/guides/DOCKER_GUIDE.md">Treoir Docker</a></b></td><td>Docker run, próifílí Compose, Caddy HTTPS, tolláin, clibeanna íomhá</td></tr>
-  <tr><td nowrap><b><a href="contrib/podman/README.md">Treoir Podman</a></b></td><td>Comhtháthú Quadlet le systemd, podman-compose, SELinux</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/VM_DEPLOYMENT_GUIDE.md">Imlonnú VM</a></b></td><td>Treoir iomlán: socrú VM + nginx + Cloudflare</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/FLY_IO_DEPLOYMENT_GUIDE.md">Imlonnú Fly.io</a></b></td><td>Imlonnaigh chuig Fly.io le stóráil bhuan</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/TERMUX_GUIDE.md">Treoir Termux</a></b></td><td>OmniRoute a rith ar Android trí Termux</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/PWA_GUIDE.md">Treoir PWA</a></b></td><td>Suiteáil Aip Ghréasáin Fhorásach, taisceadh, ailtireacht</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/UNINSTALL.md">Treoir Díshuiteála</a></b></td><td>Baint ghlan do gach modh suiteála</td></tr>
-  <tr><td nowrap><b><a href="docs/reference/ENVIRONMENT.md">Cumraíocht Timpeallachta</a></b></td><td>Athróga agus tagairtí <code>.env</code> iomlána</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/DOCKER_GUIDE.md">Treoir Docker</a></b></td><td>rith Docker, Cum próifílí, Caddy HTTPS, tolláin, clibeanna íomhá</td></tr>
+  <tr><td nowrap><b><a href="contrib/podman/README.md">Treoir Podman</a></b></td><td>Comhtháthú Quadlet systemd, podman-compose, SELinux</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/VM_DEPLOYMENT_GUIDE.md">VM Imscaradh</a></b></td><td>Treoir iomlán: VM + nginx + Cloudflare setup</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/FLY_IO_DEPLOYMENT_GUIDE.md">Imscaradh Fly.io</a></b></td><td>Imscaradh chuig Fly.io le stóráil leanúnach</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/TERMUX_GUIDE.md">Treoir Termux</a></b></td><td>Rith OmniRoute ar Android trí Termux</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/PWA_GUIDE.md">Treoir PWA</a></b></td><td>Suiteáil App Gréasáin Forásach, taisceadh, ailtireacht</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/UNINSTALL.md">Díshuiteáil Treoir</a></b></td><td>Bain glan do gach modh suiteála</td></tr>
+  <tr><td nowrap><b><a href="docs/reference/ENVIRONMENT.md">Cumraíocht Timpeallachta</a></b></td><td>Comhlánaigh athróga agus tagairtí <code>.env</code></td></tr>
 </table>
 
-### 🧠 Gnéithe agus Ailtireacht
+### 🧠 Gnéithe & Ailtireacht
 
 <table>
   <tr><th align="left">Doiciméad</th><th align="left">Cur síos</th></tr>
-  <tr><td nowrap><b><a href="docs/architecture/ARCHITECTURE.md">Ailtireacht</a></b></td><td>Ailtireacht an chórais, sreabhadh sonraí, agus inmheánacha</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_GUIDE.md">Treoir Chomhbhrúite</a></b></td><td>Píblíne 7 rogha: as / éadrom / caighdeánach / ionsaitheach / ultra / RTK / cruachta</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/RTK_COMPRESSION.md">Comhbhrú RTK</a></b></td><td>Comhbhrú aschuir orduithe, scagairí, iontaoibh, fíorú, aisghabháil amh-aschuir</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_ENGINES.md">Innill Chomhbhrúite</a></b></td><td>Caveman, RTK, píblínte cruachta, dromchlaí painéil/API/MCP</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_RULES_FORMAT.md">Formáid Rialacha Comhbhrúite</a></b></td><td>Scéimeanna pacáistí rialacha JSON do scagairí Caveman agus RTK</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_LANGUAGE_PACKS.md">Pacáistí Teanga Comhbhrúite</a></b></td><td>Brath teanga agus údarú pacáistí rialacha Caveman</td></tr>
-  <tr><td nowrap><b><a href="docs/architecture/RESILIENCE_GUIDE.md">Treoir Athléimneachta</a></b></td><td>Scoradáin chiorcaid, tréimhsí fuaraithe, ciú, cosc ar thréad tóir, aithris TLS</td></tr>
-  <tr><td nowrap><b><a href="docs/routing/AUTO-COMBO.md">Inneall Uath-Theaglama</a></b></td><td>Scóráil 16 fhachtóir, pacáistí mód, féinleigheas</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/PROXY_GUIDE.md">Treoir Seachfhreastalaí</a></b></td><td>Córas seachfhreastalaí 3 leibhéal, margadh 1proxy, CRUD clárlainne</td></tr>
-  <tr><td nowrap><b><a href="docs/reference/FREE_TIERS.md">Sraitheanna Saora</a></b></td><td>Eolaire comhdhlúite: 34 chomhthiomsú athfhillteach doiciméadaithe / 485 iontráil sraithe saor chatalógaithe</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/FEATURES.md">Gailearaí Gnéithe</a></b></td><td>Turais amhairc ar an bpainéal le scáileáin scáileáin</td></tr>
-  <tr><td nowrap><b><a href="docs/architecture/CODEBASE_DOCUMENTATION.md">Doiciméadú an Bhunchóid</a></b></td><td>Siúlóid den bhunchód atá oiriúnach do thosaitheoirí</td></tr>
+  <tr><td nowrap><b><a href="docs/architecture/ARCHITECTURE.md">Ailtireacht</a></b></td><td>Ailtireacht chórais, sreabhadh sonraí, agus inmheánaigh</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_GUIDE.md">Treoir Comhbhrú</a></b></td><td>Píblíne 7-rogha: as / lite / caighdeánach / ionsaitheach / ultra / RTK / Cruachta</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/RTK_COMPRESSION.md">Comhbhrú RTK</a></b></td><td>Comhbhrú ordú-aschuir, scagairí, muinín, fíorú, aisghabháil amh-aschuir</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_ENGINES.md">Innill Chomhbhrú</a></b></td><td>Caveman, RTK, píblínte cruachta, dromchlaí dashboard/API/MCP</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_RULES_FORMAT.md">Formáid Rialacha Comhbhrú</a></b></td><td>scéimrí pacáiste rialacha JSON do scagairí Caveman agus RTK</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_LANGUAGE_PACKS.md">Pacaí Teanga Comhbhrúite</a></b></td><td>Brath teanga agus údarú pacáiste rialacha Caveman</td></tr>
+  <tr><td nowrap><b><a href="docs/architecture/RESILIENCE_GUIDE.md">Treoir Athléimneachta</a></b></td><td>Scoradáin chiorcaid, cúlaithe, scuaine, tréad frith-thundering, spoofing TLS</td></tr>
+  <tr><td nowrap><b><a href="docs/routing/AUTO-COMBO.md">Inneall Teaglama Auto</a></b></td><td>Scóráil 16-fhachtóir, pacáistí mód, féin-leighis</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/PROXY_GUIDE.md">Treoir Seachfhreastalaí</a></b></td><td>Córas seachfhreastalaí 3-leibhéal, margadh seachfhreastalaí, clárlann CRUD</td></tr>
+  <tr><td nowrap><b><a href="docs/reference/FREE_TIERS.md">Sraitheanna saor in aisce,</a></b></td><td>Eolaire comhdhlúite: 34 linn athfhillteacha doiciméadaithe / 484 iontráil saorshraith chatalógaithe</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/FEATURES.md">Gailearaí Gnéithe</a></b></td><td>Turas painéal amhairc le screenshots</td></tr>
+  <tr><td nowrap><b><a href="docs/architecture/CODEBASE_DOCUMENTATION.md">Doiciméadúchán Codebase</a></b></td><td>Siúl tríd an codebase do thosaitheoirí</td></tr>
 </table>
 
-### 🤖 Prótacail agus APIanna
+### 🤖 Prótacail & APIs
 
 <table>
   <tr><th align="left">Doiciméad</th><th align="left">Cur síos</th></tr>
-  <tr><td nowrap><b><a href="docs/reference/API_REFERENCE.md">Tagairt API</a></b></td><td>Gach críochphointe le samplaí</td></tr>
-  <tr><td nowrap><b><a href="docs/openapi.yaml">Sonraíocht OpenAPI</a></b></td><td>Sonraíocht OpenAPI 3.0</td></tr>
-  <tr><td nowrap><b><a href="open-sse/mcp-server/README.md">Freastalaí MCP</a></b></td><td>110 uirlis MCP, cumraíochtaí IDE, cliaint Python/TS/Go</td></tr>
-  <tr><td nowrap><b><a href="docs/frameworks/MCP-SERVER.md">Treoir Freastalaí MCP</a></b></td><td>Suiteáil MCP, iompar, agus tagairt uirlisí</td></tr>
-  <tr><td nowrap><b><a href="src/lib/a2a/README.md">Freastalaí A2A</a></b></td><td>Prótacal JSON-RPC 2.0, scileanna, sruthú, bainistiú tascanna</td></tr>
-  <tr><td nowrap><b><a href="docs/frameworks/A2A-SERVER.md">Treoir Freastalaí A2A</a></b></td><td>Cárta gníomhaire A2A, tascanna, scileanna, agus sruthú</td></tr>
+  <tr><td nowrap><b><a href="docs/reference/API_REFERENCE.md">Tagairt API</a></b></td><td>Gach críochphointí le samplaí</td></tr>
+  <tr><td nowrap><b><a href="docs/openapi.yaml">OpenAPI Spec</a></b></td><td>sonraíocht OpenAPI 3.0</td></tr>
+  <tr><td nowrap><b><a href="open-sse/mcp-server/README.md">Freastalaí MCP</a></b></td><td>110 MCP tools, IDE configs, Python/TS/Go clients</td></tr>
+  <tr><td nowrap><b><a href="docs/frameworks/MCP-SERVER.md">Treoir freastalaí MCP</a></b></td><td>suiteáil MCP, iompar, agus tagairt uirlisí</td></tr>
+  <tr><td nowrap><b><a href="src/lib/a2a/README.md">Freastalaí A2A</a></b></td><td>Prótacal JSON-RPC 2.0, scileanna, sruthú, tasc mgmt</td></tr>
+  <tr><td nowrap><b><a href="docs/frameworks/A2A-SERVER.md">Treoir freastalaí A2A</a></b></td><td>cárta gníomhaire A2A, tascanna, scileanna, agus sruthú</td></tr>
 </table>
 
-### 📋 Tionscadal agus Cáilíocht
+### Tionscadal & Cáilíocht 📋
 
 <table>
   <tr><th align="left">Doiciméad</th><th align="left">Cur síos</th></tr>
-  <tr><td nowrap><b><a href="CONTRIBUTING.md">Rannchuidiú</a></b></td><td>Socrú forbartha agus treoirlínte</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/BRANCHING_MODEL.md">Múnla Brainseála & Eisiúna</a></b></td><td>Cá ndírítear PRanna (<code>release/*</code>), agus cad is brí le <code>main</code> agus le clibeanna</td></tr>
-  <tr><td nowrap><b><a href="CHANGELOG.md">Log Athruithe</a></b></td><td>Stair iomlán na n-eisiúintí de réir leagain</td></tr>
-  <tr><td nowrap><b><a href="SECURITY.md">Beartas Slándála</a></b></td><td>Tuairisciú leochaileachtaí agus cleachtais slándála</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/I18N.md">Treoir i18n</a></b></td><td>Tacaíocht do 67 teanga, sreabhadh oibre aistriúcháin, RTL</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/RELEASE_CHECKLIST.md">Seicliosta Eisiúna</a></b></td><td>Céimeanna bailíochtaithe roimh eisiúint</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/COVERAGE_PLAN.md">Plean Clúdaigh</a></b></td><td>Straitéis chlúdaigh tástála do bhreis agus 60,000 dearbhú tástála statach thar bhreis agus 8,400 comhad tástála rianaithe</td></tr>
+  <tr><td nowrap><b><a href="CONTRIBUTING.md">Ag cur leis</a></b></td><td>Socrú forbartha agus treoirlínte</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/BRANCHING_MODEL.md">Samhail Branching & Eisiúna</a></b></td><td>I gcás ina sprioc PRs (<code>release/*</code>), cad a chiallaíonn <code>main</code> agus clibeanna</td></tr>
+  <tr><td nowrap><b><a href="CHANGELOG.md">Loga athrú</a></b></td><td>Stair eisithe iomlán in aghaidh an leagan</td></tr>
+  <tr><td nowrap><b><a href="SECURITY.md">Beartas Slándála</a></b></td><td>Tuairisciú leochaileachta agus cleachtais slándála</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/I18N.md">i18n Treoir</a></b></td><td>Tacaíocht 67-teanga, sreabhadh oibre aistriúcháin, RTL</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/RELEASE_CHECKLIST.md">Seicliosta Eisiúna</a></b></td><td>Céimeanna bailíochtaithe réamhscaoilte</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/COVERAGE_PLAN.md">Plean Clúdaigh</a></b></td><td>Straitéis um chlúdach tástála le haghaidh 60,000 dearbhú tástála statach + thar 8,400 comhad tástála rianaithe +</td></tr>
 </table>
 
 <br/>
 
 <div align="center">
 
-# ⭐ Na Rannchuiditheoirí is Fearr
+# ⭐ Príomh-ranníocóirí
 
-> Is pobal paiseanta foinse oscailte a mhúnlaíonn OmniRoute. Rinne na daoine seo rannchuidithe eisceachtúla a mbíonn tionchar díreach acu ar cháilíocht, ar chobhsaíocht agus ar raon an tionscadail. **Go raibh maith agaibh.**
+> Tá OmniRoute múnlaithe ag pobal foinse oscailte paiseanta. Tá ranníocaíochtaí eisceachtúla déanta ag na daoine seo a théann i bhfeidhm go díreach ar cháilíocht, ar chobhsaíocht agus ar raon feidhme an tionscadail.** Go raibh maith agat.**
 
-### Rannchuiditheoirí seachtracha de réir iarratas tarraingthe cumaiscthe
+### Ranníocóirí seachtracha trí iarratais ar tharraingt cumaiscthe
 
 <table>
-  <tr><th align="center">Rang</th><th align="left">Rannchuiditheoir</th><th align="center">PRanna cumaiscthe</th><th align="right">~Línte athraithe</th></tr>
-  <tr><td align="center">1</td><td align="left"><a href="https://github.com/maxmad64bis"><b>maxmad64bis</b></a></td><td align="center">418</td><td align="right">25,367,739</td></tr>
+  <tr><th align="center">Céim</th><th align="left">ranníocóir</th><th align="center">Comhcheangail PRs</th><th align="right">~ Línte athraithe</th></tr>
+  <tr><td align="center">1</td><td align="left"><a href="https://github.com/maxmad64bis"><b>uasta 64bis</b></a></td><td align="center">418</td><td align="right">25,367,739</td></tr>
   <tr><td align="center">2</td><td align="left"><a href="https://github.com/HouMinXi"><b>HouMinXi</b></a></td><td align="center">295</td><td align="right">13,557,796</td></tr>
-  <tr><td align="center">3</td><td align="left"><a href="https://github.com/pacocartones"><b>pacocartones</b></a></td><td align="center">222</td><td align="right">81,551</td></tr>
-  <tr><td align="center">4</td><td align="left"><a href="https://github.com/backryun"><b>backryun</b></a></td><td align="center">210</td><td align="right">270,562</td></tr>
+  <tr><td align="center">3</td><td align="left"><a href="https://github.com/pacocartones"><b>pacacartones</b></a></td><td align="center">222</td><td align="right">81,551</td></tr>
+  <tr><td align="center">4</td><td align="left"><a href="https://github.com/backryun"><b>cúlrún</b></a></td><td align="center">210</td><td align="right">270,562</td></tr>
   <tr><td align="center">5</td><td align="left"><a href="https://github.com/JxnLexn"><b>JxnLexn</b></a></td><td align="center">198</td><td align="right">3,570,623</td></tr>
-  <tr><td align="center">6</td><td align="left"><a href="https://github.com/oyi77"><b>oyi77</b></a></td><td align="center">190</td><td align="right">411,243</td></tr>
+  <tr><td align="center">6</td><td align="left"><a href="https://github.com/oyi77"><b>oigh77</b></a></td><td align="center">190</td><td align="right">411,243</td></tr>
   <tr><td align="center">7</td><td align="left"><a href="https://github.com/KooshaPari"><b>KooshaPari</b></a></td><td align="center">151</td><td align="right">5,972,314</td></tr>
-  <tr><td align="center">8</td><td align="left"><a href="https://github.com/rdself"><b>rdself</b></a></td><td align="center">145</td><td align="right">80,663</td></tr>
+  <tr><td align="center">8</td><td align="left"><a href="https://github.com/rdself"><b>féin</b></a></td><td align="center">145</td><td align="right">80,663</td></tr>
   <tr><td align="center">9</td><td align="left"><a href="https://github.com/RaviTharuma"><b>RaviTharuma</b></a></td><td align="center">123</td><td align="right">500,065</td></tr>
   <tr><td align="center">10</td><td align="left"><a href="https://github.com/herjarsa"><b>herjarsa</b></a></td><td align="center">88</td><td align="right">230,872</td></tr>
-  <tr><td align="center">11</td><td align="left"><a href="https://github.com/hartmark"><b>hartmark</b></a></td><td align="center">85</td><td align="right">2,849,623</td></tr>
+  <tr><td align="center">11</td><td align="left"><a href="https://github.com/hartmark"><b>sainmharc</b></a></td><td align="center">85</td><td align="right">2,849,623</td></tr>
   <tr><td align="center">12</td><td align="left"><a href="https://github.com/jonlwheat2-gif"><b>jonlwheat2-gif</b></a></td><td align="center">68</td><td align="right">69,097</td></tr>
-  <tr><td align="center">13</td><td align="left"><a href="https://github.com/artickc"><b>artickc</b></a></td><td align="center">62</td><td align="right">43,502</td></tr>
+  <tr><td align="center">13</td><td align="left"><a href="https://github.com/artickc"><b>articc</b></a></td><td align="center">62</td><td align="right">43,502</td></tr>
   <tr><td align="center">14</td><td align="left"><a href="https://github.com/xiaoyaner0201"><b>xiaoyaner0201</b></a></td><td align="center">59</td><td align="right">126,220</td></tr>
   <tr><td align="center">15</td><td align="left"><a href="https://github.com/chirag127"><b>chirag127</b></a></td><td align="center">52</td><td align="right">6,661</td></tr>
   <tr><td align="center">16</td><td align="left"><a href="https://github.com/xz-dev"><b>xz-dev</b></a></td><td align="center">50</td><td align="right">245,976</td></tr>
-  <tr><td align="center">17</td><td align="left"><a href="https://github.com/woodsonl"><b>woodsonl</b></a></td><td align="center">48</td><td align="right">811,771</td></tr>
+  <tr><td align="center">17</td><td align="left"><a href="https://github.com/woodsonl"><b>coillesonl</b></a></td><td align="center">48</td><td align="right">811,771</td></tr>
   <tr><td align="center">18</td><td align="left"><a href="https://github.com/rqzbeh"><b>rqzbeh</b></a></td><td align="center">46</td><td align="right">151,229</td></tr>
   <tr><td align="center">19</td><td align="left"><a href="https://github.com/MumuTW"><b>MumuTW</b></a></td><td align="center">43</td><td align="right">28,166</td></tr>
   <tr><td align="center">19</td><td align="left"><a href="https://github.com/QuangBlue"><b>QuangBlue</b></a></td><td align="center">43</td><td align="right">13,112</td></tr>
 </table>
 
-<sub>Rinneadh an daonáireamh 2026-11-03 03:01:19 UTC le barr beo <code>release/v3.8.53</code> <code>05bc048d6c</code>. Tá 9,947 PR cumaiscthe i ndaonáireamh GitHub GraphQL le huimhriú leathanaigh: 4,130 ón úinéir stórtha, 240 ó Dependabot, 6 ó róbait/aip eile, agus <b>5,571 PR sheachtracha ó 883 rannchuiditheoir ar leith</b>. Is ionann “Línte athraithe” agus suimiúcháin + scriosadh GitHub agus áirítear leo comhaid ghinte, comhaid ghlasála, catalóga, aistriúcháin agus doiciméadacht; is éard atá ann ná athrú, ní LOC scríofa. Tuairiscíonn 53 PR difríochtaí GitHub os cionn 500,000 líne (mar shampla #13399, suimiú aon tsoláthraí amháin, ina liostaítear 2,347 comhad athraithe), rud a mhéadaíonn roinnt de na hiomláin thuas. Rangaítear ceangail le chéile.</sub>
+<sub>Daonáireamh tógtha 2026-11-03 03:01:19 UTC le <code>release/v3.8.53</code> tip beo <code>05bc048d6c</code>. Tá PRsGraphQL GitHub 4,130 ag úinéir an taisclainne, 240 ag Dependabot, 6 ag bots/apps eile, agus <b>5,571 PRs seachtrach ó 883 ranníocóir ar leith</b>. Is ionann “línte athraithe” GitHub breiseanna + a scriosadh agus folaíonn sé comhaid ginte, glaschomhaid, catalóga, aistriúcháin agus doiciméadú; is chuinneog é, ní údar LOC. 53 tuarascáil PRs Tá difríocht idir GitHub os cionn 500,000 líne (mar shampla #13399, suimiú soláthraí amháin, liostaítear 2,347 comhad athraithe), a ardaíonn roinnt iomláin thuas. Tá ceangail rangaithe le chéile.</sub>
 
-### Coistí curtha i leith GitHub
+### Tiomantas atá curtha i leith GitHub
 
 <table>
   <tr>
     <td align="center" width="160">
       <a href="https://github.com/maxmad64bis">
         <img src="https://github.com/maxmad64bis.png" width="40" style="border-radius:50%" alt="Dizzle"/><br/>
-        <b>Dizzle</b>
+        <b>Ceobhrán</b>
       </a><br/>
-      <sub>🥇 418 coimit GitHub-curtha i leith</sub>
+      <sub>🥇 418 GitHub tiomantais</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/HouMinXi">
         <img src="https://github.com/HouMinXi.png" width="40" style="border-radius:50%" alt="Bob.Hou"/><br/>
         <b>Bob.Hou</b>
       </a><br/>
-      <sub>🥈 294 coimit GitHub-curtha i leith</sub>
+      <sub>🥈 294 GitHub-geallta</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/oyi77">
         <img src="https://github.com/oyi77.png" width="40" style="border-radius:50%" alt="Paijo"/><br/>
         <b>Paijo</b>
       </a><br/>
-      <sub>🥉 229 coimit GitHub-curtha i leith</sub>
+      <sub>🥉 229 GitHub tiomantais</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/pacocartones">
         <img src="https://github.com/pacocartones.png" width="40" style="border-radius:50%" alt="Paco Cartones"/><br/>
-        <b>Paco Cartones</b>
+        <b>Cartúin Paco</b>
       </a><br/>
-      <sub>🏅 222 coimit GitHub-curtha i leith</sub>
+      <sub>🏅 222 GitHub-geallta</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/backryun">
         <img src="https://github.com/backryun.png" width="40" style="border-radius:50%" alt="backryun"/><br/>
-        <b>backryun</b>
+        <b>cúlrún</b>
       </a><br/>
-      <sub>🏅 202 coimit GitHub-curtha i leith</sub>
+      <sub>🏅 202 gealltanais atá curtha i leith GitHub</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/JxnLexn">
         <img src="https://github.com/JxnLexn.png" width="40" style="border-radius:50%" alt="Jan Leon"/><br/>
-        <b>Jan Leon</b>
+        <b>Ean Leon</b>
       </a><br/>
-      <sub>🏅 134 coimit GitHub-curtha i leith</sub>
+      <sub>🏅 134 GitHub tiomantais</sub>
     </td>
   </tr>
   <tr>
@@ -1485,49 +1479,49 @@ Méadrachtaí canónacha ar 2026-10-18: **1.976 físeán uathúil** · **20.220.
         <img src="https://github.com/RaviTharuma.png" width="40" style="border-radius:50%" alt="Ravi Tharuma"/><br/>
         <b>Ravi Tharuma</b>
       </a><br/>
-      <sub>🏅 126 coimit GitHub-curtha i leith</sub>
+      <sub>🏅 126 GitHub tiomantais</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/hartmark">
         <img src="https://github.com/hartmark.png" width="40" style="border-radius:50%" alt="Markus Hartung"/><br/>
         <b>Markus Hartung</b>
       </a><br/>
-      <sub>🏅 115 coimit GitHub-curtha i leith</sub>
+      <sub>🏅 115 GitHub-geallta</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/rdself">
         <img src="https://github.com/rdself.png" width="40" style="border-radius:50%" alt="Randi"/><br/>
         <b>Randi</b>
       </a><br/>
-      <sub>🏅 108 coimit GitHub-curtha i leith</sub>
+      <sub>🏅 108 GitHub tiomantais</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/christopher-s">
         <img src="https://github.com/christopher-s.png" width="40" style="border-radius:50%" alt="Chris"/><br/>
-        <b>Chris</b>
+        <b>Críostóir</b>
       </a><br/>
-      <sub>🏅 70 coimit GitHub-curtha i leith</sub>
+      <sub>🏅 70 GitHub tiomantais</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/jonlwheat2-gif">
         <img src="https://github.com/jonlwheat2-gif.png" width="40" style="border-radius:50%" alt="WebPerson"/><br/>
         <b>WebPerson</b>
       </a><br/>
-      <sub>🏅 68 coimit GitHub-curtha i leith</sub>
+      <sub>🏅 68 GitHub tiomantais</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/KooshaPari">
         <img src="https://github.com/KooshaPari.png" width="40" style="border-radius:50%" alt="Koosha Paridehpour"/><br/>
         <b>Koosha Paridehpour</b>
       </a><br/>
-      <sub>🏅 68 coimit GitHub-curtha i leith</sub>
+      <sub>🏅 68 GitHub tiomantais</sub>
     </td>
   </tr>
 </table>
 
-<sub>Athsheiceáil an 2026-11-03 02:09:16 UTC: coimití a chuir GitHub i leith, arna dtuairisciú ag API Contributors an stór don bhrainse réamhshocraithe <code>release/v3.8.53</code>. D’fhill an API 903 aitheantas (429 úsáideoir, 2 bhot, 472 gan ainm); fágtar an cothaitheoir, na róbónna agus na haitheantais gan ainm ar lár sa tábla seo, agus coinnítear comhscóir an chomórtais. Tá sé éagsúil ó rangú na PRanna cumaiscthe thuas agus ó dhaonáireamh meiteashonraí Git thíos.</sub>
+<sub>Athsheiceáil ag 2026-11-03 02:09:16 UTC: Tiomantais atá curtha i leith GitHub arna dtuairisciú ag an stór Rannpháirtithe API don bhrainse réamhshocraithe <code>release/v3.8.53</code>. Thug an API 903 aitheantas ar ais (429 úsáideoir, 2 bot, 472 gan ainm); ní áirítear sa tábla seo na cothabhálaí, na róbónna agus na féiniúlachtaí gan ainm agus coinníonn sé naisc iomaíochta. Tá sé difriúil ón rangú cumaisc-PR thuas agus ón daonáireamh Git-metadata thíos.</sub>
 
-> 🙏 Is **croíchuid** den mhéid a fhágann go bhfuil OmniRoute iontaofa agus lán de ghnéithe iad gnéithe, deisiúcháin fabhtanna agus feabhsuithe bonneagair na rannpháirtithe seo. Tá tábhacht le gach iarratas tarraingthe, gach cás tástála agus gach comhad aistriúcháin i18n. Is iad daoine cosúil leo a thógann bogearraí foinse oscailte.
+> 🙏 Is iad gnéithe, réitigh fabhtanna agus feabhsuithe bonneagair na rannchuiditheoirí seo a** croíchuid** de na rudaí a dhéanann OmniRoute iontaofa agus gné-saibhir. Baineann gach iarratas tarraingte, gach cás tástála, agus gach comhad aistriúcháin i18n. Tá foinse oscailte tógtha ag daoine cosúil leo.
 
 </div>
 

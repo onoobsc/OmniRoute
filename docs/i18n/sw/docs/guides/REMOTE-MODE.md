@@ -44,37 +44,35 @@ kompyuta yako                            OmniRoute ya mbali (VPS)
 
 ---
 
-## Kuunganisha
+## Inaunganisha
 
-### Kwa nenosiri la usimamizi (uanzishaji)
+### Na nenosiri la usimamizi (bootstrap)
 
 ```bash
 omniroute connect 192.168.0.15
-# Nenosiri la usimamizi la http://192.168.0.15:20128: ********
-# ✔ Imeunganishwa na http://192.168.0.15:20128 — muktadha '192.168.0.15' (upeo: admin)
+# Management password for http://192.168.0.15:20128: ********
+# ✔ Connected to http://192.168.0.15:20128 — context '192.168.0.15' (scope: admin)
 ```
 
-Mtiririko wa nenosiri hutengeneza tokeni ya **admin** kwa chaguo-msingi (unalo nenosiri, kwa hiyo
-tayari una udhibiti kamili). Punguza upeo kwa `--scope`:
+Mtiririko wa nenosiri huweka wazi** admin** ishara kwa chaguo-msingi (unashikilia nenosiri, kwa hivyo tayari una udhibiti kamili). Upeo wa chini na `--scope`:
 
 ```bash
 omniroute connect 192.168.0.15 --scope write
 ```
 
-Chaguo: `--port <p>` (wakati host haina port), `--name <ctx>` (jina la muktadha),
-`--scope read|write|admin`. URL kamili inatumika kama ilivyo:
-`omniroute connect https://omni.example.com`.
+Chaguzi: `--port <p>` (wakati mwenyeji hana), `--name <ctx>` (jina la muktadha), `--scope read|write|admin`. URL kamili inaheshimiwa kama-ilivyo: `omniroute connect https://omni.example.com`.
 
-### Kwa tokeni iliyotengenezwa mapema
+Seva inapowasha uthibitishaji wa dashibodi wa vipengele viwili (Mipangilio → Usalama), nenosiri pekee linakataliwa: CLI kisha huuliza msimbo kutoka kwa programu ya uthibitishaji (au msimbo wa kurejesha). Ipitishe mbele na `--totp <code>` kwa matumizi yasiyo ya mwingiliano.
 
-Tengeneza tokeni yenye upeo kwenye dashibodi (au kwa `omniroute tokens create`) na
-uibandike — hakuna nenosiri linalohitajika:
+### Na ishara iliyotengenezwa hapo awali
+
+Tengeneza tokeni iliyopangwa kwenye dashibodi (au na `omniroute tokens create`) na ubandike — hakuna nenosiri linalohitajika:
 
 ```bash
 omniroute connect 192.168.0.15 --key oma_live_xxxxxxxx
 ```
 
-CLI huihalalisha kupitia `GET /api/cli/whoami` na kuihifadhi kama muktadha unaotumika.
+CLI huithibitisha kupitia `GET /api/cli/whoami` na kuihifadhi kama muktadha amilifu.
 
 ---
 
@@ -438,14 +436,14 @@ omniroute contexts remove 192-168-0-15 --yes   # futa muktadha wa ndani (hata uk
 
 ---
 
-## Endpoint za API (marejeleo)
+## API mwisho (rejea)
 
-| Mbinu  | Njia                  | Uthibitishaji         | Upeo                                |
-| ------ | --------------------- | --------------------- | ----------------------------------- |
-| POST   | `/api/cli/connect`    | nenosiri la usimamizi | — (ya umma, inalindwa kwa nenosiri) |
-| GET    | `/api/cli/whoami`     | token ya ufikiaji     | kusoma                              |
-| GET    | `/api/cli/tokens`     | token ya ufikiaji     | usimamizi                           |
-| POST   | `/api/cli/tokens`     | token ya ufikiaji     | usimamizi                           |
-| DELETE | `/api/cli/tokens/:id` | token ya ufikiaji     | usimamizi                           |
+| Mbinu  | Njia                  | Auth                          | Upeo                                  |
+| ------ | --------------------- | ----------------------------- | ------------------------------------- |
+| POST   | `/api/cli/connect`    | nenosiri; 2FA ikiwa imewashwa | — (ya umma, iliyofungwa kwa nenosiri) |
+| GET    | `/api/cli/whoami`     | ishara ya ufikiaji            | soma                                  |
+| GET    | `/api/cli/tokens`     | ishara ya ufikiaji            | admin                                 |
+| POST   | `/api/cli/tokens`     | ishara ya ufikiaji            | admin                                 |
+| DELETE | `/api/cli/tokens/:id` | ishara ya ufikiaji            | admin                                 |
 
-Tazama [openapi.yaml](../openapi.yaml) kwa schema kamili.
+Tazama [openapi.yaml](../openapi.yaml) kwa michoro kamili.

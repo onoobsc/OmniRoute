@@ -21,19 +21,19 @@
 
 <div align="center">
 
-## 💰 ~1.62B โทเค็น / เดือน จากหลายผู้ให้บริการฟรีทีียร์ภายนอก
+## 💰 ~ 1.62B โทเค็น / เดือนข้าม Tiers ฟรีของบุคคลที่สาม
 
 </div>
 
-> **นำบัญชีผู้ให้บริการของคุณมาเอง** ตัวเลขนี้เป็นการประมาณการรวมจากฟรีทีียร์ของผู้ให้บริการภายนอกที่มีสิทธิ์แยกกัน ไม่ใช่โทเค็นที่ OmniRoute แจกให้ ลงทะเบียน รับข้อมูลประจำตัวหากจำเป็น และเชื่อมต่อผู้ให้บริการที่คุณสามารถใช้ได้; แต่ละผู้ให้บริการควบคุมขีดจำกัด ความพร้อมใช้งาน และเงื่อนไขของตนเอง
+> **นำบัญชีผู้ให้บริการของคุณเอง** นี่เป็นผลรวมโดยประมาณระหว่าง Free Tier ของบุคคลที่สามที่มีสิทธิ์แยกต่างหาก ไม่ใช่การให้โทเค็นจาก OmniRoute ลงทะเบียน รับข้อมูลประจำตัวตามที่จำเป็น และเชื่อมต่อกับผู้ให้บริการที่คุณสามารถใช้ได้ ผู้ให้บริการแต่ละรายจะควบคุมขีดจำกัด ความพร้อมใช้งาน และข้อกำหนดของตน
 >
-> การรวมฟรีทีียร์ด้วยตนเองเป็นเรื่องยุ่งยาก — SDK หลายสิบตัว ขีดจำกัดอัตราหลายสิบรายการ และไม่รู้ว่าคุณมีเหลือเท่าไหร่จริงๆ OmniRoute รวบรวม **485 รายการฟรีทีียร์จาก 34 คีย์พูลที่เกิดซ้ำ** และคำนวณจำนวนโทเค็นจาก **17 พูลที่มีงบประมาณรายเดือนที่เผยแพร่เป็นบวกพร้อมกับ Groq caps ต่อโมเดลอีกห้ารายการ** โดยตัดซ้ำตามพูลที่ใช้ร่วมกัน โควต้าที่เปิดใช้งานหลังจากตรวจสอบตัวตนภูมิภาค (วันนี้: ModelScope) จะแสดงแยกต่างหาก, +~6M หลังการยืนยันตัวตนภูมิภาค และจะไม่ถูกรวมในตัวเลขหลัก ผลลัพธ์จะแสดงบนแดชบอร์ด (`/dashboard/free-tiers`)
+> การซ้อนชั้นฟรีด้วยมือเป็นเรื่องที่เจ็บปวด — หลายสิบ SDKs ขีดจำกัดอัตราหลายสิบ และไม่รู้ว่าจริงๆ แล้วคุณมีเงินเท่าไหร่ แคตตาล็อก OmniRoute** รายการระดับฟรี 484 รายการจากคีย์พูลที่เกิดซ้ำ 34 รายการ** และคำนวณพาดหัวโทเค็นจาก** 17 พูลที่มีงบประมาณรายเดือนเป็นบวกที่เผยแพร่ บวกด้วย Groq caps ต่อรุ่น 5 รายการ** ขจัดข้อมูลซ้ำซ้อนโดยพูลที่ใช้ร่วมกัน โควต้าที่เปิดเฉพาะหลังจากการตรวจสอบตัวตนระดับภูมิภาค (วันนี้: ModelScope) จะแสดงแยกกัน +~ 6M หลังการยืนยันตัวตนระดับภูมิภาค และไม่เคยรวมไว้ในพาดหัว ผลลัพธ์จะยังคงมองเห็นได้บนแดชบอร์ด (`/dashboard/free-tiers`)
 
-<img src="./docs/diagrams/free-tier-budget.svg" width="100%" alt="OmniRoute free-tier budget card: ~1.62B free tokens per month steady, up to ~2.22B in the first month with signup credits, from 34 documented recurring pool keys covering 485 cataloged free-tier entries behind one endpoint. Honest pool-deduped math — each shared pool counted once, including 17 recurring pools with a published positive monthly token budget plus five per-model Groq caps; 12 providers are marked avoid in the terms-risk catalog so you decide. Budget bar includes Mistral 1B, Nara 210M, LLM7 150M, xKiro 150M, Groq 30M (five per-model caps) and smaller pools, plus first-month signup credits and permanently-free no-token-cap providers surfaced separately so they never inflate the headline. Live used/remaining on /dashboard/free-tiers."/>
+<img src="./docs/diagrams/free-tier-budget.svg" width="100%" alt="OmniRoute free-tier budget card: ~1.62B free tokens per month steady, up to ~2.22B in the first month with signup credits, from 34 documented recurring pool keys covering 484 cataloged free-tier entries behind one endpoint. Honest pool-deduped math — each shared pool counted once, including 17 recurring pools with a published positive monthly token budget plus five per-model Groq caps; 12 providers are marked avoid in the terms-risk catalog so you decide. Budget bar includes Mistral 1B, Nara 210M, LLM7 150M, xKiro 150M, Groq 30M (five per-model caps) and smaller pools, plus first-month signup credits and permanently-free no-token-cap providers surfaced separately so they never inflate the headline. Live used/remaining on /dashboard/free-tiers."/>
 
-> สรุปภาพเคลื่อนไหวของหน้า `/dashboard/free-tiers` แบบสด วิธีการเต็ม (ตัดซ้ำพูล, ระดับเครดิต, เงื่อนไขผู้ให้บริการ): **[docs/reference/FREE_TIERS.md](docs/reference/FREE_TIERS.md)**
+> สรุปภาพเคลื่อนไหวของเพจ `/dashboard/free-tiers` สด วิธีการแบบเต็ม (การขจัดข้อมูลซ้ำซ้อนของพูล ระดับเครดิต เงื่อนไขของผู้ให้บริการ):** [docs/reference/FREE_TIERS.md](docs/reference/FREE_TIERS.md)** .
 >
-> <sub>ตัวเลขเหล่านี้จะได้รับการตรวจสอบใหม่ทุกสองสัปดาห์กับแค็ตตาล็อกสดและ **เปลี่ยนแปลงได้ทั้งสองทาง** — ผู้ให้บริการยุติฟรีทีียร์และตัวเลขจะลดลง; มีผู้ให้บริการใหม่เพิ่มเข้ามาและตัวเลขจะเพิ่มขึ้น เราเผยแพร่เฉพาะสิ่งที่แค็ตตาล็อกคำนวณได้จริง ไม่เคยปัดขึ้นเป็นกรณีดีที่สุด</sub>
+> <sub> ตัวเลขเหล่านี้ได้รับการตรวจสอบซ้ำทุกๆ สองสัปดาห์เทียบกับรายการสดและ** ย้ายทั้งสองวิธี** — ผู้ให้บริการสิ้นสุดระดับฟรีและจำนวนลดลง อันใหม่ตกลงมาและมันก็ปีนขึ้นไป เราเผยแพร่สิ่งที่แค็ตตาล็อกคำนวณจริง ไม่ใช่กรณีที่ดีที่สุดแบบปัดเศษ </sub>
 
 <br/>
 
@@ -41,29 +41,23 @@
 
 <h3>
 
-⭐ กดดาวให้ repo หาก OMNIROUTE ช่วยคุณประหยัดเงินและทำให้งานของคุณง่ายขึ้น
+⭐ ติดดาว repo หาก OMNIROUTE ช่วยให้คุณประหยัดเงินและทำให้งานของคุณง่ายขึ้น
 
 </h3>
 
-[![Stars](https://img.shields.io/github/stars/diegosouzapw/OmniRoute?style=social)](https://github.com/diegosouzapw/OmniRoute)
+[![ดาว](https://img.shields.io/github/stars/diegosouzapw/OmniRoute?style=social) ](https://github.com/diegosouzapw/OmniRoute)
 <a href="https://trendshift.io/repositories/23589" target="_blank"><img src="https://trendshift.io/api/badge/repositories/23589" alt="diegosouzapw%2FOmniRoute | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
-[![Star History Rank](https://api.star-history.com/badge?repo=diegosouzapw/OmniRoute&theme=dark)](https://www.star-history.com/diegosouzapw/omniroute)
-[![olud.ai](https://olud.ai/badge.php?tool=diegosouzapw-omniroute)](https://olud.ai/project/diegosouzapw-omniroute.html)
+[![อันดับประวัติศาสตร์ดารา](https://api.star-history.com/badge?repo=diegosouzapw/OmniRoute&theme=dark) ](https://www.star-history.com/diegosouzapw/omniroute) [![olud.ai](https://olud.ai/badge.php?tool=diegosouzapw-omniroute) ](https://olud.ai/project/diegosouzapw-omniroute.html)
 
-### 💬 เข้าร่วมชุมชน
+### 💬 เข้าร่วมกับชุมชน
 
-**👋 ติดตามผู้ดูแล — รับข่าวสารผู้ให้บริการใหม่, อัปเดตเวอร์ชัน & เคล็ดลับก่อนใคร:**
+**👋 ติดตามผู้ดูแล — รับผู้ให้บริการใหม่ เผยแพร่ และเคล็ดลับก่อน:**
 
-[![Follow Diego on LinkedIn](https://img.shields.io/badge/Follow_Diego_on-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/diegosouzapw/)
-[![Follow @diegosouzapw on GitHub](https://img.shields.io/github/followers/diegosouzapw?style=for-the-badge&logo=github&logoColor=white&label=Follow%20on%20GitHub&color=181717)](https://github.com/diegosouzapw)
+[![ติดตาม Diego บน LinkedIn](https://img.shields.io/badge/Follow_Diego_on-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white) ](https://www.linkedin.com/in/diegosouzapw/) [![ติดตาม @diegosouzapw บน GitHub](https://img.shields.io/github/followers/diegosouzapw?style=for-the-badge&logo=github&logoColor=white&label=Follow%20on%20GitHub&color=181717) ](https://github.com/diegosouzapw)
 
-[![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/U47eFqAXCn)
-[![Telegram](https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/omnirouteOficial)
-[![WhatsApp Global](https://img.shields.io/badge/WhatsApp_Global-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/FvuCbrpZmQ6I85n2vW5QIC?s=cl&p=a&mlu=4)
-[![WhatsApp Brasil](https://img.shields.io/badge/WhatsApp_Brasil-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/KWgatljAjmbELQory59Oti?s=cl&p=a&mlu=4)
-[![Website](https://img.shields.io/badge/Website-omniroute.online-blue?logo=google-chrome&logoColor=white)](https://omniroute.online)
+[![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white) ](https://discord.gg/U47eFqAXCn) [![Telegram](https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white) ](https://t.me/omnirouteOficial) [![WhatsApp Global](https://img.shields.io/badge/WhatsApp_Global-25D366?style=for-the-badge&logo=whatsapp&logoColor=white) ](https://chat.whatsapp.com/FvuCbrpZmQ6I85n2vW5QIC?s=cl&p=a&mlu=4) [![WhatsApp Brasil](https://img.shields.io/badge/WhatsApp_Brasil-25D366?style=for-the-badge&logo=whatsapp&logoColor=white) ](https://chat.whatsapp.com/KWgatljAjmbELQory59Oti?s=cl&p=a&mlu=4) [![เว็บไซต์](https://img.shields.io/badge/Website-omniroute.online-blue?logo=google-chrome&logoColor=white) ](https://omniroute.online)
 
-**คำถาม, แนะนำผู้ให้บริการ, แผนงาน & ซัพพอร์ต → [Discord](https://discord.gg/U47eFqAXCn) · [Telegram](https://t.me/omnirouteOficial) · WhatsApp [🌍 Global](https://chat.whatsapp.com/FvuCbrpZmQ6I85n2vW5QIC?s=cl&p=a&mlu=4) / [🇧🇷 Brasil](https://chat.whatsapp.com/KWgatljAjmbELQory59Oti?s=cl&p=a&mlu=4) / [Portal](https://portal.sthub.com.br/communities/groups/st-hub/channels/Omniroute-World-8kRjmK)**
+**คำถาม เคล็ดลับจากผู้ให้บริการ แผนงานและการสนับสนุน → [Discord](https://discord.gg/U47eFqAXCn) · [Telegram](https://t.me/omnirouteOficial) · WhatsApp [🌍 Global](https://chat.whatsapp.com/FvuCbrpZmQ6I85n2vW5QIC?s=cl&p=a&mlu=4) / [🇧🇷 Brasil](https://chat.whatsapp.com/KWgatljAjmbELQory59Oti?s=cl&p=a&mlu=4) / [Portal](https://portal.sthub.com.br/communities/groups/st-hub/channels/Omniroute-World-8kRjmK)**
 
 <br/>
 
@@ -1283,36 +1277,36 @@ OMNIROUTE_SKIP_POSTINSTALL=1 npm install -g omniroute   # CI=1 จะข้า�
 <br/>
 <div align="center">
 
-## 🛠️ สแตกเทคโนโลยี
+## 🛠️ เทคสแต็ค
 
 </div>
 
 <table>
   <tr><th align="left">ชั้น</th><th align="left">เทคโนโลยี</th></tr>
   <tr><td nowrap><b>รันไทม์</b></td><td>Node.js 22.x / 24.x LTS — <code>&gt;=22.22.2 &lt;23 || &gt;=24.0.0 &lt;27</code></td></tr>
-  <tr><td nowrap><b>ภาษา</b></td><td>TypeScript 6.0 — <b>TypeScript 100%</b> ครอบคลุม <code>src/</code> และ <code>open-sse/</code> (ไม่มี <code>any</code> ในคอร์นับตั้งแต่ v2.0)</td></tr>
-  <tr><td nowrap><b>เฟรมเวิร์ก</b></td><td>Next.js 16 + React 19 + Tailwind CSS 4</td></tr>
-  <tr><td nowrap><b>ฐานข้อมูล</b></td><td>better-sqlite3 (SQLite, การทำเจอร์นัลแบบ WAL) + LowDB (JSON รุ่นเก่า) — โมดูลโดเมน 147 รายการ, การย้ายข้อมูล 222 รายการ</td></tr>
-  <tr><td nowrap><b>หน่วยความจำ</b></td><td>การค้นหาข้อความแบบเต็ม SQLite FTS5 + เวกเตอร์เอ็มเบดดิงที่ควอนไทซ์เป็น int8, การเสื่อมสภาพแบบมีชนิดข้อมูล</td></tr>
-  <tr><td nowrap><b>สคีมา</b></td><td>Zod 4 — การตรวจสอบ I/O ของเครื่องมือ MCP + สัญญา API</td></tr>
+  <tr><td nowrap><b>ภาษา</b></td><td>TypeScript 6.0 — <b>100% TypeScript</b> ข้าม <code>src/</code> และ <code>open-sse/</code> (ศูนย์ <code>any</code> ในคอร์ตั้งแต่ v2.0)</td></tr>
+  <tr><td nowrap><b>กรอบ</b></td><td>Next.js 16 + React 19 + Tailwind CSS 4</td></tr>
+  <tr><td nowrap><b>ฐานข้อมูล</b></td><td>better-sqlite3 (SQLite, การทำเจอร์นัล WAL ) + LowDB (JSON ดั้งเดิม) โมดูลโดเมน — 147, การโยกย้าย 222 ครั้ง</td></tr>
+  <tr><td nowrap><b>หน่วยความจำ</b></td><td>SQLite FTS5 ข้อความแบบเต็ม + int8-quantized การฝังเวกเตอร์, การสลายตัวแบบพิมพ์</td></tr>
+  <tr><td nowrap><b>สคีมา</b></td><td>Zod 4 — เครื่องมือ MCP การตรวจสอบ I/O สัญญา + API</td></tr>
   <tr><td nowrap><b>โปรโตคอล</b></td><td>MCP (stdio / HTTP / SSE) + A2A v0.3 (JSON-RPC 2.0 + SSE)</td></tr>
-  <tr><td nowrap><b>การสตรีม</b></td><td>เหตุการณ์ที่ส่งโดยเซิร์ฟเวอร์ (SSE) + บริดจ์ WebSocket (<code>/v1/ws</code>)</td></tr>
-  <tr><td nowrap><b>การบีบอัด</b></td><td>ไปป์ไลน์ 12 เอนจิน — RTK, Caveman, LLMLingua-2 (MobileBERT ONNX), GCF, OmniGlyph</td></tr>
-  <tr><td nowrap><b>การยืนยันตัวตน &amp; ความปลอดภัย</b></td><td>OAuth 2.0 (PKCE) + JWT + คีย์ API + การยืนยันตัวตนแบบกำหนดขอบเขต MCP · AES-256-GCM ขณะจัดเก็บ · DOMPurify</td></tr>
-  <tr><td nowrap><b>การพรางตัว</b></td><td>wreq-js — การเลียนแบบลายนิ้วมือ TLS แบบ JA3 / JA4, พร็อกซี 3 ระดับ</td></tr>
-  <tr><td nowrap><b>ความทนทาน</b></td><td>เซอร์กิตเบรกเกอร์, เอ็กซ์โพเนนเชียลแบ็กออฟ, การป้องกันปัญหาฝูงชนแห่กันเข้าใช้, การซ่อมแซมตัวเองอัตโนมัติแบบผสม</td></tr>
-  <tr><td nowrap><b>การบันทึกล็อก</b></td><td>pino — ล็อก JSON แบบมีโครงสร้างพร้อมบริบทคำขอ</td></tr>
-  <tr><td nowrap><b>การทดสอบ</b></td><td>ตัวรันทดสอบของ Node.js + Vitest — <b>การประกาศการทดสอบแบบสแตติกมากกว่า 60,000 รายการ</b> ครอบคลุมไฟล์ทดสอบที่ติดตามมากกว่า 8,400 ไฟล์ (ยูนิต, การผสานรวม, E2E, ความปลอดภัย, ระบบนิเวศ)</td></tr>
+  <tr><td nowrap><b>สตรีมมิ่ง</b></td><td>เหตุการณ์ที่เซิร์ฟเวอร์ส่ง (SSE) + สะพาน WebSocket (<code>/v1/ws</code>)</td></tr>
+  <tr><td nowrap><b>การบีบอัด</b></td><td>ไปป์ไลน์ 12 เครื่องยนต์ — RTK, Caveman, LLMLingua-2 (MobileBERT ONNX), GCF, OmniGlyph</td></tr>
+  <tr><td nowrap><b>การตรวจสอบความปลอดภัย &amp;</b></td><td>OAuth 2.0 (PKCE) + JWT + API คีย์ + MCP กำหนดขอบเขตการตรวจสอบสิทธิ์ · AES-256-GCM ที่เหลือ · DOMPurify</td></tr>
+  <tr><td nowrap><b>ชิงทรัพย์</b></td><td>wreq-js — JA3 / JA4 TLS การเลียนแบบลายนิ้วมือ, พร็อกซี 3 ระดับ</td></tr>
+  <tr><td nowrap><b>ความยืดหยุ่น</b></td><td>เซอร์กิตเบรกเกอร์, การถอยกลับแบบเอกซ์โพเนนเชียล, ป้องกันฟ้าผ่า, การรักษาตัวเองแบบคอมโบอัตโนมัติ</td></tr>
+  <tr><td nowrap><b>การบันทึก</b></td><td>pino — บันทึก JSON ที่มีโครงสร้างพร้อมบริบทคำขอ</td></tr>
+  <tr><td nowrap><b>การทดสอบ</b></td><td>นักวิ่งทดสอบ Node.js + Vitest — <b>ประกาศการทดสอบคงที่ 60,000 +</b> ไฟล์ทดสอบที่ติดตาม 8,400 + (หน่วย, บูรณาการ, E2E, ความปลอดภัย, ระบบนิเวศ)</td></tr>
   <tr><td nowrap><b>แพลตฟอร์ม</b></td><td>เดสก์ท็อป (Electron) · Android (Termux) · PWA (เบราว์เซอร์ใดก็ได้)</td></tr>
-  <tr><td nowrap><b>CI/CD</b></td><td>GitHub Actions — เผยแพร่ npm อัตโนมัติ + Docker Hub เมื่อรีลีส</td></tr>
-  <tr><td nowrap><b>ลิงก์</b></td><td><a href="https://omniroute.online">เว็บไซต์</a> · <a href="https://www.npmjs.com/package/omniroute">npm</a> · <a href="https://hub.docker.com/r/diegosouzapw/omniroute">Docker Hub</a></td></tr>
+  <tr><td nowrap><b>CI/CD</b></td><td>การดำเนินการ GitHub — auto npm เผยแพร่ + Docker Hub เมื่อเผยแพร่</td></tr>
+  <tr><td nowrap><b>ลิงค์</b></td><td><a href="https://omniroute.online">เว็บไซต์</a> · <a href="https://www.npmjs.com/package/omniroute">เวลา 22.00 น</a> · <a href="https://hub.docker.com/r/diegosouzapw/omniroute">Docker ฮับ</a></td></tr>
 </table>
 
 <div align="center">
 
 <br/>
 
-## 📖 เอกสารประกอบ
+## เอกสาร 📖
 
 </div>
 
@@ -1320,203 +1314,203 @@ OMNIROUTE_SKIP_POSTINSTALL=1 npm install -g omniroute   # CI=1 จะข้า�
 
 <table>
   <tr><th align="left">เอกสาร</th><th align="left">คำอธิบาย</th></tr>
-  <tr><td nowrap><b><a href="docs/guides/USER_GUIDE.md">คู่มือผู้ใช้</a></b></td><td>ผู้ให้บริการ คอมโบ การผสานรวมกับ CLI และการปรับใช้</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/SETUP_GUIDE.md">คู่มือการตั้งค่า</a></b></td><td>วิธีติดตั้งทั้งหมด การกำหนดค่าเครื่องมือ CLI การตั้งค่าโปรโตคอล และการปรับแต่งค่า timeout</td></tr>
-  <tr><td nowrap><b><a href="docs/reference/CLI-TOOLS.md">คู่มือเครื่องมือ CLI</a></b></td><td>การตั้งค่าแยกตามเครื่องมือสำหรับ Claude Code, Codex, Cursor, Cline, OpenClaw, Kilo และ Copilot</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/REMOTE-MODE.md">โหมด Remote</a></b></td><td>ควบคุม OmniRoute ระยะไกล (VPS) จาก CLI บนแล็ปท็อปของคุณผ่านโทเค็นการเข้าถึงแบบจำกัดขอบเขต</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/CLAUDE-CODE-CONFIGURATION.md">การกำหนดค่า Claude Code</a></b></td><td>กำหนดให้ Claude Code เชื่อมต่อกับ OmniRoute (ภายในเครื่อง/ระยะไกล) ด้วย <code>launch</code> + โปรไฟล์แยกตามโมเดล</td></tr>
-  <tr><td nowrap><b><a href="README.md#-quick-start">เริ่มต้นอย่างรวดเร็ว</a></b></td><td>ติดตั้ง → เชื่อมต่อ → กำหนดค่าใน 3 ขั้นตอน</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/USER_GUIDE.md">คู่มือการใช้งาน</a></b></td><td>ผู้ให้บริการ คอมโบ การรวม CLI การปรับใช้</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/SETUP_GUIDE.md">คู่มือการตั้งค่า</a></b></td><td>วิธีการติดตั้งแบบเต็ม, การกำหนดค่าเครื่องมือ CLI, การตั้งค่าโปรโตคอล, การปรับระยะหมดเวลา</td></tr>
+  <tr><td nowrap><b><a href="docs/reference/CLI-TOOLS.md">คู่มือเครื่องมือ CLI</a></b></td><td>การตั้งค่าเครื่องมือสำหรับรหัส Claude, Codex, Cursor, Cline, OpenClaw, Kilo, Copilot</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/REMOTE-MODE.md">โหมดระยะไกล</a></b></td><td>ขับ OmniRoute ระยะไกล (VPS) จากแล็ปท็อปของคุณ CLI ผ่านโทเค็นการเข้าถึงที่กำหนดขอบเขต</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/CLAUDE-CODE-CONFIGURATION.md">การกำหนดค่ารหัส Claude</a></b></td><td>ชี้รหัส Claude ที่ OmniRoute (local/remote) พร้อมด้วยโปรไฟล์ <code>launch</code> + ต่อรุ่น</td></tr>
+  <tr><td nowrap><b><a href="README.md#-quick-start">เริ่มต้นอย่างรวดเร็ว</a></b></td><td>การติดตั้ง 3 ขั้นตอน → เชื่อมต่อ → กำหนดค่า</td></tr>
 </table>
 
-### 🔧 การดำเนินงานและการปรับใช้
+### การดำเนินงานและการปรับใช้🔧
 
 <table>
   <tr><th align="left">เอกสาร</th><th align="left">คำอธิบาย</th></tr>
-  <tr><td nowrap><b><a href="docs/guides/DOCKER_GUIDE.md">คู่มือ Docker</a></b></td><td>การรัน Docker, โปรไฟล์ Compose, Caddy HTTPS, tunnel และแท็กรูปภาพ</td></tr>
-  <tr><td nowrap><b><a href="contrib/podman/README.md">คู่มือ Podman</a></b></td><td>การผสานรวม Quadlet กับ systemd, podman-compose และ SELinux</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/VM_DEPLOYMENT_GUIDE.md">การปรับใช้บน VM</a></b></td><td>คู่มือฉบับสมบูรณ์: การตั้งค่า VM + nginx + Cloudflare</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/FLY_IO_DEPLOYMENT_GUIDE.md">การปรับใช้บน Fly.io</a></b></td><td>ปรับใช้บน Fly.io พร้อมพื้นที่จัดเก็บแบบถาวร</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/DOCKER_GUIDE.md">คู่มือ Docker</a></b></td><td>Docker run, เขียนโปรไฟล์, Caddy HTTPS, tunnels, แท็กรูปภาพ</td></tr>
+  <tr><td nowrap><b><a href="contrib/podman/README.md">คู่มือพอดแมน</a></b></td><td>การรวมระบบ Quadlet, การเขียน podman, SELinux</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/VM_DEPLOYMENT_GUIDE.md">การปรับใช้VM</a></b></td><td>คู่มือฉบับสมบูรณ์: VM + nginx + Cloudflare setup</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/FLY_IO_DEPLOYMENT_GUIDE.md">การปรับใช้ Fly.io</a></b></td><td>ปรับใช้กับ Fly.io พร้อมพื้นที่เก็บข้อมูลถาวร</td></tr>
   <tr><td nowrap><b><a href="docs/guides/TERMUX_GUIDE.md">คู่มือ Termux</a></b></td><td>เรียกใช้ OmniRoute บน Android ผ่าน Termux</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/PWA_GUIDE.md">คู่มือ PWA</a></b></td><td>การติดตั้ง Progressive Web App, การแคช และสถาปัตยกรรม</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/UNINSTALL.md">คู่มือการถอนการติดตั้ง</a></b></td><td>การลบออกอย่างสะอาดสำหรับวิธีติดตั้งทั้งหมด</td></tr>
-  <tr><td nowrap><b><a href="docs/reference/ENVIRONMENT.md">การกำหนดค่าสภาพแวดล้อม</a></b></td><td>ตัวแปรและข้อมูลอ้างอิง <code>.env</code> ทั้งหมด</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/PWA_GUIDE.md">คู่มือ PWA</a></b></td><td>การติดตั้ง Progressive Web App, การแคช, สถาปัตยกรรม</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/UNINSTALL.md">คู่มือการถอนการติดตั้ง</a></b></td><td>การลบล้างทั้งหมดสำหรับวิธีการติดตั้งทั้งหมด</td></tr>
+  <tr><td nowrap><b><a href="docs/reference/ENVIRONMENT.md">การกำหนดค่าสภาพแวดล้อม</a></b></td><td>กรอกตัวแปร <code>.env</code> และการอ้างอิงให้สมบูรณ์</td></tr>
 </table>
 
-### 🧠 ฟีเจอร์และสถาปัตยกรรม
+### คุณสมบัติและสถาปัตยกรรม 🧠
 
 <table>
   <tr><th align="left">เอกสาร</th><th align="left">คำอธิบาย</th></tr>
-  <tr><td nowrap><b><a href="docs/architecture/ARCHITECTURE.md">สถาปัตยกรรม</a></b></td><td>สถาปัตยกรรมระบบ การไหลของข้อมูล และการทำงานภายใน</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_GUIDE.md">คู่มือการบีบอัด</a></b></td><td>ไปป์ไลน์ 7 ตัวเลือก: off / lite / standard / aggressive / ultra / RTK / stacked</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/RTK_COMPRESSION.md">การบีบอัด RTK</a></b></td><td>การบีบอัดเอาต์พุตคำสั่ง ตัวกรอง ความน่าเชื่อถือ การตรวจสอบ และการกู้คืนเอาต์พุตดิบ</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_ENGINES.md">เอนจินการบีบอัด</a></b></td><td>Caveman, RTK, ไปป์ไลน์แบบ stacked และอินเทอร์เฟซ dashboard/API/MCP</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_RULES_FORMAT.md">รูปแบบกฎการบีบอัด</a></b></td><td>สคีมาแพ็กกฎ JSON สำหรับตัวกรอง Caveman และ RTK</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_LANGUAGE_PACKS.md">แพ็กภาษาสำหรับการบีบอัด</a></b></td><td>การตรวจจับภาษาและการสร้างแพ็กกฎ Caveman</td></tr>
-  <tr><td nowrap><b><a href="docs/architecture/RESILIENCE_GUIDE.md">คู่มือความทนทาน</a></b></td><td>ตัวตัดวงจร ช่วงพักคูลดาวน์ คิว การป้องกันปัญหา thundering herd และการปลอมแปลง TLS</td></tr>
-  <tr><td nowrap><b><a href="docs/routing/AUTO-COMBO.md">เอนจิน Auto-Combo</a></b></td><td>การให้คะแนน 16 ปัจจัย แพ็กโหมด และการซ่อมแซมตัวเอง</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/PROXY_GUIDE.md">คู่มือ Proxy</a></b></td><td>ระบบ proxy 3 ระดับ ตลาด 1proxy และการจัดการ registry แบบ CRUD</td></tr>
-  <tr><td nowrap><b><a href="docs/reference/FREE_TIERS.md">ระดับใช้งานฟรี</a></b></td><td>ไดเรกทอรีรวม: พูลที่มีการบันทึกไว้ 34 รายการ / รายการระดับใช้งานฟรีในแค็ตตาล็อก 485 รายการ</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/FEATURES.md">แกลเลอรีฟีเจอร์</a></b></td><td>ทัวร์ชม dashboard แบบภาพพร้อมภาพหน้าจอ</td></tr>
-  <tr><td nowrap><b><a href="docs/architecture/CODEBASE_DOCUMENTATION.md">เอกสาร Codebase</a></b></td><td>คำแนะนำการทำความเข้าใจ codebase สำหรับผู้เริ่มต้น</td></tr>
+  <tr><td nowrap><b><a href="docs/architecture/ARCHITECTURE.md">สถาปัตยกรรม</a></b></td><td>สถาปัตยกรรมระบบ กระแสข้อมูล และภายใน</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_GUIDE.md">คู่มือการบีบอัด</a></b></td><td>ไปป์ไลน์ 7 ตัวเลือก: ปิด / lite / มาตรฐาน / ก้าวร้าว / พิเศษ / RTK / ซ้อนกัน</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/RTK_COMPRESSION.md">การบีบอัด RTK</a></b></td><td>การบีบอัดคำสั่ง-เอาท์พุต ตัวกรอง ความน่าเชื่อถือ ตรวจสอบ การกู้คืนเอาท์พุตดิบ</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_ENGINES.md">เครื่องยนต์อัด</a></b></td><td>มนุษย์ถ้ำ, RTK, ไปป์ไลน์แบบเรียงซ้อน, พื้นผิว dashboard/API/MCP</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_RULES_FORMAT.md">รูปแบบกฎการบีบอัด</a></b></td><td>สคีมาชุดกฎ JSON สำหรับตัวกรอง Caveman และ RTK</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_LANGUAGE_PACKS.md">ชุดภาษาบีบอัด</a></b></td><td>การตรวจหาภาษาและการเขียนชุดกฎ Caveman</td></tr>
+  <tr><td nowrap><b><a href="docs/architecture/RESILIENCE_GUIDE.md">คู่มือความยืดหยุ่น</a></b></td><td>เซอร์กิตเบรกเกอร์, คูลดาวน์, คิว, ฝูงป้องกันฟ้าผ่า, การปลอมแปลง TLS</td></tr>
+  <tr><td nowrap><b><a href="docs/routing/AUTO-COMBO.md">เครื่องยนต์ออโต้คอมโบ</a></b></td><td>การให้คะแนน 16 ปัจจัย แพ็กโหมด การรักษาตนเอง</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/PROXY_GUIDE.md">คู่มือพร็อกซี</a></b></td><td>ระบบพร็อกซี 3 ระดับ, ตลาด 1proxy, รีจิสทรี CRUD</td></tr>
+  <tr><td nowrap><b><a href="docs/reference/FREE_TIERS.md">ฟรีเทียร์</a></b></td><td>ไดเรกทอรีรวม: พูลที่เกิดซ้ำ 34 รายการ / รายการระดับฟรี 484 รายการ</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/FEATURES.md">คุณสมบัติแกลลอรี่</a></b></td><td>ทัวร์ชมแดชบอร์ดภาพพร้อมภาพหน้าจอ</td></tr>
+  <tr><td nowrap><b><a href="docs/architecture/CODEBASE_DOCUMENTATION.md">เอกสารประกอบ Codebase</a></b></td><td>คำแนะนำ codebase ที่เป็นมิตรกับผู้เริ่มต้น</td></tr>
 </table>
 
-### 🤖 โปรโตคอลและ API
+### โปรโตคอล 🤖 & APIs
 
 <table>
   <tr><th align="left">เอกสาร</th><th align="left">คำอธิบาย</th></tr>
-  <tr><td nowrap><b><a href="docs/reference/API_REFERENCE.md">ข้อมูลอ้างอิง API</a></b></td><td>endpoint ทั้งหมดพร้อมตัวอย่าง</td></tr>
-  <tr><td nowrap><b><a href="docs/openapi.yaml">ข้อกำหนด OpenAPI</a></b></td><td>ข้อกำหนด OpenAPI 3.0</td></tr>
-  <tr><td nowrap><b><a href="open-sse/mcp-server/README.md">MCP Server</a></b></td><td>เครื่องมือ MCP 110 รายการ การกำหนดค่า IDE และไคลเอ็นต์ Python/TS/Go</td></tr>
-  <tr><td nowrap><b><a href="docs/frameworks/MCP-SERVER.md">คู่มือ MCP Server</a></b></td><td>การติดตั้ง MCP, transport และข้อมูลอ้างอิงเครื่องมือ</td></tr>
-  <tr><td nowrap><b><a href="src/lib/a2a/README.md">A2A Server</a></b></td><td>โปรโตคอล JSON-RPC 2.0, ทักษะ, การสตรีม และการจัดการงาน</td></tr>
-  <tr><td nowrap><b><a href="docs/frameworks/A2A-SERVER.md">คู่มือ A2A Server</a></b></td><td>การ์ดเอเจนต์ A2A, งาน, ทักษะ และการสตรีม</td></tr>
+  <tr><td nowrap><b><a href="docs/reference/API_REFERENCE.md">อ้างอิง API</a></b></td><td>ปลายทางทั้งหมดพร้อมตัวอย่าง</td></tr>
+  <tr><td nowrap><b><a href="docs/openapi.yaml">ข้อมูลจำเพาะ OpenAPI</a></b></td><td>ข้อมูลจำเพาะของ OpenAPI 3.0</td></tr>
+  <tr><td nowrap><b><a href="open-sse/mcp-server/README.md">เซิร์ฟเวอร์MCP</a></b></td><td>เครื่องมือ 110 MCP, การกำหนดค่า IDE, ไคลเอนต์ Python/TS/Go</td></tr>
+  <tr><td nowrap><b><a href="docs/frameworks/MCP-SERVER.md">คู่มือเซิร์ฟเวอร์MCP</a></b></td><td>การติดตั้ง MCP การขนส่ง และการอ้างอิงเครื่องมือ</td></tr>
+  <tr><td nowrap><b><a href="src/lib/a2a/README.md">เซิร์ฟเวอร์A2A</a></b></td><td>โปรโตคอล JSON-RPC 2.0, ทักษะ, การสตรีม, การจัดการงาน</td></tr>
+  <tr><td nowrap><b><a href="docs/frameworks/A2A-SERVER.md">คู่มือเซิร์ฟเวอร์A2A</a></b></td><td>การ์ดตัวแทน A2A งาน ทักษะ และการสตรีม</td></tr>
 </table>
 
-### 📋 โครงการและคุณภาพ
+### โครงการ 📋 และคุณภาพ
 
 <table>
   <tr><th align="left">เอกสาร</th><th align="left">คำอธิบาย</th></tr>
-  <tr><td nowrap><b><a href="CONTRIBUTING.md">การมีส่วนร่วม</a></b></td><td>การตั้งค่าสภาพแวดล้อมการพัฒนาและแนวทางปฏิบัติ</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/BRANCHING_MODEL.md">โมเดลสาขาและการเผยแพร่</a></b></td><td>PRs จะกำหนดเป้าหมายไปที่ใด (<code>release/*</code>) และความหมายของ <code>main</code> กับแท็ก</td></tr>
-  <tr><td nowrap><b><a href="CHANGELOG.md">บันทึกการเปลี่ยนแปลง</a></b></td><td>ประวัติการเผยแพร่แยกตามเวอร์ชันทั้งหมด</td></tr>
-  <tr><td nowrap><b><a href="SECURITY.md">นโยบายความปลอดภัย</a></b></td><td>การรายงานช่องโหว่และแนวทางปฏิบัติด้านความปลอดภัย</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/I18N.md">คู่มือ i18n</a></b></td><td>การรองรับ 67 ภาษา เวิร์กโฟลว์การแปล และ RTL</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/RELEASE_CHECKLIST.md">เช็กลิสต์การเผยแพร่</a></b></td><td>ขั้นตอนการตรวจสอบก่อนเผยแพร่</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/COVERAGE_PLAN.md">แผนความครอบคลุม</a></b></td><td>กลยุทธ์ความครอบคลุมของการทดสอบสำหรับคำประกาศการทดสอบแบบคงที่มากกว่า 60,000 รายการในไฟล์การทดสอบที่ติดตามมากกว่า 8,400 ไฟล์</td></tr>
+  <tr><td nowrap><b><a href="CONTRIBUTING.md">มีส่วนร่วม</a></b></td><td>การตั้งค่าและแนวทางการพัฒนา</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/BRANCHING_MODEL.md">รูปแบบการแตกแขนงและการเปิดตัว</a></b></td><td>โดยที่ PRs target (<code>release/*</code>) <code>main</code> และแท็กหมายถึงอะไร</td></tr>
+  <tr><td nowrap><b><a href="CHANGELOG.md">บันทึกการเปลี่ยนแปลง</a></b></td><td>ประวัติการเผยแพร่ต่อเวอร์ชันแบบเต็ม</td></tr>
+  <tr><td nowrap><b><a href="SECURITY.md">นโยบายความปลอดภัย</a></b></td><td>การรายงานช่องโหว่และแนวปฏิบัติด้านความปลอดภัย</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/I18N.md">คู่มือ i18n</a></b></td><td>รองรับ 67 ภาษา ขั้นตอนการแปล RTL</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/RELEASE_CHECKLIST.md">รายการตรวจสอบการเผยแพร่</a></b></td><td>ขั้นตอนการตรวจสอบก่อนเผยแพร่</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/COVERAGE_PLAN.md">แผนความคุ้มครอง</a></b></td><td>กลยุทธ์ความครอบคลุมการทดสอบสำหรับการประกาศการทดสอบคงที่ 60,000 + ในไฟล์ทดสอบที่ติดตาม 8,400 +</td></tr>
 </table>
 
 <br/>
 
 <div align="center">
 
-# ⭐ ผู้มีส่วนร่วมสูงสุด
+# ⭐ ผู้ร่วมให้ข้อมูลดีเด่น
 
-> OmniRoute เกิดขึ้นจากชุมชนโอเพนซอร์สที่เปี่ยมด้วยความมุ่งมั่น บุคคลเหล่านี้ได้สร้างผลงานอันโดดเด่นซึ่งส่งผลโดยตรงต่อคุณภาพ ความเสถียร และการเข้าถึงโครงการ **ขอขอบคุณ**
+> OmniRoute ถูกสร้างขึ้นโดยชุมชนโอเพ่นซอร์สที่มีความกระตือรือร้น บุคคลเหล่านี้ได้มีส่วนร่วมอย่างดีเยี่ยมซึ่งส่งผลกระทบโดยตรงต่อคุณภาพ ความมั่นคง และการเข้าถึงของโครงการ** ขอบคุณ**
 
-### ผู้มีส่วนร่วมภายนอกตามจำนวน pull request ที่ผสานรวมแล้ว
+### ผู้มีส่วนร่วมภายนอกโดยการร้องขอการดึงแบบรวม
 
 <table>
-  <tr><th align="center">อันดับ</th><th align="left">ผู้มีส่วนร่วม</th><th align="center">PRs ที่ผสานรวมแล้ว</th><th align="right">~บรรทัดที่เปลี่ยนแปลง</th></tr>
-  <tr><td align="center">1</td><td align="left"><a href="https://github.com/maxmad64bis"><b>maxmad64bis</b></a></td><td align="center">418</td><td align="right">25,367,739</td></tr>
+  <tr><th align="center">อันดับ</th><th align="left">ผู้ร่วมให้ข้อมูล</th><th align="center">รวม PRs</th><th align="right">~ เปลี่ยนบรรทัด</th></tr>
+  <tr><td align="center">1</td><td align="left"><a href="https://github.com/maxmad64bis"><b>แม็กซ์แมด64บิส</b></a></td><td align="center">418</td><td align="right">25,367,739</td></tr>
   <tr><td align="center">2</td><td align="left"><a href="https://github.com/HouMinXi"><b>HouMinXi</b></a></td><td align="center">295</td><td align="right">13,557,796</td></tr>
-  <tr><td align="center">3</td><td align="left"><a href="https://github.com/pacocartones"><b>pacocartones</b></a></td><td align="center">222</td><td align="right">81,551</td></tr>
-  <tr><td align="center">4</td><td align="left"><a href="https://github.com/backryun"><b>backryun</b></a></td><td align="center">210</td><td align="right">270,562</td></tr>
+  <tr><td align="center">3</td><td align="left"><a href="https://github.com/pacocartones"><b>พาโคคาร์โทน</b></a></td><td align="center">222</td><td align="right">81,551</td></tr>
+  <tr><td align="center">4</td><td align="left"><a href="https://github.com/backryun"><b>แบ็คริยุน</b></a></td><td align="center">210</td><td align="right">270,562</td></tr>
   <tr><td align="center">5</td><td align="left"><a href="https://github.com/JxnLexn"><b>JxnLexn</b></a></td><td align="center">198</td><td align="right">3,570,623</td></tr>
   <tr><td align="center">6</td><td align="left"><a href="https://github.com/oyi77"><b>oyi77</b></a></td><td align="center">190</td><td align="right">411,243</td></tr>
   <tr><td align="center">7</td><td align="left"><a href="https://github.com/KooshaPari"><b>KooshaPari</b></a></td><td align="center">151</td><td align="right">5,972,314</td></tr>
-  <tr><td align="center">8</td><td align="left"><a href="https://github.com/rdself"><b>rdself</b></a></td><td align="center">145</td><td align="right">80,663</td></tr>
+  <tr><td align="center">8</td><td align="left"><a href="https://github.com/rdself"><b>ตัวเอง</b></a></td><td align="center">145</td><td align="right">80,663</td></tr>
   <tr><td align="center">9</td><td align="left"><a href="https://github.com/RaviTharuma"><b>RaviTharuma</b></a></td><td align="center">123</td><td align="right">500,065</td></tr>
-  <tr><td align="center">10</td><td align="left"><a href="https://github.com/herjarsa"><b>herjarsa</b></a></td><td align="center">88</td><td align="right">230,872</td></tr>
-  <tr><td align="center">11</td><td align="left"><a href="https://github.com/hartmark"><b>hartmark</b></a></td><td align="center">85</td><td align="right">2,849,623</td></tr>
+  <tr><td align="center">10</td><td align="left"><a href="https://github.com/herjarsa"><b>เฮอร์จาร์ซา</b></a></td><td align="center">88</td><td align="right">230,872</td></tr>
+  <tr><td align="center">11</td><td align="left"><a href="https://github.com/hartmark"><b>ฮาร์ทมาร์ก</b></a></td><td align="center">85</td><td align="right">2,849,623</td></tr>
   <tr><td align="center">12</td><td align="left"><a href="https://github.com/jonlwheat2-gif"><b>jonlwheat2-gif</b></a></td><td align="center">68</td><td align="right">69,097</td></tr>
-  <tr><td align="center">13</td><td align="left"><a href="https://github.com/artickc"><b>artickc</b></a></td><td align="center">62</td><td align="right">43,502</td></tr>
+  <tr><td align="center">13</td><td align="left"><a href="https://github.com/artickc"><b>อาร์ติคซี</b></a></td><td align="center">62</td><td align="right">43,502</td></tr>
   <tr><td align="center">14</td><td align="left"><a href="https://github.com/xiaoyaner0201"><b>xiaoyaner0201</b></a></td><td align="center">59</td><td align="right">126,220</td></tr>
-  <tr><td align="center">15</td><td align="left"><a href="https://github.com/chirag127"><b>chirag127</b></a></td><td align="center">52</td><td align="right">6,661</td></tr>
+  <tr><td align="center">15</td><td align="left"><a href="https://github.com/chirag127"><b>ชีรัก127</b></a></td><td align="center">52</td><td align="right">6,661</td></tr>
   <tr><td align="center">16</td><td align="left"><a href="https://github.com/xz-dev"><b>xz-dev</b></a></td><td align="center">50</td><td align="right">245,976</td></tr>
-  <tr><td align="center">17</td><td align="left"><a href="https://github.com/woodsonl"><b>woodsonl</b></a></td><td align="center">48</td><td align="right">811,771</td></tr>
+  <tr><td align="center">17</td><td align="left"><a href="https://github.com/woodsonl"><b>วูดสัน</b></a></td><td align="center">48</td><td align="right">811,771</td></tr>
   <tr><td align="center">18</td><td align="left"><a href="https://github.com/rqzbeh"><b>rqzbeh</b></a></td><td align="center">46</td><td align="right">151,229</td></tr>
   <tr><td align="center">19</td><td align="left"><a href="https://github.com/MumuTW"><b>MumuTW</b></a></td><td align="center">43</td><td align="right">28,166</td></tr>
   <tr><td align="center">19</td><td align="left"><a href="https://github.com/QuangBlue"><b>QuangBlue</b></a></td><td align="center">43</td><td align="right">13,112</td></tr>
 </table>
 
-<sub>สำรวจเมื่อ 2026-11-03 03:01:19 UTC โดยใช้ปลายทางปัจจุบันของ <code>release/v3.8.53</code> แบบสด <code>05bc048d6c</code> การสำรวจสำมะโนของ GitHub GraphQL แบบแบ่งหน้าแสดง PRs ที่ผสานรวมแล้ว 9,947 รายการ: 4,130 รายการโดยเจ้าของคลังข้อมูล 240 รายการโดย Dependabot 6 รายการโดยบอต/แอปอื่น ๆ และ <b>PRs ภายนอก 5,571 รายการจากผู้มีส่วนร่วมที่แตกต่างกัน 883 ราย</b> “บรรทัดที่เปลี่ยนแปลง” คือจำนวนการเพิ่ม + การลบของ GitHub และรวมไฟล์ที่สร้างขึ้น ไฟล์ล็อก แค็ตตาล็อก คำแปล และเอกสาร โดยเป็นปริมาณการเปลี่ยนแปลง ไม่ใช่ LOC ที่ผู้เขียนสร้างขึ้น มี PRs 53 รายการที่รายงาน diff ของ GitHub มากกว่า 500,000 บรรทัด (เช่น #13399 ซึ่งเป็นการเพิ่มผู้ให้บริการเพียงรายการเดียว แต่แสดงไฟล์ที่เปลี่ยนแปลง 2,347 ไฟล์) ส่งผลให้ยอดรวมหลายรายการด้านบนสูงเกินจริง รายการที่มีคะแนนเท่ากันจะจัดอันดับร่วมกัน</sub>
+<sub>การสำรวจสำมะโนประชากรที่ดำเนินการ 2026-11-03 03:01:19 UTC พร้อมเคล็ดลับ <code>release/v3.8.53</code> สด <code>05bc048d6c</code> การสำรวจสำมะโนประชากร GitHub GraphQL แบบแบ่งหน้าประกอบด้วย 9,947 รวม PRs: 4,130 โดยเจ้าของพื้นที่เก็บข้อมูล, 240 โดย Dependabot, 6 โดย bots/apps อื่น ๆ และ <b>5,571 PRs ภายนอกจากผู้ร่วมให้ข้อมูลที่แตกต่างกัน 883 ราย</b>. “บรรทัดที่เปลี่ยนแปลง” คือการลบ GitHub เพิ่มเติม + และรวมถึงไฟล์ที่สร้างขึ้น ไฟล์ล็อค แค็ตตาล็อก การแปล และเอกสารประกอบ LOC มันเป็นปั่นป่วนไม่ได้เขียน รายงาน 53 PRs GitHub มีความแตกต่างมากกว่า 500,000 บรรทัด (เช่น #13399 ซึ่งเป็นการเพิ่มผู้ให้บริการรายเดียว แสดงรายการไฟล์ที่เปลี่ยนแปลง 2,347 ไฟล์) ซึ่งทำให้ผลรวมหลายรายการข้างต้นสูงเกินจริง ความสัมพันธ์มีการจัดอันดับด้วยกัน</sub>
 
-### คอมมิตที่ระบุแหล่งที่มาโดย GitHub
+### คอมมิตที่มาจาก GitHub
 
 <table>
   <tr>
     <td align="center" width="160">
       <a href="https://github.com/maxmad64bis">
         <img src="https://github.com/maxmad64bis.png" width="40" style="border-radius:50%" alt="Dizzle"/><br/>
-        <b>Dizzle</b>
+        <b>เวียนหัว</b>
       </a><br/>
-      <sub>🥇 418 คอมมิตที่ระบุแหล่งที่มาจาก GitHub</sub>
+      <sub>🥇 418 GitHub-attributed คอมมิต</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/HouMinXi">
         <img src="https://github.com/HouMinXi.png" width="40" style="border-radius:50%" alt="Bob.Hou"/><br/>
-        <b>Bob.Hou</b>
+        <b>บ๊อบ.ฮู</b>
       </a><br/>
-      <sub>🥈 294 คอมมิตที่ระบุแหล่งที่มาจาก GitHub</sub>
+      <sub>🥈 294 คอมมิตที่มาจาก GitHub</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/oyi77">
         <img src="https://github.com/oyi77.png" width="40" style="border-radius:50%" alt="Paijo"/><br/>
-        <b>Paijo</b>
+        <b>ปายโจ</b>
       </a><br/>
-      <sub>🥉 229 คอมมิตที่ระบุแหล่งที่มาจาก GitHub</sub>
+      <sub>🥉 229 GitHub-attributed คอมมิต</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/pacocartones">
         <img src="https://github.com/pacocartones.png" width="40" style="border-radius:50%" alt="Paco Cartones"/><br/>
-        <b>Paco Cartones</b>
+        <b>ปาโก คาร์โตเนส</b>
       </a><br/>
-      <sub>🏅 222 คอมมิตที่ระบุแหล่งที่มาจาก GitHub</sub>
+      <sub>🏅 222 GitHub-attributed คอมมิต</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/backryun">
         <img src="https://github.com/backryun.png" width="40" style="border-radius:50%" alt="backryun"/><br/>
-        <b>backryun</b>
+        <b>แบ็คริยุน</b>
       </a><br/>
-      <sub>🏅 202 คอมมิตที่ระบุแหล่งที่มาจาก GitHub</sub>
+      <sub>🏅 202 GitHub-attributed คอมมิต</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/JxnLexn">
         <img src="https://github.com/JxnLexn.png" width="40" style="border-radius:50%" alt="Jan Leon"/><br/>
-        <b>Jan Leon</b>
+        <b>แจน ลีออน</b>
       </a><br/>
-      <sub>🏅 134 คอมมิตที่ระบุแหล่งที่มาจาก GitHub</sub>
+      <sub>🏅 134 GitHub-attributed คอมมิต</sub>
     </td>
   </tr>
   <tr>
     <td align="center" width="160">
       <a href="https://github.com/RaviTharuma">
         <img src="https://github.com/RaviTharuma.png" width="40" style="border-radius:50%" alt="Ravi Tharuma"/><br/>
-        <b>Ravi Tharuma</b>
+        <b>รวี ทารุมะ</b>
       </a><br/>
-      <sub>🏅 126 คอมมิตที่ระบุแหล่งที่มาจาก GitHub</sub>
+      <sub>🏅 126 GitHub-attributed คอมมิต</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/hartmark">
         <img src="https://github.com/hartmark.png" width="40" style="border-radius:50%" alt="Markus Hartung"/><br/>
-        <b>Markus Hartung</b>
+        <b>มาร์คุส ฮาร์ตุง</b>
       </a><br/>
-      <sub>🏅 115 คอมมิตที่ระบุแหล่งที่มาจาก GitHub</sub>
+      <sub>🏅 115 คอมมิตที่มาจาก GitHub</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/rdself">
         <img src="https://github.com/rdself.png" width="40" style="border-radius:50%" alt="Randi"/><br/>
-        <b>Randi</b>
+        <b>แรนดี้</b>
       </a><br/>
-      <sub>🏅 108 คอมมิตที่ระบุแหล่งที่มาจาก GitHub</sub>
+      <sub>🏅 108 GitHub-attributed คอมมิต</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/christopher-s">
         <img src="https://github.com/christopher-s.png" width="40" style="border-radius:50%" alt="Chris"/><br/>
-        <b>Chris</b>
+        <b>คริส</b>
       </a><br/>
-      <sub>🏅 70 คอมมิตที่ระบุแหล่งที่มาจาก GitHub</sub>
+      <sub>🏅 70 คอมมิตที่มาจาก GitHub</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/jonlwheat2-gif">
         <img src="https://github.com/jonlwheat2-gif.png" width="40" style="border-radius:50%" alt="WebPerson"/><br/>
         <b>WebPerson</b>
       </a><br/>
-      <sub>🏅 68 คอมมิตที่ระบุแหล่งที่มาจาก GitHub</sub>
+      <sub>🏅 68 GitHub-attributed คอมมิต</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/KooshaPari">
         <img src="https://github.com/KooshaPari.png" width="40" style="border-radius:50%" alt="Koosha Paridehpour"/><br/>
-        <b>Koosha Paridehpour</b>
+        <b>คูชา ปริเดพร</b>
       </a><br/>
-      <sub>🏅 68 คอมมิตที่ระบุแหล่งที่มาจาก GitHub</sub>
+      <sub>🏅 68 GitHub-attributed คอมมิต</sub>
     </td>
   </tr>
 </table>
 
-<sub>ตรวจสอบอีกครั้งเมื่อ 2026-11-03 02:09:16 UTC: คอมมิตที่ระบุแหล่งที่มาจาก GitHub ซึ่งรายงานโดย Contributors API ของ repository สำหรับสาขาเริ่มต้น <code>release/v3.8.53</code> API ส่งคืนข้อมูลระบุตัวตน 903 รายการ (ผู้ใช้ 429 ราย, บอต 2 ราย, ไม่ระบุชื่อ 472 รายการ); ตารางนี้ไม่รวมผู้ดูแล บอต และผู้ใช้ที่ไม่ระบุชื่อ และคงรายการที่มีอันดับร่วมไว้ ตารางนี้แตกต่างจากทั้งการจัดอันดับ merged-PR ด้านบนและการสำรวจข้อมูลเมตาของ Git ด้านล่าง</sub>
+<sub>ตรวจสอบอีกครั้งเมื่อ 2026-11-03 02:09:16 UTC: GitHub-attributed commits ที่รายงานโดย repository Contributors API สำหรับสาขาเริ่มต้น <code>release/v3.8.53</code> API ส่งคืนข้อมูลระบุตัวตน 903 รายการ (ผู้ใช้ 429 ราย, บอท 2 ตัว, ไม่เปิดเผยตัวตน 472 ราย) ตารางนี้ไม่รวมผู้ดูแล บอท และข้อมูลระบุตัวตนที่ไม่ระบุตัวตน และรักษาความสัมพันธ์ทางการแข่งขัน มันแตกต่างจากทั้งการจัดอันดับ PR แบบรวมด้านบนและการสำรวจสำมะโนประชากร Git-metadata ด้านล่าง</sub>
 
-> 🙏 ฟีเจอร์ การแก้ไขบัก และการปรับปรุงโครงสร้างพื้นฐานของผู้มีส่วนร่วมเหล่านี้ **เป็นส่วนสำคัญ** ที่ทำให้ OmniRoute มีความน่าเชื่อถือและฟีเจอร์ครบครัน ทุก pull request ทุกกรณีทดสอบ และไฟล์แปล i18n ล้วนมีความสำคัญ โอเพนซอร์สสร้างขึ้นโดยผู้คนเช่นพวกเขา
+> 🙏 คุณสมบัติของผู้มีส่วนร่วม การแก้ไขข้อบกพร่อง และการปรับปรุงโครงสร้างพื้นฐานคือ** ส่วนหลัก** สิ่งที่ทำให้ OmniRoute น่าเชื่อถือและมีคุณสมบัติหลากหลาย ทุกคำขอดึง ทุกกรณีทดสอบ และไฟล์การแปล i18n ทุกไฟล์มีความสำคัญ โอเพ่นซอร์สถูกสร้างขึ้นโดยคนเช่นพวกเขา
 
 </div>
 

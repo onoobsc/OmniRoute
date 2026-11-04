@@ -44,37 +44,35 @@ máy tính xách tay của bạn                 OmniRoute từ xa (VPS)
 
 ---
 
-## Kết nối
+## Đang kết nối
 
-### Bằng mật khẩu quản lý (khởi tạo)
+### Với mật khẩu quản lý (bootstrap)
 
 ```bash
 omniroute connect 192.168.0.15
-# Mật khẩu quản lý cho http://192.168.0.15:20128: ********
-# ✔ Đã kết nối với http://192.168.0.15:20128 — ngữ cảnh '192.168.0.15' (phạm vi: admin)
+# Management password for http://192.168.0.15:20128: ********
+# ✔ Connected to http://192.168.0.15:20128 — context '192.168.0.15' (scope: admin)
 ```
 
-Luồng dùng mật khẩu mặc định cấp một token **admin** (bạn nắm giữ mật khẩu, vì vậy
-bạn đã có toàn quyền kiểm soát). Giới hạn phạm vi bằng `--scope`:
+Luồng mật khẩu tạo ra một** quản trị viên** mã thông báo theo mặc định (bạn giữ mật khẩu, do đó bạn có toàn quyền kiểm soát). Downscope với `--scope`:
 
 ```bash
 omniroute connect 192.168.0.15 --scope write
 ```
 
-Các tùy chọn: `--port <p>` (khi máy chủ không có cổng), `--name <ctx>` (tên ngữ cảnh),
-`--scope read|write|admin`. URL đầy đủ được giữ nguyên:
-`omniroute connect https://omni.example.com`.
+Tùy chọn: `--port <p>` (khi máy chủ không có), `--name <ctx>` (tên ngữ cảnh), `--scope read|write|admin`. Một URL đầy đủ được vinh danh như hiện tại: `omniroute connect https://omni.example.com`.
 
-### Bằng token được tạo sẵn
+Khi máy chủ đã bật xác thực hai yếu tố trên trang tổng quan (Cài đặt → Security), riêng mật khẩu sẽ bị từ chối: CLI sau đó sẽ yêu cầu mã từ ứng dụng xác thực (hoặc mã khôi phục). Chuyển nó lên trước `--totp <code>` để sử dụng không tương tác.
 
-Tạo một token có phạm vi trong bảng điều khiển (hoặc bằng `omniroute tokens create`) và
-dán token đó — không cần mật khẩu:
+### Với mã thông báo được tạo trước
+
+Tạo mã thông báo có phạm vi trong bảng điều khiển (hoặc với `omniroute tokens create`) và dán nó — mà không cần mật khẩu:
 
 ```bash
 omniroute connect 192.168.0.15 --key oma_live_xxxxxxxx
 ```
 
-CLI xác thực token qua `GET /api/cli/whoami` và lưu token làm ngữ cảnh đang hoạt động.
+CLI xác thực nó thông qua `GET /api/cli/whoami` và lưu nó dưới dạng ngữ cảnh hoạt động.
 
 ---
 
@@ -440,14 +438,14 @@ omniroute contexts remove 192-168-0-15 --yes   # xóa context cục bộ (ngay c
 
 ---
 
-## Điểm cuối API (tham khảo)
+## điểm cuối API (tham khảo)
 
-| Phương thức | Tuyến                 | Xác thực         | Phạm vi                                  |
-| ----------- | --------------------- | ---------------- | ---------------------------------------- |
-| POST        | `/api/cli/connect`    | mật khẩu quản lý | — (công khai, được bảo vệ bằng mật khẩu) |
-| GET         | `/api/cli/whoami`     | token truy cập   | đọc                                      |
-| GET         | `/api/cli/tokens`     | token truy cập   | quản trị                                 |
-| POST        | `/api/cli/tokens`     | token truy cập   | quản trị                                 |
-| DELETE      | `/api/cli/tokens/:id` | token truy cập   | quản trị                                 |
+| Phương pháp | Tuyến đường           | Xác thực              | Phạm vi                                |
+| ----------- | --------------------- | --------------------- | -------------------------------------- |
+| POST        | `/api/cli/connect`    | mật khẩu; 2FA nếu bật | — (công khai, kiểm soát bằng mật khẩu) |
+| GET         | `/api/cli/whoami`     | mã thông báo truy cập | đọc                                    |
+| GET         | `/api/cli/tokens`     | mã thông báo truy cập | quản trị viên                          |
+| POST        | `/api/cli/tokens`     | mã thông báo truy cập | quản trị viên                          |
+| DELETE      | `/api/cli/tokens/:id` | mã thông báo truy cập | quản trị viên                          |
 
-Xem [openapi.yaml](../openapi.yaml) để biết đầy đủ các lược đồ.
+Xem [openapi.yaml](../openapi.yaml) để biết các lược đồ đầy đủ.

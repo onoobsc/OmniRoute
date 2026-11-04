@@ -13,112 +13,59 @@ OmniRoute-ს აქვს მარშრუტის ამომცნობ�
 
 > წყარო: [diagrams/authz-pipeline.mmd](../diagrams/authz-pipeline.mmd)
 
-## ავტორიზაციის ორი რეჟიმი
+## ორი ავტორიზაციის რეჟიმი
 
-### 1. API გასაღები (Bearer)
+### 1. API გასაღები (მატარებელი)
 
-გამოიყენება OpenAI/Anthropic/Gemini-თან თავსებადი კლიენტის API-ებისთვის და მართვის რამდენიმე მარშრუტისთვის, როდესაც გასაღებს აქვს `manage` წვდომის სფერო.
+გამოიყენება OpenAI/Anthropic/Gemini-compatible კლიენტისთვის APIs და მართვის რამდენიმე მარშრუტისთვის, როდესაც კლავიშს აქვს `manage` ფარგლები.
 
 ```
 Authorization: Bearer <api-key>
 ```
 
-ვალიდაცია სრულდება `isValidApiKey()` / `extractApiKey()` ფუნქციებით `src/sse/services/auth.ts`-ში და ხელახლა ექსპორტირდება `src/shared/utils/apiAuth.ts`-ის მეშვეობით. ვალიდატორი ასევე იღებს `OMNIROUTE_API_KEY` / `ROUTER_API_KEY` გარემოს ცვლადებს, როგორც მუდმივ გამტარ გასაღებებს (საკითხი #1350).
+დამოწმებულია `isValidApiKey()` / `extractApiKey()` ით `src/sse/services/auth.ts` ში და რეექსპორტირებულია `src/shared/utils/apiAuth.ts` მეშვეობით. ვალიდატორი ასევე იღებს `OMNIROUTE_API_KEY` / `ROUTER_API_KEY` env vars-ს, როგორც მუდმივ გადასასვლელ კლავიშებს (issue #1350).
 
-### 2. დაფის სესია (auth_token cookie)
+### 2. დაფის სესია (auth_token ქუქი)
 
-დაფის გვერდებისა და ადმინისტრაციული ოპერაციებისთვის.
+დაფის გვერდებისა და ადმინისტრატორის ოპერაციებისთვის.
 
 ```
 Cookie: auth_token=<JWT signed with JWT_SECRET>
 ```
 
-Cookie სესიად ითვლება მხოლოდ მაშინ, როდესაც JWT წარმატებით მოწმდება **და** შეიცავს `authenticated: true` ატრიბუტს
-(`src/shared/utils/dashboardSessionToken.ts` → `verifyDashboardSessionToken`). Cookie-ის ყველა
-მომხმარებელი (დაფის მარშრუტის დამცავი (`isDashboardSessionAuthenticated()`), ავტორიზაციის pipeline-ის განახლება, WebSocket-ის handshake, live
-სერვერი, `/api/settings/require-login`, `/api/auth/status`) ამ დამხმარე ფუნქციას იყენებს.
-არსებობს `JWT_SECRET`-ით ხელმოწერილი სხვა JWT-ებიც — Cursor CLI-ის გამტარი მექანიზმი გასაღების მფლობელებისთვის ქმნის
-`iss "omniroute" / aud "cursor-cli"` ტოკენებს — და ისინი არასოდეს ითვლება სესიებად
-(#13298).
+ქუქი არის სესია მხოლოდ მაშინ, როდესაც JWT ამოწმებს** და** ატარებს `authenticated: true` (`src/shared/utils/dashboardSessionToken.ts` → `verifyDashboardSessionToken`). ქუქი-ფაილის ყველა მომხმარებელი (დაფის მარშრუტის მცველი (`isDashboardSessionAuthenticated()`), authz მილსადენის განახლება, WebSocket ხელის ჩამორთმევა, ცოცხალი სერვერი, `/api/settings/require-login`, `/api/auth/status`) გადის ამ დამხმარეს. `JWT_SECRET` ით ხელმოწერილი სხვა JWTs არსებობს — Cursor CLI გავლა აჭრის `iss "omniroute" / aud "cursor-cli"` ჟეტონებს გასაღების მფლობელებისთვის — და არასოდეს არის სესიები (#13298).
 
-შემოწმება სრულდება `isDashboardSessionAuthenticated()`-ით `src/shared/utils/apiAuth.ts`-ში. Pipeline ავტომატურად განაახლებს JWT-ს, როდესაც მისი 30-დღიანი მოქმედების ვადის ამოწურვამდე 7 დღეზე ნაკლები რჩება.
+დამოწმებულია `isDashboardSessionAuthenticated()` მიერ `src/shared/utils/apiAuth.ts` ში. მილსადენი ავტომატურად განაახლებს JWT ს, როდესაც მას 7 დღეზე ნაკლები რჩება მისი 30-დღიანი მოქმედების დასრულებამდე.
 
-სესია შეიძლება 30 დღის გასვლამდეც დასრულდეს, რადგან ყველა გამომცემი იყენებს `mintDashboardSessionToken`-ს (გამოშვების დრო `iat` და იდენტიფიკატორი `jti`), ხოლო შემმოწმებელი ორ პარამეტრს ამოწმებს: `sessionsValidAfter`, რომელიც პაროლის შეცვლისას დაყენდება, რათა მანამდე გაცემულმა ყველა სესიამ ვალიდაცია შეწყვიტოს (ბრაუზერი, რომლითაც პაროლი შეიცვალა, ახალ cookie-ს იღებს), და `revokedDashboardSessions`, რომელშიც `POST /api/auth/logout` გასული სესიის `jti`-ს ამატებს. ძველი გამოშვებით შექმნილი სესიები არც ერთ ამ ატრიბუტს არ შეიცავს და პაროლის პირველ შეცვლამდე მოქმედად რჩება. თუ პარამეტრების წაკითხვა ვერ ხერხდება, სესია სანდოდ არ მიიჩნევა.
+სესია ასევე შეიძლება დასრულდეს მისი 30 დღის დასრულებამდე, რადგან ყოველი მინტერი გადის `mintDashboardSessionToken` (გამოცემის დრო `iat` და id `jti`) და ვერიფიკატორი ამოწმებს ორ პარამეტრს: `sessionsValidAfter`, დაყენებულია პაროლის შეცვლით ისე, რომ ყოველი სესია გაცემულია, სანამ ის შეწყვეტს დამოწმებას (ბრაუზერი, რომელმაც პაროლი შეცვალა, იღებს ახალ ქუქი-ფაილს) და `revokedDashboardSessions`, რომელსაც `POST /api/auth/logout` -out ამატებს `jti`. ძველი გამოშვების მიერ შედგენილი სესიები არ შეიცავს არცერთ პრეტენზიას და ძალაში რჩება პაროლის პირველ შეცვლამდე. თუ პარამეტრების წაკითხვა შეუძლებელია, სესია არ არის სანდო.
 
-მართვის ზოგიერთი მარშრუტი იღებს **ნებისმიერ** რეჟიმს: cookie-ს ან `Bearer <key>`-ს, როდესაც API გასაღებს აქვს `manage` (ან `admin`) წვდომის სფერო. სწორედ ეს უზრუნველყოფს v3.8-ში დამატებულ „API გამოძახებებით კონფიგურირებად“ სამუშაო პროცესს.
+ზოგიერთი მართვის მარშრუტი მიიღება** ან** რეჟიმი: ქუქი OR `Bearer <key>` როდესაც API კლავიშს აქვს `manage` (ან `admin`) ფარგლები. ეს არის ის, რაც იძლევა v3.8-ში დამატებულ სამუშაო ნაკადს "კონფიგურირებადი API ზარების საშუალებით".
 
-#### სურვილისამებრ გასააქტიურებელი OIDC შესვლის შეზღუდვა (#6973)
+#### სურვილისამებრ OIDC შესვლის კარიბჭე (#6973)
 
-დაფის ადმინისტრატორის შესვლა ნაგულისხმევ პაროლით შესვლასთან ერთად ასევე მხარს უჭერს **სურვილისამებრ გასააქტიურებელ** OIDC (OpenID Connect) პროცესს — პაროლით შესვლა არასოდეს იშლება, მას მხოლოდ
-ემატება დამატებითი შესაძლებლობა:
+დაფის ადმინისტრატორის შესვლა ასევე მხარს უჭერს** აირჩიე** OIDC (OpenID Connect) ნაკადი ნაგულისხმევი პაროლის შესვლის პარალელურად. — პაროლის შესვლა არასოდეს წაიშლება, მხოლოდ დამატებულია:
 
-- გამორთულია, თუ `settings.oidcEnabled === true` **და** `oidcIssuer` /
-  `oidcClientId` / `oidcClientSecret` სრულად არ არის კონფიგურირებული (პარამეტრები → ავთენტიფიკაცია).
-  წინააღმდეგ შემთხვევაში `GET /api/auth/oidc/login` აბრუნებს `400`-ს.
-- `GET /api/auth/oidc/login` ავტორიზაციის გამომცემლის
-  `/.well-known/openid-configuration`-იდან აღმოაჩენს `authorization_endpoint`-ს (თუ ვერ აღმოაჩინა,
-  იყენებს `<issuer>/authorize`-ს), შემომავალი მოთხოვნის საფუძველზე აგებს გადამისამართების URI-ს
-  (`x-forwarded-proto`-ს გათვალისწინებით) და IdP-ზე გადაამისამართებს შემთხვევითი `state`-ით,
-  რომელიც ინახება `httpOnly` ტიპის `oidc_state` cookie-ში.
-- `GET /api/auth/oidc/callback` ამოწმებს `state`-ს, ცვლის ავტორიზაციის
-  კოდს და გამომცემლის JWKS-ის მეშვეობით ამოწმებს ID-ტოკენის ხელმოწერას
-  (`jose`-ის `createRemoteJWKSet`, რომელიც ქეშირდება თითოეული JWKS URI-სთვის), `issuer`/`audience`
-  შემოწმებებით. მართვის პანელზე დაშვებისთვის საჭიროა არაცარიელი `oidcAllowedSubjects` სია,
-  `oidcAdmissionClaim` პოლიტიკა ან ორივე. სუბიექტების სია ემთხვევა `sub`-ს ან
-  `email`-ს მხოლოდ მაშინ, როდესაც `email_verified === true`. არასავალდებულო მოთხოვნის პოლიტიკა
-  იღებს წერტილებით გამოყოფილ ID-ტოკენის მოთხოვნის გზას (მაგალითად, `realm_access.roles`) და
-  მისაღები მნიშვნელობების მასივს; მიღებული მოთხოვნა უნდა იყოს სტრიქონების მასივი,
-  რომელიც შეიცავს სულ მცირე ერთ მისაღებ მნიშვნელობას. თუ ორივე პოლიტიკაა კონფიგურირებული,
-  ორივე წარმატებით უნდა დაკმაყოფილდეს. არარსებული ან არასწორად ფორმირებული მოთხოვნები დაშვებას უარყოფს,
-  ხოლო ორივე პოლიტიკის არარსებობის შემთხვევაში უკუგამოძახება შესვლაზე უარს ამბობს
-  (`not_configured`). მხოლოდ სუბიექტზე დაფუძნებული არსებული კონფიგურაციები უცვლელად
-  განაგრძობს მუშაობას.
-- Keycloak ჩვეულებრივ realm-ის როლებს წვდომის ტოკენებში ათავსებს და არა აუცილებლად ID
-  ტოკენებში. realm-ის `admin` როლის მოსათხოვად ამ კლიენტისთვის დააკონფიგურირეთ პროტოკოლის
-  მაპერი, რომელიც `realm_access.roles`-ს მის **ID ტოკენში** ჩართავს, შემდეგ კი
-  `oidcAdmissionClaim` დააყენეთ მნიშვნელობაზე `{ "path": "realm_access.roles", "values": ["admin"] }`.
-  მხოლოდ როლზე დაფუძნებული დაშვების ჩართვამდე შეამოწმეთ ამ კლიენტის ID-ტოკენის რეალური მოთხოვნა;
-  აპლიკაცია წვდომის ტოკენის როლებს არ კითხულობს. IdP-ის მხრიდან ტოკენზე უარის თქმა
-  შეიძლება ამ შემოწმებას ავსებდეს, თუმცა ვერ ჩაანაცვლებს აპლიკაციის მხარეს შესრულებულ შემოწმებას.
-- წარმატების შემთხვევაში იქმნება **ზუსტად იგივე** 30-დღიანი `auth_token` JWT, რომელსაც პაროლით
-  შესვლა გასცემს (`src/app/api/auth/login/route.ts`), ამიტომ მართვის პანელის
-  სესიის დანარჩენი კონვეიერი (ავტომატური განახლება, cookie-ს ალმები) უცვლელი რჩება —
-  OIDC მხოლოდ cookie-ს შექმნის მეთოდს ცვლის და არა მის მიერ მინიჭებულ უფლებებს. IdP-ის
-  როლებსა თუ ჯგუფებში შეტანილი ცვლილებები OmniRoute-ის არსებულ სესიებს არ აუქმებს; მათი
-  მოქმედების ვადას კვლავ განსაზღვრავს სისტემიდან გასვლა, პაროლის შეცვლა ან სესიის ვადის ამოწურვა.
-- ყოველი `oidc*` პარამეტრი (`oidcEnabled`, `oidcDisablePasswordLogin`,
-  `oidcIssuer`, `oidcClientId`, `oidcClientSecret`, `oidcAllowedSubjects`,
-  `oidcAdmissionClaim`, `oidcRedirectPath`, `oidcScopes`) შედის `SECURITY_IMPACTING_SETTINGS_KEYS`-ში
-  (`src/shared/constants/securityImpactingSettings.ts`): `PATCH /api/settings`
-  აბრუნებს `400 PASSWORD_REQUIRED`-ს, თუ მოთხოვნის სხეული მართვის
-  პაროლს `currentPassword`-ის სახით არ შეიცავს (თუ ის არასწორია — `401 PASSWORD_MISMATCH`).
-  `oidcDisablePasswordLogin` კრძალავს პაროლით _შესვლას_ (`POST /api/auth/login`),
-  მაგრამ ინარჩუნებს შენახულ პაროლის ჰეშს, ხოლო ხელახალი ავთენტიფიკაცია კვლავ ადარებს
-  `currentPassword`-ს მას.
-- `corsOrigins` და `bruteForceProtection` ასევე შედის `SECURITY_IMPACTING_SETTINGS_KEYS`-ში:
-  რომელიმეს შერბილება შესვლის დაცვის მექანიზმებს ასუსტებს, ამიტომ მათთვისაც საჭიროა
-  იგივე ხელახალი ავთენტიფიკაცია `currentPassword`-ით (Security ჩანართი მას ითხოვს), ხოლო JSON იმპორტი
-  მათ გამოტოვებს.
-- უსაფრთხოების პოლიტიკის ყოველი გასაღები — `SECURITY_IMPACTING_SETTINGS_KEYS`-ის ჩანაწერები,
-  ყოველი `oidc*` გასაღები და მართვის პანელის სესიის მდგომარეობა — `PATCH /api/settings`-ში
-  **მხოლოდ ოპერატორისთვისაა** განკუთვნილი: `manage` მოქმედების არეალის მქონე API გასაღებს ან `oma_`
-  წვდომის ტოკენს უარი ეთქმება `403`-ით, მაშინაც კი, თუ ის სწორ `currentPassword`-ს აგზავნის, ხოლო
-  უარი აუდიტის ჟურნალში ჩაიწერება, როგორც `settings.update_failed`, მნიშვნელობით
-  `reason: OPERATOR_REQUIRED`
-  (`requireOperatorCredential()` ფაილში `src/lib/api/operatorCredential.ts`).
-  ჩვეულებრივი პარამეტრების (თემა, ჩვენების პარამეტრები) ჩაწერა კვლავ შეუძლია `manage` გასაღებს
-  ან `admin` წვდომის ტოკენს. თავად `/api/settings`-ის (და ასევე
-  `/api/settings/require-login`-ის) ყოველი ცვლილებისთვის საჭიროა წვდომის ტოკენის `admin`
-  მოქმედების არეალიც (`ADMIN_MUTATION_EXACT_PATHS` ფაილში `src/server/authz/accessScopes.ts`, ზუსტი
-  გზის დამთხვევა); `GET` რჩება `read`, ხოლო სხვა `/api/settings/*` ქვე-მარშრუტები (პროქსი-სერვერები,
-  კომბინაციების ნაგულისხმევი პარამეტრები, მოდელების ფსევდონიმები, შეკუმშვა, გასუფთავებები…) ინარჩუნებს
-  მეთოდიდან განსაზღვრულ `write` მოქმედების არეალს.
-- `POST /api/settings/import-json` ამ ხელახალ ავთენტიფიკაციას გამოტოვებს, ამიტომ ჩაწერამდე
-  შლის `IMPORT_STRIPPED_SETTINGS_KEYS`-ში (იგივე ფაილი) შემავალ ყველა გასაღებს: პაროლსა და
-  `currentPassword`-ს, `SECURITY_IMPACTING_SETTINGS_KEYS`-ის ყოველ ჩანაწერს და
-  მართვის პანელის სესიის მდგომარეობას (`sessionsValidAfter`, `revokedDashboardSessions`).
-  შესაბამისად, ძველი სარეზერვო ასლის იმპორტი ვერ აღადგენს სესიას, რომელიც პაროლის
-  შეცვლამ ან სისტემიდან გასვლამ უკვე დაასრულა.
+- გამორთულია, თუ `settings.oidcEnabled === true`** და** `oidcIssuer` / `oidcClientId` / `oidcClientSecret` ყველა კონფიგურირებულია (პარამეტრები → Auth). `GET /api/auth/oidc/login` აბრუნებს `400` წინააღმდეგ შემთხვევაში.
+- `GET /api/auth/oidc/login` აღმოაჩენს `authorization_endpoint` ემიტენტის `/.well-known/openid-configuration` დან (უბრუნდება `<issuer>/authorize`), აშენებს URI გადამისამართებას შემომავალი მოთხოვნიდან (`x-forwarded-proto` -aware) და გადამისამართებს IdP ზე შემთხვევითი `state`, რომელიც ინახება `httpOnly` `oidc_state` ქუქიში.
+- `GET /api/auth/oidc/callback` ამოწმებს `state`, ცვლის ავტორიზაციის კოდს და ამოწმებს ID ჟეტონის ხელმოწერას ემიტენტის JWKS (`jose`'s `createRemoteJWKSet`, ქეშირებული თითო JWKS URI) მეშვეობით `issuer`/`audience` ჩეკებით. საინფორმაციო დაფაზე დაშვება მოითხოვს ცარიელ `oidcAllowedSubjects` სიას, `oidcAdmissionClaim` პოლიტიკას ან ორივეს. საგნების სია ემთხვევა `sub` ან `email` მხოლოდ `email_verified === true` დროს. არასავალდებულო საჩივრის პოლიტიკა იღებს წერტილებით გამოყოფილ ID ნიშნით საჩივრის გზას (მაგალითად, `realm_access.roles`) და მიღებული მნიშვნელობების მასივს; გადაწყვეტილი პრეტენზია უნდა იყოს სტრიქონების მასივი, რომელიც შეიცავს მინიმუმ ერთ მიღებულ მნიშვნელობას. თუ ორივე პოლიტიკა კონფიგურირებულია, ორივე უნდა გაიაროს. Missing/malformed პრეტენზიები ვერ დაიხურება და არცერთი პოლიტიკის გარეშე გამოძახება უარს ამბობს შესვლაზე (`not_configured`). არსებული მხოლოდ საგნის კონფიგურაციები უცვლელი რჩება.
+- Keycloak ჩვეულებრივ ასახავს სფეროს როლებს წვდომის ტოკენებში და არა აუცილებლად ID ტოკენებში. იმისთვის, რომ მოითხოვოთ სფერო `admin` როლი, დააკონფიგურირეთ ამ კლიენტისთვის პროტოკოლის მაპერი, რომელიც შეიცავს `realm_access.roles` ს**ID ჟეტონი** , შემდეგ დააყენეთ `oidcAdmissionClaim` `{ "path": "realm_access.roles", "values": ["admin"] }`. შეამოწმეთ რეალური ID-token სარჩელი ამ კლიენტისთვის მხოლოდ როლის დაშვების ჩართვამდე; აპლიკაცია არ კითხულობს წვდომის ნიშნის როლებს. IdP-ის ჟეტონზე უარის თქმა შეიძლება შეავსოს, მაგრამ არ ცვლის ამ განაცხადის მხარეს შემოწმებას.
+- წარმატებაზე ის წყვეტს** ზუსტად იგივე** 30-დღიანი `auth_token` JWT პაროლის შესვლის პრობლემაა (`src/app/api/auth/login/route.ts`), ასე რომ, დაფის სესიის მილსადენის დანარჩენი ნაწილი (ავტომატური განახლება, ქუქი-ფაილების დროშები) უცვლელია — OIDC მხოლოდ ცვლის ქუქი-ფაილის დამზადებას და არა იმას, რასაც ანიჭებს. IdP roles/groups ში ცვლილებები არ არღვევს არსებულ OmniRoute სესიებს; გამოსვლა, პაროლის როტაცია ან სესიის ვადის გასვლა კვლავ განაპირობებს მათ სიცოცხლეს.
+- ყველა `oidc*` პარამეტრი (`oidcEnabled`, `oidcDisablePasswordLogin`, `oidcIssuer`, `oidcClientId`, `oidcClientSecret`, `oidcAllowedSubjects`, `oidcAdmissionClaim`, `oidcRedirectPath`, `oidcScopes`) არის `SECURITY_IMPACTING_SETTINGS_KEYS` (`src/shared/constants/securityImpactingSettings.ts`): `PATCH /api/settings` პასუხობს `400 PASSWORD_REQUIRED`, თუ სხეული არ ატარებს მართვის პაროლს, როგორც `currentPassword` (`401 PASSWORD_MISMATCH` როდესაც ის არასწორია). `oidcDisablePasswordLogin` უარს ამბობს _login_ (`POST /api/auth/login`) პაროლზე, მაგრამ ინახავს შენახულ პაროლის ჰეშს და ხელახალი ავტორიზაცია მაინც ამოწმებს `currentPassword` მის წინააღმდეგ.
+- `corsOrigins` და `bruteForceProtection` ასევე არის `SECURITY_IMPACTING_SETTINGS_KEYS` ში: შესუსტება ან ასუსტებს შესვლის დაცვას, ამიტომ ისინი იღებენ იგივე `currentPassword` ხელახალი ავტორიზაციას (უსაფრთხოების ჩანართი ითხოვს ამას) და JSON იმპორტი ტოვებს მათ.
+- უსაფრთხოების პოლიტიკის ყველა გასაღები — `SECURITY_IMPACTING_SETTINGS_KEYS` ჩანაწერები, ყველა `oidc*` კლავიში და დაფის სესიის მდგომარეობა — არის** მხოლოდ ოპერატორისთვის** `PATCH /api/settings` ზე: API კლავიშის მართვაში ან `oma_` წვდომის ჟეტონზე უარი თქვა `403` ით მაშინაც კი, როცა ის აგზავნის სწორ `currentPassword`, და უარი განიხილება როგორც `settings.update_failed` `reason: OPERATOR_REQUIRED` ით (`requireOperatorCredential()` in `src/lib/api/operatorCredential.ts`). ჩვეულებრივი პარამეტრები (თემა, ეკრანის პარამეტრები) რჩება ჩასაწერად `manage` გასაღებისთვის ან `admin` წვდომის ნიშნისთვის. თავად `/api/settings` (და `/api/settings/require-login`) ყოველ მუტაციას ასევე სჭირდება `admin` წვდომის ნიშანი (`ADMIN_MUTATION_EXACT_PATHS` in `src/server/authz/accessScopes.ts`, exact-path match); `GET` რჩება `read`, ხოლო სხვა `/api/settings/*` ქვე-მარშრუტები (პროქსიები, კომბინირებული ნაგულისხმევი პარამეტრები, მოდელის მეტსახელები, შეკუმშვა, გასუფთავება…) ინარჩუნებენ მეთოდის მიერ დასკვნას `write` ფარგლებს.
+- `POST /api/settings/import-json` გამოტოვებს ხელახლა ავტორიზაციას, ამიტომ ჩამოაგდებს ყველა კლავიშს `IMPORT_STRIPPED_SETTINGS_KEYS` ში (იგივე ფაილი) ჩაწერამდე: პაროლი და `currentPassword`, ყველა `SECURITY_IMPACTING_SETTINGS_KEYS` ჩანაწერი და დაფის სესიის მდგომარეობა (`sessionsValidAfter`, `revokedDashboardSessions`). ამიტომ, ძველი სარეზერვო ასლის იმპორტი ვერ აღადგენს სესიას, რომელშიც პაროლის შეცვლა ან გასვლა უკვე დასრულებულია.
+
+#### სურვილისამებრ TOTP ორფაქტორიანი შესვლა (#16619)
+
+რეგისტრირებულია პარამეტრებიდან → Security; გამორთულია სანამ ოპერატორი არ ჩართავს მას (`src/server/auth/dashboardMfa.ts`).
+
+- **რას მოიცავს:** პაროლის შესვლა (`POST /api/auth/login`, რომელსაც შემდეგ სჭირდება `POST /api/auth/mfa/verify`) და `omniroute connect` (`POST /api/cli/connect`, რომელიც უარს ამბობს მხოლოდ პაროლის გაცვლაზე და იღებს კოდს, როგორც `totp`).
+- **რას არ მოიცავს:** OIDC / SSO შესვლა (`/api/auth/oidc/callback`) არ ითხოვს OmniRoute TOTP. ის ეყრდნობა პირადობის პროვაიდერის მეორე ფაქტორს, ასე რომ, განახორციელეთ MFA IdP ში, თუ OIDC ჩართულია.
+- **აღდგენა** (დაკარგული მოწყობილობა, არ დარჩა აღდგენის კოდები, ან ფაქტორი, რომლის შემოწმებაც შეუძლებელია, მაგალითად `STORAGE_ENCRYPTION_KEY` შეცვლის შემდეგ):
+  1. გადატვირთეთ სერვერი `OMNIROUTE_DISABLE_MFA=true` ით.
+  2. თავად ჰოსტზე (loopback peer და loopback `Host`, როგორიცაა `http://localhost:20128`), შედით პაროლით. მეორე ფაქტორი გამოტოვებულია მხოლოდ ამ წარმოშობისთვის; ყველა სხვა წარმოშობას ჯერ კიდევ სჭირდება კოდი.
+  3. პარამეტრებში → Security → გამორთეთ, შეიყვანეთ პაროლი და დატოვეთ კოდი ცარიელი. `POST /api/auth/mfa/disable` იღებს სხეულს `code` გარეშე მხოლოდ მაშინ, როცა ცვლადი დაყენებულია და მოთხოვნა მოდის ჰოსტიდან; ის კვლავ მოითხოვს დაფის სესიას და მიმდინარე პაროლს და აუდიტირდება როგორც `auth.mfa.disabled` `secondFactor: "recovery_switch"` ით.
+  4. გააუქმეთ `OMNIROUTE_DISABLE_MFA`, გადატვირთეთ და საჭიროების შემთხვევაში ხელახლა დარეგისტრირდით.
 
 ## მარშრუტების კლასები
 
@@ -163,28 +110,27 @@ Incoming request → src/proxy.ts
 
 ## საჯარო მარშრუტების სია
 
-`src/shared/constants/publicApiRoutes.ts` არის მკაფიოდ განსაზღვრული ნებადართული მარშრუტების სია:
+`src/shared/constants/publicApiRoutes.ts` არის აშკარა დაშვებული სია:
 
-სია დაყოფილია **ფორმის** მიხედვით და ამ დაყოფას კრიტიკული მნიშვნელობა აქვს (GHSA-74g9-q8f6-793h): პრეფიქსი მოწმდება `startsWith()`-ით, ამიტომ ის ასევე ემთხვევა ყველა მომიჯნავე ბილიკს, რომელსაც იგივე საწყისი სიმბოლოები აქვს.
-`/api/usage/om-usage`-ის პრეფიქსად მითითებამ `/api/usage/om-usage<anything>` საჯარო გახადა, ხოლო Next ამას მიმართავს
-`/api/usage/[connectionId]`-ზე — დამმუშავებელზე, რომელსაც საკუთარი ავტორიზაციის შემოწმება არ აქვს.
+სია დაყოფილია** ფორმა** და გაყოფა მატარებელია (GHSA-74g9-q8f6-793h): პრეფიქსი ემთხვევა `startsWith()`, ამიტომ ის ასევე ემთხვევა ყველა მიმდებარე ბილიკს, რომელიც იზიარებს მის წამყვან სიმბოლოებს. `/api/usage/om-usage` როგორც პრეფიქსი, მონიშნულია `/api/usage/om-usage<anything>` PUBLIC, და Next წყვეტს, რომ `/api/usage/[connectionId]` — დამმუშავებელს არ აქვს საკუთარი ავტორიზაცია.
 
 ```ts
-// ნამდვილი ქვეხეები. ყოველი ჩანაწერი აუცილებლად უნდა მთავრდებოდეს სიმბოლოთი "/" (ამას მოდულური ტესტი ამოწმებს).
+// Genuine subtrees. Every entry MUST end in "/" (asserted by a unit test).
 PUBLIC_API_ROUTE_PREFIXES = [
   "/api/auth/oidc/",
-  "/api/v1/", // classify-ში განიხილება როგორც CLIENT_API და არა როგორც „ავთენტიფიკაციის გარეშე საჯარო“
+  "/api/v1/", // treated as CLIENT_API in classify, not as "no-auth public"
   "/api/oauth/",
   "/api/codex/connect/",
   "/api/telegram/",
   "/api/cursor-cli/",
 ];
 
-// ცალკეული მარშრუტები, რომლებიც ზუსტად უნდა დაემთხვეს (ბოლო დახრილი ხაზით ან მის გარეშე).
+// Single routes, matched EXACTLY (with or without a trailing slash).
 PUBLIC_API_ROUTES_EXACT = new Set([
   "/api/auth/login",
   "/api/auth/logout",
   "/api/auth/status",
+  "/api/auth/mfa/verify", // login step 2 for opt-in TOTP; needs the MFA-pending cookie
   "/api/init",
   "/api/sync/bundle",
   "/api/cli/connect",
@@ -192,20 +138,20 @@ PUBLIC_API_ROUTES_EXACT = new Set([
   "/api/skills/collect/chaos",
 ]);
 
-// მხოლოდ წასაკითხი ცალკეული მარშრუტები, რომლებზეც ასევე ვრცელდება CORS origin-ის შემსუბუქება.
+// Read-only single routes that also take the CORS origin relaxation.
 PUBLIC_READONLY_CORS_API_ROUTES = [
   "/api/health/ping",
   "/api/monitoring/health",
   "/api/settings/require-login",
 ];
 
-// მხოლოდ წასაკითხი ცალკეული მარშრუტი CORS-ის შემსუბუქების გარეშე.
+// Read-only single route WITHOUT the CORS relaxation.
 PUBLIC_READONLY_API_ROUTES_EXACT = new Set(["/api/health"]);
 
 PUBLIC_READONLY_METHODS = new Set(["GET", "HEAD", "OPTIONS"]);
 ```
 
-მხოლოდ წასაკითხი მარშრუტები საჯაროა **მხოლოდ** უსაფრთხო მეთოდებისთვის. შენიშვნა: `classifyRoute()` გამორიცხავს `/api/v1/*`-სა და `/api/v1beta/*`-ს PUBLIC-ში ნაგულისხმევად მოხვედრისგან — ისინი ყოველთვის `CLIENT_API`-ად კლასიფიცირდება, რათა Bearer-გასაღების პოლიტიკა კვლავ მოქმედებდეს.
+მხოლოდ წაკითხვადი მარშრუტები საჯაროა** მხოლოდ** უსაფრთხო მეთოდებისთვის. შენიშვნა: `classifyRoute()` გამორიცხავს `/api/v1/*` და `/api/v1beta/*` PUBLIC ვარდნის — დან, ისინი ყოველთვის `CLIENT_API` არიან, ასე რომ, მატარებლის გასაღების პოლიტიკა კვლავ მოქმედებს.
 
 ## ახალი მარშრუტის დამატება
 

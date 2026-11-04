@@ -44,37 +44,35 @@ laptopul dvs.                            OmniRoute la distanță (VPS)
 
 ---
 
-## Conectarea
+## Conectare
 
-### Cu parola de administrare (inițializare)
+### Cu parola de management (bootstrap)
 
 ```bash
 omniroute connect 192.168.0.15
-# Parola de administrare pentru http://192.168.0.15:20128: ********
-# ✔ Conectat la http://192.168.0.15:20128 — contextul '192.168.0.15' (domeniu: admin)
+# Management password for http://192.168.0.15:20128: ********
+# ✔ Connected to http://192.168.0.15:20128 — context '192.168.0.15' (scope: admin)
 ```
 
-Fluxul bazat pe parolă emite implicit un token **admin** (dețineți parola, deci
-aveți deja control deplin). Restrângeți domeniul cu `--scope`:
+Fluxul de parole menționează an** admin** simbol în mod implicit (dețineți parola, deci aveți deja controlul total). Downscope cu `--scope`:
 
 ```bash
 omniroute connect 192.168.0.15 --scope write
 ```
 
-Opțiuni: `--port <p>` (când gazda nu include niciun port), `--name <ctx>` (numele contextului),
-`--scope read|write|admin`. Un URL complet este utilizat ca atare:
-`omniroute connect https://omni.example.com`.
+Opțiuni: `--port <p>` (când gazda nu are niciuna), `--name <ctx>` (nume context), `--scope read|write|admin`. Un URL complet este onorat așa cum este: `omniroute connect https://omni.example.com`.
 
-### Cu un token generat în prealabil
+Când serverul are activată autentificarea cu doi factori de bord (Setări → Security), doar parola este refuzată: CLI cere apoi codul din aplicația de autentificare (sau un cod de recuperare). Transmiteți-l în față cu `--totp <code>` pentru utilizare non-interactivă.
 
-Generați un token cu domeniu de aplicare în panoul de control (sau cu `omniroute tokens create`) și
-inserați-l — nu este necesară nicio parolă:
+### Cu un token pregenerat
+
+Generați un token cu scop în tabloul de bord (sau cu `omniroute tokens create`) și lipiți-l — fără a fi nevoie de parolă:
 
 ```bash
 omniroute connect 192.168.0.15 --key oma_live_xxxxxxxx
 ```
 
-CLI-ul îl validează prin `GET /api/cli/whoami` și îl salvează drept context activ.
+CLI îl validează prin `GET /api/cli/whoami` și îl salvează ca context activ.
 
 ---
 
@@ -426,14 +424,14 @@ omniroute contexts remove 192-168-0-15 --yes   # elimină contextul local (chiar
 
 ---
 
-## Endpointuri API (referință)
+## puncte finale API (referință)
 
-| Metodă | Rută                  | Autentificare        | Domeniu                          |
-| ------ | --------------------- | -------------------- | -------------------------------- |
-| POST   | `/api/cli/connect`    | parola de gestionare | — (public, protejat prin parolă) |
-| GET    | `/api/cli/whoami`     | token de acces       | read                             |
-| GET    | `/api/cli/tokens`     | token de acces       | admin                            |
-| POST   | `/api/cli/tokens`     | token de acces       | admin                            |
-| DELETE | `/api/cli/tokens/:id` | token de acces       | admin                            |
+| Metodă | Traseu                | Auth                          | Domeniul de aplicare           |
+| ------ | --------------------- | ----------------------------- | ------------------------------ |
+| POST   | `/api/cli/connect`    | parolă; 2FA dacă este activat | — (public, închis prin parolă) |
+| GET    | `/api/cli/whoami`     | jeton de acces                | citire                         |
+| GET    | `/api/cli/tokens`     | jeton de acces                | admin                          |
+| POST   | `/api/cli/tokens`     | jeton de acces                | admin                          |
+| DELETE | `/api/cli/tokens/:id` | jeton de acces                | admin                          |
 
-Consultați [openapi.yaml](../openapi.yaml) pentru schemele complete.
+Consultați [openapi.yaml](../openapi.yaml) pentru scheme complete.

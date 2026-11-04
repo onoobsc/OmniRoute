@@ -21,19 +21,19 @@
 
 <div align="center">
 
-## 💰 ~1,62Δισ. Διακριτικά / Μήνα Μέσω Δωρεάν Τιμών Τρίτων Παρόχων
+## 💰 ~ 1,62 δισεκατομμύρια διακριτικά / μήνας σε επίπεδο δωρεάν τρίτων
 
 </div>
 
-> **Φέρτε τους δικούς σας λογαριασμούς παρόχων.** Αυτή είναι μια εκτιμώμενη συνολική ποσότητα από ξεχωριστά επιλέξιμες δωρεάν τιμές τρίτων παρόχων, όχι επιχορήγηση διακριτικών από το OmniRoute. Εγγραφείτε, αποκτήστε διαπιστευτήρια όπου απαιτείται και συνδέστε τους παρόχους που μπορείτε να χρησιμοποιήσετε· κάθε πάροχος ελέγχει τα όριά του, τη διαθεσιμότητα και τους όρους του.
+> **Φέρτε τους δικούς σας λογαριασμούς παρόχου.** Αυτό είναι ένα εκτιμώμενο άθροισμα σε ξεχωριστά επιλέξιμα δωρεάν επίπεδα τρίτων, όχι μια συμβολική επιχορήγηση από OmniRoute. Εγγραφείτε, αποκτήστε διαπιστευτήρια όπου απαιτείται και συνδέστε τους παρόχους που μπορείτε να χρησιμοποιήσετε. κάθε πάροχος ελέγχει τα όρια, τη διαθεσιμότητα και τους όρους του.
 >
-> Το να συνδυάζετε δωρεάν τιμές με το χέρι είναι επίπονο — δεκάδες SDKs, δεκάδες όρια ταχύτητας και καμία ιδέα για το πόσα πραγματικά έχετε. Το OmniRoute καταλογογραφεί **485 εγγραφές δωρεάν τιμής σε 34 επαναλαμβανόμενα pool keys** και υπολογίζει το συνολικό αριθμό διακριτικών από τις **17 pools με δημοσιευμένο θετικό μηνιαίο προϋπολογισμό συν πέντε ανά μοντέλο Groq caps**, αφαιρώντας τα διπλά μέσω κοινών pools. Ποσοστώσεις που ανοίγουν μόνο μετά από επαλήθευση περιφερειακής ταυτότητας (σήμερα: ModelScope) εμφανίζονται ξεχωριστά, +~6M πίσω από επαλήθευση περιφερειακής ταυτότητας, και δεν προστίθενται ποτέ στο συνολικό αριθμό. Το αποτέλεσμα παραμένει ορατό στον πίνακα ελέγχου (`/dashboard/free-tiers`).
+> Η στοίβαξη ελεύθερων επιπέδων με SDKs χέρι είναι —. καταλόγους OmniRoute** 484 καταχωρήσεις ελεύθερης βαθμίδας σε 34 επαναλαμβανόμενα κλειδιά πισίνας** και υπολογίζει την επικεφαλίδα του διακριτικού από το** 17 ομάδες με δημοσιευμένο θετικό μηνιαίο προϋπολογισμό συν πέντε ανώτατα όρια Groq ανά μοντέλο** , καταργήθηκε από την κοινόχρηστη πισίνα. Οι ποσοστώσεις που ανοίγουν μόνο μετά από έλεγχο περιφερειακής ταυτότητας (σήμερα: ModelScope) εμφανίζονται χωριστά, +~ 6 εκατομμύρια πίσω από την επαλήθευση περιφερειακής ταυτότητας και δεν συνοψίζονται ποτέ στην επικεφαλίδα. Το αποτέλεσμα παραμένει ορατό στο ταμπλό (`/dashboard/free-tiers`).
 
-<img src="./docs/diagrams/free-tier-budget.svg" width="100%" alt="Κάρτα προϋπολογισμού δωρεάν διακριτικών OmniRoute: ~1,62Δισ. δωρεάν διακριτικά το μήνα σταθερά, έως ~2,22Δισ. τον πρώτο μήνα με credits εγγραφής, από 34 τεκμηριωμένα επαναλαμβανόμενα pool keys που καλύπτουν 485 καταγεγραμμένες εγγραφές δωρεάν τιμής πίσω από ένα endpoint. Ειλικρινής μαθηματική αφαίρεση διπλών pools — κάθε κοινό pool μετριέται μία φορά, συμπεριλαμβανομένων 17 επαναλαμβανόμενων pools με δημοσιευμένο θετικό μηνιαίο προϋπολογισμό διακριτικών συν πέντε ανά μοντέλο Groq caps· 12 πάροχοι σημειώνονται ως αποφυγή στον κατάλογο κινδύνου όρων ώστε να αποφασίσετε εσείς. Η μπάρα προϋπολογισμού περιλαμβάνει Mistral 1B, Nara 210M, LLM7 150M, xKiro 150M, Groq 30M (πέντε ανά μοντέλο caps) και μικρότερα pools, συν credits εγγραφής πρώτου μήνα και μόνιμα δωρεάν παρόχους χωρίς όριο διακριτικών που εμφανίζονται ξεχωριστά ώστε να μην φουσκώνουν ποτέ το συνολικό αριθμό. Ζωντανά χρησιμοποιημένα/υπόλοιπο στο /dashboard/free-tiers."/>
+<img src="./docs/diagrams/free-tier-budget.svg" width="100%" alt="OmniRoute free-tier budget card: ~1.62B free tokens per month steady, up to ~2.22B in the first month with signup credits, from 34 documented recurring pool keys covering 484 cataloged free-tier entries behind one endpoint. Honest pool-deduped math — each shared pool counted once, including 17 recurring pools with a published positive monthly token budget plus five per-model Groq caps; 12 providers are marked avoid in the terms-risk catalog so you decide. Budget bar includes Mistral 1B, Nara 210M, LLM7 150M, xKiro 150M, Groq 30M (five per-model caps) and smaller pools, plus first-month signup credits and permanently-free no-token-cap providers surfaced separately so they never inflate the headline. Live used/remaining on /dashboard/free-tiers."/>
 
-> Κινούμενη περίληψη της ζωντανής σελίδας `/dashboard/free-tiers`. Πλήρης μεθοδολογία (αφαίρεση διπλών pools, επίπεδα credits, όροι παρόχων): **[docs/reference/FREE_TIERS.md](docs/reference/FREE_TIERS.md)**.
+> Κινούμενη περίληψη της ζωντανής σελίδας `/dashboard/free-tiers`. Πλήρης μεθοδολογία (pool dedupe, πιστωτικά επίπεδα, όροι παρόχου):** [docs/reference/FREE_TIERS.md](docs/reference/FREE_TIERS.md)** .
 >
-> <sub>Αυτά τα στοιχεία επανελέγχονται κάθε δύο εβδομάδες με τον ζωντανό κατάλογο και **μεταβάλλονται και προς τις δύο κατευθύνσεις** — ένας πάροχος σταματά μια δωρεάν τιμή και ο αριθμός πέφτει· προστίθεται νέος και ανεβαίνει. Δημοσιεύουμε ό,τι υπολογίζει πραγματικά ο κατάλογος, ποτέ ένα στρογγυλεμένο καλύτερο σενάριο.</sub>
+> <sub> Αυτά τα στοιχεία ελέγχονται εκ νέου κάθε δύο εβδομάδες σε σχέση με τον ζωντανό κατάλογο και** κινηθείτε με δύο τρόπους** — ένας πάροχος τερματίζει ένα δωρεάν επίπεδο και ο αριθμός πέφτει. προσγειώνεται καινούργιο και σκαρφαλώνει. Δημοσιεύουμε αυτό που πραγματικά υπολογίζει ο κατάλογος, ποτέ μια στρογγυλεμένη καλύτερη περίπτωση.</sub>
 
 <br/>
 
@@ -41,29 +41,23 @@
 
 <h3>
 
-⭐ Βάλτε αστέρι στο αποθετήριο αν το OMNIROUTE σας βοήθησε να εξοικονομήσετε χρήματα και να κάνετε τη δουλειά σας ευκολότερη.
+⭐ Star the repo if OMNIROUTE σάς βοήθησε να εξοικονομήσετε χρήματα και να κάνετε τη δουλειά σας πιο εύκολη.
 
 </h3>
 
-[![Stars](https://img.shields.io/github/stars/diegosouzapw/OmniRoute?style=social)](https://github.com/diegosouzapw/OmniRoute)
+[![Αστέρια](https://img.shields.io/github/stars/diegosouzapw/OmniRoute?style=social) ](https://github.com/diegosouzapw/OmniRoute)
 <a href="https://trendshift.io/repositories/23589" target="_blank"><img src="https://trendshift.io/api/badge/repositories/23589" alt="diegosouzapw%2FOmniRoute | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
-[![Star History Rank](https://api.star-history.com/badge?repo=diegosouzapw/OmniRoute&theme=dark)](https://www.star-history.com/diegosouzapw/omniroute)
-[![olud.ai](https://olud.ai/badge.php?tool=diegosouzapw-omniroute)](https://olud.ai/project/diegosouzapw-omniroute.html)
+[![Star History Rank](https://api.star-history.com/badge?repo=diegosouzapw/OmniRoute&theme=dark) ](https://www.star-history.com/diegosouzapw/omniroute) [![olud.ai](https://olud.ai/badge.php?tool=diegosouzapw-omniroute) ](https://olud.ai/project/diegosouzapw-omniroute.html)
 
-### 💬 Ελάτε στην κοινότητα
+### 💬 Γίνετε μέλος της κοινότητας
 
-**👋 Ακολουθήστε τον συντηρητή — μάθετε πρώτοι για νέους παρόχους, εκδόσεις & συμβουλές:**
+**👋 Ακολουθήστε τον συντηρητή — λάβετε πρώτα νέους παρόχους, εκδόσεις και συμβουλές:**
 
-[![Follow Diego on LinkedIn](https://img.shields.io/badge/Follow_Diego_on-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/diegosouzapw/)
-[![Follow @diegosouzapw on GitHub](https://img.shields.io/github/followers/diegosouzapw?style=for-the-badge&logo=github&logoColor=white&label=Follow%20on%20GitHub&color=181717)](https://github.com/diegosouzapw)
+[![Ακολουθήστε τον Ντιέγκο στο LinkedIn](https://img.shields.io/badge/Follow_Diego_on-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white) ](https://www.linkedin.com/in/diegosouzapw/) [![Ακολουθήστε τον @diegosouzapw στο GitHub](https://img.shields.io/github/followers/diegosouzapw?style=for-the-badge&logo=github&logoColor=white&label=Follow%20on%20GitHub&color=181717) ](https://github.com/diegosouzapw)
 
-[![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/U47eFqAXCn)
-[![Telegram](https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/omnirouteOficial)
-[![WhatsApp Global](https://img.shields.io/badge/WhatsApp_Global-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/FvuCbrpZmQ6I85n2vW5QIC?s=cl&p=a&mlu=4)
-[![WhatsApp Brasil](https://img.shields.io/badge/WhatsApp_Brasil-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/KWgatljAjmbELQory59Oti?s=cl&p=a&mlu=4)
-[![Website](https://img.shields.io/badge/Website-omniroute.online-blue?logo=google-chrome&logoColor=white)](https://omniroute.online)
+[![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white) ](https://discord.gg/U47eFqAXCn) [![Telegram](https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white) ](https://t.me/omnirouteOficial) [![WhatsApp Global](https://img.shields.io/badge/WhatsApp_Global-25D366?style=for-the-badge&logo=whatsapp&logoColor=white) ](https://chat.whatsapp.com/FvuCbrpZmQ6I85n2vW5QIC?s=cl&p=a&mlu=4) [![WhatsApp Brasil](https://img.shields.io/badge/WhatsApp_Brasil-25D366?style=for-the-badge&logo=whatsapp&logoColor=white) ](https://chat.whatsapp.com/KWgatljAjmbELQory59Oti?s=cl&p=a&mlu=4) [![Ιστότοπος](https://img.shields.io/badge/Website-omniroute.online-blue?logo=google-chrome&logoColor=white) ](https://omniroute.online)
 
-**Ερωτήσεις, συμβουλές παρόχων, χάρτης πορείας & υποστήριξη → [Discord](https://discord.gg/U47eFqAXCn) · [Telegram](https://t.me/omnirouteOficial) · WhatsApp [🌍 Global](https://chat.whatsapp.com/FvuCbrpZmQ6I85n2vW5QIC?s=cl&p=a&mlu=4) / [🇧🇷 Brasil](https://chat.whatsapp.com/KWgatljAjmbELQory59Oti?s=cl&p=a&mlu=4) / [Portal](https://portal.sthub.com.br/communities/groups/st-hub/channels/Omniroute-World-8kRjmK)**
+**Ερωτήσεις, συμβουλές παρόχων, οδικός χάρτης και υποστήριξη → [Discord](https://discord.gg/U47eFqAXCn) · [Telegram](https://t.me/omnirouteOficial) · WhatsApp [🌍 Global](https://chat.whatsapp.com/FvuCbrpZmQ6I85n2vW5QIC?s=cl&p=a&mlu=4) / [🇧🇷 Brasil](https://chat.whatsapp.com/KWgatljAjmbELQory59Oti?s=cl&p=a&mlu=4) / [Πύλη](https://portal.sthub.com.br/communities/groups/st-hub/channels/Omniroute-World-8kRjmK)**
 
 <br/>
 
@@ -1295,135 +1289,135 @@ OMNIROUTE_SKIP_POSTINSTALL=1 npm install -g omniroute   # CI=1 επίσης τη
 <br/>
 <div align="center">
 
-## 🛠️ Τεχνολογίες
+## 🛠️ Tech Stack
 
 </div>
 
 <table>
-  <tr><th align="left">Επίπεδο</th><th align="left">Τεχνολογία</th></tr>
-  <tr><td nowrap><b>Περιβάλλον εκτέλεσης</b></td><td>Node.js 22.x / 24.x LTS — <code>&gt;=22.22.2 &lt;23 || &gt;=24.0.0 &lt;27</code></td></tr>
-  <tr><td nowrap><b>Γλώσσα</b></td><td>TypeScript 6.0 — <b>100% TypeScript</b> σε <code>src/</code> και <code>open-sse/</code> (μηδενική χρήση <code>any</code> στον πυρήνα από την v2.0)</td></tr>
-  <tr><td nowrap><b>Framework</b></td><td>Next.js 16 + React 19 + Tailwind CSS 4</td></tr>
-  <tr><td nowrap><b>Βάση δεδομένων</b></td><td>better-sqlite3 (SQLite, καταγραφή WAL) + LowDB (κληρονομικό JSON) — 147 αρθρώματα τομέα, 222 μεταναστεύσεις</td></tr>
-  <tr><td nowrap><b>Μνήμη</b></td><td>Πλήρες κείμενο SQLite FTS5 + διανυσματικές ενσωματώσεις με κβαντισμό int8, τυποποιημένη εξασθένηση</td></tr>
-  <tr><td nowrap><b>Σχήματα</b></td><td>Zod 4 — επικύρωση εισόδου/εξόδου εργαλείων MCP + συμβάσεις API</td></tr>
+  <tr><th align="left">Στρώμα</th><th align="left">Τεχνολογία</th></tr>
+  <tr><td nowrap><b>Χρόνος εκτέλεσης</b></td><td>Node.js 22.x / 24.x LTS — <code>&gt;=22.22.2 &lt;23 || &gt;=24.0.0 &lt;27</code></td></tr>
+  <tr><td nowrap><b>Γλώσσα</b></td><td>TypeScript 6.0 — <b>100% TypeScript</b> σε <code>src/</code> και <code>open-sse/</code> (μηδέν <code>any</code> στον πυρήνα από την έκδοση 2.0)</td></tr>
+  <tr><td nowrap><b>Σκελετός</b></td><td>Next.js 16 + React 19 + Tailwind CSS 4</td></tr>
+  <tr><td nowrap><b>Βάση δεδομένων</b></td><td>better-sqlite3 (SQLite, WAL journaling) + LowDB (JSON legacy) — 147 λειτουργικές μονάδες τομέα, 222 μετεγκαταστάσεις</td></tr>
+  <tr><td nowrap><b>Μνήμη</b></td><td>SQLite FTS5 πλήρες κείμενο + int8-quantized διανυσματικές ενσωματώσεις, τυπωμένη αποσύνθεση</td></tr>
+  <tr><td nowrap><b>Σχήματα</b></td><td>Zod 4 — MCP εργαλείο I/O επικύρωση + API συμβόλαια</td></tr>
   <tr><td nowrap><b>Πρωτόκολλα</b></td><td>MCP (stdio / HTTP / SSE) + A2A v0.3 (JSON-RPC 2.0 + SSE)</td></tr>
-  <tr><td nowrap><b>Ροή δεδομένων</b></td><td>Αποσταλμένα συμβάντα από τον διακομιστή (SSE) + γέφυρα WebSocket (<code>/v1/ws</code>)</td></tr>
-  <tr><td nowrap><b>Συμπίεση</b></td><td>Αγωγός 12 μηχανών — RTK, Caveman, LLMLingua-2 (MobileBERT ONNX), GCF, OmniGlyph</td></tr>
-  <tr><td nowrap><b>Έλεγχος ταυτότητας &amp; ασφάλεια</b></td><td>OAuth 2.0 (PKCE) + JWT + κλειδιά API + έλεγχος ταυτότητας με περιορισμένη εμβέλεια MCP · AES-256-GCM σε κατάσταση αδράνειας · DOMPurify</td></tr>
-  <tr><td nowrap><b>Απόκρυψη</b></td><td>wreq-js — πλαστοπροσωπία αποτυπώματος TLS JA3 / JA4, διακομιστής μεσολάβησης 3 επιπέδων</td></tr>
-  <tr><td nowrap><b>Ανθεκτικότητα</b></td><td>Διακόπτης κυκλώματος, εκθετική οπισθοχώρηση, αποτροπή ταυτόχρονων αιτημάτων, αυτοθεραπεία auto-combo</td></tr>
-  <tr><td nowrap><b>Καταγραφή</b></td><td>pino — δομημένα αρχεία καταγραφής JSON με πλαίσιο αιτήματος</td></tr>
-  <tr><td nowrap><b>Έλεγχος</b></td><td>Node.js test runner + Vitest — <b>πάνω από 60.000 στατικές δηλώσεις ελέγχων</b> σε περισσότερα από 8.400 παρακολουθούμενα αρχεία ελέγχων (μονάδας, ενοποίησης, E2E, ασφάλειας, οικοσυστήματος)</td></tr>
-  <tr><td nowrap><b>Πλατφόρμες</b></td><td>Υπολογιστής (Electron) · Android (Termux) · PWA (οποιοδήποτε πρόγραμμα περιήγησης)</td></tr>
-  <tr><td nowrap><b>CI/CD</b></td><td>GitHub Actions — αυτόματη δημοσίευση στο npm + Docker Hub κατά την κυκλοφορία</td></tr>
-  <tr><td nowrap><b>Σύνδεσμοι</b></td><td><a href="https://omniroute.online">Ιστότοπος</a> · <a href="https://www.npmjs.com/package/omniroute">npm</a> · <a href="https://hub.docker.com/r/diegosouzapw/omniroute">Docker Hub</a></td></tr>
+  <tr><td nowrap><b>Ροή</b></td><td>Συμβάντα απεσταλμένα από διακομιστή (SSE) + WebSocket bridge (<code>/v1/ws</code>)</td></tr>
+  <tr><td nowrap><b>Συμπίεση</b></td><td>Pipeline 12 κινητήρων — RTK, Caveman, LLMLingua-2 (MobileBERT ONNX), GCF, OmniGlyph</td></tr>
+  <tr><td nowrap><b>Auth &amp; security</b></td><td>OAuth 2.0 (PKCE) + JWT + API Πλήκτρα + MCP scoped auth · AES-256-GCM σε ηρεμία · DOMPurify</td></tr>
+  <tr><td nowrap><b>Λαθραία</b></td><td>wreq-js — JA3 / JA4 TLS πλαστοπροσωπία δακτυλικών αποτυπωμάτων, διακομιστής μεσολάβησης 3 επιπέδων</td></tr>
+  <tr><td nowrap><b>Ελαστικότητα</b></td><td>Διακόπτης κυκλώματος, εκθετική οπισθοδρόμηση, αγέλη κατά της βροντής, αυτο-θεραπεία αυτόματης συνδυασμού</td></tr>
+  <tr><td nowrap><b>Ξύλευση</b></td><td>pino — δομημένα αρχεία καταγραφής JSON με πλαίσιο αιτήματος</td></tr>
+  <tr><td nowrap><b>Δοκιμές</b></td><td>Node.js δοκιμαστικός δρομέας + Vitest — <b>60.000 δηλώσεις στατικής δοκιμής +</b> σε 8.400 αρχεία δοκιμής παρακολούθησης + (μονάδα, ενοποίηση, E2E, ασφάλεια, οικοσύστημα)</td></tr>
+  <tr><td nowrap><b>Πλατφόρμες</b></td><td>Επιτραπέζιος υπολογιστής (Electron) · Android (Termux) · PWA (οποιοδήποτε πρόγραμμα περιήγησης)</td></tr>
+  <tr><td nowrap><b>CI/CD</b></td><td>GitHub Actions — auto npm δημοσιεύει + Docker Hub κατά την κυκλοφορία</td></tr>
+  <tr><td nowrap><b>Εδαφος διά παιγνίδι γκολφ</b></td><td><a href="https://omniroute.online">Δικτυακός τόπος</a> · <a href="https://www.npmjs.com/package/omniroute">npm</a> · <a href="https://hub.docker.com/r/diegosouzapw/omniroute">Docker Hub</a></td></tr>
 </table>
 
 <div align="center">
 
 <br/>
 
-## 📖 Τεκμηρίωση
+## Τεκμηρίωση 📖
 
 </div>
 
 ### 📘 Ξεκινώντας
 
 <table>
-  <tr><th align="left">Έγγραφο</th><th align="left">Περιγραφή</th></tr>
-  <tr><td nowrap><b><a href="docs/guides/USER_GUIDE.md">Οδηγός χρήστη</a></b></td><td>Πάροχοι, συνδυασμοί, ενοποίηση CLI, ανάπτυξη</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/SETUP_GUIDE.md">Οδηγός εγκατάστασης</a></b></td><td>Πλήρεις μέθοδοι εγκατάστασης, ρυθμίσεις εργαλείων CLI, ρύθμιση πρωτοκόλλων, προσαρμογή χρονικού ορίου</td></tr>
+  <tr><th align="left">Εγγραφο</th><th align="left">Περιγραφή</th></tr>
+  <tr><td nowrap><b><a href="docs/guides/USER_GUIDE.md">Οδηγός χρήσης</a></b></td><td>Πάροχοι, συνδυασμοί, ενσωμάτωση CLI, ανάπτυξη</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/SETUP_GUIDE.md">Οδηγός εγκατάστασης</a></b></td><td>Μέθοδοι πλήρους εγκατάστασης, ρυθμίσεις παραμέτρων εργαλείου CLI, ρύθμιση πρωτοκόλλου, συντονισμός χρονικού ορίου</td></tr>
   <tr><td nowrap><b><a href="docs/reference/CLI-TOOLS.md">Οδηγός εργαλείων CLI</a></b></td><td>Ρύθμιση ανά εργαλείο για Claude Code, Codex, Cursor, Cline, OpenClaw, Kilo, Copilot</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/REMOTE-MODE.md">Απομακρυσμένη λειτουργία</a></b></td><td>Χειρισμός ενός απομακρυσμένου OmniRoute (VPS) από το CLI του φορητού σας υπολογιστή μέσω διακριτών διακριτικών πρόσβασης</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/CLAUDE-CODE-CONFIGURATION.md">Ρύθμιση Claude Code</a></b></td><td>Σύνδεση του Claude Code στο OmniRoute (τοπικά/απομακρυσμένα) με <code>launch</code> + προφίλ ανά μοντέλο</td></tr>
-  <tr><td nowrap><b><a href="README.md#-quick-start">Γρήγορη εκκίνηση</a></b></td><td>Εγκατάσταση → σύνδεση → ρύθμιση σε 3 βήματα</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/REMOTE-MODE.md">Απομακρυσμένη λειτουργία</a></b></td><td>Οδηγήστε ένα απομακρυσμένο OmniRoute (VPS) από το φορητό υπολογιστή CLI σας μέσω διακριτικών πρόσβασης εύρους</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/CLAUDE-CODE-CONFIGURATION.md">Claude Code Config</a></b></td><td>Τοποθετήστε τον κωδικό Claude στο OmniRoute (local/remote) με προφίλ <code>launch</code> + ανά μοντέλο</td></tr>
+  <tr><td nowrap><b><a href="README.md#-quick-start">Γρήγορη εκκίνηση</a></b></td><td>Εγκατάσταση 3 βημάτων → connect configure →</td></tr>
 </table>
 
-### 🔧 Λειτουργία & ανάπτυξη
+### 🔧 Operations & Deployment
 
 <table>
-  <tr><th align="left">Έγγραφο</th><th align="left">Περιγραφή</th></tr>
-  <tr><td nowrap><b><a href="docs/guides/DOCKER_GUIDE.md">Οδηγός Docker</a></b></td><td>Εκτέλεση Docker, προφίλ Compose, Caddy HTTPS, διοχετεύσεις, ετικέτες εικόνων</td></tr>
-  <tr><td nowrap><b><a href="contrib/podman/README.md">Οδηγός Podman</a></b></td><td>Ενοποίηση Quadlet με systemd, podman-compose, SELinux</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/VM_DEPLOYMENT_GUIDE.md">Ανάπτυξη σε VM</a></b></td><td>Πλήρης οδηγός: ρύθμιση VM + nginx + Cloudflare</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/FLY_IO_DEPLOYMENT_GUIDE.md">Ανάπτυξη στο Fly.io</a></b></td><td>Ανάπτυξη στο Fly.io με μόνιμο χώρο αποθήκευσης</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/TERMUX_GUIDE.md">Οδηγός Termux</a></b></td><td>Εκτέλεση του OmniRoute σε Android μέσω Termux</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/PWA_GUIDE.md">Οδηγός PWA</a></b></td><td>Εγκατάσταση, προσωρινή αποθήκευση και αρχιτεκτονική Progressive Web App</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/UNINSTALL.md">Οδηγός απεγκατάστασης</a></b></td><td>Πλήρης κατάργηση για όλες τις μεθόδους εγκατάστασης</td></tr>
-  <tr><td nowrap><b><a href="docs/reference/ENVIRONMENT.md">Ρύθμιση περιβάλλοντος</a></b></td><td>Πλήρεις μεταβλητές και αναφορές του <code>.env</code></td></tr>
+  <tr><th align="left">Εγγραφο</th><th align="left">Περιγραφή</th></tr>
+  <tr><td nowrap><b><a href="docs/guides/DOCKER_GUIDE.md">Οδηγός Docker</a></b></td><td>Docker run, Σύνθεση προφίλ, Caddy HTTPS, τούνελ, ετικέτες εικόνας</td></tr>
+  <tr><td nowrap><b><a href="contrib/podman/README.md">Οδηγός Podman</a></b></td><td>Quadlet systemd integration, podman-compose, SELinux</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/VM_DEPLOYMENT_GUIDE.md">Ανάπτυξη VM</a></b></td><td>Πλήρης οδηγός: εγκατάσταση VM + nginx + Cloudflare</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/FLY_IO_DEPLOYMENT_GUIDE.md">Ανάπτυξη Fly.io</a></b></td><td>Αναπτύξτε στο Fly.io με μόνιμο χώρο αποθήκευσης</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/TERMUX_GUIDE.md">Οδηγός Termux</a></b></td><td>Εκτελέστε OmniRoute στο Android μέσω Termux</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/PWA_GUIDE.md">Οδηγός PWA</a></b></td><td>Προοδευτική εγκατάσταση εφαρμογής Ιστού, προσωρινή αποθήκευση, αρχιτεκτονική</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/UNINSTALL.md">Οδηγός απεγκατάστασης</a></b></td><td>Καθαρίστε την αφαίρεση για όλες τις μεθόδους εγκατάστασης</td></tr>
+  <tr><td nowrap><b><a href="docs/reference/ENVIRONMENT.md">Διαμόρφωση περιβάλλοντος</a></b></td><td>Συμπληρώστε τις μεταβλητές και τις αναφορές <code>.env</code></td></tr>
 </table>
 
-### 🧠 Δυνατότητες & αρχιτεκτονική
+### 🧠 Χαρακτηριστικά & Αρχιτεκτονική
 
 <table>
-  <tr><th align="left">Έγγραφο</th><th align="left">Περιγραφή</th></tr>
-  <tr><td nowrap><b><a href="docs/architecture/ARCHITECTURE.md">Αρχιτεκτονική</a></b></td><td>Αρχιτεκτονική συστήματος, ροή δεδομένων και εσωτερική λειτουργία</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_GUIDE.md">Οδηγός συμπίεσης</a></b></td><td>Αγωγός 7 επιλογών: απενεργοποιημένη / ελαφριά / τυπική / επιθετική / ultra / RTK / στοιβαγμένη</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/RTK_COMPRESSION.md">Συμπίεση RTK</a></b></td><td>Συμπίεση εξόδου εντολών, φίλτρα, εμπιστοσύνη, επαλήθευση, ανάκτηση ακατέργαστης εξόδου</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_ENGINES.md">Μηχανές συμπίεσης</a></b></td><td>Caveman, RTK, στοιβαγμένοι αγωγοί, επιφάνειες dashboard/API/MCP</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_RULES_FORMAT.md">Μορφή κανόνων συμπίεσης</a></b></td><td>Σχήματα JSON για πακέτα κανόνων των φίλτρων Caveman και RTK</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_LANGUAGE_PACKS.md">Πακέτα γλωσσών συμπίεσης</a></b></td><td>Ανίχνευση γλώσσας και συγγραφή πακέτων κανόνων Caveman</td></tr>
-  <tr><td nowrap><b><a href="docs/architecture/RESILIENCE_GUIDE.md">Οδηγός ανθεκτικότητας</a></b></td><td>Ασφαλειοδιακόπτες, περίοδοι ψύξης, ουρά, αποτροπή ταυτόχρονων αιτημάτων, πλαστογράφηση TLS</td></tr>
-  <tr><td nowrap><b><a href="docs/routing/AUTO-COMBO.md">Μηχανή αυτόματων συνδυασμών</a></b></td><td>Βαθμολόγηση 16 παραγόντων, πακέτα λειτουργιών, αυτοΐαση</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/PROXY_GUIDE.md">Οδηγός διακομιστή μεσολάβησης</a></b></td><td>Σύστημα διακομιστών μεσολάβησης 3 επιπέδων, marketplace 1proxy, CRUD μητρώου</td></tr>
-  <tr><td nowrap><b><a href="docs/reference/FREE_TIERS.md">Δωρεάν επίπεδα</a></b></td><td>Ενοποιημένος κατάλογος: 34 τεκμηριωμένες επαναλαμβανόμενες δεξαμενές / 485 καταγεγραμμένες καταχωρίσεις δωρεάν επιπέδου</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/FEATURES.md">Συλλογή δυνατοτήτων</a></b></td><td>Οπτική περιήγηση στον πίνακα ελέγχου με στιγμιότυπα οθόνης</td></tr>
-  <tr><td nowrap><b><a href="docs/architecture/CODEBASE_DOCUMENTATION.md">Τεκμηρίωση βάσης κώδικα</a></b></td><td>Περιήγηση στη βάση κώδικα φιλική για αρχάριους</td></tr>
+  <tr><th align="left">Εγγραφο</th><th align="left">Περιγραφή</th></tr>
+  <tr><td nowrap><b><a href="docs/architecture/ARCHITECTURE.md">Αρχιτεκτονική</a></b></td><td>Αρχιτεκτονική συστήματος, ροή δεδομένων και εσωτερικά στοιχεία</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_GUIDE.md">Οδηγός συμπίεσης</a></b></td><td>Διοχέτευση 7 επιλογών: off / lite / standard / επιθετικό / ultra / RTK / στοιβαγμένο</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/RTK_COMPRESSION.md">Συμπίεση RTK</a></b></td><td>Συμπίεση εντολών-εξόδου, φίλτρα, εμπιστοσύνη, επαλήθευση, ανάκτηση πρωτογενούς εξόδου</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_ENGINES.md">Μηχανές Συμπίεσης</a></b></td><td>Caveman, RTK, στοιβαγμένοι αγωγοί, επιφάνειες dashboard/API/MCP</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_RULES_FORMAT.md">Μορφή κανόνων συμπίεσης</a></b></td><td>Σχήματα πακέτου κανόνων JSON για φίλτρα Caveman και RTK</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_LANGUAGE_PACKS.md">Πακέτα γλωσσών συμπίεσης</a></b></td><td>Ανίχνευση γλώσσας και σύνταξη πακέτου κανόνων Caveman</td></tr>
+  <tr><td nowrap><b><a href="docs/architecture/RESILIENCE_GUIDE.md">Οδηγός ανθεκτικότητας</a></b></td><td>Διακόπτες κυκλώματος, χαλάρωση, ουρά, αγέλη κατά των βροντών, πλαστογράφηση TLS</td></tr>
+  <tr><td nowrap><b><a href="docs/routing/AUTO-COMBO.md">Κινητήρας Auto-Combo</a></b></td><td>Βαθμολογία 16 παραγόντων, πακέτα λειτουργίας, αυτοίαση</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/PROXY_GUIDE.md">Οδηγός διακομιστή μεσολάβησης</a></b></td><td>Σύστημα μεσολάβησης 3 επιπέδων, αγορά 1 διακομιστή μεσολάβησης, μητρώο CRUD</td></tr>
+  <tr><td nowrap><b><a href="docs/reference/FREE_TIERS.md">Δωρεάν Επίπεδα</a></b></td><td>Ενοποιημένος κατάλογος: 34 τεκμηριωμένες επαναλαμβανόμενες ομάδες / 484 καταχωρημένες καταχωρήσεις ελεύθερης βαθμίδας</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/FEATURES.md">Γκαλερί χαρακτηριστικών</a></b></td><td>Οπτική περιήγηση στον πίνακα ελέγχου με στιγμιότυπα οθόνης</td></tr>
+  <tr><td nowrap><b><a href="docs/architecture/CODEBASE_DOCUMENTATION.md">Τεκμηρίωση βάσης κώδικα</a></b></td><td>Περιήγηση στη βάση κώδικα για αρχάριους</td></tr>
 </table>
 
-### 🤖 Πρωτόκολλα & API
+### 🤖 Protocols & APIs
 
 <table>
-  <tr><th align="left">Έγγραφο</th><th align="left">Περιγραφή</th></tr>
-  <tr><td nowrap><b><a href="docs/reference/API_REFERENCE.md">Αναφορά API</a></b></td><td>Όλα τα endpoint με παραδείγματα</td></tr>
-  <tr><td nowrap><b><a href="docs/openapi.yaml">Προδιαγραφή OpenAPI</a></b></td><td>Προδιαγραφή OpenAPI 3.0</td></tr>
-  <tr><td nowrap><b><a href="open-sse/mcp-server/README.md">Διακομιστής MCP</a></b></td><td>110 εργαλεία MCP, ρυθμίσεις IDE, πελάτες Python/TS/Go</td></tr>
-  <tr><td nowrap><b><a href="docs/frameworks/MCP-SERVER.md">Οδηγός διακομιστή MCP</a></b></td><td>Εγκατάσταση MCP, μεταφορές και αναφορά εργαλείων</td></tr>
-  <tr><td nowrap><b><a href="src/lib/a2a/README.md">Διακομιστής A2A</a></b></td><td>Πρωτόκολλο JSON-RPC 2.0, δεξιότητες, ροή δεδομένων, διαχείριση εργασιών</td></tr>
-  <tr><td nowrap><b><a href="docs/frameworks/A2A-SERVER.md">Οδηγός διακομιστή A2A</a></b></td><td>Κάρτα πράκτορα A2A, εργασίες, δεξιότητες και ροή δεδομένων</td></tr>
+  <tr><th align="left">Εγγραφο</th><th align="left">Περιγραφή</th></tr>
+  <tr><td nowrap><b><a href="docs/reference/API_REFERENCE.md">API Αναφορά</a></b></td><td>Όλα τα τελικά σημεία με παραδείγματα</td></tr>
+  <tr><td nowrap><b><a href="docs/openapi.yaml">OpenAPI Spec</a></b></td><td>Προδιαγραφές OpenAPI 3.0</td></tr>
+  <tr><td nowrap><b><a href="open-sse/mcp-server/README.md">Διακομιστής MCP</a></b></td><td>110 εργαλεία MCP, διαμορφώσεις IDE, πελάτες Python/TS/Go</td></tr>
+  <tr><td nowrap><b><a href="docs/frameworks/MCP-SERVER.md">Οδηγός διακομιστή MCP</a></b></td><td>MCP εγκατάσταση, μεταφορές και αναφορά εργαλείων</td></tr>
+  <tr><td nowrap><b><a href="src/lib/a2a/README.md">Διακομιστής A2A</a></b></td><td>Πρωτόκολλο JSON-RPC 2.0, δεξιότητες, ροή, mgmt εργασίας</td></tr>
+  <tr><td nowrap><b><a href="docs/frameworks/A2A-SERVER.md">Οδηγός διακομιστή A2A</a></b></td><td>Κάρτα πράκτορα A2A, εργασίες, δεξιότητες και ροή</td></tr>
 </table>
 
-### 📋 Έργο & ποιότητα
+### 📋 Project & Quality
 
 <table>
-  <tr><th align="left">Έγγραφο</th><th align="left">Περιγραφή</th></tr>
-  <tr><td nowrap><b><a href="CONTRIBUTING.md">Συνεισφορά</a></b></td><td>Ρύθμιση περιβάλλοντος ανάπτυξης και οδηγίες</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/BRANCHING_MODEL.md">Μοντέλο διακλάδωσης και κυκλοφορίας</a></b></td><td>Πού στοχεύουν τα PR (<code>release/*</code>), τι σημαίνουν τα <code>main</code> και τα tags</td></tr>
-  <tr><td nowrap><b><a href="CHANGELOG.md">Αρχείο αλλαγών</a></b></td><td>Πλήρες ιστορικό κυκλοφοριών ανά έκδοση</td></tr>
-  <tr><td nowrap><b><a href="SECURITY.md">Πολιτική ασφάλειας</a></b></td><td>Αναφορά ευπαθειών και πρακτικές ασφάλειας</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/I18N.md">Οδηγός i18n</a></b></td><td>Υποστήριξη 67 γλωσσών, ροή εργασίας μετάφρασης, RTL</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/RELEASE_CHECKLIST.md">Λίστα ελέγχου κυκλοφορίας</a></b></td><td>Βήματα επικύρωσης πριν από την κυκλοφορία</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/COVERAGE_PLAN.md">Σχέδιο κάλυψης</a></b></td><td>Στρατηγική κάλυψης δοκιμών για περισσότερες από 60.000 δηλώσεις στατικών δοκιμών σε περισσότερα από 8.400 καταγεγραμμένα αρχεία δοκιμών</td></tr>
+  <tr><th align="left">Εγγραφο</th><th align="left">Περιγραφή</th></tr>
+  <tr><td nowrap><b><a href="CONTRIBUTING.md">Συμβάλλοντας</a></b></td><td>Ρύθμιση και οδηγίες ανάπτυξης</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/BRANCHING_MODEL.md">Μοντέλο Διακλάδωσης & Έκδοσης</a></b></td><td>Πού στόχος PRs (<code>release/*</code>), τι σημαίνουν <code>main</code> και ετικέτες</td></tr>
+  <tr><td nowrap><b><a href="CHANGELOG.md">Καταγραφή αλλαγών</a></b></td><td>Πλήρες ιστορικό κυκλοφορίας ανά έκδοση</td></tr>
+  <tr><td nowrap><b><a href="SECURITY.md">Πολιτική Ασφαλείας</a></b></td><td>Αναφορά ευπάθειας και πρακτικές ασφάλειας</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/I18N.md">Οδηγός i18n</a></b></td><td>Υποστήριξη 67 γλωσσών, ροή εργασιών μετάφρασης, RTL</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/RELEASE_CHECKLIST.md">Λίστα ελέγχου έκδοσης</a></b></td><td>Βήματα επικύρωσης πριν από την κυκλοφορία</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/COVERAGE_PLAN.md">Σχέδιο Κάλυψης</a></b></td><td>Δοκιμαστική στρατηγική κάλυψης για 60.000 δηλώσεις στατικής δοκιμής + σε 8.400 αρχεία δοκιμών που παρακολουθούνται +</td></tr>
 </table>
 
 <br/>
 
 <div align="center">
 
-# ⭐ Κορυφαίοι συνεισφέροντες
+# ⭐ Κορυφαίοι συντελεστές
 
-> Το OmniRoute διαμορφώνεται από μια παθιασμένη κοινότητα ανοιχτού κώδικα. Αυτά τα άτομα έχουν πραγματοποιήσει εξαιρετικές συνεισφορές που επηρεάζουν άμεσα την ποιότητα, τη σταθερότητα και την εμβέλεια του έργου. **Σας ευχαριστούμε.**
+> OmniRoute διαμορφώνεται από μια παθιασμένη κοινότητα ανοιχτού κώδικα. Αυτά τα άτομα έχουν κάνει εξαιρετικές συνεισφορές που επηρεάζουν άμεσα την ποιότητα, τη σταθερότητα και την εμβέλεια του έργου.** Σας ευχαριστώ.**
 
-### Εξωτερικοί συνεισφέροντες ανά συγχωνευμένα pull requests
+### Εξωτερικοί συνεργάτες με συγχωνευμένα αιτήματα έλξης
 
 <table>
-  <tr><th align="center">Κατάταξη</th><th align="left">Συνεισφέρων</th><th align="center">Συγχωνευμένα PR</th><th align="right">~Αλλαγμένες γραμμές</th></tr>
+  <tr><th align="center">Τάξη</th><th align="left">Συνεισφέρων</th><th align="center">Συγχωνευμένο PRs</th><th align="right">~ Άλλαξε γραμμές</th></tr>
   <tr><td align="center">1</td><td align="left"><a href="https://github.com/maxmad64bis"><b>maxmad64bis</b></a></td><td align="center">418</td><td align="right">25,367,739</td></tr>
   <tr><td align="center">2</td><td align="left"><a href="https://github.com/HouMinXi"><b>HouMinXi</b></a></td><td align="center">295</td><td align="right">13,557,796</td></tr>
-  <tr><td align="center">3</td><td align="left"><a href="https://github.com/pacocartones"><b>pacocartones</b></a></td><td align="center">222</td><td align="right">81,551</td></tr>
+  <tr><td align="center">3</td><td align="left"><a href="https://github.com/pacocartones"><b>πακοκαρτόνες</b></a></td><td align="center">222</td><td align="right">81,551</td></tr>
   <tr><td align="center">4</td><td align="left"><a href="https://github.com/backryun"><b>backryun</b></a></td><td align="center">210</td><td align="right">270,562</td></tr>
   <tr><td align="center">5</td><td align="left"><a href="https://github.com/JxnLexn"><b>JxnLexn</b></a></td><td align="center">198</td><td align="right">3,570,623</td></tr>
   <tr><td align="center">6</td><td align="left"><a href="https://github.com/oyi77"><b>oyi77</b></a></td><td align="center">190</td><td align="right">411,243</td></tr>
   <tr><td align="center">7</td><td align="left"><a href="https://github.com/KooshaPari"><b>KooshaPari</b></a></td><td align="center">151</td><td align="right">5,972,314</td></tr>
-  <tr><td align="center">8</td><td align="left"><a href="https://github.com/rdself"><b>rdself</b></a></td><td align="center">145</td><td align="right">80,663</td></tr>
+  <tr><td align="center">8</td><td align="left"><a href="https://github.com/rdself"><b>τον εαυτό μου</b></a></td><td align="center">145</td><td align="right">80,663</td></tr>
   <tr><td align="center">9</td><td align="left"><a href="https://github.com/RaviTharuma"><b>RaviTharuma</b></a></td><td align="center">123</td><td align="right">500,065</td></tr>
   <tr><td align="center">10</td><td align="left"><a href="https://github.com/herjarsa"><b>herjarsa</b></a></td><td align="center">88</td><td align="right">230,872</td></tr>
-  <tr><td align="center">11</td><td align="left"><a href="https://github.com/hartmark"><b>hartmark</b></a></td><td align="center">85</td><td align="right">2,849,623</td></tr>
+  <tr><td align="center">11</td><td align="left"><a href="https://github.com/hartmark"><b>σημάδι χαρτιού</b></a></td><td align="center">85</td><td align="right">2,849,623</td></tr>
   <tr><td align="center">12</td><td align="left"><a href="https://github.com/jonlwheat2-gif"><b>jonlwheat2-gif</b></a></td><td align="center">68</td><td align="right">69,097</td></tr>
   <tr><td align="center">13</td><td align="left"><a href="https://github.com/artickc"><b>artickc</b></a></td><td align="center">62</td><td align="right">43,502</td></tr>
   <tr><td align="center">14</td><td align="left"><a href="https://github.com/xiaoyaner0201"><b>xiaoyaner0201</b></a></td><td align="center">59</td><td align="right">126,220</td></tr>
-  <tr><td align="center">15</td><td align="left"><a href="https://github.com/chirag127"><b>chirag127</b></a></td><td align="center">52</td><td align="right">6,661</td></tr>
+  <tr><td align="center">15</td><td align="left"><a href="https://github.com/chirag127"><b>τσιράγκ127</b></a></td><td align="center">52</td><td align="right">6,661</td></tr>
   <tr><td align="center">16</td><td align="left"><a href="https://github.com/xz-dev"><b>xz-dev</b></a></td><td align="center">50</td><td align="right">245,976</td></tr>
   <tr><td align="center">17</td><td align="left"><a href="https://github.com/woodsonl"><b>woodsonl</b></a></td><td align="center">48</td><td align="right">811,771</td></tr>
   <tr><td align="center">18</td><td align="left"><a href="https://github.com/rqzbeh"><b>rqzbeh</b></a></td><td align="center">46</td><td align="right">151,229</td></tr>
@@ -1431,104 +1425,104 @@ OMNIROUTE_SKIP_POSTINSTALL=1 npm install -g omniroute   # CI=1 επίσης τη
   <tr><td align="center">19</td><td align="left"><a href="https://github.com/QuangBlue"><b>QuangBlue</b></a></td><td align="center">43</td><td align="right">13,112</td></tr>
 </table>
 
-<sub>Η απογραφή πραγματοποιήθηκε στις 2026-11-03 03:01:19 UTC με την τρέχουσα αιχμή <code>release/v3.8.53</code> <code>05bc048d6c</code>. Η σελιδοποιημένη απογραφή GitHub GraphQL περιέχει 9.947 συγχωνευμένα PR: 4.130 από τον κάτοχο του αποθετηρίου, 240 από το Dependabot, 6 από άλλα bots/apps και <b>5.571 εξωτερικά PR από 883 διαφορετικούς συνεισφέροντες</b>. Οι «αλλαγμένες γραμμές» είναι οι προσθήκες + διαγραφές του GitHub και περιλαμβάνουν παραγόμενα αρχεία, lockfiles, καταλόγους, μεταφράσεις και τεκμηρίωση· αποτυπώνουν την κινητικότητα και όχι τις LOC που έχουν συνταχθεί. 53 PR αναφέρουν διαφορές GitHub άνω των 500.000 γραμμών (για παράδειγμα το #13399, μια μεμονωμένη προσθήκη provider, αναφέρει 2.347 αλλαγμένα αρχεία), γεγονός που διογκώνει αρκετά από τα παραπάνω σύνολα. Οι ισοβαθμίες κατατάσσονται μαζί.</sub>
+<sub>Απογραφή 2026-11-03 03:01:19 UTC με ζωντανή συμβουλή <code>release/v3.8.53</code> <code>05bc048d6c</code>. Η σελιδοποιημένη απογραφή GitHub GraphQL περιέχει 9.947 συγχωνευμένα PRs: 4.130 από τον κάτοχο αποθετηρίου, 240 από το Dependabot, 6 από άλλα bots/apps και <b>5.571 εξωτερικούς PRs από 883 διακριτούς συντελεστές</b>. Το "Changed lines" είναι προσθήκες GitHub διαγραφές + και περιλαμβάνει δημιουργημένα αρχεία, lockfiles, καταλόγους, μεταφράσεις και τεκμηρίωση. είναι churn, δεν έχει εγγραφεί LOC. Η αναφορά 53 PRs GitHub διαφέρει πάνω από 500.000 γραμμές (για παράδειγμα #13399, μια προσθήκη μεμονωμένου παρόχου, παραθέτει 2.347 αλλαγμένα αρχεία), γεγονός που διογκώνει αρκετά σύνολα παραπάνω. Οι δεσμοί κατατάσσονται μαζί.</sub>
 
-### Commits που αποδίδονται στο GitHub
+### Δεσμεύσεις που αποδίδονται στο GitHub
 
 <table>
   <tr>
     <td align="center" width="160">
       <a href="https://github.com/maxmad64bis">
         <img src="https://github.com/maxmad64bis.png" width="40" style="border-radius:50%" alt="Dizzle"/><br/>
-        <b>Dizzle</b>
+        <b>Ζάλη</b>
       </a><br/>
-      <sub>🥇 418 αποδιδόμενες από το GitHub υποβολές</sub>
+      <sub>🥇 418 δεσμεύσεις που αποδίδονται στο GitHub</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/HouMinXi">
         <img src="https://github.com/HouMinXi.png" width="40" style="border-radius:50%" alt="Bob.Hou"/><br/>
         <b>Bob.Hou</b>
       </a><br/>
-      <sub>🥈 294 αποδιδόμενες από το GitHub υποβολές</sub>
+      <sub>🥈 294 δεσμεύσεις που αποδίδονται στο GitHub</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/oyi77">
         <img src="https://github.com/oyi77.png" width="40" style="border-radius:50%" alt="Paijo"/><br/>
         <b>Paijo</b>
       </a><br/>
-      <sub>🥉 229 αποδιδόμενες από το GitHub υποβολές</sub>
+      <sub>🥉 229 δεσμεύσεις που αποδίδονται στο GitHub</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/pacocartones">
         <img src="https://github.com/pacocartones.png" width="40" style="border-radius:50%" alt="Paco Cartones"/><br/>
         <b>Paco Cartones</b>
       </a><br/>
-      <sub>🏅 222 αποδιδόμενες από το GitHub υποβολές</sub>
+      <sub>🏅 222 δεσμεύσεις που αποδίδονται στο GitHub</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/backryun">
         <img src="https://github.com/backryun.png" width="40" style="border-radius:50%" alt="backryun"/><br/>
         <b>backryun</b>
       </a><br/>
-      <sub>🏅 202 αποδιδόμενες από το GitHub υποβολές</sub>
+      <sub>🏅 202 δεσμεύσεις που αποδίδονται στο GitHub</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/JxnLexn">
         <img src="https://github.com/JxnLexn.png" width="40" style="border-radius:50%" alt="Jan Leon"/><br/>
-        <b>Jan Leon</b>
+        <b>Γιαν Λεόν</b>
       </a><br/>
-      <sub>🏅 134 αποδιδόμενες από το GitHub υποβολές</sub>
+      <sub>🏅 134 δεσμεύσεις που αποδίδονται στο GitHub</sub>
     </td>
   </tr>
   <tr>
     <td align="center" width="160">
       <a href="https://github.com/RaviTharuma">
         <img src="https://github.com/RaviTharuma.png" width="40" style="border-radius:50%" alt="Ravi Tharuma"/><br/>
-        <b>Ravi Tharuma</b>
+        <b>Ράβι Θαρούμα</b>
       </a><br/>
-      <sub>🏅 126 αποδιδόμενες από το GitHub υποβολές</sub>
+      <sub>🏅 126 δεσμεύσεις που αποδίδονται στο GitHub</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/hartmark">
         <img src="https://github.com/hartmark.png" width="40" style="border-radius:50%" alt="Markus Hartung"/><br/>
         <b>Markus Hartung</b>
       </a><br/>
-      <sub>🏅 115 αποδιδόμενες από το GitHub υποβολές</sub>
+      <sub>🏅 115 δεσμεύσεις που αποδίδονται στο GitHub</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/rdself">
         <img src="https://github.com/rdself.png" width="40" style="border-radius:50%" alt="Randi"/><br/>
-        <b>Randi</b>
+        <b>Ράντι</b>
       </a><br/>
-      <sub>🏅 108 αποδιδόμενες από το GitHub υποβολές</sub>
+      <sub>🏅 108 δεσμεύσεις που αποδίδονται στο GitHub</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/christopher-s">
         <img src="https://github.com/christopher-s.png" width="40" style="border-radius:50%" alt="Chris"/><br/>
-        <b>Chris</b>
+        <b>Κρις</b>
       </a><br/>
-      <sub>🏅 70 αποδιδόμενες από το GitHub υποβολές</sub>
+      <sub>🏅 70 δεσμεύσεις που αποδίδονται στο GitHub</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/jonlwheat2-gif">
         <img src="https://github.com/jonlwheat2-gif.png" width="40" style="border-radius:50%" alt="WebPerson"/><br/>
         <b>WebPerson</b>
       </a><br/>
-      <sub>🏅 68 αποδιδόμενες από το GitHub υποβολές</sub>
+      <sub>🏅 68 δεσμεύσεις που αποδίδονται στο GitHub</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/KooshaPari">
         <img src="https://github.com/KooshaPari.png" width="40" style="border-radius:50%" alt="Koosha Paridehpour"/><br/>
         <b>Koosha Paridehpour</b>
       </a><br/>
-      <sub>🏅 68 αποδιδόμενες από το GitHub υποβολές</sub>
+      <sub>🏅 68 δεσμεύσεις που αποδίδονται στο GitHub</sub>
     </td>
   </tr>
 </table>
 
-<sub>Επανελέγχθηκε στις 2026-11-03 02:09:16 UTC: αποδιδόμενες από το GitHub υποβολές που αναφέρθηκαν από το API Contributors του αποθετηρίου για τον προεπιλεγμένο κλάδο <code>release/v3.8.53</code>. Το API επέστρεψε 903 ταυτότητες (429 χρήστες, 2 bot, 472 ανώνυμες)· ο πίνακας αυτός εξαιρεί τον συντηρητή, τα bot και τις ανώνυμες ταυτότητες και διατηρεί τις ισοβαθμίες. Διαφέρει τόσο από την παραπάνω κατάταξη των συγχωνευμένων PR όσο και από την παρακάτω απογραφή μεταδεδομένων του Git.</sub>
+<sub>Επανέλεγχος στις 03-11-2026 02:09:16 UTC: δεσμεύσεις που αποδίδονται στο GitHub που αναφέρθηκαν από το αποθετήριο Contributors API για τον προεπιλεγμένο κλάδο <code>release/v3.8.53</code>. Το API επέστρεψε 903 ταυτότητες (429 χρήστες, 2 bots, 472 ανώνυμες). αυτός ο πίνακας εξαιρεί τον συντηρητή, τα bots και τις ανώνυμες ταυτότητες και διατηρεί τους δεσμούς ανταγωνισμού. Διαφέρει τόσο από την παραπάνω κατάταξη συγχωνευμένων PR όσο και από την απογραφή Git-metadata παρακάτω.</sub>
 
-> 🙏 Οι δυνατότητες, οι διορθώσεις σφαλμάτων και οι βελτιώσεις υποδομής αυτών των συνεισφερόντων αποτελούν **βασικό μέρος** όσων κάνουν το OmniRoute αξιόπιστο και πλούσιο σε δυνατότητες. Κάθε αίτημα μεταφοράς, κάθε περίπτωση δοκιμής και κάθε αρχείο μετάφρασης i18n έχει σημασία. Το ανοιχτό λογισμικό δημιουργείται από ανθρώπους σαν κι αυτούς.
+> 🙏 Αυτές οι δυνατότητες, οι διορθώσεις σφαλμάτων και οι βελτιώσεις υποδομής των συνεργατών είναι α** βασικό μέρος** τι κάνει OmniRoute αξιόπιστο και πλούσιο σε χαρακτηριστικά. Κάθε αίτημα έλξης, κάθε δοκιμαστική περίπτωση και κάθε αρχείο μετάφρασης i18n έχει σημασία. Το ανοιχτό κώδικα δημιουργείται από ανθρώπους σαν αυτούς.
 
 </div>
 

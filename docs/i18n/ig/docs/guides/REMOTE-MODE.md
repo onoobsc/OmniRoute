@@ -44,37 +44,35 @@ laptọọpụ gị                              OmniRoute dịpụrụ adịp�
 
 ---
 
-## Ijikọta
+## Na-ejikọta
 
-### Iji okwuntughe njikwa (bootstrap)
+### Na paswọọdụ njikwa (bootstrap)
 
 ```bash
 omniroute connect 192.168.0.15
-# Okwuntughe njikwa maka http://192.168.0.15:20128: ********
-# ✔ Ejikọtala na http://192.168.0.15:20128 — context '192.168.0.15' (scope: admin)
+# Management password for http://192.168.0.15:20128: ********
+# ✔ Connected to http://192.168.0.15:20128 — context '192.168.0.15' (scope: admin)
 ```
 
-Usoro okwuntughe na-emepụta token **admin** na ndabara (ị nwere okwuntughe ahụ, ya mere
-ị nweelarị njikwa zuru ezu). Jiri `--scope` belata ikike ya:
+Okwuntughe na-erugharị mits an** admin** token site na ndabara (ị na-ejide paswọọdụ, yabụ ị nweburu njikwa zuru oke). Downscope na `--scope`:
 
 ```bash
 omniroute connect 192.168.0.15 --scope write
 ```
 
-Nhọrọ: `--port <p>` (mgbe host enweghị nke e depụtara), `--name <ctx>` (aha context),
-`--scope read|write|admin`. A na-eji URL zuru ezu dịka ọ dị:
-`omniroute connect https://omni.example.com`.
+Nhọrọ: `--port <p>` (mgbe onye ọbịa enweghị nke ọ bụla), `--name <ctx>` (aha ọnọdụ), `--scope read|write|admin`. A na-asọpụrụ URL zuru oke dịka-bụ: `omniroute connect https://omni.example.com`.
 
-### Iji token e mepụtara tupu oge eruo
+Mgbe ihe nkesa nwere dashboard nwere njirimara ihe abụọ (Ntọala → ), a na-ajụ naanị paswọọdụ: CLI wee jụọ maka koodu site na ngwa nyocha (ma ọ bụ koodu mgbake). Nyefee ya n'ihu na `--totp <code>` maka ojiji anaghị emekọrịta ihe.
 
-Mepụta token nwere oke ikike na dashboard (ma ọ bụ jiri `omniroute tokens create`) wee
-mado ya — okwuntughe adịghị mkpa:
+### Site na akara emepụtara mbụ
+
+Mepụta akara ngosi scoped na dashboard (ma ọ bụ jiri `omniroute tokens create`) wee mado ya — enweghị paswọọdụ achọrọ:
 
 ```bash
 omniroute connect 192.168.0.15 --key oma_live_xxxxxxxx
 ```
 
-CLI na-eji `GET /api/cli/whoami` enyocha ya ma chekwaa ya dịka context nọ n’ọrụ.
+CLI na-akwado ya site na `GET /api/cli/whoami` wee chekwaa ya dị ka ihe na-arụ ọrụ.
 
 ---
 
@@ -431,14 +429,14 @@ omniroute contexts remove 192-168-0-15 --yes   # wepụ context mpaghara (ọb�
 
 ---
 
-## Endpoint API (ntụaka)
+## njedebe API (ntụaka)
 
-| Usoro  | Ụzọ                   | Nnyocha ikike     | Oke                              |
-| ------ | --------------------- | ----------------- | -------------------------------- |
-| POST   | `/api/cli/connect`    | okwuntughe njikwa | — (ọha, okwuntughe na-echebe ya) |
-| GET    | `/api/cli/whoami`     | token nnweta      | ịgụ                              |
-| GET    | `/api/cli/tokens`     | token nnweta      | nchịkwa                          |
-| POST   | `/api/cli/tokens`     | token nnweta      | nchịkwa                          |
-| DELETE | `/api/cli/tokens/:id` | token nnweta      | nchịkwa                          |
+| Usoro  | Ụzọ                   | Auth                         | Oke                         |
+| ------ | --------------------- | ---------------------------- | --------------------------- |
+| POST   | `/api/cli/connect`    | okwuntughe; 2FA ma ọ bụrụ na | — (ọha, nke nwere paswọọdụ) |
+| GET    | `/api/cli/whoami`     | ohere ohere                  | gụọ                         |
+| GET    | `/api/cli/tokens`     | ohere ohere                  | admin                       |
+| POST   | `/api/cli/tokens`     | ohere ohere                  | admin                       |
+| DELETE | `/api/cli/tokens/:id` | ohere ohere                  | admin                       |
 
-Lee [openapi.yaml](../openapi.yaml) maka schema niile.
+Hụ [openapi.yaml](../openapi.yaml) maka atụmatụ zuru ezu.

@@ -13,121 +13,59 @@ OmniRoute har en ruttmedveten auktoriseringspipeline som spärrar varje API-för
 
 > Källa: [diagrams/authz-pipeline.mmd](../diagrams/authz-pipeline.mmd)
 
-## Två autentiseringslägen
+## Två Auth-lägen
 
-### 1. API-nyckel (Bearer)
+### 1. API Key (bärare)
 
-Används för de OpenAI-/Anthropic-/Gemini-kompatibla klient-API:erna och några hanteringsrutter när nyckeln har behörighetsomfånget `manage`.
+Används för OpenAI/Anthropic/Gemini-compatible klienten APIs och några hanteringsvägar när nyckeln har `manage` omfattningen.
 
 ```
 Authorization: Bearer <api-key>
 ```
 
-Valideras av `isValidApiKey()` / `extractApiKey()` i `src/sse/services/auth.ts` och återexporteras via `src/shared/utils/apiAuth.ts`. Valideraren godtar även miljövariablerna `OMNIROUTE_API_KEY` / `ROUTER_API_KEY` som permanenta passthrough-nycklar (ärende #1350).
+Validerad av `isValidApiKey()` / `extractApiKey()` i `src/sse/services/auth.ts` och återexporterad genom `src/shared/utils/apiAuth.ts`. Validatorn accepterar också `OMNIROUTE_API_KEY` / `ROUTER_API_KEY` env vars som beständiga passthrough-nycklar (problem #1350).
 
-### 2. Dashboard-session (auth_token-kaka)
+### 2. Dashboard-session (auth_token-cookie)
 
-För dashboard-sidor och administratörsåtgärder.
+För instrumentpanelsidor och adminoperationer.
 
 ```
 Cookie: auth_token=<JWT signed with JWT_SECRET>
 ```
 
-En kaka är endast en session när JWT:n verifieras **och** innehåller `authenticated: true`
-(`src/shared/utils/dashboardSessionToken.ts` → `verifyDashboardSessionToken`). Varje
-konsument av kakan (dashboardens ruttskydd (`isDashboardSessionAuthenticated()`), uppdatering i authz-pipelinen, WebSocket-handskakning, live-
-servern, `/api/settings/require-login`, `/api/auth/status`) använder den hjälpfunktionen.
-Det finns andra JWT:er som signerats med `JWT_SECRET` — Cursor CLI-passthrough skapar
-token med `iss "omniroute" / aud "cursor-cli"` åt nyckelinnehavare — och de är aldrig sessioner
-(#13298).
+En cookie är en session endast när JWT verifierar** och** bär `authenticated: true` (`src/shared/utils/dashboardSessionToken.ts` → `verifyDashboardSessionToken`). Varje konsument av kakan (ruttskydd för instrumentpanelen (`isDashboardSessionAuthenticated()`), authz pipeline refresh, WebSocket handshake, live server, `/api/settings/require-login`, `/api/auth/status`) går igenom den hjälparen. Andra JWTs signerade med `JWT_SECRET` finns — Cursor CLI passthrough mints `iss "omniroute" / aud "cursor-cli"` tokens för nyckelinnehavare — och är aldrig sessioner (#13298).
 
-Verifieras av `isDashboardSessionAuthenticated()` i `src/shared/utils/apiAuth.ts`. Pipelinen uppdaterar automatiskt JWT:n när mindre än 7 dagar återstår av dess 30 dagar långa livslängd.
+Verifierad av `isDashboardSessionAuthenticated()` i `src/shared/utils/apiAuth.ts`. Pipelinen uppdaterar JWT automatiskt när den har färre än 7 dagar kvar under sin 30-dagars livstid.
 
-En session kan också avslutas innan dess 30 dagar har gått, eftersom varje utfärdare använder `mintDashboardSessionToken` (en utfärdandetid `iat` och ett id `jti`) och verifieraren kontrollerar två inställningar: `sessionsValidAfter`, som ställs in vid ett lösenordsbyte så att alla sessioner som utfärdats dessförinnan inte längre kan verifieras (webbläsaren där lösenordet ändrades får en ny kaka), och `revokedDashboardSessions`, där `POST /api/auth/logout` lägger till den utloggade sessionens `jti`. Sessioner som skapats av en äldre version innehåller inget av dessa anspråk och förblir giltiga fram till det första lösenordsbytet. Om inställningarna inte kan läsas betraktas sessionen inte som betrodd.
+En session kan också avslutas innan dess 30 dagar är slut, eftersom varje minter går igenom `mintDashboardSessionToken` (en utfärdandetid `iat` och en id `jti`) och verifieraren kontrollerar två inställningar: `sessionsValidAfter`, inställd av en lösenordsändring så att varje session som utfärdas innan den slutar verifiera (webbläsaren som ändrade lösenordet får en ny cookie), och `revokedDashboardSessions`, som `POST /api/auth/logout` -sessionen lägger till `jti`-sessionen till. Sessioner som skapats av en äldre version har inget anspråk och förblir giltiga tills den första lösenordsändringen. Om inställningarna inte kan läsas är sessionen inte betrodd.
 
-Vissa hanteringsrutter accepterar **endera** läget: kaka ELLER `Bearer <key>` när API-nyckeln har behörighetsomfånget `manage` (eller `admin`). Det är detta som möjliggör arbetsflödet ”konfigurerbart via API-anrop” som lades till i v3.8.
+Vissa förvaltningsvägar accepteras** antingen** läge: cookie OR `Bearer <key>` när API tangenten har `manage` (eller `admin`) omfattning. Detta är vad som möjliggör det "konfigurerbara via API -anrop"-arbetsflödet som lagts till i v3.8.
 
-#### Valfri OIDC-inloggningsspärr (#6973)
+#### Valfri OIDC inloggningsport (#6973)
 
-Administratörsinloggningen till dashboarden stöder även ett **valfritt** OIDC-flöde (OpenID Connect)
-vid sidan av den förvalda lösenordsinloggningen — lösenordsinloggningen tas aldrig bort utan
-kompletteras endast:
+Admininloggningen på instrumentpanelen stöder också en** opt-in** OIDC (OpenID Connect) flöde tillsammans med standardlösenordsinloggningen — lösenordsinloggning tas aldrig bort, bara kompletteras:
 
-- Inaktiverat om inte `settings.oidcEnabled === true` **och** `oidcIssuer` /
-  `oidcClientId` / `oidcClientSecret` alla är konfigurerade (Inställningar → Autentisering).
-  `GET /api/auth/oidc/login` returnerar annars `400`.
-- `GET /api/auth/oidc/login` identifierar `authorization_endpoint` från
-  utfärdarens `/.well-known/openid-configuration` (faller tillbaka till
-  `<issuer>/authorize`), skapar omdirigerings-URI:n från den inkommande begäran
-  (med stöd för `x-forwarded-proto`) och omdirigerar till IdP:n med ett slumpmässigt `state`
-  som lagras i en `httpOnly`-cookie med namnet `oidc_state`.
-- `GET /api/auth/oidc/callback` validerar `state`, växlar auktoriseringskoden
-  och verifierar ID-tokenens signatur via utfärdarens JWKS
-  (`jose`:s `createRemoteJWKSet`, cachelagrad per JWKS-URI) med kontroller av
-  `issuer`/`audience`. Åtkomst till instrumentpanelen kräver en icke-tom
-  `oidcAllowedSubjects`-lista, en `oidcAdmissionClaim`-policy eller båda.
-  Listan över subjekt matchar `sub` eller `email` endast när
-  `email_verified === true`. Den valfria anspråkspolicyn tar en punktseparerad
-  sökväg till ett anspråk i ID-tokenen (till exempel `realm_access.roles`) och
-  en matris med accepterade värden; det uppslagna anspråket måste vara en matris
-  med strängar som innehåller minst ett accepterat värde. Om båda policyerna är
-  konfigurerade måste båda godkännas. Saknade eller felaktigt utformade anspråk
-  nekas, och utan någon av policyerna vägrar callback-rutten inloggning
-  (`not_configured`). Befintliga konfigurationer som enbart använder subjekt
-  fortsätter att fungera oförändrade.
-- Keycloak mappar normalt realm-roller till åtkomsttoken, men inte nödvändigtvis
-  till ID-token. Om du vill kräva realm-rollen `admin` konfigurerar du en
-  protokollmappare för den här klienten som inkluderar `realm_access.roles` i
-  dess **ID-token** och ställer sedan in `oidcAdmissionClaim` på
-  `{ "path": "realm_access.roles", "values": ["admin"] }`. Kontrollera det
-  faktiska anspråket i ID-tokenen för den här klienten innan du aktiverar åtkomst
-  enbart baserad på roller; programmet läser inte roller från åtkomsttoken.
-  Tokenvägran på IdP-sidan kan komplettera men ersätter inte den här kontrollen
-  på programsidan.
-- Vid framgång skapas **exakt samma** 30-dagars `auth_token`-JWT som utfärdas
-  vid lösenordsinloggning (`src/app/api/auth/login/route.ts`), så resten av
-  sessionsflödet för instrumentpanelen (automatisk förnyelse, cookieflaggor)
-  förblir oförändrat — OIDC ersätter endast hur cookien skapas, inte vilka
-  rättigheter den ger. Ändringar av roller eller grupper hos IdP:n ogiltigförklarar
-  inte befintliga OmniRoute-sessioner; utloggning, lösenordsrotation eller
-  sessionsutgång styr fortfarande deras livslängd.
-- Varje `oidc*`-inställning (`oidcEnabled`, `oidcDisablePasswordLogin`,
-  `oidcIssuer`, `oidcClientId`, `oidcClientSecret`, `oidcAllowedSubjects`,
-  `oidcAdmissionClaim`, `oidcRedirectPath`, `oidcScopes`) finns i
-  `SECURITY_IMPACTING_SETTINGS_KEYS`
-  (`src/shared/constants/securityImpactingSettings.ts`): `PATCH /api/settings`
-  svarar med `400 PASSWORD_REQUIRED` om inte begärandetexten innehåller
-  administrationslösenordet som `currentPassword` (`401 PASSWORD_MISMATCH` om
-  det är felaktigt). `oidcDisablePasswordLogin` nekar _inloggning_ med lösenord
-  (`POST /api/auth/login`) men behåller den lagrade lösenordshashen, och
-  återautentisering kontrollerar fortfarande `currentPassword` mot den.
-- `corsOrigins` och `bruteForceProtection` finns också i
-  `SECURITY_IMPACTING_SETTINGS_KEYS`: att göra någon av dem mindre strikt
-  försvagar inloggningsskyddet, så de kräver samma återautentisering med
-  `currentPassword` (fliken Säkerhet frågar efter det), och JSON-importen
-  utelämnar dem.
-- Varje säkerhetspolicynyckel — posterna i `SECURITY_IMPACTING_SETTINGS_KEYS`,
-  varje `oidc*`-nyckel och instrumentpanelens sessionstillstånd — är **endast
-  för operatörer** på `PATCH /api/settings`: en API-nyckel med `manage`-omfång
-  eller en `oma_`-åtkomsttoken nekas med `403` även när den skickar rätt
-  `currentPassword`, och nekandet loggas i granskningsloggen som
-  `settings.update_failed` med `reason: OPERATOR_REQUIRED`
-  (`requireOperatorCredential()` i `src/lib/api/operatorCredential.ts`).
-  Vanliga inställningar (tema, visningsinställningar) förblir skrivbara med en
-  `manage`-nyckel eller en `admin`-åtkomsttoken. Varje ändring av
-  `/api/settings` i sig (och av `/api/settings/require-login`) kräver dessutom
-  åtkomsttokenomfånget `admin` (`ADMIN_MUTATION_EXACT_PATHS` i
-  `src/server/authz/accessScopes.ts`, exakt sökvägsmatchning); `GET` förblir
-  `read`, och de andra `/api/settings/*`-underrutterna (proxyservrar,
-  kombinationsstandardvärden, modellalias, komprimering, rensningar …) behåller
-  det metodhärledda `write`-omfånget.
-- `POST /api/settings/import-json` hoppar över den återautentiseringen och
-  utelämnar därför varje nyckel i `IMPORT_STRIPPED_SETTINGS_KEYS` (samma fil)
-  före skrivning: lösenordet och `currentPassword`, varje post i
-  `SECURITY_IMPACTING_SETTINGS_KEYS` samt instrumentpanelens sessionstillstånd
-  (`sessionsValidAfter`, `revokedDashboardSessions`). Import av en äldre
-  säkerhetskopia kan därför inte återaktivera en session som redan avslutats
-  genom ett lösenordsbyte eller en utloggning.
+- Inaktiverad om inte `settings.oidcEnabled === true`** och** `oidcIssuer` / `oidcClientId` / `oidcClientSecret` är alla konfigurerade (Settings → Auth). `GET /api/auth/oidc/login` returnerar `400` annars.
+- `GET /api/auth/oidc/login` upptäcker `authorization_endpoint` från utfärdarens `/.well-known/openid-configuration` (faller tillbaka till `<issuer>/authorize`), bygger omdirigeringen URI från den inkommande begäran (`x-forwarded-proto` -aware), och omdirigerar till IdP med en slumpmässig `state` lagrad i en `httpOnly` `oidc_state` cookie.
+- `GET /api/auth/oidc/callback` validerar `state`, byter ut auktoriseringskoden och verifierar ID tokenets signatur via utfärdarens JWKS (`jose` `createRemoteJWKSet`, cachad per JWKS URI) med `issuer`/`audience` kontroller. Tillträde till instrumentpanelen kräver en icke-tom `oidcAllowedSubjects` lista, en `oidcAdmissionClaim` -policy eller båda. Ämneslistan matchar `sub` eller `email` endast när `email_verified === true`. Den valfria anspråkspolicyn tar en prickseparerad ID-token anspråksväg (till exempel `realm_access.roles`) och en uppsättning accepterade värden; det lösta anspråket måste vara en array av strängar som innehåller minst ett accepterat värde. Om båda principerna är konfigurerade måste båda godkännas. Missing/malformed -anspråken misslyckas stängda, och utan någon av policyerna vägrar återuppringningen inloggning (`not_configured`). Befintliga konfigurationer för endast ämne fortsätter oförändrade.
+- Keycloak mappar normalt sfärens roller till åtkomsttokens, inte nödvändigtvis ID -tokens. För att kräva realm-rollen `admin`, konfigurera en protokollmappare för den här klienten som inkluderar `realm_access.roles` i sin**ID -token** , ställ sedan in `oidcAdmissionClaim` till `{ "path": "realm_access.roles", "values": ["admin"] }`. Kontrollera det faktiska ID-tokenanspråket för denna klient innan du aktiverar enbart rolltillträde; applikationen läser inte roller för åtkomsttoken. IdP-side-tokenvägran kan komplettera men ersätter inte denna kontroll på applikationssidan.
+- På framgång det mints den** exakt samma** 30-dagars `auth_token` JWT problem med lösenordsinloggning (`src/app/api/auth/login/route.ts`), så resten av instrumentpanelens sessionspipeline (automatisk uppdatering, cookie-flaggor) är oförändrad — OIDC ersätter bara hur cookien präglas, inte vad den ger. Ändringar av IdP roles/groups ogiltigförklarar inte befintliga OmniRoute sessioner; utloggning, lösenordsrotation eller sessionsutgång styr fortfarande deras livstid.
+- Varje `oidc*` inställning (`oidcEnabled`, `oidcDisablePasswordLogin`, `oidcIssuer`, `oidcClientId`, `oidcClientSecret`, `oidcAllowedSubjects`, `oidcAdmissionClaim`, `oidcRedirectPath`, `oidcScopes`) är i `SECURITY_IMPACTING_SETTINGS_KEYS` (`src/shared/constants/securityImpactingSettings.ts`): `PATCH /api/settings` svarar `400 PASSWORD_REQUIRED` om inte kroppen bär hanteringslösenordet som `currentPassword` (`401 PASSWORD_MISMATCH` när det är fel). `oidcDisablePasswordLogin` vägrar lösenord _login_ (`POST /api/auth/login`) men behåller det lagrade lösenordet hash, och re-auth kontrollerar fortfarande `currentPassword` mot det.
+- `corsOrigins` och `bruteForceProtection` är också i `SECURITY_IMPACTING_SETTINGS_KEYS` : att lossa antingen försvagar inloggningsförsvaret, så de tar samma `currentPassword` -återautentisering (säkerhetsfliken frågar efter det) och JSON importen tar bort dem.
+- Varje säkerhetspolicynyckel — `SECURITY_IMPACTING_SETTINGS_KEYS` -posterna, varje `oidc*` nyckel och instrumentpanelens sessionstillstånd — är** endast för operatör** på `PATCH /api/settings`: en API -nyckel eller en `oma_` åtkomsttoken avvisas med `403` även när den skickar rätt `currentPassword`, och vägran granskas som `settings.update_failed` med `reason: OPERATOR_REQUIRED` (`requireOperatorCredential()` i `src/lib/api/operatorCredential.ts`). Vanliga inställningar (tema, visningsinställningar) förblir skrivbara för en `manage` nyckel eller en `admin` -åtkomsttoken. Varje mutation av `/api/settings` själv (och av `/api/settings/require-login`) behöver också `admin` access-token scope (`ADMIN_MUTATION_EXACT_PATHS` i `src/server/authz/accessScopes.ts`, exakt-sökväg matchning); `GET` förblir `read`, och de andra `/api/settings/*` -undervägarna (proxies, combo-standardvärden, modellalias, komprimering, utrensningar...) behåller den metod som härleds till `write` -omfattningen.
+- `POST /api/settings/import-json` hoppar över den omautenteringen, så den tappar varje tangent i `IMPORT_STRIPPED_SETTINGS_KEYS` (samma fil) innan du skriver: lösenordet och `currentPassword`, varje `SECURITY_IMPACTING_SETTINGS_KEYS` post och instrumentpanelens sessionstillstånd (`sessionsValidAfter`, `revokedDashboardSessions`). Att importera en äldre säkerhetskopia kan därför inte återuppliva en session som en lösenordsändring eller en utloggning redan har avslutats.
+
+#### Valfri TOTP tvåfaktorsinloggning (#16619)
+
+Registrerad från Inställningar → Säkerhet; av tills operatören slår på den (`src/server/auth/dashboardMfa.ts`).
+
+- **Vad det omfattar:** lösenordsinloggning (`POST /api/auth/login`, som då behöver `POST /api/auth/mfa/verify`) och `omniroute connect` (`POST /api/cli/connect`, som vägrar byte av endast lösenord och tar koden som `totp`).
+- **Vad det inte täcker:** OIDC / SSO -inloggning (`/api/auth/oidc/callback`) frågar inte efter OmniRoute TOTP. Den förlitar sig på identitetsleverantörens egen andra faktor, så tvinga fram MFA i IdP om OIDC är aktiverat.
+- **Återhämtning** (förlorad enhet, inga återställningskoder kvar eller en faktor som inte längre kan verifieras, till exempel efter att `STORAGE_ENCRYPTION_KEY` ändrats):
+  1. Starta om servern med `OMNIROUTE_DISABLE_MFA=true`.
+  2. På själva värden (loopback peer och loopback `Host`, som `http://localhost:20128`), logga in med lösenordet. Den andra faktorn hoppas bara över för det ursprunget; alla andra ursprung behöver fortfarande koden.
+  3. I Inställningar → Security → Disable, ange lösenordet och lämna koden tom. `POST /api/auth/mfa/disable` accepterar en body utan `code` endast medan variabeln är inställd och begäran kommer från värden; det kräver fortfarande instrumentpanelsessionen och det aktuella lösenordet och granskas som `auth.mfa.disabled` med `secondFactor: "recovery_switch"`.
+  4. Avaktivera `OMNIROUTE_DISABLE_MFA`, starta om och registrera dig igen om det behövs.
 
 ## Ruttklasser
 
@@ -170,28 +108,29 @@ Varje ruttklass har en policy i `src/server/authz/policies/`:
 
 En framgångsrik policy returnerar `AuthSubject` med `kind ∈ { client_api_key, dashboard_session, management_key, anonymous, sso_user }`. Nedströmshanterare kan läsa den via `assertAuth(request, "CLIENT_API")` i `src/server/authz/assertAuth.ts` istället för att köra autentiseringslogik igen.
 
-## Lista över publika routes
+## Lista över allmänna vägar
 
-`src/shared/constants/publicApiRoutes.ts` är den uttryckliga tillåtelselistan:
+`src/shared/constants/publicApiRoutes.ts` är den explicita godkännandelistan:
 
-Listan är uppdelad efter **form**, och uppdelningen är säkerhetskritisk (GHSA-74g9-q8f6-793h): ett prefix matchas med `startsWith()`, så det matchar även alla intilliggande sökvägar som delar dess inledande tecken. När `/api/usage/om-usage` användes som prefix blev `/api/usage/om-usage<anything>` PUBLIK, och Next matchar detta mot `/api/usage/[connectionId]` — en hanterare som saknar egen autentisering.
+Listan är uppdelad efter** form** , och uppdelningen är bärande (GHSA-74g9-q8f6-793h): ett prefix matchas med `startsWith()`, så det matchar också varje intilliggande sökväg som delar dess ledande tecken. `/api/usage/om-usage` som ett prefix markerat `/api/usage/om-usage<anything>` PUBLIC, och Next löser det för att `/api/usage/[connectionId]` — en hanterare utan egen auth.
 
 ```ts
-// Verkliga underträd. Varje post MÅSTE sluta med "/" (verifieras av ett enhetstest).
+// Genuine subtrees. Every entry MUST end in "/" (asserted by a unit test).
 PUBLIC_API_ROUTE_PREFIXES = [
   "/api/auth/oidc/",
-  "/api/v1/", // behandlas som CLIENT_API i classify, inte som "no-auth public"
+  "/api/v1/", // treated as CLIENT_API in classify, not as "no-auth public"
   "/api/oauth/",
   "/api/codex/connect/",
   "/api/telegram/",
   "/api/cursor-cli/",
 ];
 
-// Enskilda routes, matchas EXAKT (med eller utan avslutande snedstreck).
+// Single routes, matched EXACTLY (with or without a trailing slash).
 PUBLIC_API_ROUTES_EXACT = new Set([
   "/api/auth/login",
   "/api/auth/logout",
   "/api/auth/status",
+  "/api/auth/mfa/verify", // login step 2 for opt-in TOTP; needs the MFA-pending cookie
   "/api/init",
   "/api/sync/bundle",
   "/api/cli/connect",
@@ -199,20 +138,20 @@ PUBLIC_API_ROUTES_EXACT = new Set([
   "/api/skills/collect/chaos",
 ]);
 
-// Skrivskyddade enskilda routes som även får det mindre restriktiva CORS-ursprunget.
+// Read-only single routes that also take the CORS origin relaxation.
 PUBLIC_READONLY_CORS_API_ROUTES = [
   "/api/health/ping",
   "/api/monitoring/health",
   "/api/settings/require-login",
 ];
 
-// Skrivskyddad enskild route UTAN det mindre restriktiva CORS-ursprunget.
+// Read-only single route WITHOUT the CORS relaxation.
 PUBLIC_READONLY_API_ROUTES_EXACT = new Set(["/api/health"]);
 
 PUBLIC_READONLY_METHODS = new Set(["GET", "HEAD", "OPTIONS"]);
 ```
 
-Skrivskyddade routes är publika **endast** för säkra metoder. Obs! `classifyRoute()` undantar `/api/v1/*` och `/api/v1beta/*` från reservklassificeringen PUBLIC — dessa är alltid `CLIENT_API`, så policyn för Bearer-nycklar gäller fortfarande.
+Läsbara rutter är offentliga** endast** för säkra metoder. Obs: `classifyRoute()` utesluter `/api/v1/*` och `/api/v1beta/*` från PUBLIC -fall-through — de är alltid `CLIENT_API` så bärarnyckelpolicyn gäller fortfarande.
 
 ## Lägga till en ny route
 

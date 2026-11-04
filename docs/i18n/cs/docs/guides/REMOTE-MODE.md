@@ -44,31 +44,29 @@ váš notebook                             vzdálený OmniRoute (VPS)
 
 ---
 
-## Připojení
+## Spojovací
 
-### Pomocí hesla pro správu (počáteční nastavení)
+### S heslem pro správu (bootstrap)
 
 ```bash
 omniroute connect 192.168.0.15
-# Heslo pro správu serveru http://192.168.0.15:20128: ********
-# ✔ Připojeno k http://192.168.0.15:20128 — kontext '192.168.0.15' (rozsah: admin)
+# Management password for http://192.168.0.15:20128: ********
+# ✔ Connected to http://192.168.0.15:20128 — context '192.168.0.15' (scope: admin)
 ```
 
-Postup s heslem ve výchozím nastavení vydá token s rozsahem **admin** (jelikož máte heslo,
-již máte úplnou kontrolu). Rozsah omezíte pomocí `--scope`:
+Heslo flow razítka an** admin** token ve výchozím nastavení (držíte heslo, takže již máte plnou kontrolu). Downscope s `--scope`:
 
 ```bash
 omniroute connect 192.168.0.15 --scope write
 ```
 
-Možnosti: `--port <p>` (pokud hostitel port neobsahuje), `--name <ctx>` (název kontextu),
-`--scope read|write|admin`. Úplná URL se použije beze změny:
-`omniroute connect https://omni.example.com`.
+Možnosti: `--port <p>` (pokud hostitel žádný nemá), `--name <ctx>` (kontextový název), `--scope read|write|admin`. Úplné URL se ctí tak, jak je: `omniroute connect https://omni.example.com`.
 
-### Pomocí předem vygenerovaného tokenu
+Když má server povolenou dvoufaktorovou autentizaci řídicího panelu (Nastavení → Security), je odmítnuto pouze heslo: CLI pak požádá o kód z aplikace pro ověřování (nebo kód pro obnovení). Pro neinteraktivní použití to předejte dopředu se `--totp <code>`.
 
-Vygenerujte token s omezeným rozsahem na řídicím panelu (nebo pomocí `omniroute tokens create`) a
-vložte jej — heslo není potřeba:
+### S předem vygenerovaným tokenem
+
+Vygenerujte token s rozsahem na řídicím panelu (nebo pomocí `omniroute tokens create`) a vložte jej — bez nutnosti hesla:
 
 ```bash
 omniroute connect 192.168.0.15 --key oma_live_xxxxxxxx
@@ -433,14 +431,14 @@ omniroute contexts remove 192-168-0-15 --yes   # odstraní místní kontext (i k
 
 ---
 
-## Koncové body API (referenční přehled)
+## API koncové body (referenční)
 
-| Metoda | Trasa                 | Ověření          | Rozsah                       |
-| ------ | --------------------- | ---------------- | ---------------------------- |
-| POST   | `/api/cli/connect`    | heslo pro správu | — (veřejné, chráněné heslem) |
-| GET    | `/api/cli/whoami`     | přístupový token | čtení                        |
-| GET    | `/api/cli/tokens`     | přístupový token | správce                      |
-| POST   | `/api/cli/tokens`     | přístupový token | správce                      |
-| DELETE | `/api/cli/tokens/:id` | přístupový token | správce                      |
+| Metoda | Trasa                 | Auth                         | Rozsah                       |
+| ------ | --------------------- | ---------------------------- | ---------------------------- |
+| POST   | `/api/cli/connect`    | heslo; 2FA, pokud je zapnuto | — (veřejné, chráněné heslem) |
+| GET    | `/api/cli/whoami`     | přístupový token             | číst                         |
+| GET    | `/api/cli/tokens`     | přístupový token             | admin                        |
+| POST   | `/api/cli/tokens`     | přístupový token             | admin                        |
+| DELETE | `/api/cli/tokens/:id` | přístupový token             | admin                        |
 
-Úplná schémata najdete v souboru [openapi.yaml](../openapi.yaml).
+Úplná schémata viz [openapi.yaml](../openapi.yaml).

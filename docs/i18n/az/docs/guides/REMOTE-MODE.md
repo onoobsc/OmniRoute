@@ -41,37 +41,35 @@ noutbukunuz                              uzaq OmniRoute (VPS)
 
 ---
 
-## Qoşulma
+## Qoşulur
 
-### İdarəetmə parolu ilə (ilkin quraşdırma)
+### İdarəetmə parolu ilə (bootstrap)
 
 ```bash
 omniroute connect 192.168.0.15
-# http://192.168.0.15:20128 üçün idarəetmə parolu: ********
-# ✔ http://192.168.0.15:20128 ünvanına qoşuldu — kontekst '192.168.0.15' (əhatə dairəsi: admin)
+# Management password for http://192.168.0.15:20128: ********
+# ✔ Connected to http://192.168.0.15:20128 — context '192.168.0.15' (scope: admin)
 ```
 
-Parol axını standart olaraq **admin** tokeni yaradır (parol sizdə olduğuna görə
-onsuz da tam nəzarətə maliksiniz). Əhatə dairəsini `--scope` ilə məhdudlaşdırın:
+Parol axını mints an** admin** defolt olaraq mö'cüzə (şifrəni saxlayırsınız, ona görə də artıq tam nəzarətə sahibsiniz). `--scope` ilə aşağı baxış:
 
 ```bash
 omniroute connect 192.168.0.15 --scope write
 ```
 
-Seçimlər: `--port <p>` (hostda port göstərilmədikdə), `--name <ctx>` (kontekst adı),
-`--scope read|write|admin`. Tam URL olduğu kimi qəbul edilir:
-`omniroute connect https://omni.example.com`.
+Seçimlər: `--port <p>` (ev sahibinin heç biri olmadıqda), `--name <ctx>` (kontekst adı), `--scope read|write|admin`. Tam URL olduğu kimi şərəfləndirilir: `omniroute connect https://omni.example.com`.
 
-### Əvvəlcədən yaradılmış token ilə
+Serverdə iki faktorlu autentifikasiya aktiv olduqda (Settings → Security), parol tək rədd edilir: CLI sonra autentifikator proqramından (və ya bərpa kodu) kodu soruşur. Qeyri-interaktiv istifadə üçün `--totp <code>` ilə onu önə keçirin.
 
-İdarəetmə panelində (və ya `omniroute tokens create` ilə) əhatə dairəli token yaradıb
-onu daxil edin — parol tələb olunmur:
+### Əvvəlcədən yaradılmış işarə ilə
+
+İdarə panelində əhatəli nişan yaradın (və ya `omniroute tokens create` ilə) və onu — parola ehtiyac olmadan yapışdırın:
 
 ```bash
 omniroute connect 192.168.0.15 --key oma_live_xxxxxxxx
 ```
 
-CLI tokeni `GET /api/cli/whoami` vasitəsilə yoxlayır və onu aktiv kontekst kimi saxlayır.
+CLI onu `GET /api/cli/whoami` vasitəsilə təsdiqləyir və aktiv kontekst kimi saxlayır.
 
 ---
 
@@ -398,12 +396,12 @@ omniroute contexts remove 192-168-0-15 --yes   # lokal konteksti silir (aktiv ol
 
 ## API son nöqtələri (istinad)
 
-| Metod  | Marşrut               | Doğrulama        | Əhatə dairəsi                |
-| ------ | --------------------- | ---------------- | ---------------------------- |
-| POST   | `/api/cli/connect`    | idarəetmə parolu | — (ictimai, parolla qorunan) |
-| GET    | `/api/cli/whoami`     | giriş tokeni     | oxuma                        |
-| GET    | `/api/cli/tokens`     | giriş tokeni     | inzibatçı                    |
-| POST   | `/api/cli/tokens`     | giriş tokeni     | inzibatçı                    |
-| DELETE | `/api/cli/tokens/:id` | giriş tokeni     | inzibatçı                    |
+| Metod  | Marşrut               | Auth                  | Əhatə dairəsi             |
+| ------ | --------------------- | --------------------- | ------------------------- |
+| POST   | `/api/cli/connect`    | parol; 2FA aktivdirsə | — (ictimai, parol qapalı) |
+| GET    | `/api/cli/whoami`     | giriş nişanı          | oxumaq                    |
+| GET    | `/api/cli/tokens`     | giriş nişanı          | admin                     |
+| POST   | `/api/cli/tokens`     | giriş nişanı          | admin                     |
+| DELETE | `/api/cli/tokens/:id` | giriş nişanı          | admin                     |
 
-Tam sxemlər üçün [openapi.yaml](../openapi.yaml) faylına baxın.
+Tam sxemlər üçün [openapi.yaml](../openapi.yaml) baxın.

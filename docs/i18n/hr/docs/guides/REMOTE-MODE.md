@@ -46,35 +46,33 @@ vaše prijenosno računalo                 udaljeni OmniRoute (VPS)
 
 ## Povezivanje
 
-### Pomoću upravljačke lozinke (početno postavljanje)
+### S lozinkom za upravljanje (bootstrap)
 
 ```bash
 omniroute connect 192.168.0.15
-# Upravljačka lozinka za http://192.168.0.15:20128: ********
-# ✔ Povezano s http://192.168.0.15:20128 — kontekst '192.168.0.15' (opseg: admin)
+# Management password for http://192.168.0.15:20128: ********
+# ✔ Connected to http://192.168.0.15:20128 — context '192.168.0.15' (scope: admin)
 ```
 
-Tok s lozinkom prema zadanim postavkama izdaje token opsega **admin** (budući da imate lozinku,
-već imate potpunu kontrolu). Smanjite opseg pomoću `--scope`:
+Tijek lozinki mints an** admin** token prema zadanim postavkama (vi imate lozinku, tako da već imate punu kontrolu). Downscope sa `--scope`:
 
 ```bash
 omniroute connect 192.168.0.15 --scope write
 ```
 
-Opcije: `--port <p>` (kada glavno računalo nema naveden port), `--name <ctx>` (naziv konteksta),
-`--scope read|write|admin`. Potpuni URL upotrebljava se bez izmjena:
-`omniroute connect https://omni.example.com`.
+Opcije: `--port <p>` (kada ih host nema), `--name <ctx>` (naziv konteksta), `--scope read|write|admin`. Puni URL poštuje se takav kakav jest: `omniroute connect https://omni.example.com`.
 
-### Pomoću unaprijed generiranog tokena
+Kada poslužitelj ima omogućenu dvofaktorsku autentifikaciju na nadzornoj ploči (Postavke → Sigurnost), sama lozinka se odbija: CLI tada traži kod iz aplikacije autentifikatora (ili kod za oporavak). Proslijedite naprijed sa `--totp <code>` za neinteraktivnu upotrebu.
 
-Generirajte token ograničenog opsega na nadzornoj ploči (ili pomoću `omniroute tokens create`) i
-zalijepite ga — lozinka nije potrebna:
+### S unaprijed generiranim tokenom
+
+Generirajte označeni token na nadzornoj ploči (ili pomoću `omniroute tokens create`) i zalijepite ga — nije potrebna lozinka:
 
 ```bash
 omniroute connect 192.168.0.15 --key oma_live_xxxxxxxx
 ```
 
-CLI ga provjerava putem `GET /api/cli/whoami` i sprema kao aktivni kontekst.
+CLI ga potvrđuje putem `GET /api/cli/whoami` i sprema ga kao aktivni kontekst.
 
 ---
 
@@ -435,14 +433,14 @@ omniroute contexts remove 192-168-0-15 --yes   # uklanja lokalni kontekst (čak 
 
 ---
 
-## Krajnje točke API-ja (referenca)
+## API krajnje točke (referenca)
 
-| Metoda | Ruta                  | Autentifikacija        | Opseg                         |
-| ------ | --------------------- | ---------------------- | ----------------------------- |
-| POST   | `/api/cli/connect`    | lozinka za upravljanje | — (javno, zaštićeno lozinkom) |
-| GET    | `/api/cli/whoami`     | pristupni token        | čitanje                       |
-| GET    | `/api/cli/tokens`     | pristupni token        | administracija                |
-| POST   | `/api/cli/tokens`     | pristupni token        | administracija                |
-| DELETE | `/api/cli/tokens/:id` | pristupni token        | administracija                |
+| metoda | Ruta                  | Auth                         | Opseg                         |
+| ------ | --------------------- | ---------------------------- | ----------------------------- |
+| POST   | `/api/cli/connect`    | lozinka; 2FA ako je uključen | — (javno, zaštićeno lozinkom) |
+| GET    | `/api/cli/whoami`     | pristupni token              | pročitati                     |
+| GET    | `/api/cli/tokens`     | pristupni token              | admin                         |
+| POST   | `/api/cli/tokens`     | pristupni token              | admin                         |
+| DELETE | `/api/cli/tokens/:id` | pristupni token              | admin                         |
 
-Potpune sheme potražite u datoteci [openapi.yaml](../openapi.yaml).
+Pogledajte [openapi.yaml](../openapi.yaml) za potpune sheme.

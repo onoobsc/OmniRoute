@@ -15,15 +15,15 @@ OmniRoute possui um pipeline de autorização sensível a rotas que protege cada
 
 ## Dois modos de autenticação
 
-### 1. Chave de API (Bearer)
+### 1. Chave API (portador)
 
-Utilizado para as APIs de cliente compatíveis com OpenAI/Anthropic/Gemini e para algumas rotas de gestão quando a chave tem o âmbito `manage`.
+Utilizado para o cliente OpenAI/Anthropic/Gemini-compatible APIs e algumas rotas de gestão quando a chave tem o âmbito `manage`.
 
 ```
 Authorization: Bearer <api-key>
 ```
 
-Validado por `isValidApiKey()` / `extractApiKey()` em `src/sse/services/auth.ts` e reexportado através de `src/shared/utils/apiAuth.ts`. O validador também aceita as variáveis de ambiente `OMNIROUTE_API_KEY` / `ROUTER_API_KEY` como chaves de passagem persistentes (issue #1350).
+Validado por `isValidApiKey()` / `extractApiKey()` em `src/sse/services/auth.ts` e reexportado através de `src/shared/utils/apiAuth.ts`. O validador também aceita os vars `OMNIROUTE_API_KEY` / `ROUTER_API_KEY` env como chaves de passagem persistentes (problema #1350).
 
 ### 2. Sessão do painel (cookie auth_token)
 
@@ -33,106 +33,39 @@ Para páginas do painel e operações administrativas.
 Cookie: auth_token=<JWT signed with JWT_SECRET>
 ```
 
-Um cookie só é uma sessão quando o JWT é validado **e** contém `authenticated: true`
-(`src/shared/utils/dashboardSessionToken.ts` → `verifyDashboardSessionToken`). Todos os
-consumidores do cookie (proteção de rotas do painel (`isDashboardSessionAuthenticated()`), atualização do pipeline de autorização, negociação WebSocket, servidor
-em direto, `/api/settings/require-login`, `/api/auth/status`) passam por esse auxiliar.
-Existem outros JWT assinados com `JWT_SECRET` — a passagem da CLI do Cursor emite
-tokens `iss "omniroute" / aud "cursor-cli"` para detentores de chaves — e estes nunca são sessões
-(#13298).
+Um cookie é uma sessão apenas quando o JWT verifica** e** carrega `authenticated: true` (`src/shared/utils/dashboardSessionToken.ts` → `verifyDashboardSessionToken`). Cada consumidor do cookie (painel route guard (`isDashboardSessionAuthenticated()`), authz pipeline update, handshake WebSocket, active server, `/api/settings/require-login`, `/api/auth/status`) passa por este auxiliar. Outros JWTs assinados com `JWT_SECRET` existem — o passthrough Cursor CLI cria tokens `iss "omniroute" / aud "cursor-cli"` para detentores de chaves — e nunca são sessões (#13298).
 
-Verificado por `isDashboardSessionAuthenticated()` em `src/shared/utils/apiAuth.ts`. O pipeline atualiza automaticamente o JWT quando restam menos de 7 dias dos seus 30 dias de validade.
+Verificado por `isDashboardSessionAuthenticated()` em `src/shared/utils/apiAuth.ts`. O pipeline atualiza automaticamente o JWT quando restam menos de 7 dias na sua vida útil de 30 dias.
 
-Uma sessão também pode terminar antes de decorrerem os 30 dias, porque todos os emissores passam por `mintDashboardSessionToken` (um instante de emissão `iat` e um identificador `jti`) e o verificador consulta duas definições: `sessionsValidAfter`, definida por uma alteração da palavra-passe para que todas as sessões emitidas anteriormente deixem de ser validadas (o navegador que alterou a palavra-passe recebe um cookie novo), e `revokedDashboardSessions`, à qual `POST /api/auth/logout` adiciona o `jti` da sessão terminada. As sessões emitidas por uma versão anterior não contêm nenhuma destas alegações e permanecem válidas até à primeira alteração da palavra-passe. Se não for possível ler as definições, a sessão não é considerada fidedigna.
+Uma sessão também pode terminar antes de os seus 30 dias terminarem, porque cada minter passa por `mintDashboardSessionToken` (uma hora de emissão `iat` e um id `jti`) e o verificador verifica duas definições: `sessionsValidAfter`, definida por uma alteração de palavra-passe para que cada sessão emitida antes de parar de verificar (o browser que alterou a palavra-passe recebe um novo cookie) e `revokedDashboardSessions`, ao qual `POST /api/auth/logout` adiciona o `jti` da sessão desligada. As sessões criadas por uma versão mais antiga não têm qualquer reivindicação e permanecem válidas até à primeira alteração de palavra-passe. Se as definições não puderem ser lidas, a sessão não é fiável.
 
-Algumas rotas de gestão aceitam **qualquer um** dos modos: cookie OU `Bearer <key>` quando a chave de API tem o âmbito `manage` (ou `admin`). É isto que permite o fluxo de trabalho "configurável através de chamadas à API" adicionado na v3.8.
+Algumas rotas de gestão aceitam** ou** mode: cookie OR `Bearer <key>` quando a chave API tem o âmbito `manage` (ou `admin`). É isto que permite o workflow "configurável através de chamadas API " adicionado na v3.8.
 
-#### Porta de início de sessão OIDC opcional (#6973)
+#### Porta de login OIDC opcional (#6973)
 
-O início de sessão administrativo no painel também suporta um fluxo OIDC (OpenID Connect) de **adesão opcional**
-em conjunto com o início de sessão predefinido por palavra-passe — o início de sessão por palavra-passe nunca é removido, apenas
-complementado:
+O login de administrador do painel também suporta um** aceitar** O fluxo OIDC (OpenID Connect) juntamente com o login de password padrão — password login nunca é removido, apenas complementado:
 
-- Desativado, a menos que `settings.oidcEnabled === true` **e** `oidcIssuer` /
-  `oidcClientId` / `oidcClientSecret` estejam todos configurados (Definições → Autenticação).
-  Caso contrário, `GET /api/auth/oidc/login` devolve `400`.
-- `GET /api/auth/oidc/login` descobre o `authorization_endpoint` a partir de
-  `/.well-known/openid-configuration` do emissor (recorrendo a
-  `<issuer>/authorize` como alternativa), constrói o URI de redirecionamento a
-  partir do pedido recebido (tendo em conta `x-forwarded-proto`) e redireciona
-  para o IdP com um `state` aleatório armazenado num cookie `oidc_state`
-  `httpOnly`.
-- `GET /api/auth/oidc/callback` valida o `state`, troca o código de autorização
-  e verifica a assinatura do token de ID através do JWKS do emissor
-  (`createRemoteJWKSet` do `jose`, colocado em cache por URI do JWKS), com
-  verificações de `issuer`/`audience`. A admissão no painel requer uma lista
-  `oidcAllowedSubjects` não vazia, uma política `oidcAdmissionClaim` ou ambas.
-  A lista de sujeitos corresponde a `sub` ou `email` apenas quando
-  `email_verified === true`. A política de claim opcional recebe um caminho
-  para um claim do token de ID separado por pontos (por exemplo,
-  `realm_access.roles`) e um array de valores aceites; o claim resolvido tem de
-  ser um array de strings que contenha pelo menos um valor aceite. Se ambas as
-  políticas estiverem configuradas, ambas têm de ser satisfeitas. Claims
-  ausentes ou malformados resultam na recusa do acesso e, sem qualquer uma das
-  políticas, o callback recusa o início de sessão (`not_configured`). As
-  configurações existentes baseadas apenas no sujeito continuam inalteradas.
-- Normalmente, o Keycloak mapeia as funções do realm para tokens de acesso, mas
-  não necessariamente para tokens de ID. Para exigir a função de realm `admin`,
-  configure um protocol mapper para este cliente que inclua
-  `realm_access.roles` no respetivo **token de ID** e, em seguida, defina
-  `oidcAdmissionClaim` como `{ "path": "realm_access.roles", "values": ["admin"] }`.
-  Verifique o claim real do token de ID para este cliente antes de ativar a
-  admissão baseada apenas em funções; a aplicação não lê funções do token de
-  acesso. A recusa de tokens no lado do IdP pode complementar esta verificação
-  do lado da aplicação, mas não a substitui.
-- Em caso de sucesso, emite **exatamente o mesmo** JWT `auth_token` de 30 dias
-  emitido pelo início de sessão com palavra-passe
-  (`src/app/api/auth/login/route.ts`), pelo que o restante pipeline de sessão
-  do painel (renovação automática, flags de cookies) permanece inalterado —
-  o OIDC substitui apenas a forma como o cookie é emitido, não aquilo a que
-  concede acesso. As alterações às funções/aos grupos do IdP não invalidam as
-  sessões OmniRoute existentes; o fim de sessão, a rotação da palavra-passe ou
-  a expiração da sessão continuam a determinar o respetivo tempo de vida.
-- Todas as definições `oidc*` (`oidcEnabled`, `oidcDisablePasswordLogin`,
-  `oidcIssuer`, `oidcClientId`, `oidcClientSecret`, `oidcAllowedSubjects`,
-  `oidcAdmissionClaim`, `oidcRedirectPath`, `oidcScopes`) estão em
-  `SECURITY_IMPACTING_SETTINGS_KEYS`
-  (`src/shared/constants/securityImpactingSettings.ts`): `PATCH /api/settings`
-  responde com `400 PASSWORD_REQUIRED`, a menos que o corpo inclua a
-  palavra-passe de gestão como `currentPassword` (`401 PASSWORD_MISMATCH` quando
-  está incorreta). `oidcDisablePasswordLogin` recusa o _início de sessão_ com
-  palavra-passe (`POST /api/auth/login`), mas mantém o hash da palavra-passe
-  armazenado, e a reautenticação continua a verificar `currentPassword` em
-  relação ao mesmo.
-- `corsOrigins` e `bruteForceProtection` também estão em
-  `SECURITY_IMPACTING_SETTINGS_KEYS`: tornar qualquer uma destas definições
-  menos restritiva enfraquece as defesas do início de sessão, pelo que exigem
-  a mesma reautenticação com `currentPassword` (o separador Segurança solicita-a)
-  e a importação de JSON remove-as.
-- Todas as chaves de política de segurança — as entradas de
-  `SECURITY_IMPACTING_SETTINGS_KEYS`, todas as chaves `oidc*` e o estado da
-  sessão do painel — são **exclusivas do operador** em `PATCH /api/settings`:
-  uma chave de API com âmbito `manage` ou um token de acesso `oma_` é recusado
-  com `403`, mesmo quando envia o `currentPassword` correto, e a recusa é
-  registada na auditoria como `settings.update_failed` com
-  `reason: OPERATOR_REQUIRED` (`requireOperatorCredential()` em
-  `src/lib/api/operatorCredential.ts`). As definições comuns (tema,
-  preferências de apresentação) continuam a poder ser alteradas por uma chave
-  `manage` ou por um token de acesso `admin`. Todas as mutações de
-  `/api/settings` propriamente dito (e de `/api/settings/require-login`) também
-  necessitam do âmbito de token de acesso `admin`
-  (`ADMIN_MUTATION_EXACT_PATHS` em `src/server/authz/accessScopes.ts`,
-  correspondência exata do caminho); `GET` permanece com `read`, e as outras
-  sub-rotas `/api/settings/*` (proxies, predefinições de combos, aliases de
-  modelos, compressão, limpezas…) mantêm o âmbito `write` inferido a partir do
-  método.
-- `POST /api/settings/import-json` ignora essa reautenticação, pelo que remove
-  todas as chaves em `IMPORT_STRIPPED_SETTINGS_KEYS` (no mesmo ficheiro) antes
-  da escrita: a palavra-passe e `currentPassword`, todas as entradas de
-  `SECURITY_IMPACTING_SETTINGS_KEYS` e o estado da sessão do painel
-  (`sessionsValidAfter`, `revokedDashboardSessions`). Assim, importar uma cópia
-  de segurança mais antiga não pode reativar uma sessão que uma alteração da
-  palavra-passe ou um fim de sessão já tenha terminado.
+- Desativado, a menos que `settings.oidcEnabled === true`** e** `oidcIssuer` / `oidcClientId` / `oidcClientSecret` estão todos configurados ( → Auth Settings). `GET /api/auth/oidc/login` retorna `400` caso contrário.
+- `GET /api/auth/oidc/login` descobre o `authorization_endpoint` do `/.well-known/openid-configuration` do emissor (volta para `<issuer>/authorize`), cria o redireccionamento URI a partir do pedido recebido (`x-forwarded-proto` -aware) e redirecciona para o IdP com um `state` aleatório armazenado num cookie `httpOnly` `oidc_state`.
+- `GET /api/auth/oidc/callback` valida `state`, troca o código de autorização e verifica a assinatura do token ID através do JWKS do emissor (`jose` de `createRemoteJWKSet`, armazenado em cache por JWKS URI) com verificações `issuer`/`audience`. A admissão no painel requer uma lista `oidcAllowedSubjects` não vazia, uma política `oidcAdmissionClaim` ou ambas. A lista de assuntos corresponde `sub` ou `email` apenas quando `email_verified === true`. A política de declaração opcional utiliza um caminho de declaração de token de ID separado por pontos (por exemplo, `realm_access.roles`) e uma matriz de valores aceites; a instrução resolvida deve ser uma matriz de strings contendo pelo menos um valor aceite. Se ambas as políticas estiverem configuradas, ambas terão de ser aprovadas. As reivindicações Missing/malformed falham o fecho e, sem qualquer uma das políticas, o callback recusa o login (`not_configured`). As definições existentes apenas de motivo permanecem inalteradas.
+- O keycloak mapeia normalmente as funções de domínio em tokens de acesso, não necessariamente em tokens ID. Para exigir a função de região `admin`, configure um mapeador de protocolo para esse cliente que inclua `realm_access.roles` no seu** token ID** e defina `oidcAdmissionClaim` como `{ "path": "realm_access.roles", "values": ["admin"] }`. Verifique a reivindicação real do token de ID deste cliente antes de ativar a admissão apenas de funções; a aplicação não lê funções de token de acesso. A recusa do token do lado do IdP pode complementar, mas não substitui, esta verificação do lado da aplicação.
+- Com sucesso, ele cunha o** exatamente o mesmo** 30 dias `auth_token` JWT os problemas de login da palavra-passe (`src/app/api/auth/login/route.ts`), pelo que o resto do pipeline da sessão do painel (atualização automática, sinalizadores de cookies) permanece inalterado — OIDC apenas substitui a forma como o cookie é criado, não o que concede. As alterações ao IdP roles/groups não invalidam as sessões OmniRoute existentes; logout, rotação de palavra-passe ou expiração de sessão ainda regem a sua vida útil.
+- Cada configuração `oidc*` (`oidcEnabled`, `oidcDisablePasswordLogin`, `oidcIssuer`, `oidcClientId`, `oidcClientSecret`, `oidcAllowedSubjects`, `oidcAdmissionClaim`, `oidcRedirectPath`, `oidcScopes`) está em `SECURITY_IMPACTING_SETTINGS_KEYS` (`src/shared/constants/securityImpactingSettings.ts`): `PATCH /api/settings` responde `400 PASSWORD_REQUIRED` a menos que o corpo carregue a palavra-passe de gestão como `currentPassword` (`401 PASSWORD_MISMATCH` quando está errada). `oidcDisablePasswordLogin` recusa a palavra-passe _login_ (`POST /api/auth/login`), mas mantém o hash da palavra-passe armazenada e a reautenticação ainda verifica `currentPassword` contra ela.
+- `corsOrigins` e `bruteForceProtection` também estão no `SECURITY_IMPACTING_SETTINGS_KEYS` : afrouxar ou enfraquece as defesas de login, depois fazem a mesma reautenticação `currentPassword` (o separador Segurança pede isso) e a importação JSON descarta-as.
+- Cada chave de política de segurança — as entradas `SECURITY_IMPACTING_SETTINGS_KEYS`, cada chave `oidc*` e o estado da sessão do painel — são** somente operador** em `PATCH /api/settings`: uma chave API com âmbito de gestão ou um token de acesso `oma_` é recusado com `403` mesmo quando envia o `currentPassword` correto, e a recusa é auditada como `settings.update_failed` com `reason: OPERATOR_REQUIRED` (`requireOperatorCredential()` em `src/lib/api/operatorCredential.ts`). As definições comuns (tema, preferências de visualização) permanecem graváveis para uma chave `manage` ou um token de acesso `admin`. Cada mutação do próprio `/api/settings` (e do `/api/settings/require-login`) necessita também do âmbito do token de acesso `admin` (`ADMIN_MUTATION_EXACT_PATHS` in `src/server/authz/accessScopes.ts`, correspondência de caminho exato); `GET` permanece `read`, e as outras sub-rotas `/api/settings/*` (proxies, padrões de combinação, aliases de modelo, compressão, limpezas…) mantêm o âmbito `write` inferido pelo método.
+- `POST /api/settings/import-json` ignora esta nova autenticação, pelo que descarta todas as chaves em `IMPORT_STRIPPED_SETTINGS_KEYS` (mesmo ficheiro) antes de escrever: a palavra-passe e `currentPassword`, cada entrada `SECURITY_IMPACTING_SETTINGS_KEYS` e o estado da sessão do painel (`sessionsValidAfter`, `revokedDashboardSessions`). A importação de um backup mais antigo não pode, portanto, reavivar uma sessão cuja alteração de palavra-passe ou logout já tenha terminado.
+
+#### Login opcional TOTP de dois factores (#16619)
+
+Inscrito em Configurações → Security; desligado até que o operador o ligue (`src/server/auth/dashboardMfa.ts`).
+
+- **O que cobre:** login de password (`POST /api/auth/login`, que necessita então `POST /api/auth/mfa/verify`) e `omniroute connect` (`POST /api/cli/connect`, que recusa uma alteração apenas de password e assume o código como `totp`).
+- **O que não cobre:** O login OIDC / SSO (`/api/auth/oidc/callback`) não solicita o OmniRoute TOTP. Depende do segundo fator do próprio fornecedor de identidade, por isso aplique MFA no IdP se OIDC estiver ativado.
+- **Recuperação** (dispositivo perdido, sem código de recuperação restante ou um fator que já não pode ser verificado, por exemplo, após a alteração `STORAGE_ENCRYPTION_KEY` ):
+  1. Reinicie o servidor com `OMNIROUTE_DISABLE_MFA=true`.
+  2. No próprio host (loopback point e loopback `Host`, como `http://localhost:20128`), inicie sessão com a palavra-passe. O segundo fator é ignorado apenas para esta origem; todas as outras origens ainda necessitam do código.
+  3. Em Definições → Segurança → Desativar, introduza a palavra-passe e deixe o código em branco. `POST /api/auth/mfa/disable` aceita um corpo sem `code` apenas enquanto a variável está definida e o pedido vem do host; ainda requer a sessão do painel e a palavra-passe atual e é auditado como `auth.mfa.disabled` com `secondFactor: "recovery_switch"`.
+  4. Desmarque `OMNIROUTE_DISABLE_MFA`, reinicie e volte a inscrever-se, se necessário.
 
 ## Classes de rotas
 
@@ -179,27 +112,25 @@ Uma política bem-sucedida retorna `AuthSubject` com `kind ∈ { client_api_key,
 
 `src/shared/constants/publicApiRoutes.ts` é a lista de permissões explícita:
 
-A lista está dividida por **formato**, e esta divisão é essencial (GHSA-74g9-q8f6-793h): um prefixo é
-comparado com `startsWith()`, pelo que também corresponde a todos os caminhos adjacentes que partilhem os respetivos caracteres iniciais.
-Usar `/api/usage/om-usage` como prefixo tornou `/api/usage/om-usage<anything>` PÚBLICO, e o Next resolve
-isso como `/api/usage/[connectionId]` — um handler sem autenticação própria.
+A lista está dividida por** forma** , e a divisão é de suporte de carga (GHSA-74g9-q8f6-793h): um prefixo é combinado com `startsWith()`, pelo que corresponde também a todos os caminhos adjacentes que partilham os seus caracteres iniciais. `/api/usage/om-usage` como um prefixo marcado `/api/usage/om-usage<anything>` PUBLIC e Next resolve isto para `/api/usage/[connectionId]` — um manipulador sem autenticação própria.
 
 ```ts
-// Subárvores genuínas. Cada entrada DEVE terminar em "/" (verificado por um teste unitário).
+// Genuine subtrees. Every entry MUST end in "/" (asserted by a unit test).
 PUBLIC_API_ROUTE_PREFIXES = [
   "/api/auth/oidc/",
-  "/api/v1/", // tratado como CLIENT_API em classify, não como público "sem autenticação"
+  "/api/v1/", // treated as CLIENT_API in classify, not as "no-auth public"
   "/api/oauth/",
   "/api/codex/connect/",
   "/api/telegram/",
   "/api/cursor-cli/",
 ];
 
-// Rotas individuais, comparadas EXATAMENTE (com ou sem uma barra final).
+// Single routes, matched EXACTLY (with or without a trailing slash).
 PUBLIC_API_ROUTES_EXACT = new Set([
   "/api/auth/login",
   "/api/auth/logout",
   "/api/auth/status",
+  "/api/auth/mfa/verify", // login step 2 for opt-in TOTP; needs the MFA-pending cookie
   "/api/init",
   "/api/sync/bundle",
   "/api/cli/connect",
@@ -207,20 +138,20 @@ PUBLIC_API_ROUTES_EXACT = new Set([
   "/api/skills/collect/chaos",
 ]);
 
-// Rotas individuais só de leitura que também recebem a flexibilização da origem CORS.
+// Read-only single routes that also take the CORS origin relaxation.
 PUBLIC_READONLY_CORS_API_ROUTES = [
   "/api/health/ping",
   "/api/monitoring/health",
   "/api/settings/require-login",
 ];
 
-// Rota individual só de leitura SEM a flexibilização de CORS.
+// Read-only single route WITHOUT the CORS relaxation.
 PUBLIC_READONLY_API_ROUTES_EXACT = new Set(["/api/health"]);
 
 PUBLIC_READONLY_METHODS = new Set(["GET", "HEAD", "OPTIONS"]);
 ```
 
-As rotas só de leitura são públicas **apenas** para métodos seguros. Nota: `classifyRoute()` exclui `/api/v1/*` e `/api/v1beta/*` do caso geral PUBLIC — estas são sempre `CLIENT_API`, para que a política de chave Bearer continue a ser aplicada.
+As rotas somente leitura são públicas** apenas** para métodos seguros. Nota: `classifyRoute()` exclui `/api/v1/*` e `/api/v1beta/*` do PUBLIC fall-through — estes são sempre `CLIENT_API` pelo que a política da chave do portador ainda se aplica.
 
 ## Adicionar uma Nova Rota
 

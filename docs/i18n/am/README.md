@@ -21,19 +21,19 @@
 
 <div align="center">
 
-## 💰 ~1.62ቢሊዮን ቶክኖች / ወር በሶስተኛ ወገን ነፃ ደረጃዎች
+## 💰 ~ 1.62B Tokens / ወር ከሶስተኛ ወገን ነፃ ደረጃዎች
 
 </div>
 
-> **የእርስዎን የአቅራቢዎች መለያዎች ያመጡ።** ይህ በተለያዩ ብቻ የሚስተጋቡ የሶስተኛ ወገን ነፃ ደረጃዎች ላይ የተገመተ ድምር ነው፣ ከ OmniRoute የቶክን ስጦታ አይደለም። ይመዝገቡ፣ በያስፈልጋቸው ቦታዎች ምስክርነት ያግኙ፣ እና መጠቀም የሚችሉትን አቅራቢዎች ያገናኙ፤ እያንዳንዱ አቅራቢ የራሱን ገደብ፣ አገልግሎትና ውሎች ይቆጣጠራል።
+> **የራስዎን የአቅራቢ መለያዎች ይዘው ይምጡ።** ይህ ለየብቻ ብቁ በሆኑ የሶስተኛ ወገን ነፃ እርከኖች የሚገመተው ድምር ነው እንጂ OmniRoute ማስመሰያ ስጦታ አይደለም። ይመዝገቡ፣ አስፈላጊ ሆኖ ሲገኝ ምስክርነቶችን ያግኙ፣ እና ሊጠቀሙባቸው የሚችሉትን አቅራቢዎች ያገናኙ፤ እያንዳንዱ አቅራቢ ገደቦቹን፣ መገኘቱን እና ውሎችን ይቆጣጠራል።
 >
-> ነፃ ደረጃዎችን በእጅ ማደባበር የሚያስቸግር ነው — አስር የSDKዎች፣ አስር የደረጃ ገደቦች፣ እና ምን እንደተቀረዎት ምንም ሃሳብ የለዎትም። OmniRoute **485 የነፃ-ደረጃ እትም በ34 የተደጋጋሚ የመጠቀሚያ ቁልፎች** ውስጥ ይዘው ይዘው የቶክን ራስጌውን ከ**17 የተወጣጡ የወርሃዊ ቶክን በጀት ያላቸው ቦታዎች እና አምስት በአንድ-ሞዴል Groq ገደቦች** ይቆጣጠራል፣ በተጋራ ቦታ በመድበደብ። በክልል መለያ ምርመራ ብቻ የሚከፈቱ ኮታዎች (ዛሬ: ModelScope) በተለይ ይታያሉ፣ +~6ሚሊዮን ከክልል መለያ ማረጋገጫ በኋላ፣ እና በራስጌው ውስጥ በፍጹም አይደለም። ውጤቱ በዳሽቦርዱ ላይ ይታያል (`/dashboard/free-tiers`)።
+> ነፃ እርከኖችን በእጅ መደርደር ህመም ነው — በደርዘን የሚቆጠሩ SDKs፣ በደርዘን የሚቆጠሩ የዋጋ ገደቦች እና ምን ያህል እንዳለህ ሳያውቅ ነው። OmniRoute ካታሎጎች** በ34 ተደጋጋሚ የመዋኛ ቁልፎች ላይ 484 ነፃ-ደረጃ ግቤቶች** እና የቶከን አርዕስተ ዜናውን ከ** የታተመ አዎንታዊ ወርሃዊ በጀት እና አምስት በአንድ ሞዴል Groq ካፕ ያላቸው 17 ገንዳዎች** ፣ በጋራ ገንዳ የተባዛ። ከክልላዊ የማንነት ማረጋገጫ በኋላ ብቻ የሚከፈቱ ኮታዎች (ዛሬ ModelScope) ተለያይተው፣ +~ 6M ከክልላዊ ማንነት ማረጋገጫ ጀርባ ይታያሉ፣ እና በርዕሰ አንቀጹ ውስጥ በጭራሽ አልተካተቱም። ውጤቱ በዳሽቦርዱ (`/dashboard/free-tiers`) ላይ የሚታይ ሆኖ ይቆያል።
 
-<img src="./docs/diagrams/free-tier-budget.svg" width="100%" alt="OmniRoute free-tier budget card: ~1.62B free tokens per month steady, up to ~2.22B in the first month with signup credits, from 34 documented recurring pool keys covering 485 cataloged free-tier entries behind one endpoint. Honest pool-deduped math — each shared pool counted once, including 17 recurring pools with a published positive monthly token budget plus five per-model Groq caps; 12 providers are marked avoid in the terms-risk catalog so you decide. Budget bar includes Mistral 1B, Nara 210M, LLM7 150M, xKiro 150M, Groq 30M (five per-model caps) and smaller pools, plus first-month signup credits and permanently-free no-token-cap providers surfaced separately so they never inflate the headline. Live used/remaining on /dashboard/free-tiers."/>
+<img src="./docs/diagrams/free-tier-budget.svg" width="100%" alt="OmniRoute free-tier budget card: ~1.62B free tokens per month steady, up to ~2.22B in the first month with signup credits, from 34 documented recurring pool keys covering 484 cataloged free-tier entries behind one endpoint. Honest pool-deduped math — each shared pool counted once, including 17 recurring pools with a published positive monthly token budget plus five per-model Groq caps; 12 providers are marked avoid in the terms-risk catalog so you decide. Budget bar includes Mistral 1B, Nara 210M, LLM7 150M, xKiro 150M, Groq 30M (five per-model caps) and smaller pools, plus first-month signup credits and permanently-free no-token-cap providers surfaced separately so they never inflate the headline. Live used/remaining on /dashboard/free-tiers."/>
 
-> የቀጥታ `/dashboard/free-tiers` ገፅ አንደኛ የተንቀሳቃሽ ማጠቃለያ። ሙሉ መመኪያ (የቦታ ድብደባ፣ የብድር ደረጃዎች፣ የአቅራቢ ውሎች): **[docs/reference/FREE_TIERS.md](docs/reference/FREE_TIERS.md)**።
+> የቀጥታ `/dashboard/free-tiers` ገጽ አኒሜሽን ማጠቃለያ። ሙሉ ዘዴ (ገንዳ ተቀናሽ፣ የብድር ደረጃዎች፣ የአቅራቢዎች ውሎች)** [docs/reference/FREE_TIERS.md](docs/reference/FREE_TIERS.md)** .
 >
-> <sub>እነዚህ ቁጥሮች ሁለት ሳምንት ከሁለት ጊዜ በቀጥታ ካታሎጉ ጋር ይታወቃሉ እና **ሁለቱንም አቅጣጫ ይንቀሳቀሳሉ** — አንድ አቅራቢ ነፃ ደረጃ ካቆረጠ ቁጥሩ ይቀንሳል፤ አዲስ ከተጨመረ ይጨምራል። ካታሎጉ በእውነት የሚቆጣጠረውን እንታት፣ በፍጹም የተደረገ የምርጫ አይደለም።</sub>
+> <sub> እነዚህ አሃዞች በየሁለት ሳምንቱ በቀጥታ ካታሎግ እና እንደገና ኦዲት ይደረጋሉ።** በሁለቱም መንገዶች መንቀሳቀስ** — አቅራቢው ነፃ ደረጃን ያበቃል እና ቁጥሩ ይቀንሳል; አዲስ መሬት እና ይወጣል. ካታሎጉ በትክክል ያሰሉትን እናተምታለን፣ በጭራሽ የተጠቀለለ ምርጥ ጉዳይ አይደለም።</sub>
 
 <br/>
 
@@ -41,29 +41,23 @@
 
 <h3>
 
-⭐ ካለፉት OMNIROUTE ገንዘብ እንዲቆጥቡ እና ስራዎን እንዲቀላቀሉ ካደረገልዎ ማጣቀሻውን ይስጡ።
+⭐ ገንዘብ ለመቆጠብ እና ስራዎን ቀላል ለማድረግ OMNIROUTE ከረዳዎት repo ኮከብ ያድርጉ።
 
 </h3>
 
-[![Stars](https://img.shields.io/github/stars/diegosouzapw/OmniRoute?style=social)](https://github.com/diegosouzapw/OmniRoute)
+[![ኮከቦች](https://img.shields.io/github/stars/diegosouzapw/OmniRoute?style=social) ](https://github.com/diegosouzapw/OmniRoute)
 <a href="https://trendshift.io/repositories/23589" target="_blank"><img src="https://trendshift.io/api/badge/repositories/23589" alt="diegosouzapw%2FOmniRoute | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
-[![Star History Rank](https://api.star-history.com/badge?repo=diegosouzapw/OmniRoute&theme=dark)](https://www.star-history.com/diegosouzapw/omniroute)
-[![olud.ai](https://olud.ai/badge.php?tool=diegosouzapw-omniroute)](https://olud.ai/project/diegosouzapw-omniroute.html)
+[![የኮከብ ታሪክ ደረጃ](https://api.star-history.com/badge?repo=diegosouzapw/OmniRoute&theme=dark) ](https://www.star-history.com/diegosouzapw/omniroute) [![olud.ai](https://olud.ai/badge.php?tool=diegosouzapw-omniroute) ](https://olud.ai/project/diegosouzapw-omniroute.html)
 
-### 💬 ማህበሩን ይቀላቀሉ
+### 💬 ማህበረሰቡን ይቀላቀሉ
 
-**👋 አስተዳዳሪውን ይከተሉ — አዲስ አቅራቢዎች፣ ልትስፋፋዎች እና ምክሮችን በመጀመሪያ ይውሰዱ፦**
+**👋 ጠባቂውን ይከተሉ — በመጀመሪያ አዳዲስ አቅራቢዎችን፣ ልቀቶችን እና ምክሮችን ያግኙ፡-**
 
-[![Follow Diego on LinkedIn](https://img.shields.io/badge/Follow_Diego_on-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/diegosouzapw/)
-[![Follow @diegosouzapw on GitHub](https://img.shields.io/github/followers/diegosouzapw?style=for-the-badge&logo=github&logoColor=white&label=Follow%20on%20GitHub&color=181717)](https://github.com/diegosouzapw)
+[![ዲያጎን LinkedIn ላይ ይከተሉ](https://img.shields.io/badge/Follow_Diego_on-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white) ](https://www.linkedin.com/in/diegosouzapw/) [![ @diegosouzapw በ GitHub ላይ ይከተሉ](https://img.shields.io/github/followers/diegosouzapw?style=for-the-badge&logo=github&logoColor=white&label=Follow%20on%20GitHub&color=181717) ](https://github.com/diegosouzapw)
 
-[![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/U47eFqAXCn)
-[![Telegram](https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/omnirouteOficial)
-[![WhatsApp Global](https://img.shields.io/badge/WhatsApp_Global-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/FvuCbrpZmQ6I85n2vW5QIC?s=cl&p=a&mlu=4)
-[![WhatsApp Brasil](https://img.shields.io/badge/WhatsApp_Brasil-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/KWgatljAjmbELQory59Oti?s=cl&p=a&mlu=4)
-[![Website](https://img.shields.io/badge/Website-omniroute.online-blue?logo=google-chrome&logoColor=white)](https://omniroute.online)
+[![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/U47eFqAXCn) [![Telegram](https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/omnirouteOficial) [![WhatsApp Global](https://img.shields.io/badge/WhatsApp_Global-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/FvuCbrpZmQ6I85n2vW5QIC?s=cl&p=a&mlu=4) [![WhatsApp Brasil](https://img.shields.io/badge/WhatsApp_Brasil-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/KWgatljAjmbELQory59Oti?s=cl&p=a&mlu=4) [![Website](https://img.shields.io/badge/Website-omniroute.online-blue?logo=google-chrome&logoColor=white)](https://omniroute.online)
 
-**ጥያቄዎች፣ የአቅራቢ ምክሮች፣ የመንገድ ካርታ እና ድጋፍ → [Discord](https://discord.gg/U47eFqAXCn) · [Telegram](https://t.me/omnirouteOficial) · WhatsApp [🌍 ዓለም](https://chat.whatsapp.com/FvuCbrpZmQ6I85n2vW5QIC?s=cl&p=a&mlu=4) / [🇧🇷 ብራዚል](https://chat.whatsapp.com/KWgatljAjmbELQory59Oti?s=cl&p=a&mlu=4) / [ፖርታል](https://portal.sthub.com.br/communities/groups/st-hub/channels/Omniroute-World-8kRjmK)**
+**ጥያቄዎች፣ የአቅራቢ ምክሮች፣ የመንገድ ካርታ እና ድጋፍ → [Discord](https://discord.gg/U47eFqAXCn) · [Telegram](https://t.me/omnirouteOficial) · WhatsApp [🌍 Global](https://chat.whatsapp.com/FvuCbrpZmQ6I85n2vW5QIC?s=cl&p=a&mlu=4) / [🇧🇷 Brasil](https://chat.whatsapp.com/KWgatljAjmbELQory59Oti?s=cl&p=a&mlu=4) / [Portal](https://portal.sthub.com.br/communities/groups/st-hub/channels/Omniroute-World-8kRjmK)**
 
 <br/>
 
@@ -1285,135 +1279,135 @@ OMNIROUTE_SKIP_POSTINSTALL=1 npm install -g omniroute   # CI=1ም ይዘለዋ�
 <br/>
 <div align="center">
 
-## 🛠️ የቴክኖሎጂ ቁልል
+## 🛠️ ቴክ ቁልል
 
 </div>
 
 <table>
   <tr><th align="left">ንብርብር</th><th align="left">ቴክኖሎጂ</th></tr>
-  <tr><td nowrap><b>የማስኬጃ አካባቢ</b></td><td>Node.js 22.x / 24.x LTS — <code>&gt;=22.22.2 &lt;23 || &gt;=24.0.0 &lt;27</code></td></tr>
-  <tr><td nowrap><b>ቋንቋ</b></td><td>TypeScript 6.0 — በ<code>src/</code> እና <code>open-sse/</code> ውስጥ <b>100% TypeScript</b> (ከv2.0 ጀምሮ በዋናው ኮድ ውስጥ ዜሮ <code>any</code>)</td></tr>
-  <tr><td nowrap><b>ፍሬምወርክ</b></td><td>Next.js 16 + React 19 + Tailwind CSS 4</td></tr>
-  <tr><td nowrap><b>ዳታቤዝ</b></td><td>better-sqlite3 (SQLite፣ WAL መዝገብ) + LowDB (የJSON ውርስ) — 147 የድርጅት ሞጁሎች፣ 222 ማሻሻያዎች</td></tr>
-  <tr><td nowrap><b>ማስታወሻ</b></td><td>SQLite FTS5 ሙሉ ጽሑፍ + int8-quantized የቬክተር ኢምቤዲንጎች፣ በአይነት የተወሰነ መቀነስ</td></tr>
-  <tr><td nowrap><b>ስኪማዎች</b></td><td>Zod 4 — የMCP መሣሪያ I/O ማረጋገጫ + የAPI ውሎች</td></tr>
+  <tr><td nowrap><b>የሩጫ ጊዜ</b></td><td>Node.js 22.x / 24.x LTS — <code>&gt;=22.22.2 &lt;23 || &gt;=24.0.0 &lt;27</code></td></tr>
+  <tr><td nowrap><b>ቋንቋ</b></td><td>TypeScript 6.0 — <b>100% TypeScript</b> በ <code>src/</code> እና <code>open-sse/</code> (ዜሮ <code>any</code> በኮር ከv2.0 ጀምሮ)</td></tr>
+  <tr><td nowrap><b>ማዕቀፍ</b></td><td>Next.js 16 + React 19 + Tailwind CSS 4</td></tr>
+  <tr><td nowrap><b>የውሂብ ጎታ</b></td><td>better-sqlite3 (SQLite፣ WAL journaling) + LowDB (JSON ቅርስ) — 147 ጎራ ሞጁሎች፣ 222 ፍልሰት</td></tr>
+  <tr><td nowrap><b>ማህደረ ትውስታ</b></td><td>SQLite FTS5 ሙሉ ጽሑፍ + int8-quantized የቬክተር መክተቻዎች፣ የተተየበው መበስበስ</td></tr>
+  <tr><td nowrap><b>መርሃግብሮች</b></td><td>Zod 4 — MCP መሣሪያ I/O ማረጋገጫ + API ኮንትራቶች</td></tr>
   <tr><td nowrap><b>ፕሮቶኮሎች</b></td><td>MCP (stdio / HTTP / SSE) + A2A v0.3 (JSON-RPC 2.0 + SSE)</td></tr>
-  <tr><td nowrap><b>ዥረት ማስተላለፍ</b></td><td>በአገልጋይ የሚላኩ ክስተቶች (SSE) + WebSocket ድልድይ (<code>/v1/ws</code>)</td></tr>
-  <tr><td nowrap><b>መጭመቂያ</b></td><td>12-ሞተር ቧንቧ — RTK፣ Caveman፣ LLMLingua-2 (MobileBERT ONNX)፣ GCF፣ OmniGlyph</td></tr>
-  <tr><td nowrap><b>ማረጋገጫ እና ደህንነት</b></td><td>OAuth 2.0 (PKCE) + JWT + API Keys + የMCP የተወሰነ ማረጋገጫ · AES-256-GCM በማከማቻ ላይ · DOMPurify</td></tr>
-  <tr><td nowrap><b>ስውርነት</b></td><td>wreq-js — JA3 / JA4 TLS የአሻራ ማስመሰል፣ ባለ3-ደረጃ ፕሮክሲ</td></tr>
-  <tr><td nowrap><b>ጽናት</b></td><td>የወረዳ ማቋረጫ፣ የሚጨምር የመጠበቂያ ጊዜ፣ ፀረ-መጨናነቅ፣ በራስ-ሰር ጥምር ራስን መጠገን</td></tr>
-  <tr><td nowrap><b>መዝገብ ማድረግ</b></td><td>pino — የተዋቀሩ የJSON መዝገቦች ከጥያቄ አውድ ጋር</td></tr>
-  <tr><td nowrap><b>ሙከራ</b></td><td>የNode.js ሙከራ አስኬጂ + Vitest — በ8,400+ ተከታትለው በተመዘገቡ የሙከራ ፋይሎች ላይ <b>60,000+ የማይንቀሳቀሱ የሙከራ መግለጫዎች</b> (ዩኒት፣ ውህደት፣ E2E፣ ደህንነት፣ ኢኮሲስተም)</td></tr>
-  <tr><td nowrap><b>መድረኮች</b></td><td>ዴስክቶፕ (Electron) · Android (Termux) · PWA (ማንኛውም አሳሽ)</td></tr>
-  <tr><td nowrap><b>CI/CD</b></td><td>GitHub Actions — በልቀት ጊዜ በራስ-ሰር npm ማተም + Docker Hub</td></tr>
-  <tr><td nowrap><b>አገናኞች</b></td><td><a href="https://omniroute.online">ድረ-ገጽ</a> · <a href="https://www.npmjs.com/package/omniroute">npm</a> · <a href="https://hub.docker.com/r/diegosouzapw/omniroute">Docker Hub</a></td></tr>
+  <tr><td nowrap><b>በዥረት መልቀቅ</b></td><td>በአገልጋይ የተላኩ ክስተቶች (SSE) + WebSocket ድልድይ (<code>/v1/ws</code>)</td></tr>
+  <tr><td nowrap><b>መጨናነቅ</b></td><td>12-ሞተር ቧንቧ መስመር — RTK, Caveman, LLMLingua-2 (MobileBERT ONNX), GCF, OmniGlyph</td></tr>
+  <tr><td nowrap><b>Auth &amp; ደህንነት</b></td><td>OAuth 2.0 (PKCE) + JWT + API ቁልፎች + MCP scoped auth · AES-256-GCM በእረፍት · DOMPurify</td></tr>
+  <tr><td nowrap><b>ስውርነት</b></td><td>wreq-js — JA3 / JA4 TLS የጣት አሻራ ማስመሰል፣ ባለ 3-ደረጃ ፕሮክሲ</td></tr>
+  <tr><td nowrap><b>የመቋቋም ችሎታ</b></td><td>የወረዳ ሰባሪ፣ ገላጭ የኋላ ማጥፋት፣ ፀረ-ነጎድጓድ-መንጋ፣ ራስ-ኮምቦ ራስን መፈወስ</td></tr>
+  <tr><td nowrap><b>መግባት</b></td><td>pino — የተዋቀሩ JSON ምዝግብ ማስታወሻዎች ከጥያቄ አውድ ጋር</td></tr>
+  <tr><td nowrap><b>መሞከር</b></td><td>Node.js የሙከራ ሯጭ + Vitest — <b>60,000 + የማይንቀሳቀስ ሙከራ መግለጫዎች</b> በ8,400 + ክትትል የሚደረግባቸው የሙከራ ፋይሎች (ዩኒት፣ ውህደት፣ E2E፣ ደህንነት፣ ስነ-ምህዳር)</td></tr>
+  <tr><td nowrap><b>መድረኮች</b></td><td>ዴስክቶፕ (Electron) · አንድሮይድ (ቴርሙክስ) · PWA (ማንኛውም አሳሽ)</td></tr>
+  <tr><td nowrap><b>CI/CD</b></td><td>GitHub ድርጊቶች — auto npm + Docker Hub በሚለቀቅበት ጊዜ ያትማል</td></tr>
+  <tr><td nowrap><b>አገናኞች</b></td><td><a href="https://omniroute.online">ድህረገፅ</a> · <a href="https://www.npmjs.com/package/omniroute">npm</a> · <a href="https://hub.docker.com/r/diegosouzapw/omniroute">Docker Hub</a></td></tr>
 </table>
 
 <div align="center">
 
 <br/>
 
-## 📖 ሰነዶች
+## 📖 ሰነድ
 
 </div>
 
-### 📘 መጀመሪያ መጀመር
+### 📘 መጀመር
 
 <table>
   <tr><th align="left">ሰነድ</th><th align="left">መግለጫ</th></tr>
-  <tr><td nowrap><b><a href="docs/guides/USER_GUIDE.md">የተጠቃሚ መመሪያ</a></b></td><td>አቅራቢዎች፣ ጥምረቶች፣ CLI ውህደት፣ ማሰማራት</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/SETUP_GUIDE.md">የማዋቀሪያ መመሪያ</a></b></td><td>ሙሉ የመጫኛ ዘዴዎች፣ CLI መሣሪያ ውቅሮች፣ የፕሮቶኮል ማዋቀር፣ የጊዜ ገደብ ማስተካከያ</td></tr>
-  <tr><td nowrap><b><a href="docs/reference/CLI-TOOLS.md">የCLI መሣሪያዎች መመሪያ</a></b></td><td>ለ Claude Code፣ Codex፣ Cursor፣ Cline፣ OpenClaw፣ Kilo፣ Copilot የተናጠል መሣሪያ ማዋቀር</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/REMOTE-MODE.md">የርቀት ሁነታ</a></b></td><td>የርቀት OmniRoute (VPS) ን ከላፕቶፕዎ CLI በተወሰነ የመዳረሻ ማስመሰያ መቆጣጠር</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/CLAUDE-CODE-CONFIGURATION.md">የClaude Code ውቅር</a></b></td><td>Claude Code ን ወደ OmniRoute (አካባቢያዊ/ርቀት) በ<code>launch</code> + በእያንዳንዱ ሞዴል መገለጫዎች ማመልከት</td></tr>
-  <tr><td nowrap><b><a href="README.md#-quick-start">ፈጣን መጀመሪያ</a></b></td><td>በ3 ደረጃዎች መጫን → መገናኘት → ማዋቀር</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/USER_GUIDE.md">የተጠቃሚ መመሪያ</a></b></td><td>አቅራቢዎች፣ ጥንብሮች፣ CLI ውህደት፣ ማሰማራት</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/SETUP_GUIDE.md">የማዋቀር መመሪያ</a></b></td><td>ሙሉ የመጫኛ ዘዴዎች፣ CLI tool configs፣ ፕሮቶኮል ማዋቀር፣ የጊዜ ማብቂያ ማስተካከል</td></tr>
+  <tr><td nowrap><b><a href="docs/reference/CLI-TOOLS.md">CLI መሣሪያዎች መመሪያ</a></b></td><td>በመሣሪያ ማዋቀር ለ Claude ኮድ፣ Codex፣ Cursor፣ Cline፣ OpenClaw፣ ኪሎ፣ Copilot</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/REMOTE-MODE.md">የርቀት ሁነታ</a></b></td><td>የርቀት OmniRoute (VPS) ከላፕቶፕዎ CLI ላይ በተቀመጡ የመዳረሻ ቶከኖች ይንዱ</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/CLAUDE-CODE-CONFIGURATION.md">Claude ኮድ ውቅር</a></b></td><td>Claude ኮድ በ OmniRoute (local/remote) ከ <code>launch</code> + በእያንዳንዱ ሞዴል መገለጫዎች</td></tr>
+  <tr><td nowrap><b><a href="README.md#-quick-start">ፈጣን ጅምር</a></b></td><td>ባለ 3-ደረጃ ጭነት → አገናኝ → ውቅር</td></tr>
 </table>
 
-### 🔧 አሠራር እና ማሰማራት
+### 🔧 ክወናዎች እና ማሰማራት
 
 <table>
   <tr><th align="left">ሰነድ</th><th align="left">መግለጫ</th></tr>
-  <tr><td nowrap><b><a href="docs/guides/DOCKER_GUIDE.md">የDocker መመሪያ</a></b></td><td>Docker ማስኬድ፣ Compose መገለጫዎች፣ Caddy HTTPS፣ ቱነሎች፣ የምስል መለያዎች</td></tr>
-  <tr><td nowrap><b><a href="contrib/podman/README.md">የPodman መመሪያ</a></b></td><td>የQuadlet systemd ውህደት፣ podman-compose፣ SELinux</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/VM_DEPLOYMENT_GUIDE.md">VM ማሰማራት</a></b></td><td>ሙሉ መመሪያ፦ VM + nginx + Cloudflare ማዋቀር</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/FLY_IO_DEPLOYMENT_GUIDE.md">Fly.io ማሰማራት</a></b></td><td>ቋሚ ማከማቻን በመጠቀም ወደ Fly.io ማሰማራት</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/TERMUX_GUIDE.md">የTermux መመሪያ</a></b></td><td>OmniRoute ን በTermux በኩል በAndroid ላይ ማስኬድ</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/PWA_GUIDE.md">የPWA መመሪያ</a></b></td><td>Progressive Web App መጫን፣ መሸጎጥ፣ አርክቴክቸር</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/UNINSTALL.md">የማራገፊያ መመሪያ</a></b></td><td>ለሁሉም የመጫኛ ዘዴዎች ንጹህ ማስወገድ</td></tr>
-  <tr><td nowrap><b><a href="docs/reference/ENVIRONMENT.md">የአካባቢ ውቅር</a></b></td><td>ሙሉ <code>.env</code> ተለዋዋጮች እና ማጣቀሻዎች</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/DOCKER_GUIDE.md">Docker መመሪያ</a></b></td><td>Docker ሩጫ፣ ፕሮፋይሎችን ጻፍ፣ Caddy HTTPS፣ ዋሻዎች፣ የምስል መለያዎች</td></tr>
+  <tr><td nowrap><b><a href="contrib/podman/README.md">Podman መመሪያ</a></b></td><td>ኳድሌት ሲስተምድ ውህደት፣ ፖድማን-አቀናባሪ፣ SELinux</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/VM_DEPLOYMENT_GUIDE.md">VM ማሰማራት</a></b></td><td>የተሟላ መመሪያ VM + nginx + Cloudflare ማዋቀር</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/FLY_IO_DEPLOYMENT_GUIDE.md">Fly.io ማሰማራት</a></b></td><td>ከቋሚ ማከማቻ ጋር ወደ Fly.io አሰማር</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/TERMUX_GUIDE.md">Termux መመሪያ</a></b></td><td>በTermux በኩል OmniRoute በአንድሮይድ ላይ ያሂዱ</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/PWA_GUIDE.md">PWA መመሪያ</a></b></td><td>ተራማጅ የድር መተግበሪያ መጫን፣ መሸጎጫ፣ አርክቴክቸር</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/UNINSTALL.md">የማራገፍ መመሪያ</a></b></td><td>ለሁሉም የመጫኛ ዘዴዎች ንጹህ መወገድ</td></tr>
+  <tr><td nowrap><b><a href="docs/reference/ENVIRONMENT.md">የአካባቢ ውቅር</a></b></td><td>የተሟላ <code>.env</code> ተለዋዋጮች እና ማጣቀሻዎች</td></tr>
 </table>
 
 ### 🧠 ባህሪያት እና አርክቴክቸር
 
 <table>
   <tr><th align="left">ሰነድ</th><th align="left">መግለጫ</th></tr>
-  <tr><td nowrap><b><a href="docs/architecture/ARCHITECTURE.md">አርክቴክቸር</a></b></td><td>የስርዓት አርክቴክቸር፣ የውሂብ ፍሰት እና ውስጣዊ አሠራር</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_GUIDE.md">የመጭመቂያ መመሪያ</a></b></td><td>7-አማራጭ የሂደት መስመር፦ off / lite / standard / aggressive / ultra / RTK / stacked</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/RTK_COMPRESSION.md">RTK መጭመቂያ</a></b></td><td>የትዕዛዝ ውጤት መጭመቂያ፣ ማጣሪያዎች፣ መተማመን፣ ማረጋገጥ፣ ጥሬ ውጤት መልሶ ማግኘት</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_ENGINES.md">የመጭመቂያ ሞተሮች</a></b></td><td>Caveman፣ RTK፣ የተደራረቡ የሂደት መስመሮች፣ dashboard/API/MCP በይነገጾች</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_RULES_FORMAT.md">የመጭመቂያ ደንቦች ቅርጸት</a></b></td><td>ለCaveman እና RTK ማጣሪያዎች የJSON ደንብ-ጥቅል ስኪማዎች</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_LANGUAGE_PACKS.md">የመጭመቂያ ቋንቋ ጥቅሎች</a></b></td><td>የቋንቋ ማወቂያ እና የCaveman ደንብ-ጥቅል አዘገጃጀት</td></tr>
-  <tr><td nowrap><b><a href="docs/architecture/RESILIENCE_GUIDE.md">የመቋቋም አቅም መመሪያ</a></b></td><td>የወረዳ ማቋረጫዎች፣ የማቀዝቀዣ ጊዜዎች፣ ወረፋ፣ የተጠቃሚዎች በአንድ ጊዜ መጨናነቅን መከላከል፣ TLS spoofing</td></tr>
-  <tr><td nowrap><b><a href="docs/routing/AUTO-COMBO.md">የAuto-Combo ሞተር</a></b></td><td>በ16 ምክንያቶች የሚደረግ ውጤት መስጠት፣ የሁነታ ጥቅሎች፣ ራስን መጠገን</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/PROXY_GUIDE.md">የProxy መመሪያ</a></b></td><td>ባለ3-ደረጃ የProxy ስርዓት፣ 1proxy የገበያ መድረክ፣ የመዝገብ CRUD</td></tr>
-  <tr><td nowrap><b><a href="docs/reference/FREE_TIERS.md">ነፃ ደረጃዎች</a></b></td><td>የተጠናከረ ማውጫ፦ 34 በሰነድ የተደገፉ ተደጋጋሚ ስብስቦች / 485 በካታሎግ የተመዘገቡ የነፃ ደረጃ ግቤቶች</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/FEATURES.md">የባህሪያት ማሳያ</a></b></td><td>ከስክሪንሾቶች ጋር የእይታ dashboard ጉብኝት</td></tr>
-  <tr><td nowrap><b><a href="docs/architecture/CODEBASE_DOCUMENTATION.md">የኮድቤዝ ሰነድ</a></b></td><td>ለጀማሪዎች ተስማሚ የኮድቤዝ መግለጫ</td></tr>
+  <tr><td nowrap><b><a href="docs/architecture/ARCHITECTURE.md">አርክቴክቸር</a></b></td><td>የስርዓት አርክቴክቸር፣ የውሂብ ፍሰት እና የውስጥ አካላት</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_GUIDE.md">የመጭመቂያ መመሪያ</a></b></td><td>ባለ 7-አማራጭ የቧንቧ መስመር፡- ጠፍቷል/ላይት/መደበኛ/ጨካኝ/ultra/ RTK /የተቆለለ</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/RTK_COMPRESSION.md">RTK መጭመቂያ</a></b></td><td>የትዕዛዝ-ውፅዓት መጭመቂያ፣ ማጣሪያዎች፣ እምነት፣ ማረጋገጥ፣ የጥሬ-ውፅዓት መልሶ ማግኛ</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_ENGINES.md">መጭመቂያ ሞተሮች</a></b></td><td>ዋሻማን፣ RTK፣ የተደረደሩ የቧንቧ መስመሮች፣ dashboard/API/MCP ንጣፎች</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_RULES_FORMAT.md">የማመቅ ደንቦች ቅርጸት</a></b></td><td>ለ Caveman እና RTK ማጣሪያዎች JSON ደንብ-ጥቅል መርሃግብሮች</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_LANGUAGE_PACKS.md">የመጭመቂያ ቋንቋ ጥቅሎች</a></b></td><td>የቋንቋ ማወቂያ እና የ Caveman ደንብ ጥቅል ደራሲ</td></tr>
+  <tr><td nowrap><b><a href="docs/architecture/RESILIENCE_GUIDE.md">የመቋቋም መመሪያ</a></b></td><td>የወረዳ የሚላተም, cooldowns, ወረፋ, ፀረ-ነጎድጓድ መንጋ, TLS spoofing</td></tr>
+  <tr><td nowrap><b><a href="docs/routing/AUTO-COMBO.md">ራስ-ኮምቦ ሞተር</a></b></td><td>ባለ 16-ደረጃ ነጥብ, ሁነታ ጥቅሎች, ራስን መፈወስ</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/PROXY_GUIDE.md">ተኪ መመሪያ</a></b></td><td>ባለ 3-ደረጃ ተኪ ስርዓት፣ 1proxy marketplace፣ መዝገብ ቤት CRUD</td></tr>
+  <tr><td nowrap><b><a href="docs/reference/FREE_TIERS.md">ነጻ ደረጃዎች</a></b></td><td>የተዋሃደ ማውጫ፡- 34 በሰነድ የተደገፈ ተደጋጋሚ ገንዳዎች/484 በካታሎግ የተመዘገቡ የነጻ ደረጃ ግቤቶች</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/FEATURES.md">የባህሪዎች ማዕከለ-ስዕላት</a></b></td><td>ከቅጽበታዊ ገጽ እይታዎች ጋር የእይታ ዳሽቦርድ ጉብኝት</td></tr>
+  <tr><td nowrap><b><a href="docs/architecture/CODEBASE_DOCUMENTATION.md">Codebase ሰነድ</a></b></td><td>ለጀማሪ ተስማሚ የሆነ የኮድቤዝ ጉዞ</td></tr>
 </table>
 
-### 🤖 ፕሮቶኮሎች እና APIዎች
+### 🤖 ፕሮቶኮሎች & APIs
 
 <table>
   <tr><th align="left">ሰነድ</th><th align="left">መግለጫ</th></tr>
-  <tr><td nowrap><b><a href="docs/reference/API_REFERENCE.md">የAPI ማጣቀሻ</a></b></td><td>ሁሉም መጨረሻ ነጥቦች ከምሳሌዎች ጋር</td></tr>
-  <tr><td nowrap><b><a href="docs/openapi.yaml">OpenAPI መግለጫ</a></b></td><td>የOpenAPI 3.0 መግለጫ</td></tr>
-  <tr><td nowrap><b><a href="open-sse/mcp-server/README.md">MCP አገልጋይ</a></b></td><td>110 MCP መሣሪያዎች፣ IDE ውቅሮች፣ Python/TS/Go ደንበኞች</td></tr>
-  <tr><td nowrap><b><a href="docs/frameworks/MCP-SERVER.md">የMCP አገልጋይ መመሪያ</a></b></td><td>MCP መጫን፣ ትራንስፖርቶች እና የመሣሪያ ማጣቀሻ</td></tr>
-  <tr><td nowrap><b><a href="src/lib/a2a/README.md">A2A አገልጋይ</a></b></td><td>JSON-RPC 2.0 ፕሮቶኮል፣ ክህሎቶች፣ ዥረት፣ የተግባር አስተዳደር</td></tr>
-  <tr><td nowrap><b><a href="docs/frameworks/A2A-SERVER.md">የA2A አገልጋይ መመሪያ</a></b></td><td>የA2A ወኪል ካርድ፣ ተግባራት፣ ክህሎቶች እና ዥረት</td></tr>
+  <tr><td nowrap><b><a href="docs/reference/API_REFERENCE.md">API ማጣቀሻ</a></b></td><td>ሁሉም የመጨረሻ ነጥቦች በምሳሌዎች</td></tr>
+  <tr><td nowrap><b><a href="docs/openapi.yaml">OpenAPI Spec</a></b></td><td>OpenAPI 3.0 ዝርዝር</td></tr>
+  <tr><td nowrap><b><a href="open-sse/mcp-server/README.md">MCP አገልጋይ</a></b></td><td>110 MCP መሳሪያዎች፣ IDE ውቅሮች፣ Python/TS/Go ደንበኞች</td></tr>
+  <tr><td nowrap><b><a href="docs/frameworks/MCP-SERVER.md">MCP አገልጋይ መመሪያ</a></b></td><td>MCP መጫን፣ ማጓጓዣ እና የመሳሪያ ማጣቀሻ</td></tr>
+  <tr><td nowrap><b><a href="src/lib/a2a/README.md">A2A አገልጋይ</a></b></td><td>JSON-RPC 2.0 ፕሮቶኮል፣ ችሎታዎች፣ ዥረት መልቀቅ፣ ተግባር mgmt</td></tr>
+  <tr><td nowrap><b><a href="docs/frameworks/A2A-SERVER.md">A2A አገልጋይ መመሪያ</a></b></td><td>A2A ወኪል ካርድ፣ ተግባራት፣ ችሎታዎች እና በዥረት መልቀቅ</td></tr>
 </table>
 
 ### 📋 ፕሮጀክት እና ጥራት
 
 <table>
   <tr><th align="left">ሰነድ</th><th align="left">መግለጫ</th></tr>
-  <tr><td nowrap><b><a href="CONTRIBUTING.md">አስተዋጽኦ ማድረግ</a></b></td><td>የልማት ማዋቀሪያ እና መመሪያዎች</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/BRANCHING_MODEL.md">የቅርንጫፍ እና የልቀት ሞዴል</a></b></td><td>PRs የሚያነጣጥሩበት (<code>release/*</code>)፣ <code>main</code> እና መለያዎች ምን እንደሚወክሉ</td></tr>
-  <tr><td nowrap><b><a href="CHANGELOG.md">የለውጦች መዝገብ</a></b></td><td>ሙሉ የእያንዳንዱ ስሪት የልቀት ታሪክ</td></tr>
-  <tr><td nowrap><b><a href="SECURITY.md">የደህንነት መመሪያ</a></b></td><td>የተጋላጭነት ሪፖርት ማድረግ እና የደህንነት አሠራሮች</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/I18N.md">የi18n መመሪያ</a></b></td><td>የ67 ቋንቋዎች ድጋፍ፣ የትርጉም የሥራ ሂደት፣ RTL</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/RELEASE_CHECKLIST.md">የልቀት ዝርዝር ማረጋገጫ</a></b></td><td>ከልቀት በፊት የሚደረጉ የማረጋገጫ ደረጃዎች</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/COVERAGE_PLAN.md">የሽፋን ዕቅድ</a></b></td><td>በ8,400+ በተከታተሉ የሙከራ ፋይሎች ውስጥ ከ60,000+ የማይንቀሳቀሱ የሙከራ መግለጫዎች የሚኖራቸው የሙከራ ሽፋን ስትራቴጂ</td></tr>
+  <tr><td nowrap><b><a href="CONTRIBUTING.md">አስተዋጽዖ ማድረግ</a></b></td><td>የእድገት ማዋቀር እና መመሪያዎች</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/BRANCHING_MODEL.md">የቅርንጫፎች እና የመልቀቂያ ሞዴል</a></b></td><td>የት PRs ኢላማ (<code>release/*</code>)፣ <code>main</code> እና መለያዎች ማለት ምን ማለት ነው።</td></tr>
+  <tr><td nowrap><b><a href="CHANGELOG.md">ለውጥ ሎግ</a></b></td><td>ሙሉ በየሥሪት የሚለቀቅ ታሪክ</td></tr>
+  <tr><td nowrap><b><a href="SECURITY.md">የደህንነት ፖሊሲ</a></b></td><td>የተጋላጭነት ሪፖርት እና የደህንነት ልምዶች</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/I18N.md">i18n መመሪያ</a></b></td><td>67-ቋንቋ ድጋፍ, የትርጉም የስራ ሂደት, RTL</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/RELEASE_CHECKLIST.md">የልቀት ማረጋገጫ ዝርዝር</a></b></td><td>የቅድመ-ልቀት ማረጋገጫ እርምጃዎች</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/COVERAGE_PLAN.md">የሽፋን እቅድ</a></b></td><td>በ 8,400 + ክትትል የሚደረግባቸው የሙከራ ፋይሎች ውስጥ ለ60,000 + የማይንቀሳቀስ ሙከራ መግለጫዎች የሽፋን ስትራቴጂን ሞክር</td></tr>
 </table>
 
 <br/>
 
 <div align="center">
 
-# ⭐ ከፍተኛ አስተዋጽኦ አድራጊዎች
+# ⭐ ከፍተኛ አስተዋጽዖ አበርካቾች
 
-> OmniRoute የተቀረጸው በትጋት በሚሳተፍ የክፍት ምንጭ ማኅበረሰብ ነው። እነዚህ ግለሰቦች በፕሮጀክቱ ጥራት፣ መረጋጋት እና ተደራሽነት ላይ በቀጥታ ተጽዕኖ የሚያሳድሩ ልዩ አስተዋጽኦዎችን አድርገዋል። **እናመሰግናለን።**
+> OmniRoute በስሜታዊ ክፍት ምንጭ ማህበረሰብ የተቀረፀ ነው። እነዚህ ግለሰቦች የፕሮጀክቱን ጥራት፣ መረጋጋት እና ተደራሽነት በቀጥታ የሚነኩ ልዩ አስተዋጾ አድርገዋል።** አመሰግናለሁ።**
 
-### በተዋሃዱ የመሳብ ጥያቄዎች መሠረት የውጭ አስተዋጽኦ አድራጊዎች
+### የውጪ አስተዋጽዖ አበርካቾች የተዋሃዱ የመሳብ ጥያቄዎች
 
 <table>
-  <tr><th align="center">ደረጃ</th><th align="left">አስተዋጽኦ አድራጊ</th><th align="center">የተዋሃዱ PRs</th><th align="right">~የተቀየሩ መስመሮች</th></tr>
+  <tr><th align="center">ደረጃ</th><th align="left">አበርካች</th><th align="center">የተዋሃደ PRs</th><th align="right">~ የተቀየሩ መስመሮች</th></tr>
   <tr><td align="center">1</td><td align="left"><a href="https://github.com/maxmad64bis"><b>maxmad64bis</b></a></td><td align="center">418</td><td align="right">25,367,739</td></tr>
   <tr><td align="center">2</td><td align="left"><a href="https://github.com/HouMinXi"><b>HouMinXi</b></a></td><td align="center">295</td><td align="right">13,557,796</td></tr>
-  <tr><td align="center">3</td><td align="left"><a href="https://github.com/pacocartones"><b>pacocartones</b></a></td><td align="center">222</td><td align="right">81,551</td></tr>
+  <tr><td align="center">3</td><td align="left"><a href="https://github.com/pacocartones"><b>ፓኮካርቶንስ</b></a></td><td align="center">222</td><td align="right">81,551</td></tr>
   <tr><td align="center">4</td><td align="left"><a href="https://github.com/backryun"><b>backryun</b></a></td><td align="center">210</td><td align="right">270,562</td></tr>
   <tr><td align="center">5</td><td align="left"><a href="https://github.com/JxnLexn"><b>JxnLexn</b></a></td><td align="center">198</td><td align="right">3,570,623</td></tr>
-  <tr><td align="center">6</td><td align="left"><a href="https://github.com/oyi77"><b>oyi77</b></a></td><td align="center">190</td><td align="right">411,243</td></tr>
+  <tr><td align="center">6</td><td align="left"><a href="https://github.com/oyi77"><b>ወይ77</b></a></td><td align="center">190</td><td align="right">411,243</td></tr>
   <tr><td align="center">7</td><td align="left"><a href="https://github.com/KooshaPari"><b>KooshaPari</b></a></td><td align="center">151</td><td align="right">5,972,314</td></tr>
   <tr><td align="center">8</td><td align="left"><a href="https://github.com/rdself"><b>rdself</b></a></td><td align="center">145</td><td align="right">80,663</td></tr>
   <tr><td align="center">9</td><td align="left"><a href="https://github.com/RaviTharuma"><b>RaviTharuma</b></a></td><td align="center">123</td><td align="right">500,065</td></tr>
-  <tr><td align="center">10</td><td align="left"><a href="https://github.com/herjarsa"><b>herjarsa</b></a></td><td align="center">88</td><td align="right">230,872</td></tr>
-  <tr><td align="center">11</td><td align="left"><a href="https://github.com/hartmark"><b>hartmark</b></a></td><td align="center">85</td><td align="right">2,849,623</td></tr>
+  <tr><td align="center">10</td><td align="left"><a href="https://github.com/herjarsa"><b>ሄርጃርሳ</b></a></td><td align="center">88</td><td align="right">230,872</td></tr>
+  <tr><td align="center">11</td><td align="left"><a href="https://github.com/hartmark"><b>ሃርትማርክ</b></a></td><td align="center">85</td><td align="right">2,849,623</td></tr>
   <tr><td align="center">12</td><td align="left"><a href="https://github.com/jonlwheat2-gif"><b>jonlwheat2-gif</b></a></td><td align="center">68</td><td align="right">69,097</td></tr>
-  <tr><td align="center">13</td><td align="left"><a href="https://github.com/artickc"><b>artickc</b></a></td><td align="center">62</td><td align="right">43,502</td></tr>
+  <tr><td align="center">13</td><td align="left"><a href="https://github.com/artickc"><b>artckc</b></a></td><td align="center">62</td><td align="right">43,502</td></tr>
   <tr><td align="center">14</td><td align="left"><a href="https://github.com/xiaoyaner0201"><b>xiaoyaner0201</b></a></td><td align="center">59</td><td align="right">126,220</td></tr>
-  <tr><td align="center">15</td><td align="left"><a href="https://github.com/chirag127"><b>chirag127</b></a></td><td align="center">52</td><td align="right">6,661</td></tr>
+  <tr><td align="center">15</td><td align="left"><a href="https://github.com/chirag127"><b>ቺራግ127</b></a></td><td align="center">52</td><td align="right">6,661</td></tr>
   <tr><td align="center">16</td><td align="left"><a href="https://github.com/xz-dev"><b>xz-dev</b></a></td><td align="center">50</td><td align="right">245,976</td></tr>
   <tr><td align="center">17</td><td align="left"><a href="https://github.com/woodsonl"><b>woodsonl</b></a></td><td align="center">48</td><td align="right">811,771</td></tr>
   <tr><td align="center">18</td><td align="left"><a href="https://github.com/rqzbeh"><b>rqzbeh</b></a></td><td align="center">46</td><td align="right">151,229</td></tr>
@@ -1421,104 +1415,104 @@ OMNIROUTE_SKIP_POSTINSTALL=1 npm install -g omniroute   # CI=1ም ይዘለዋ�
   <tr><td align="center">19</td><td align="left"><a href="https://github.com/QuangBlue"><b>QuangBlue</b></a></td><td align="center">43</td><td align="right">13,112</td></tr>
 </table>
 
-<sub>ቆጠራው የተካሄደው 2026-11-03 03:01:19 UTC ላይ፣ ከቀጥታ <code>release/v3.8.53</code> ጫፍ <code>05bc048d6c</code> ጋር ነው። በገጽ የተከፋፈለው የGitHub GraphQL ቆጠራ 9,947 የተዋሃዱ PRs ይዟል፦ 4,130 በማከማቻው ባለቤት፣ 240 በDependabot፣ 6 በሌሎች ቦቶች/መተግበሪያዎች፣ እና <b>5,571 የውጭ PRs ከ883 የተለያዩ አስተዋጽኦ አድራጊዎች</b>። “የተቀየሩ መስመሮች” የGitHub ጭማሪዎች + ስረዛዎች ሲሆኑ፣ የተመነጩ ፋይሎችን፣ የመቆለፊያ ፋይሎችን፣ ካታሎጎችን፣ ትርጉሞችን እና ሰነዶችን ያካትታሉ፤ ይህም የተጻፈ LOC ሳይሆን የለውጥ መጠን ነው። 53 PRs ከ500,000 መስመሮች በላይ የGitHub ልዩነቶችን ያሳያሉ (ለምሳሌ #13399፣ አንድ ነጠላ የአቅራቢ ጭማሪ፣ 2,347 የተቀየሩ ፋይሎችን ይዘረዝራል)፤ ይህም ከላይ ያሉትን በርካታ ድምሮች ከፍ ያደርጋል። እኩል ውጤት ያላቸው በአንድ ደረጃ ተመድበዋል።</sub>
+<sub>ቆጠራ 2026-11-03 03:01:19 UTC በቀጥታ <code>release/v3.8.53</code> ጫፍ <code>05bc048d6c</code> ተወሰደ። የዝቅድ GitHub GraphQL 9,947 የተዋሃደ PRs: 4,130 በማከማቻው ባለቤት፣ 240 በዴፔንዳቦት፣ 6 በሌላ bots/apps እና <b>5,571 የውጭ PRs ከ 883 ልዩ አስተዋጽዖ አበርካቾች</b>. "የተቀየሩ መስመሮች" GitHub ተጨማሪዎች + ስረዛዎች እና የተፈጠሩ ፋይሎችን፣ መቆለፊያ ፋይሎችን፣ ካታሎጎችን፣ ትርጉሞችን እና ሰነዶችን ያካትታል። ቸልተኛ ነው እንጂ የተጻፈ አይደለም LOC. 53 PRs ሪፖርት GitHub ከ 500,000 መስመሮች በላይ ልዩነት አለው (ለምሳሌ #13399፣ ነጠላ አቅራቢ ጭማሪ፣ 2,347 የተቀየሩ ፋይሎችን ይዘረዝራል) ይህም ከላይ ብዙ ድምርን ይጨምራል። ትስስሮች አንድ ላይ ይመደባሉ.</sub>
 
-### በGitHub የተመደቡ ኮሚቶች
+### GitHub-የተሰጠው ግዴታዎች
 
 <table>
   <tr>
     <td align="center" width="160">
       <a href="https://github.com/maxmad64bis">
         <img src="https://github.com/maxmad64bis.png" width="40" style="border-radius:50%" alt="Dizzle"/><br/>
-        <b>Dizzle</b>
+        <b>መፍዘዝ</b>
       </a><br/>
-      <sub>🥇 418 በGitHub የተመዘገቡ ኮሚቶች</sub>
+      <sub>🥇 418 GitHub-የተሰጠው ተግባር</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/HouMinXi">
         <img src="https://github.com/HouMinXi.png" width="40" style="border-radius:50%" alt="Bob.Hou"/><br/>
-        <b>Bob.Hou</b>
+        <b>ቦብ ሁ</b>
       </a><br/>
-      <sub>🥈 294 በGitHub የተመዘገቡ ኮሚቶች</sub>
+      <sub>🥈 294 GitHub-የተሰጠው ተግባር</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/oyi77">
         <img src="https://github.com/oyi77.png" width="40" style="border-radius:50%" alt="Paijo"/><br/>
-        <b>Paijo</b>
+        <b>ፓይጆ</b>
       </a><br/>
-      <sub>🥉 229 በGitHub የተመዘገቡ ኮሚቶች</sub>
+      <sub>🥉 229 GitHub-የተሰጠው ተግባር</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/pacocartones">
         <img src="https://github.com/pacocartones.png" width="40" style="border-radius:50%" alt="Paco Cartones"/><br/>
-        <b>Paco Cartones</b>
+        <b>ፓኮ ካርቶኖች</b>
       </a><br/>
-      <sub>🏅 222 በGitHub የተመዘገቡ ኮሚቶች</sub>
+      <sub>🏅 222 GitHub-የተሰጠው ተግባር</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/backryun">
         <img src="https://github.com/backryun.png" width="40" style="border-radius:50%" alt="backryun"/><br/>
         <b>backryun</b>
       </a><br/>
-      <sub>🏅 202 በGitHub የተመዘገቡ ኮሚቶች</sub>
+      <sub>🏅 202 GitHub-የተሰጠው ተግባር</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/JxnLexn">
         <img src="https://github.com/JxnLexn.png" width="40" style="border-radius:50%" alt="Jan Leon"/><br/>
-        <b>Jan Leon</b>
+        <b>ጃን ሊዮን</b>
       </a><br/>
-      <sub>🏅 134 በGitHub የተመዘገቡ ኮሚቶች</sub>
+      <sub>🏅 134 GitHub-የተሰጠው ተግባር</sub>
     </td>
   </tr>
   <tr>
     <td align="center" width="160">
       <a href="https://github.com/RaviTharuma">
         <img src="https://github.com/RaviTharuma.png" width="40" style="border-radius:50%" alt="Ravi Tharuma"/><br/>
-        <b>Ravi Tharuma</b>
+        <b>ራቪ ታሩማ</b>
       </a><br/>
-      <sub>🏅 126 በGitHub የተመዘገቡ ኮሚቶች</sub>
+      <sub>🏅 126 GitHub-የተሰጠው ተግባር</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/hartmark">
         <img src="https://github.com/hartmark.png" width="40" style="border-radius:50%" alt="Markus Hartung"/><br/>
-        <b>Markus Hartung</b>
+        <b>ማርከስ ሃርቱንግ</b>
       </a><br/>
-      <sub>🏅 115 በGitHub የተመዘገቡ ኮሚቶች</sub>
+      <sub>🏅 115 GitHub-የተሰጠው ተግባር</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/rdself">
         <img src="https://github.com/rdself.png" width="40" style="border-radius:50%" alt="Randi"/><br/>
-        <b>Randi</b>
+        <b>ራንዲ</b>
       </a><br/>
-      <sub>🏅 108 በGitHub የተመዘገቡ ኮሚቶች</sub>
+      <sub>🏅 108 GitHub-የተሰጠው ተግባር</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/christopher-s">
         <img src="https://github.com/christopher-s.png" width="40" style="border-radius:50%" alt="Chris"/><br/>
-        <b>Chris</b>
+        <b>ክሪስ</b>
       </a><br/>
-      <sub>🏅 70 በGitHub የተመዘገቡ ኮሚቶች</sub>
+      <sub>🏅 70 GitHub-የተሰጠው ተግባር</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/jonlwheat2-gif">
         <img src="https://github.com/jonlwheat2-gif.png" width="40" style="border-radius:50%" alt="WebPerson"/><br/>
         <b>WebPerson</b>
       </a><br/>
-      <sub>🏅 68 በGitHub የተመዘገቡ ኮሚቶች</sub>
+      <sub>🏅 68 GitHub-የተሰጠው ተግባር</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/KooshaPari">
         <img src="https://github.com/KooshaPari.png" width="40" style="border-radius:50%" alt="Koosha Paridehpour"/><br/>
         <b>Koosha Paridehpour</b>
       </a><br/>
-      <sub>🏅 68 በGitHub የተመዘገቡ ኮሚቶች</sub>
+      <sub>🏅 68 GitHub-የተሰጠው ተግባር</sub>
     </td>
   </tr>
 </table>
 
-<sub>በ2026-11-03 02:09:16 UTC እንደገና ተረጋግጧል፦ በማከማቻው Contributors API ለ<code>release/v3.8.53</code> ነባሪ ቅርንጫፍ የተመዘገቡ በGitHub የተመዘገቡ ኮሚቶች። API 903 ማንነቶችን መልሷል (429 ተጠቃሚዎች፣ 2 ቦቶች፣ 472 ስማቸው ያልታወቀ)፤ ይህ ሰንጠረዥ ጠባቂውን፣ ቦቶችን እና ስማቸው ያልታወቁ ማንነቶችን አያካትትም፣ እንዲሁም የውድድር እኩልነቶችን ይጠብቃል። ይህ ከላይ ከተጠቀሰው የተዋሃዱ PR ደረጃ እና ከታች ካለው የGit ሜታዳታ ቆጠራ የተለየ ነው።</sub>
+<sub>በ2026-11-03 02:09:16 ድጋሚ UTC፡ GitHub-የተሰጠው ተግባር በማጠራቀሚያው አስተዋፅዖ አበርካቾች API ለ <code>release/v3.8.53</code> ነባሪ ቅርንጫፍ ሪፖርት የተደረገ። API 903 ማንነቶችን መልሷል (429 ተጠቃሚዎች፣ 2 ቦቶች፣ 472 ማንነታቸው ያልታወቀ)። ይህ ሰንጠረዥ ጠባቂውን፣ ቦቶችን እና ማንነታቸው ያልታወቁ ማንነቶችን አያካትትም እና የውድድር ትስስሮችን ይይዛል። ከሁለቱም ከተዋሃደ-PR ደረጃ እና ከታች ካለው Git-ሜታዳታ ቆጠራ የተለየ ነው።</sub>
 
-> 🙏 የእነዚህ አስተዋጽዖ አበርካቾች ባህሪያት፣ የሳንካ ማስተካከያዎች እና የመሠረተ ልማት ማሻሻያዎች OmniRoute አስተማማኝ እና በባህሪያት የበለጸገ እንዲሆን የሚያደርጉት **ዋና ክፍል** ናቸው። እያንዳንዱ pull request፣ እያንዳንዱ የሙከራ ጉዳይ እና እያንዳንዱ i18n የትርጉም ፋይል ጠቃሚ ነው። ክፍት ምንጭ የሚገነባው እንደነሱ ባሉ ሰዎች ነው።
+> 🙏 የእነዚህ አስተዋፅዖ አበርካቾች ባህሪያት፣ የሳንካ ጥገናዎች እና የመሰረተ ልማት ማሻሻያዎች ሀ** ዋና ክፍል** OmniRoute አስተማማኝ እና በባህሪው የበለፀገ ከሚያደርገው። እያንዳንዱ የመጎተት ጥያቄ፣ እያንዳንዱ የፈተና ጉዳይ እና እያንዳንዱ i18n የትርጉም ፋይል ጉዳይ ነው። ክፍት ምንጭ እንደነሱ ባሉ ሰዎች ነው የተሰራው።
 
 </div>
 

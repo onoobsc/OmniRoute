@@ -21,19 +21,19 @@
 
 <div align="center">
 
-## 💰 ~1,62M Miliar Token / Bulan di Seluruh Free Tier Pihak Ketiga
+## 💰 ~ 1,62 miliar Token / Bulan di Tingkat Gratis Pihak Ketiga
 
 </div>
 
-> **Gunakan akun penyedia milik Anda sendiri.** Ini adalah perkiraan agregat di seluruh free tier pihak ketiga yang memenuhi syarat secara terpisah, bukan hibah token dari OmniRoute. Daftar, dapatkan kredensial jika diperlukan, dan hubungkan penyedia yang dapat Anda gunakan; setiap penyedia mengontrol batas, ketersediaan, dan ketentuannya sendiri.
+> **Bawalah akun penyedia Anda sendiri.** Ini adalah perkiraan agregat di seluruh tingkat gratis pihak ketiga yang memenuhi syarat secara terpisah, bukan pemberian token dari OmniRoute. Daftar, dapatkan kredensial jika diperlukan, dan sambungkan penyedia yang dapat Anda gunakan; setiap penyedia mengontrol batasan, ketersediaan, dan ketentuannya.
 >
-> Menggabungkan free tier secara manual itu melelahkan — puluhan SDK, puluhan batas laju, dan tidak tahu berapa banyak yang sebenarnya Anda miliki. OmniRoute mengkatalogkan **485 entri free tier di 34 kunci pool berulang** dan menghitung jumlah token utama dari **17 pool dengan anggaran bulanan positif yang dipublikasikan ditambah lima batas Groq per model**, dideduplikasi berdasarkan pool bersama. Kuota yang hanya terbuka setelah verifikasi identitas regional (saat ini: ModelScope) ditampilkan terpisah, +~6M di balik verifikasi identitas regional, dan tidak pernah dijumlahkan ke headline. Hasilnya tetap terlihat di dashboard (`/dashboard/free-tiers`).
+> Menumpuk tingkatan gratis dengan tangan sangat menyakitkan — puluhan SDKs, lusinan batas tarif, dan tidak tahu berapa banyak yang sebenarnya Anda miliki. katalog OmniRoute** 484 entri tingkat gratis di 34 kunci kumpulan berulang** dan menghitung judul token dari** 17 kumpulan dengan anggaran bulanan positif yang dipublikasikan ditambah lima batas Groq per model** , dihapus duplikatnya oleh kumpulan bersama. Kuota yang hanya dibuka setelah pemeriksaan identitas regional (hari ini: ModelScope) ditampilkan terpisah, +~ 6M di belakang verifikasi identitas regional, dan tidak pernah dijumlahkan ke dalam judul. Hasilnya tetap terlihat di dashboard (`/dashboard/free-tiers`).
 
-<img src="./docs/diagrams/free-tier-budget.svg" width="100%" alt="Kartu anggaran free-tier OmniRoute: ~1,62M miliar token gratis per bulan stabil, hingga ~2,22M miliar di bulan pertama dengan kredit pendaftaran, dari 34 kunci pool berulang yang didokumentasikan mencakup 485 entri free-tier yang dikatalogkan di balik satu endpoint. Perhitungan jujur pool-deduped — setiap pool bersama dihitung satu kali, termasuk 17 pool berulang dengan anggaran token bulanan positif yang dipublikasikan ditambah lima batas Groq per model; 12 penyedia ditandai hindari dalam katalog risiko ketentuan sehingga Anda yang memutuskan. Bar anggaran mencakup Mistral 1M, Nara 210M, LLM7 150M, xKiro 150M, Groq 30M (lima batas per model) dan pool yang lebih kecil, ditambah kredit pendaftaran bulan pertama dan penyedia tanpa batas token yang benar-benar gratis ditampilkan terpisah sehingga tidak pernah menggelembungkan headline. Live used/remaining di /dashboard/free-tiers."/>
+<img src="./docs/diagrams/free-tier-budget.svg" width="100%" alt="OmniRoute free-tier budget card: ~1.62B free tokens per month steady, up to ~2.22B in the first month with signup credits, from 34 documented recurring pool keys covering 484 cataloged free-tier entries behind one endpoint. Honest pool-deduped math — each shared pool counted once, including 17 recurring pools with a published positive monthly token budget plus five per-model Groq caps; 12 providers are marked avoid in the terms-risk catalog so you decide. Budget bar includes Mistral 1B, Nara 210M, LLM7 150M, xKiro 150M, Groq 30M (five per-model caps) and smaller pools, plus first-month signup credits and permanently-free no-token-cap providers surfaced separately so they never inflate the headline. Live used/remaining on /dashboard/free-tiers."/>
 
-> Ringkasan animasi dari halaman live `/dashboard/free-tiers`. Metodologi lengkap (deduplikasi pool, tier kredit, ketentuan penyedia): **[docs/reference/FREE_TIERS.md](docs/reference/FREE_TIERS.md)**.
+> Ringkasan animasi halaman `/dashboard/free-tiers` langsung. Metodologi lengkap (kumpulan dedupe, tingkatan kredit, ketentuan penyedia):** [docs/reference/FREE_TIERS.md](docs/reference/FREE_TIERS.md)** .
 >
-> <sub>Angka-angka ini diaudit ulang setiap dua minggu terhadap katalog live dan **bergerak dua arah** — penyedia mengakhiri free tier dan angka turun; yang baru masuk dan angka naik. Kami mempublikasikan apa yang benar-benar dihitung katalog, tidak pernah dibulatkan ke atas sebagai skenario terbaik.</sub>
+> <sub> Angka-angka ini diaudit ulang setiap dua minggu terhadap katalog langsung dan** bergerak ke dua arah** — penyedia mengakhiri tingkat gratis dan jumlahnya turun; yang baru mendarat dan memanjat. Kami mempublikasikan apa yang sebenarnya dihitung oleh katalog, bukan kasus terbaik yang dibulatkan.</sub>
 
 <br/>
 
@@ -45,25 +45,19 @@
 
 </h3>
 
-[![Stars](https://img.shields.io/github/stars/diegosouzapw/OmniRoute?style=social)](https://github.com/diegosouzapw/OmniRoute)
+[![Bintang](https://img.shields.io/github/stars/diegosouzapw/OmniRoute?style=social) ](https://github.com/diegosouzapw/OmniRoute)
 <a href="https://trendshift.io/repositories/23589" target="_blank"><img src="https://trendshift.io/api/badge/repositories/23589" alt="diegosouzapw%2FOmniRoute | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
-[![Star History Rank](https://api.star-history.com/badge?repo=diegosouzapw/OmniRoute&theme=dark)](https://www.star-history.com/diegosouzapw/omniroute)
-[![olud.ai](https://olud.ai/badge.php?tool=diegosouzapw-omniroute)](https://olud.ai/project/diegosouzapw-omniroute.html)
+[![Peringkat Sejarah Bintang](https://api.star-history.com/badge?repo=diegosouzapw/OmniRoute&theme=dark) ](https://www.star-history.com/diegosouzapw/omniroute) [![olud.ai](https://olud.ai/badge.php?tool=diegosouzapw-omniroute) ](https://olud.ai/project/diegosouzapw-omniroute.html)
 
 ### 💬 Bergabunglah dengan komunitas
 
-**👋 Ikuti maintainer — dapatkan info penyedia baru, rilis & tips pertama kali:**
+**👋 Ikuti pengelola — dapatkan penyedia, rilis & tips baru terlebih dahulu:**
 
-[![Follow Diego on LinkedIn](https://img.shields.io/badge/Follow_Diego_on-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/diegosouzapw/)
-[![Follow @diegosouzapw on GitHub](https://img.shields.io/github/followers/diegosouzapw?style=for-the-badge&logo=github&logoColor=white&label=Follow%20on%20GitHub&color=181717)](https://github.com/diegosouzapw)
+[![Ikuti Diego di LinkedIn](https://img.shields.io/badge/Follow_Diego_on-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white) ](https://www.linkedin.com/in/diegosouzapw/) [![Ikuti @diegosouzapw di GitHub](https://img.shields.io/github/followers/diegosouzapw?style=for-the-badge&logo=github&logoColor=white&label=Follow%20on%20GitHub&color=181717) ](https://github.com/diegosouzapw)
 
-[![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/U47eFqAXCn)
-[![Telegram](https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/omnirouteOficial)
-[![WhatsApp Global](https://img.shields.io/badge/WhatsApp_Global-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/FvuCbrpZmQ6I85n2vW5QIC?s=cl&p=a&mlu=4)
-[![WhatsApp Brasil](https://img.shields.io/badge/WhatsApp_Brasil-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/KWgatljAjmbELQory59Oti?s=cl&p=a&mlu=4)
-[![Website](https://img.shields.io/badge/Website-omniroute.online-blue?logo=google-chrome&logoColor=white)](https://omniroute.online)
+[![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white) ](https://discord.gg/U47eFqAXCn) [![Telegram](https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white) ](https://t.me/omnirouteOficial) [![WhatsApp Global](https://img.shields.io/badge/WhatsApp_Global-25D366?style=for-the-badge&logo=whatsapp&logoColor=white) ](https://chat.whatsapp.com/FvuCbrpZmQ6I85n2vW5QIC?s=cl&p=a&mlu=4) [![WhatsApp Brasil](https://img.shields.io/badge/WhatsApp_Brasil-25D366?style=for-the-badge&logo=whatsapp&logoColor=white) ](https://chat.whatsapp.com/KWgatljAjmbELQory59Oti?s=cl&p=a&mlu=4) [![Situs web](https://img.shields.io/badge/Website-omniroute.online-blue?logo=google-chrome&logoColor=white) ](https://omniroute.online)
 
-**Pertanyaan, tips penyedia, roadmap & dukungan → [Discord](https://discord.gg/U47eFqAXCn) · [Telegram](https://t.me/omnirouteOficial) · WhatsApp [🌍 Global](https://chat.whatsapp.com/FvuCbrpZmQ6I85n2vW5QIC?s=cl&p=a&mlu=4) / [🇧🇷 Brasil](https://chat.whatsapp.com/KWgatljAjmbELQory59Oti?s=cl&p=a&mlu=4) / [Portal](https://portal.sthub.com.br/communities/groups/st-hub/channels/Omniroute-World-8kRjmK)**
+**Pertanyaan, kiat penyedia, peta jalan & dukungan → [Discord](https://discord.gg/U47eFqAXCn) · [Telegram](https://t.me/omnirouteOficial) · WhatsApp [🌍 Global](https://chat.whatsapp.com/FvuCbrpZmQ6I85n2vW5QIC?s=cl&p=a&mlu=4) / [🇧🇷 Brasil](https://chat.whatsapp.com/KWgatljAjmbELQory59Oti?s=cl&p=a&mlu=4) / [Portal](https://portal.sthub.com.br/communities/groups/st-hub/channels/Omniroute-World-8kRjmK)**
 
 <br/>
 
@@ -1286,28 +1280,28 @@ Metrik kanonis pada 2026-10-18: **1.976 video unik** · **20.220.289 tayangan ya
 <br/>
 <div align="center">
 
-## 🛠️ Tumpukan Teknologi
+## 🛠️ Teknologi Stack
 
 </div>
 
 <table>
   <tr><th align="left">Lapisan</th><th align="left">Teknologi</th></tr>
-  <tr><td nowrap><b>Runtime</b></td><td>Node.js 22.x / 24.x LTS — <code>&gt;=22.22.2 &lt;23 || &gt;=24.0.0 &lt;27</code></td></tr>
-  <tr><td nowrap><b>Bahasa</b></td><td>TypeScript 6.0 — <b>100% TypeScript</b> di seluruh <code>src/</code> dan <code>open-sse/</code> (<code>any</code> tidak digunakan di inti sejak v2.0)</td></tr>
-  <tr><td nowrap><b>Framework</b></td><td>Next.js 16 + React 19 + Tailwind CSS 4</td></tr>
-  <tr><td nowrap><b>Basis data</b></td><td>better-sqlite3 (SQLite, pencatatan WAL) + LowDB (JSON legacy) — 147 modul domain, 222 migrasi</td></tr>
-  <tr><td nowrap><b>Memori</b></td><td>Pencarian teks penuh SQLite FTS5 + embedding vektor terkuantisasi int8, peluruhan bertipe</td></tr>
-  <tr><td nowrap><b>Skema</b></td><td>Zod 4 — validasi I/O alat MCP + kontrak API</td></tr>
+  <tr><td nowrap><b>Waktu proses</b></td><td>Node.js 22.x / 24.x LTS — <code>&gt;=22.22.2 &lt;23 || &gt;=24.0.0 &lt;27</code></td></tr>
+  <tr><td nowrap><b>Bahasa</b></td><td>TypeScript 6.0 — <b>100% TypeScript</b> melintasi <code>src/</code> dan <code>open-sse/</code> (nol <code>any</code> di inti sejak v2.0)</td></tr>
+  <tr><td nowrap><b>Kerangka</b></td><td>Next.js 16 + React 19 + Tailwind CSS 4</td></tr>
+  <tr><td nowrap><b>Basis data</b></td><td>better-sqlite3 (SQLite, WAL journaling) + LowDB (JSON legacy) — 147 modul domain, 222 migrasi</td></tr>
+  <tr><td nowrap><b>Ingatan</b></td><td>SQLite FTS5 penyematan vektor teks lengkap + int8-quantized, peluruhan yang diketik</td></tr>
+  <tr><td nowrap><b>Skema</b></td><td>Zod 4 — MCP alat validasi I/O kontrak + API</td></tr>
   <tr><td nowrap><b>Protokol</b></td><td>MCP (stdio / HTTP / SSE) + A2A v0.3 (JSON-RPC 2.0 + SSE)</td></tr>
-  <tr><td nowrap><b>Streaming</b></td><td>Server-Sent Events (SSE) + jembatan WebSocket (<code>/v1/ws</code>)</td></tr>
-  <tr><td nowrap><b>Kompresi</b></td><td>Pipeline 12 mesin — RTK, Caveman, LLMLingua-2 (MobileBERT ONNX), GCF, OmniGlyph</td></tr>
-  <tr><td nowrap><b>Autentikasi &amp; keamanan</b></td><td>OAuth 2.0 (PKCE) + JWT + API Keys + autentikasi MCP berskop · AES-256-GCM saat tersimpan · DOMPurify</td></tr>
-  <tr><td nowrap><b>Penyamaran</b></td><td>wreq-js — penyamaran sidik jari TLS JA3 / JA4, proxy 3 tingkat</td></tr>
-  <tr><td nowrap><b>Ketahanan</b></td><td>Pemutus sirkuit, backoff eksponensial, pencegahan thundering herd, pemulihan mandiri auto-combo</td></tr>
-  <tr><td nowrap><b>Pencatatan</b></td><td>pino — log JSON terstruktur dengan konteks permintaan</td></tr>
-  <tr><td nowrap><b>Pengujian</b></td><td>Pelari pengujian Node.js + Vitest — <b>60.000+ deklarasi pengujian statis</b> di lebih dari 8.400 file pengujian yang dilacak (unit, integrasi, E2E, keamanan, ekosistem)</td></tr>
-  <tr><td nowrap><b>Platform</b></td><td>Desktop (Electron) · Android (Termux) · PWA (browser apa pun)</td></tr>
-  <tr><td nowrap><b>CI/CD</b></td><td>GitHub Actions — publikasi npm otomatis + Docker Hub saat rilis</td></tr>
+  <tr><td nowrap><b>Mengalir</b></td><td>Peristiwa Terkirim Server (SSE) + WebSocket bridge (<code>/v1/ws</code>)</td></tr>
+  <tr><td nowrap><b>Kompresi</b></td><td>Pipa 12 mesin — RTK, Caveman, LLMLingua-2 (MobileBERT ONNX), GCF, OmniGlyph</td></tr>
+  <tr><td nowrap><b>Keamanan autentikasi &amp;</b></td><td>OAuth 2.0 (PKCE) + JWT + API + MCP cakupan autentikasi · AES-256-GCM saat istirahat · DOMPurify</td></tr>
+  <tr><td nowrap><b>Diam-diam</b></td><td>wreq-js — JA3 / JA4 TLS peniruan sidik jari, proksi 3 tingkat</td></tr>
+  <tr><td nowrap><b>Ketangguhan</b></td><td>Pemutus sirkuit, backoff eksponensial, anti-gemuruh-kawanan, penyembuhan diri kombo otomatis</td></tr>
+  <tr><td nowrap><b>Pencatatan</b></td><td>log JSON terstruktur pino — dengan konteks permintaan</td></tr>
+  <tr><td nowrap><b>Pengujian</b></td><td>pelari tes Node.js + Vitest — <b>60.000 deklarasi uji statis +</b> di 8.400 file pengujian yang dilacak + (unit, integrasi, E2E, keamanan, ekosistem)</td></tr>
+  <tr><td nowrap><b>Platform</b></td><td>Desktop (Electron) · Android (Termux) · PWA (browser apa saja)</td></tr>
+  <tr><td nowrap><b>CI/CD</b></td><td>GitHub Tindakan — auto npm publikasikan + Docker Hub saat rilis</td></tr>
   <tr><td nowrap><b>Tautan</b></td><td><a href="https://omniroute.online">Situs web</a> · <a href="https://www.npmjs.com/package/omniroute">npm</a> · <a href="https://hub.docker.com/r/diegosouzapw/omniroute">Docker Hub</a></td></tr>
 </table>
 
@@ -1315,91 +1309,91 @@ Metrik kanonis pada 2026-10-18: **1.976 video unik** · **20.220.289 tayangan ya
 
 <br/>
 
-## 📖 Dokumentasi
+## dokumentasi 📖
 
 </div>
 
 ### 📘 Memulai
 
 <table>
-  <tr><th align="left">Dokumen</th><th align="left">Deskripsi</th></tr>
-  <tr><td nowrap><b><a href="docs/guides/USER_GUIDE.md">Panduan Pengguna</a></b></td><td>Provider, kombinasi, integrasi CLI, deployment</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/SETUP_GUIDE.md">Panduan Penyiapan</a></b></td><td>Metode instalasi lengkap, konfigurasi alat CLI, penyiapan protokol, penyesuaian waktu tunggu</td></tr>
-  <tr><td nowrap><b><a href="docs/reference/CLI-TOOLS.md">Panduan Alat CLI</a></b></td><td>Penyiapan per alat untuk Claude Code, Codex, Cursor, Cline, OpenClaw, Kilo, Copilot</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/REMOTE-MODE.md">Mode Jarak Jauh</a></b></td><td>Mengendalikan OmniRoute jarak jauh (VPS) dari CLI laptop Anda melalui token akses terbatas</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/CLAUDE-CODE-CONFIGURATION.md">Konfigurasi Claude Code</a></b></td><td>Mengarahkan Claude Code ke OmniRoute (lokal/jarak jauh) dengan <code>launch</code> + profil per model</td></tr>
-  <tr><td nowrap><b><a href="README.md#-quick-start">Mulai Cepat</a></b></td><td>Instal → hubungkan → konfigurasikan dalam 3 langkah</td></tr>
+  <tr><th align="left">Dokumen</th><th align="left">Keterangan</th></tr>
+  <tr><td nowrap><b><a href="docs/guides/USER_GUIDE.md">Panduan Pengguna</a></b></td><td>Penyedia, kombo, integrasi CLI, penerapan</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/SETUP_GUIDE.md">Panduan Pengaturan</a></b></td><td>Metode instalasi lengkap, konfigurasi alat CLI, pengaturan protokol, penyetelan batas waktu</td></tr>
+  <tr><td nowrap><b><a href="docs/reference/CLI-TOOLS.md">Panduan Alat CLI</a></b></td><td>Pengaturan per alat untuk Kode Claude, Codex, Cursor, Cline, OpenClaw, Kilo, Copilot</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/REMOTE-MODE.md">Modus Jarak Jauh</a></b></td><td>Kendarai OmniRoute jarak jauh (VPS) dari laptop Anda CLI melalui token akses terbatas</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/CLAUDE-CODE-CONFIGURATION.md">Konfigurasi Kode Claude</a></b></td><td>Arahkan Kode Claude ke OmniRoute (local/remote) dengan <code>launch</code> + profil per model</td></tr>
+  <tr><td nowrap><b><a href="README.md#-quick-start">Mulai Cepat</a></b></td><td>Instal 3 langkah → sambungkan konfigurasi →</td></tr>
 </table>
 
-### 🔧 Operasi & Deployment
+### 🔧 Operasi & Penerapan
 
 <table>
-  <tr><th align="left">Dokumen</th><th align="left">Deskripsi</th></tr>
-  <tr><td nowrap><b><a href="docs/guides/DOCKER_GUIDE.md">Panduan Docker</a></b></td><td>Menjalankan Docker, profil Compose, HTTPS Caddy, tunnel, tag image</td></tr>
-  <tr><td nowrap><b><a href="contrib/podman/README.md">Panduan Podman</a></b></td><td>Integrasi systemd Quadlet, podman-compose, SELinux</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/VM_DEPLOYMENT_GUIDE.md">Deployment VM</a></b></td><td>Panduan lengkap: penyiapan VM + nginx + Cloudflare</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/FLY_IO_DEPLOYMENT_GUIDE.md">Deployment Fly.io</a></b></td><td>Deployment ke Fly.io dengan penyimpanan persisten</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/TERMUX_GUIDE.md">Panduan Termux</a></b></td><td>Menjalankan OmniRoute di Android melalui Termux</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/PWA_GUIDE.md">Panduan PWA</a></b></td><td>Instalasi, caching, dan arsitektur Progressive Web App</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/UNINSTALL.md">Panduan Penghapusan Instalasi</a></b></td><td>Penghapusan bersih untuk semua metode instalasi</td></tr>
-  <tr><td nowrap><b><a href="docs/reference/ENVIRONMENT.md">Konfigurasi Environment</a></b></td><td>Variabel dan referensi <code>.env</code> lengkap</td></tr>
+  <tr><th align="left">Dokumen</th><th align="left">Keterangan</th></tr>
+  <tr><td nowrap><b><a href="docs/guides/DOCKER_GUIDE.md">Panduan Docker</a></b></td><td>Docker run, Tulis profil, Caddy HTTPS, terowongan, tag gambar</td></tr>
+  <tr><td nowrap><b><a href="contrib/podman/README.md">Panduan Podman</a></b></td><td>Integrasi sistem quadlet, penulisan podman, SELinux</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/VM_DEPLOYMENT_GUIDE.md">Penerapan VM</a></b></td><td>Panduan lengkap: pengaturan VM + nginx + Cloudflare</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/FLY_IO_DEPLOYMENT_GUIDE.md">Penerapan Fly.io</a></b></td><td>Terapkan ke Fly.io dengan penyimpanan persisten</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/TERMUX_GUIDE.md">Panduan Termux</a></b></td><td>Jalankan OmniRoute di Android melalui Termux</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/PWA_GUIDE.md">Panduan PWA</a></b></td><td>Penginstalan Aplikasi Web Progresif, caching, arsitektur</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/UNINSTALL.md">Panduan Copot Pemasangan</a></b></td><td>Penghapusan bersih untuk semua metode instalasi</td></tr>
+  <tr><td nowrap><b><a href="docs/reference/ENVIRONMENT.md">Konfigurasi Lingkungan</a></b></td><td>Lengkapi variabel <code>.env</code> dan referensinya</td></tr>
 </table>
 
 ### 🧠 Fitur & Arsitektur
 
 <table>
-  <tr><th align="left">Dokumen</th><th align="left">Deskripsi</th></tr>
+  <tr><th align="left">Dokumen</th><th align="left">Keterangan</th></tr>
   <tr><td nowrap><b><a href="docs/architecture/ARCHITECTURE.md">Arsitektur</a></b></td><td>Arsitektur sistem, aliran data, dan internal</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_GUIDE.md">Panduan Kompresi</a></b></td><td>Pipeline 7 opsi: nonaktif / lite / standar / agresif / ultra / RTK / bertumpuk</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/RTK_COMPRESSION.md">Kompresi RTK</a></b></td><td>Kompresi keluaran perintah, filter, kepercayaan, verifikasi, pemulihan keluaran mentah</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_ENGINES.md">Mesin Kompresi</a></b></td><td>Caveman, RTK, pipeline bertumpuk, antarmuka dashboard/API/MCP</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_RULES_FORMAT.md">Format Aturan Kompresi</a></b></td><td>Skema paket aturan JSON untuk filter Caveman dan RTK</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_LANGUAGE_PACKS.md">Paket Bahasa Kompresi</a></b></td><td>Deteksi bahasa dan penulisan paket aturan Caveman</td></tr>
-  <tr><td nowrap><b><a href="docs/architecture/RESILIENCE_GUIDE.md">Panduan Ketahanan</a></b></td><td>Circuit breaker, cooldown, antrean, pencegahan thundering herd, spoofing TLS</td></tr>
-  <tr><td nowrap><b><a href="docs/routing/AUTO-COMBO.md">Mesin Auto-Combo</a></b></td><td>Penilaian 16 faktor, paket mode, pemulihan mandiri</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/PROXY_GUIDE.md">Panduan Proxy</a></b></td><td>Sistem proxy 3 tingkat, marketplace 1proxy, CRUD registry</td></tr>
-  <tr><td nowrap><b><a href="docs/reference/FREE_TIERS.md">Tier Gratis</a></b></td><td>Direktori terkonsolidasi: 34 pool berulang yang terdokumentasi / 485 entri tier gratis yang dikatalogkan</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/FEATURES.md">Galeri Fitur</a></b></td><td>Tur visual dashboard dengan tangkapan layar</td></tr>
-  <tr><td nowrap><b><a href="docs/architecture/CODEBASE_DOCUMENTATION.md">Dokumentasi Codebase</a></b></td><td>Penjelasan codebase yang mudah dipahami pemula</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_GUIDE.md">Panduan Kompresi</a></b></td><td>Pipa 7 pilihan: mati / lite / standar / agresif / ultra / RTK / ditumpuk</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/RTK_COMPRESSION.md">RTK Kompresi</a></b></td><td>Kompresi keluaran perintah, filter, kepercayaan, verifikasi, pemulihan keluaran mentah</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_ENGINES.md">Mesin Kompresi</a></b></td><td>Manusia gua, RTK, pipa bertumpuk, permukaan dashboard/API/MCP</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_RULES_FORMAT.md">Format Aturan Kompresi</a></b></td><td>skema paket aturan JSON untuk filter Caveman dan RTK</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_LANGUAGE_PACKS.md">Paket Bahasa Kompresi</a></b></td><td>Deteksi bahasa dan pembuatan paket aturan Caveman</td></tr>
+  <tr><td nowrap><b><a href="docs/architecture/RESILIENCE_GUIDE.md">Panduan Ketahanan</a></b></td><td>Pemutus sirkuit, cooldown, antrian, kawanan anti-gemuruh, spoofing TLS</td></tr>
+  <tr><td nowrap><b><a href="docs/routing/AUTO-COMBO.md">Mesin Kombo Otomatis</a></b></td><td>Penilaian 16 faktor, paket mode, penyembuhan diri</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/PROXY_GUIDE.md">Panduan Proksi</a></b></td><td>Sistem proxy 3 tingkat, 1 pasar proxy, CRUD registri</td></tr>
+  <tr><td nowrap><b><a href="docs/reference/FREE_TIERS.md">Tingkat Gratis</a></b></td><td>Direktori gabungan: 34 kumpulan berulang yang terdokumentasi / 484 entri tingkat gratis yang dikatalogkan</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/FEATURES.md">Galeri Fitur</a></b></td><td>Tur dasbor visual dengan tangkapan layar</td></tr>
+  <tr><td nowrap><b><a href="docs/architecture/CODEBASE_DOCUMENTATION.md">Dokumentasi Basis Kode</a></b></td><td>Panduan basis kode yang ramah bagi pemula</td></tr>
 </table>
 
-### 🤖 Protokol & API
+### Protokol 🤖 & APIs
 
 <table>
-  <tr><th align="left">Dokumen</th><th align="left">Deskripsi</th></tr>
-  <tr><td nowrap><b><a href="docs/reference/API_REFERENCE.md">Referensi API</a></b></td><td>Semua endpoint beserta contohnya</td></tr>
-  <tr><td nowrap><b><a href="docs/openapi.yaml">Spesifikasi OpenAPI</a></b></td><td>Spesifikasi OpenAPI 3.0</td></tr>
-  <tr><td nowrap><b><a href="open-sse/mcp-server/README.md">Server MCP</a></b></td><td>110 alat MCP, konfigurasi IDE, client Python/TS/Go</td></tr>
-  <tr><td nowrap><b><a href="docs/frameworks/MCP-SERVER.md">Panduan Server MCP</a></b></td><td>Instalasi MCP, transport, dan referensi alat</td></tr>
-  <tr><td nowrap><b><a href="src/lib/a2a/README.md">Server A2A</a></b></td><td>Protokol JSON-RPC 2.0, kemampuan, streaming, manajemen tugas</td></tr>
-  <tr><td nowrap><b><a href="docs/frameworks/A2A-SERVER.md">Panduan Server A2A</a></b></td><td>Kartu agen A2A, tugas, kemampuan, dan streaming</td></tr>
+  <tr><th align="left">Dokumen</th><th align="left">Keterangan</th></tr>
+  <tr><td nowrap><b><a href="docs/reference/API_REFERENCE.md">Referensi API</a></b></td><td>Semua titik akhir dengan contoh</td></tr>
+  <tr><td nowrap><b><a href="docs/openapi.yaml">OpenAPI Spesifikasi</a></b></td><td>spesifikasi OpenAPI 3.0</td></tr>
+  <tr><td nowrap><b><a href="open-sse/mcp-server/README.md">MCP Server</a></b></td><td>110 alat MCP, konfigurasi IDE, klien Python/TS/Go</td></tr>
+  <tr><td nowrap><b><a href="docs/frameworks/MCP-SERVER.md">Panduan Server MCP</a></b></td><td>instalasi MCP, transportasi, dan referensi alat</td></tr>
+  <tr><td nowrap><b><a href="src/lib/a2a/README.md">A2A Server</a></b></td><td>Protokol JSON-RPC 2.0, keterampilan, streaming, manajemen tugas</td></tr>
+  <tr><td nowrap><b><a href="docs/frameworks/A2A-SERVER.md">Panduan Server A2A</a></b></td><td>kartu agen A2A, tugas, keterampilan, dan streaming</td></tr>
 </table>
 
 ### 📋 Proyek & Kualitas
 
 <table>
-  <tr><th align="left">Dokumen</th><th align="left">Deskripsi</th></tr>
-  <tr><td nowrap><b><a href="CONTRIBUTING.md">Kontribusi</a></b></td><td>Penyiapan dan panduan pengembangan</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/BRANCHING_MODEL.md">Model Percabangan & Rilis</a></b></td><td>Ke mana PR ditujukan (<code>release/*</code>), serta arti <code>main</code> dan tag</td></tr>
-  <tr><td nowrap><b><a href="CHANGELOG.md">Catatan Perubahan</a></b></td><td>Riwayat rilis lengkap per versi</td></tr>
+  <tr><th align="left">Dokumen</th><th align="left">Keterangan</th></tr>
+  <tr><td nowrap><b><a href="CONTRIBUTING.md">Berkontribusi</a></b></td><td>Pengaturan dan pedoman pengembangan</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/BRANCHING_MODEL.md">Model Percabangan & Rilis</a></b></td><td>Dimana PRs target (<code>release/*</code>), apa arti <code>main</code> dan tag</td></tr>
+  <tr><td nowrap><b><a href="CHANGELOG.md">log perubahan</a></b></td><td>Riwayat rilis lengkap per versi</td></tr>
   <tr><td nowrap><b><a href="SECURITY.md">Kebijakan Keamanan</a></b></td><td>Pelaporan kerentanan dan praktik keamanan</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/I18N.md">Panduan i18n</a></b></td><td>Dukungan 67 bahasa, alur kerja penerjemahan, RTL</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/RELEASE_CHECKLIST.md">Daftar Periksa Rilis</a></b></td><td>Langkah validasi pra-rilis</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/COVERAGE_PLAN.md">Rencana Cakupan</a></b></td><td>Strategi cakupan pengujian untuk lebih dari 60.000 deklarasi pengujian statis di lebih dari 8.400 file pengujian yang dilacak</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/I18N.md">Panduan i18n</a></b></td><td>Dukungan 67 bahasa, alur kerja terjemahan, RTL</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/RELEASE_CHECKLIST.md">Daftar Periksa Rilis</a></b></td><td>Langkah-langkah validasi pra-rilis</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/COVERAGE_PLAN.md">Rencana Cakupan</a></b></td><td>Strategi cakupan pengujian untuk 60.000 deklarasi pengujian statis + di 8.400 file pengujian yang dilacak +</td></tr>
 </table>
 
 <br/>
 
 <div align="center">
 
-# ⭐ Kontributor Teratas
+# ⭐ Kontributor Utama
 
-> OmniRoute dibentuk oleh komunitas sumber terbuka yang penuh semangat. Individu-individu ini telah memberikan kontribusi luar biasa yang secara langsung berdampak pada kualitas, stabilitas, dan jangkauan proyek. **Terima kasih.**
+> OmniRoute dibentuk oleh komunitas sumber terbuka yang penuh semangat. Orang-orang ini telah memberikan kontribusi luar biasa yang secara langsung berdampak pada kualitas, stabilitas, dan jangkauan proyek.** Terima kasih.**
 
-### Kontributor eksternal berdasarkan pull request yang digabungkan
+### Kontributor eksternal berdasarkan permintaan penarikan gabungan
 
 <table>
-  <tr><th align="center">Peringkat</th><th align="left">Kontributor</th><th align="center">PR yang Digabungkan</th><th align="right">~Baris Diubah</th></tr>
+  <tr><th align="center">Pangkat</th><th align="left">Penyumbang</th><th align="center">PRs yang digabungkan</th><th align="right">~ Mengubah baris</th></tr>
   <tr><td align="center">1</td><td align="left"><a href="https://github.com/maxmad64bis"><b>maxmad64bis</b></a></td><td align="center">418</td><td align="right">25,367,739</td></tr>
   <tr><td align="center">2</td><td align="left"><a href="https://github.com/HouMinXi"><b>HouMinXi</b></a></td><td align="center">295</td><td align="right">13,557,796</td></tr>
   <tr><td align="center">3</td><td align="left"><a href="https://github.com/pacocartones"><b>pacocartones</b></a></td><td align="center">222</td><td align="right">81,551</td></tr>
@@ -1407,12 +1401,12 @@ Metrik kanonis pada 2026-10-18: **1.976 video unik** · **20.220.289 tayangan ya
   <tr><td align="center">5</td><td align="left"><a href="https://github.com/JxnLexn"><b>JxnLexn</b></a></td><td align="center">198</td><td align="right">3,570,623</td></tr>
   <tr><td align="center">6</td><td align="left"><a href="https://github.com/oyi77"><b>oyi77</b></a></td><td align="center">190</td><td align="right">411,243</td></tr>
   <tr><td align="center">7</td><td align="left"><a href="https://github.com/KooshaPari"><b>KooshaPari</b></a></td><td align="center">151</td><td align="right">5,972,314</td></tr>
-  <tr><td align="center">8</td><td align="left"><a href="https://github.com/rdself"><b>rdself</b></a></td><td align="center">145</td><td align="right">80,663</td></tr>
+  <tr><td align="center">8</td><td align="left"><a href="https://github.com/rdself"><b>diri sendiri</b></a></td><td align="center">145</td><td align="right">80,663</td></tr>
   <tr><td align="center">9</td><td align="left"><a href="https://github.com/RaviTharuma"><b>RaviTharuma</b></a></td><td align="center">123</td><td align="right">500,065</td></tr>
   <tr><td align="center">10</td><td align="left"><a href="https://github.com/herjarsa"><b>herjarsa</b></a></td><td align="center">88</td><td align="right">230,872</td></tr>
-  <tr><td align="center">11</td><td align="left"><a href="https://github.com/hartmark"><b>hartmark</b></a></td><td align="center">85</td><td align="right">2,849,623</td></tr>
+  <tr><td align="center">11</td><td align="left"><a href="https://github.com/hartmark"><b>tanda panah</b></a></td><td align="center">85</td><td align="right">2,849,623</td></tr>
   <tr><td align="center">12</td><td align="left"><a href="https://github.com/jonlwheat2-gif"><b>jonlwheat2-gif</b></a></td><td align="center">68</td><td align="right">69,097</td></tr>
-  <tr><td align="center">13</td><td align="left"><a href="https://github.com/artickc"><b>artickc</b></a></td><td align="center">62</td><td align="right">43,502</td></tr>
+  <tr><td align="center">13</td><td align="left"><a href="https://github.com/artickc"><b>artikelc</b></a></td><td align="center">62</td><td align="right">43,502</td></tr>
   <tr><td align="center">14</td><td align="left"><a href="https://github.com/xiaoyaner0201"><b>xiaoyaner0201</b></a></td><td align="center">59</td><td align="right">126,220</td></tr>
   <tr><td align="center">15</td><td align="left"><a href="https://github.com/chirag127"><b>chirag127</b></a></td><td align="center">52</td><td align="right">6,661</td></tr>
   <tr><td align="center">16</td><td align="left"><a href="https://github.com/xz-dev"><b>xz-dev</b></a></td><td align="center">50</td><td align="right">245,976</td></tr>
@@ -1422,104 +1416,104 @@ Metrik kanonis pada 2026-10-18: **1.976 video unik** · **20.220.289 tayangan ya
   <tr><td align="center">19</td><td align="left"><a href="https://github.com/QuangBlue"><b>QuangBlue</b></a></td><td align="center">43</td><td align="right">13,112</td></tr>
 </table>
 
-<sub>Sensus diambil pada 2026-11-03 03:01:19 UTC dengan tip live <code>release/v3.8.53</code> <code>05bc048d6c</code>. Sensus GraphQL GitHub yang dipaginasi memuat 9.947 PR yang digabungkan: 4.130 oleh pemilik repositori, 240 oleh Dependabot, 6 oleh bot/aplikasi lain, dan <b>5.571 PR eksternal dari 883 kontributor berbeda</b>. “Baris yang diubah” adalah penambahan + penghapusan GitHub dan mencakup file yang dibuat secara otomatis, lockfile, katalog, terjemahan, dan dokumentasi; ini adalah perubahan, bukan LOC yang ditulis. 53 PR melaporkan diff GitHub di atas 500.000 baris (misalnya #13399, satu penambahan provider, mencantumkan 2.347 file yang diubah), yang meningkatkan beberapa total di atas. Peringkat yang sama ditempatkan bersama.</sub>
+<sub>Sensus diambil 03-11-2026 03:01:19 UTC dengan <code>release/v3.8.53</code> tip <code>05bc048d6c</code>. Sensus GitHub GraphQL yang diberi nomor halaman berisi 9.947 gabungan PRs: 4.130 oleh pemilik repositori, 240 oleh Dependabot, 6 oleh bots/apps lainnya, dan <b>5.571 PRs eksternal dari 883 kontributor berbeda</b>. “Baris yang diubah” adalah penambahan GitHub penghapusan + dan mencakup file yang dihasilkan, file kunci, katalog, terjemahan dan dokumentasi; itu churn, bukan dibuat LOC. 53 PRs laporan GitHub berbeda di atas 500.000 baris (misalnya #13399, penambahan penyedia tunggal, mencantumkan 2.347 file yang diubah), yang meningkatkan beberapa total di atas. Dasi diberi peringkat bersama.</sub>
 
-### Commit yang Diatribusikan ke GitHub
+### Komitmen yang dikaitkan dengan GitHub
 
 <table>
   <tr>
     <td align="center" width="160">
       <a href="https://github.com/maxmad64bis">
         <img src="https://github.com/maxmad64bis.png" width="40" style="border-radius:50%" alt="Dizzle"/><br/>
-        <b>Dizzle</b>
+        <b>pusing</b>
       </a><br/>
-      <sub>🥇 418 commit yang diatribusikan ke GitHub</sub>
+      <sub>🥇 418 Komit yang dikaitkan dengan GitHub</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/HouMinXi">
         <img src="https://github.com/HouMinXi.png" width="40" style="border-radius:50%" alt="Bob.Hou"/><br/>
         <b>Bob.Hou</b>
       </a><br/>
-      <sub>🥈 294 commit yang diatribusikan ke GitHub</sub>
+      <sub>🥈 294 Komit yang dikaitkan dengan GitHub</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/oyi77">
         <img src="https://github.com/oyi77.png" width="40" style="border-radius:50%" alt="Paijo"/><br/>
         <b>Paijo</b>
       </a><br/>
-      <sub>🥉 229 commit yang diatribusikan ke GitHub</sub>
+      <sub>🥉 229 Komit yang dikaitkan dengan GitHub</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/pacocartones">
         <img src="https://github.com/pacocartones.png" width="40" style="border-radius:50%" alt="Paco Cartones"/><br/>
-        <b>Paco Cartones</b>
+        <b>Paco Karton</b>
       </a><br/>
-      <sub>🏅 222 commit yang diatribusikan ke GitHub</sub>
+      <sub>🏅 222 Komit yang dikaitkan dengan GitHub</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/backryun">
         <img src="https://github.com/backryun.png" width="40" style="border-radius:50%" alt="backryun"/><br/>
         <b>backryun</b>
       </a><br/>
-      <sub>🏅 202 commit yang diatribusikan ke GitHub</sub>
+      <sub>🏅 202 Komit yang dikaitkan dengan GitHub</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/JxnLexn">
         <img src="https://github.com/JxnLexn.png" width="40" style="border-radius:50%" alt="Jan Leon"/><br/>
         <b>Jan Leon</b>
       </a><br/>
-      <sub>🏅 134 commit yang diatribusikan ke GitHub</sub>
+      <sub>🏅 134 Komit yang dikaitkan dengan GitHub</sub>
     </td>
   </tr>
   <tr>
     <td align="center" width="160">
       <a href="https://github.com/RaviTharuma">
         <img src="https://github.com/RaviTharuma.png" width="40" style="border-radius:50%" alt="Ravi Tharuma"/><br/>
-        <b>Ravi Tharuma</b>
+        <b>Ravi Tharama</b>
       </a><br/>
-      <sub>🏅 126 commit yang diatribusikan ke GitHub</sub>
+      <sub>🏅 126 Komit yang dikaitkan dengan GitHub</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/hartmark">
         <img src="https://github.com/hartmark.png" width="40" style="border-radius:50%" alt="Markus Hartung"/><br/>
         <b>Markus Hartung</b>
       </a><br/>
-      <sub>🏅 115 commit yang diatribusikan ke GitHub</sub>
+      <sub>🏅 115 Komit yang dikaitkan dengan GitHub</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/rdself">
         <img src="https://github.com/rdself.png" width="40" style="border-radius:50%" alt="Randi"/><br/>
         <b>Randi</b>
       </a><br/>
-      <sub>🏅 108 commit yang diatribusikan ke GitHub</sub>
+      <sub>🏅 108 Komit yang dikaitkan dengan GitHub</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/christopher-s">
         <img src="https://github.com/christopher-s.png" width="40" style="border-radius:50%" alt="Chris"/><br/>
-        <b>Chris</b>
+        <b>Kris</b>
       </a><br/>
-      <sub>🏅 70 commit yang diatribusikan ke GitHub</sub>
+      <sub>🏅 70 komitmen yang dikaitkan dengan GitHub</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/jonlwheat2-gif">
         <img src="https://github.com/jonlwheat2-gif.png" width="40" style="border-radius:50%" alt="WebPerson"/><br/>
         <b>WebPerson</b>
       </a><br/>
-      <sub>🏅 68 commit yang diatribusikan ke GitHub</sub>
+      <sub>🏅 68 Komit yang dikaitkan dengan GitHub</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/KooshaPari">
         <img src="https://github.com/KooshaPari.png" width="40" style="border-radius:50%" alt="Koosha Paridehpour"/><br/>
         <b>Koosha Paridehpour</b>
       </a><br/>
-      <sub>🏅 68 commit yang diatribusikan ke GitHub</sub>
+      <sub>🏅 68 Komit yang dikaitkan dengan GitHub</sub>
     </td>
   </tr>
 </table>
 
-<sub>Diperiksa ulang pada 2026-11-03 02:09:16 UTC: commit yang diatribusikan ke GitHub dan dilaporkan oleh Contributors API repositori untuk branch default <code>release/v3.8.53</code>. API mengembalikan 903 identitas (429 pengguna, 2 bot, 472 anonim); tabel ini mengecualikan pemelihara, bot, dan identitas anonim serta mempertahankan peringkat yang seri. Tabel ini berbeda dari peringkat PR yang digabungkan di atas maupun sensus metadata Git di bawah.</sub>
+<sub>Diperiksa ulang pada 03-11-2026 02:09:16 UTC: Komit yang dikaitkan dengan GitHub dilaporkan oleh Kontributor repositori API untuk cabang default <code>release/v3.8.53</code>. API mengembalikan 903 identitas (429 pengguna, 2 bot, 472 anonim); tabel ini mengecualikan pengelola, bot, dan identitas anonim serta mempertahankan ikatan persaingan. Hal ini berbeda dari peringkat PR gabungan di atas dan sensus metadata Git di bawah.</sub>
 
-> 🙏 Fitur, perbaikan bug, dan peningkatan infrastruktur dari para kontributor ini adalah **bagian inti** yang membuat OmniRoute andal dan kaya fitur. Setiap pull request, setiap kasus pengujian, dan setiap file terjemahan i18n sangat berarti. Sumber terbuka dibangun oleh orang-orang seperti mereka.
+> 🙏 Fitur-fitur kontributor, perbaikan bug, dan peningkatan infrastruktur ini adalah a** bagian inti** tentang apa yang membuat OmniRoute andal dan kaya fitur. Setiap permintaan penarikan, setiap kasus pengujian, dan setiap file terjemahan i18n penting. Open source dibangun oleh orang-orang seperti mereka.
 
 </div>
 

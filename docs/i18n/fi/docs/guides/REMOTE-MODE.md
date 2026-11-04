@@ -44,37 +44,35 @@ kannettavasi                             OmniRoute-etäpalvelin (VPS)
 
 ---
 
-## Yhdistäminen
+## Yhdistetään
 
-### Hallintasalasanalla (ensimääritys)
+### Hallintosalasanalla (bootstrap)
 
 ```bash
 omniroute connect 192.168.0.15
-# Hallintasalasana osoitteelle http://192.168.0.15:20128: ********
-# ✔ Yhdistetty osoitteeseen http://192.168.0.15:20128 — konteksti '192.168.0.15' (käyttöalue: admin)
+# Management password for http://192.168.0.15:20128: ********
+# ✔ Connected to http://192.168.0.15:20128 — context '192.168.0.15' (scope: admin)
 ```
 
-Salasanalla yhdistäminen luo oletusarvoisesti **admin**-tunnuksen (sinulla on salasana, joten
-sinulla on jo täydet käyttöoikeudet). Rajaa käyttöoikeuksia valinnalla `--scope`:
+Salasanavirta lähtee an** järjestelmänvalvoja** token oletusarvoisesti (sinä pidät salasanaa, joten sinulla on jo täysi hallinta). Alaviiva `--scope` kanssa:
 
 ```bash
 omniroute connect 192.168.0.15 --scope write
 ```
 
-Valinnat: `--port <p>` (kun isäntäosoite ei sisällä porttia), `--name <ctx>` (kontekstin nimi),
-`--scope read|write|admin`. Täydellistä URL-osoitetta käytetään sellaisenaan:
-`omniroute connect https://omni.example.com`.
+Vaihtoehdot: `--port <p>` (kun isännällä ei ole mitään), `--name <ctx>` (kontekstin nimi), `--scope read|write|admin`. Täysi URL arvostetaan sellaisenaan: `omniroute connect https://omni.example.com`.
+
+Kun palvelimella on käytössä kojelaudan kaksivaiheinen todennus (Settings → Security), pelkkä salasana hylätään: CLI pyytää sitten koodia todennussovelluksesta (tai palautuskoodia). Ohita se eteenpäin `--totp <code>` :llä ei-interaktiiviseen käyttöön.
 
 ### Ennalta luodulla tunnuksella
 
-Luo rajattu tunnus hallintapaneelissa (tai komennolla `omniroute tokens create`) ja
-liitä se — salasanaa ei tarvita:
+Luo mittaustunnus kojelautaan (tai `omniroute tokens create`) ja liitä se — salasanaa ei tarvita:
 
 ```bash
 omniroute connect 192.168.0.15 --key oma_live_xxxxxxxx
 ```
 
-CLI validoi sen reitillä `GET /api/cli/whoami` ja tallentaa sen aktiiviseen kontekstiin.
+CLI vahvistaa sen `GET /api/cli/whoami` kautta ja tallentaa sen aktiivisena kontekstina.
 
 ---
 
@@ -437,14 +435,14 @@ omniroute contexts remove 192-168-0-15 --yes   # poista paikallinen konteksti (v
 
 ---
 
-## API-päätepisteet (viite)
+## API -päätepisteet (viite)
 
-| Menetelmä | Reitti                | Todennus           | Käyttöoikeus                       |
-| --------- | --------------------- | ------------------ | ---------------------------------- |
-| POST      | `/api/cli/connect`    | hallinnan salasana | — (julkinen, salasanalla suojattu) |
-| GET       | `/api/cli/whoami`     | käyttötoken        | luku                               |
-| GET       | `/api/cli/tokens`     | käyttötoken        | ylläpito                           |
-| POST      | `/api/cli/tokens`     | käyttötoken        | ylläpito                           |
-| DELETE    | `/api/cli/tokens/:id` | käyttötoken        | ylläpito                           |
+| Menetelmä | Reitti                | Tod                        | Laajuus                            |
+| --------- | --------------------- | -------------------------- | ---------------------------------- |
+| POST      | `/api/cli/connect`    | salasana; 2FA jos käytössä | — (julkinen, salasanalla suojattu) |
+| GET       | `/api/cli/whoami`     | pääsytunnus                | lukea                              |
+| GET       | `/api/cli/tokens`     | pääsytunnus                | järjestelmänvalvoja                |
+| POST      | `/api/cli/tokens`     | pääsytunnus                | järjestelmänvalvoja                |
+| DELETE    | `/api/cli/tokens/:id` | pääsytunnus                | järjestelmänvalvoja                |
 
-Täydelliset skeemat ovat tiedostossa [openapi.yaml](../openapi.yaml).
+Katso täydelliset skeemat kohdasta [openapi.yaml](../openapi.yaml).

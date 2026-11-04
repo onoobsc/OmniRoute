@@ -46,35 +46,33 @@ jūsų nešiojamasis kompiuteris             nuotolinė „OmniRoute“ (VPS)
 
 ## Prisijungimas
 
-### Naudojant valdymo slaptažodį (pradinis parengimas)
+### Su valdymo slaptažodžiu (bootstrap)
 
 ```bash
 omniroute connect 192.168.0.15
-# Valdymo slaptažodis, skirtas http://192.168.0.15:20128: ********
-# ✔ Prisijungta prie http://192.168.0.15:20128 — kontekstas „192.168.0.15“ (aprėptis: admin)
+# Management password for http://192.168.0.15:20128: ********
+# ✔ Connected to http://192.168.0.15:20128 — context '192.168.0.15' (scope: admin)
 ```
 
-Pagal numatytąją nuostatą slaptažodžio eiga išduoda **admin** prieigos raktą (kadangi
-turite slaptažodį, jau turite visišką valdymą). Aprėptį sumažinkite naudodami `--scope`:
+Slaptažodžių srautas minta an** admin** prieigos raktas pagal numatytuosius nustatymus (turite slaptažodį, todėl jau turite visišką valdymą). Sumažėjimas su `--scope`:
 
 ```bash
 omniroute connect 192.168.0.15 --scope write
 ```
 
-Parinktys: `--port <p>` (kai pagrindiniame kompiuteryje prievadas nenurodytas), `--name <ctx>` (konteksto pavadinimas),
-`--scope read|write|admin`. Visas URL naudojamas nepakeistas:
-`omniroute connect https://omni.example.com`.
+Parinktys: `--port <p>` (kai priegloba neturi), `--name <ctx>` (konteksto pavadinimas), `--scope read|write|admin`. Visas URL gerbiamas toks, koks yra: `omniroute connect https://omni.example.com`.
 
-### Naudojant iš anksto sugeneruotą prieigos raktą
+Kai serveryje įjungtas dviejų veiksnių autentifikavimas prietaisų skydelyje (nustatymai → Security), atmetamas vien slaptažodis: tada CLI paprašys kodo iš autentifikavimo programos (arba atkūrimo kodo). Perduokite jį priekyje naudodami `--totp <code>`, kad galėtumėte naudoti neinteraktyviai.
 
-Valdymo skydelyje (arba naudodami `omniroute tokens create`) sugeneruokite aprėptimi apribotą prieigos raktą ir
-įklijuokite jį — slaptažodžio nereikia:
+### Su iš anksto sugeneruotu žetonu
+
+Sugeneruokite aprėpties prieigos raktą prietaisų skydelyje (arba naudodami `omniroute tokens create`) ir įklijuokite jį — nereikia slaptažodžio:
 
 ```bash
 omniroute connect 192.168.0.15 --key oma_live_xxxxxxxx
 ```
 
-CLI patikrina jį per `GET /api/cli/whoami` ir išsaugo kaip aktyvų kontekstą.
+CLI patvirtina jį per `GET /api/cli/whoami` ir išsaugo kaip aktyvų kontekstą.
 
 ---
 
@@ -447,14 +445,14 @@ omniroute contexts remove 192-168-0-15 --yes   # pašalina vietinį kontekstą (
 
 ---
 
-## API galiniai taškai (žinynas)
+## API galutiniai taškai (nuoroda)
 
-| Metodas | Maršrutas             | Autentifikavimas    | Apimtis                             |
-| ------- | --------------------- | ------------------- | ----------------------------------- |
-| POST    | `/api/cli/connect`    | valdymo slaptažodis | — (viešas, apsaugotas slaptažodžiu) |
-| GET     | `/api/cli/whoami`     | prieigos raktas     | skaitymas                           |
-| GET     | `/api/cli/tokens`     | prieigos raktas     | administravimas                     |
-| POST    | `/api/cli/tokens`     | prieigos raktas     | administravimas                     |
-| DELETE  | `/api/cli/tokens/:id` | prieigos raktas     | administravimas                     |
+| Metodas | Maršrutas             | Aut                           | Taikymo sritis          |
+| ------- | --------------------- | ----------------------------- | ----------------------- |
+| POST    | `/api/cli/connect`    | slaptažodis; 2FA, jei įjungta | — (viešas, slaptažodis) |
+| GET     | `/api/cli/whoami`     | prieigos raktas               | skaityti                |
+| GET     | `/api/cli/tokens`     | prieigos raktas               | admin                   |
+| POST    | `/api/cli/tokens`     | prieigos raktas               | admin                   |
+| DELETE  | `/api/cli/tokens/:id` | prieigos raktas               | admin                   |
 
-Išsamias schemas žr. [openapi.yaml](../openapi.yaml).
+Žr. [openapi.yaml](../openapi.yaml) visas schemas.

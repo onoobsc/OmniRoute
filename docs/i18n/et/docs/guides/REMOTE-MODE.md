@@ -44,37 +44,35 @@ sinu sülearvuti                          OmniRoute'i kaugserver (VPS)
 
 ---
 
-## Ühenduse loomine
+## Ühendamine
 
-### Haldusparooliga (algseadistus)
+### Haldusparooliga (bootstrap)
 
 ```bash
 omniroute connect 192.168.0.15
-# Haldusparool aadressile http://192.168.0.15:20128: ********
-# ✔ Ühendatud aadressiga http://192.168.0.15:20128 — kontekst '192.168.0.15' (õigustase: admin)
+# Management password for http://192.168.0.15:20128: ********
+# ✔ Connected to http://192.168.0.15:20128 — context '192.168.0.15' (scope: admin)
 ```
 
-Parooliga autentimine väljastab vaikimisi **admin**-tõendi (kuna sul on parool,
-on sul juba täielik kontroll). Piira õigustaset suvandiga `--scope`:
+Paroolivoog loob an** admin** vaikimisi token (hoiate parooli, nii et teil on juba täielik kontroll). Allakäik `--scope`:
 
 ```bash
 omniroute connect 192.168.0.15 --scope write
 ```
 
-Suvandid: `--port <p>` (kui hostil pole porti määratud), `--name <ctx>` (konteksti nimi),
-`--scope read|write|admin`. Täielikku URL-i kasutatakse muutmata kujul:
-`omniroute connect https://omni.example.com`.
+Valikud: `--port <p>` (kui hostil seda pole), `--name <ctx>` (konteksti nimi), `--scope read|write|admin`. Täielik URL on au sees: `omniroute connect https://omni.example.com`.
 
-### Eelnevalt loodud tõendiga
+Kui serveris on armatuurlaua kahefaktoriline autentimine lubatud (Settings → Security), keeldutakse ainult parooli andmisest: CLI küsib seejärel autentimisrakendusest koodi (või taastekoodi). Andke see mitteinteraktiivseks kasutamiseks ette `--totp <code>`.
 
-Loo juhtpaneelil (või käsuga `omniroute tokens create`) piiratud õigustega tõend ja
-kleebi see — parooli pole vaja:
+### Eelgenereeritud märgiga
+
+Looge armatuurlaual (või `omniroute tokens create` abil) ulatusega luba ja kleepige see — parooli pole vaja:
 
 ```bash
 omniroute connect 192.168.0.15 --key oma_live_xxxxxxxx
 ```
 
-CLI valideerib selle päringuga `GET /api/cli/whoami` ja salvestab aktiivse kontekstina.
+CLI kinnitab selle `GET /api/cli/whoami` kaudu ja salvestab selle aktiivse kontekstina.
 
 ---
 
@@ -440,12 +438,12 @@ omniroute contexts remove 192-168-0-15 --yes   # eemalda kohalik kontekst (isegi
 
 ## API lõpp-punktid (viide)
 
-| Meetod | Marsruut              | Autentimine      | Ulatus                         |
-| ------ | --------------------- | ---------------- | ------------------------------ |
-| POST   | `/api/cli/connect`    | haldusparool     | — (avalik, parooliga kaitstud) |
-| GET    | `/api/cli/whoami`     | juurdepääsutoken | lugemine                       |
-| GET    | `/api/cli/tokens`     | juurdepääsutoken | admin                          |
-| POST   | `/api/cli/tokens`     | juurdepääsutoken | admin                          |
-| DELETE | `/api/cli/tokens/:id` | juurdepääsutoken | admin                          |
+| meetod | Marsruut              | Aut                                     | Ulatus                        |
+| ------ | --------------------- | --------------------------------------- | ----------------------------- |
+| POST   | `/api/cli/connect`    | parool; 2FA, kui see on sisse lülitatud | — (avalik, parooliga suletud) |
+| GET    | `/api/cli/whoami`     | juurdepääsuluba                         | lugeda                        |
+| GET    | `/api/cli/tokens`     | juurdepääsuluba                         | admin                         |
+| POST   | `/api/cli/tokens`     | juurdepääsuluba                         | admin                         |
+| DELETE | `/api/cli/tokens/:id` | juurdepääsuluba                         | admin                         |
 
-Täielikud skeemid leiad failist [openapi.yaml](../openapi.yaml).
+Vaata [openapi.yaml](../openapi.yaml) täielikke skeeme.

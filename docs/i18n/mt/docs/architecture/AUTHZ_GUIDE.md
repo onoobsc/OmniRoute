@@ -13,111 +13,59 @@ OmniRoute għandu pipeline ta' awtorizzazzjoni konxju mir-rotta li jikkontrolla 
 
 > Sors: [diagrams/authz-pipeline.mmd](../diagrams/authz-pipeline.mmd)
 
-## Żewġ Modi ta' Awtentikazzjoni
+## Żewġ Modi Awth
 
-### 1. Ċavetta API (Bearer)
+### 1. API Key (Bearer)
 
-Jintuża għall-APIs tal-klijenti kompatibbli ma' OpenAI/Anthropic/Gemini u għal xi rotot ta' ġestjoni meta ċ-ċavetta jkollha l-ambitu `manage`.
+Użat għall-klijent OpenAI/Anthropic/Gemini-compatible APIs u ftit rotot ta 'ġestjoni meta ċ-ċavetta għandha l-ambitu `manage`.
 
 ```
 Authorization: Bearer <api-key>
 ```
 
-Ivvalidat minn `isValidApiKey()` / `extractApiKey()` f’`src/sse/services/auth.ts` u esportat mill-ġdid permezz ta’ `src/shared/utils/apiAuth.ts`. Il-validatur jaċċetta wkoll il-varjabbli tal-ambjent `OMNIROUTE_API_KEY` / `ROUTER_API_KEY` bħala ċwievet persistenti ta' passthrough (kwistjoni #1350).
+Ivvalidat minn `isValidApiKey()` / `extractApiKey()` `src/sse/services/auth.ts` u esportat mill-ġdid permezz ta' `src/shared/utils/apiAuth.ts`. Il-validatur jaċċetta wkoll il-vars `OMNIROUTE_API_KEY` / `ROUTER_API_KEY` env bħala ċwievet passthrough persistenti (ħarġa #1350).
 
-### 2. Sessjoni tad-Dashboard (cookie auth_token)
+### 2. Dashboard Sessjoni (auth_token cookie)
 
-Għall-paġni tad-dashboard u l-operazzjonijiet amministrattivi.
+Għal paġni tad-dashboard u operazzjonijiet amministrattivi.
 
 ```
 Cookie: auth_token=<JWT signed with JWT_SECRET>
 ```
 
-Cookie titqies bħala sessjoni biss meta l-JWT jiġi vverifikat **u** jkollu `authenticated: true`
-(`src/shared/utils/dashboardSessionToken.ts` → `verifyDashboardSessionToken`). Kull
-konsumatur tal-cookie (il-kontroll tar-rotta tad-dashboard (`isDashboardSessionAuthenticated()`), l-aġġornament tal-pipeline tal-awtorizzazzjoni, il-handshake tal-WebSocket, is-server
-live, `/api/settings/require-login`, `/api/auth/status`) jgħaddi minn dak il-helper.
-Jeżistu JWTs oħra ffirmati b’`JWT_SECRET` — il-passthrough tas-CLI ta' Cursor joħloq
-tokens `iss "omniroute" / aud "cursor-cli"` għad-detenturi taċ-ċwievet — u dawn qatt ma jitqiesu bħala sessjonijiet
-(#13298).
+Cookie hija sessjoni biss meta JWT tivverifika** u** iġorr `authenticated: true` (`src/shared/utils/dashboardSessionToken.ts` → `verifyDashboardSessionToken`). Kull konsumatur tal-cookie (dashboard route guard (`isDashboardSessionAuthenticated()`), authz pipeline refresh, WebSocket handshake, live server, `/api/settings/require-login`, `/api/auth/status`) jgħaddi minn dak l-helper. Oħrajn JWTs iffirmati `JWT_SECRET` jeżistu — the Cursor CLI passthrough mints `iss "omniroute" / aud "cursor-cli"` tokens for key holders — and are never sessions (#13298).
 
-Ivverifikat minn `isDashboardSessionAuthenticated()` f’`src/shared/utils/apiAuth.ts`. Il-pipeline jaġġorna awtomatikament il-JWT meta jkun fadallu inqas minn 7 ijiem mill-ħajja tiegħu ta' 30 jum.
+Verifikat minn `isDashboardSessionAuthenticated()` fi `src/shared/utils/apiAuth.ts`. Il-pipeline jġedded awtomatikament iż- JWT meta fadal inqas minn 7 ijiem fil-ħajja tiegħu ta' 30 jum.
 
-Sessjoni tista' tintemm ukoll qabel ma jgħaddu t-30 jum tagħha, minħabba li kull komponent li joħroġha jgħaddi minn `mintDashboardSessionToken` (ħin tal-ħruġ `iat` u ID `jti`) u l-verifikatur jiċċekkja żewġ settings: `sessionsValidAfter`, li jiġi ssettjat meta tinbidel password sabiex kull sessjoni maħruġa qablu ma tibqax tiġi vverifikata (il-browser li biddel il-password jirċievi cookie ġdida), u `revokedDashboardSessions`, li miegħu `POST /api/auth/logout` iżid il-`jti` tas-sessjoni li tkun għamlet sign-out. Sessjonijiet maħruġa minn rilaxx eqdem ma jkollhom l-ebda waħda minn dawn id-dikjarazzjonijiet u jibqgħu validi sal-ewwel bidla tal-password. Jekk is-settings ma jkunux jistgħu jinqraw, is-sessjoni ma titqiesx affidabbli.
+Sessjoni tista' wkoll tispiċċa qabel ma jispiċċaw it-30 jum tagħha, għaliex kull minter jgħaddi minn `mintDashboardSessionToken` (ħin tal-ħruġ `iat` u id `jti`) u l-verifikatur jiċċekkja żewġ settings: `sessionsValidAfter`, stabbilit b'bidla fil-password sabiex kull sessjoni maħruġa qabel ma tieqaf tivverifika (il-browser li biddel il-password jieħu cookie ġdida), u `revokedDashboardSessions`, li `POST /api/auth/logout` iżid is-sessjonijiet ffirmati `jti`-out . Sessjonijiet maħduma minn rilaxx antik ma jġorru l-ebda pretensjoni u jibqgħu validi sakemm tinbidel l-ewwel password. Jekk is-settings ma jistgħux jinqraw, is-sessjoni mhix fdata.
 
-Xi rotot ta' ġestjoni jaċċettaw **kwalunkwe wieħed** miż-żewġ modi: cookie JEW `Bearer <key>` meta ċ-ċavetta API jkollha l-ambitu `manage` (jew `admin`). Dan huwa dak li jippermetti l-fluss tax-xogħol "konfigurabbli permezz ta' sejħiet API" miżjud f’v3.8.
+Xi rotot ta 'ġestjoni jaċċettaw** jew** mod: cookie OR `Bearer <key>` meta ċ-ċavetta API għandha l-ambitu `manage` (jew `admin`). Dan huwa dak li jippermetti l-fluss tax-xogħol "konfigurabbli permezz ta 'sejħiet API " miżjud f'v3.8.
 
-#### Kontroll fakultattiv tal-login OIDC (#6973)
+#### Gejt tal-login OIDC mhux obbligatorju (#6973)
 
-Il-login tal-amministratur tad-dashboard jappoġġja wkoll fluss OIDC (OpenID Connect) **fakultattiv**
-flimkien mal-login standard permezz ta' password — il-login permezz ta' password qatt ma jitneħħa, iżda
-jiġi biss issupplimentat:
+Il-login tal-amministratur tad-dashboard jappoġġja wkoll an** opt-in** OIDC (OpenID Connect) fluss flimkien mal-login tal-password default — password login qatt ma titneħħa, supplimentata biss:
 
-- Diżattivat sakemm `settings.oidcEnabled === true` **u** `oidcIssuer` /
-  `oidcClientId` / `oidcClientSecret` ma jkunux kollha kkonfigurati (Settings → Awtentikazzjoni).
-  Inkella, `GET /api/auth/oidc/login` jirritorna `400`.
-- `GET /api/auth/oidc/login` jiskopri l-`authorization_endpoint` mill-
-  `/.well-known/openid-configuration` tal-emittent (jinqaleb għal
-  `<issuer>/authorize` jekk dan ifalli), jibni l-URI tar-ridirezzjoni mit-talba
-  li tkun dieħla (b'kunsiderazzjoni għal `x-forwarded-proto`), u jirridirezzjona lejn l-IdP bi `state`
-  każwali maħżun f'cookie `oidc_state` `httpOnly`.
-- `GET /api/auth/oidc/callback` jivvalida `state`, jiskambja l-kodiċi tal-awtorizzazzjoni,
-  u jivverifika l-firma tat-token tal-ID permezz tal-JWKS tal-emittent
-  (`createRemoteJWKSet` ta' `jose`, maħżun fil-cache għal kull URI tal-JWKS) b'verifiki ta'
-  `issuer`/`audience`. L-aċċess għad-dashboard jeħtieġ lista `oidcAllowedSubjects`
-  mhux vojta, politika `oidcAdmissionClaim`, jew it-tnejn. Il-lista tas-suġġetti tqabbel `sub` jew
-  `email` biss meta `email_verified === true`. Il-politika fakultattiva tal-claim tieħu
-  mogħdija ta' claim tat-token tal-ID separata b'tikek (pereżempju, `realm_access.roles`) u
-  array ta' valuri aċċettati; il-claim riżolta trid tkun array ta' strings
-  li jkun fiha mill-inqas valur aċċettat wieħed. Jekk iż-żewġ politiki jkunu kkonfigurati,
-  it-tnejn iridu jgħaddu. Claims neqsin jew ifformattjati ħażin jiġu miċħuda b'mod sikur, u mingħajr
-  ebda waħda mill-politiki l-callback jirrifjuta l-login (`not_configured`). Konfigurazzjonijiet
-  eżistenti bbażati biss fuq is-suġġett jibqgħu jaħdmu mingħajr tibdil.
-- Keycloak normalment jimmappja r-rwoli tar-realm fit-tokens tal-aċċess, mhux neċessarjament fit-tokens
-  tal-ID. Biex tirrikjedi r-rwol tar-realm `admin`, ikkonfigura protocol mapper għal
-  dan il-client li jinkludi `realm_access.roles` fit-**token tal-ID** tiegħu, imbagħad issettja
-  `oidcAdmissionClaim` għal `{ "path": "realm_access.roles", "values": ["admin"] }`.
-  Iċċekkja l-claim reali tat-token tal-ID għal dan il-client qabel tattiva aċċess ibbażat biss
-  fuq ir-rwol; l-applikazzjoni ma taqrax ir-rwoli tat-token tal-aċċess. Ir-rifjut tat-token
-  min-naħa tal-IdP jista' jissupplimenta din il-verifika min-naħa tal-applikazzjoni iżda ma jissostitwihiex.
-- Meta jirnexxi, joħloq **eżattament l-istess** JWT `auth_token` ta' 30 jum li joħroġ il-login
-  bil-password (`src/app/api/auth/login/route.ts`), għalhekk il-bqija tal-
-  fluss tas-sessjoni tad-dashboard (aġġornament awtomatiku, flags tal-cookie) jibqa' l-istess —
-  OIDC jissostitwixxi biss il-mod kif tinħoloq il-cookie, mhux dak li tagħti aċċess għalih. Tibdil
-  fir-rwoli/gruppi tal-IdP ma jinvalidax sessjonijiet eżistenti ta' OmniRoute; il-logout,
-  it-tibdil tal-password, jew l-iskadenza tas-sessjoni jibqgħu jiddeterminaw it-tul ta' ħajjithom.
-- Kull setting `oidc*` (`oidcEnabled`, `oidcDisablePasswordLogin`,
-  `oidcIssuer`, `oidcClientId`, `oidcClientSecret`, `oidcAllowedSubjects`,
-  `oidcAdmissionClaim`, `oidcRedirectPath`, `oidcScopes`) jinsab f'`SECURITY_IMPACTING_SETTINGS_KEYS`
-  (`src/shared/constants/securityImpactingSettings.ts`): `PATCH /api/settings`
-  iwieġeb b'`400 PASSWORD_REQUIRED` sakemm il-body ma jkunx fih il-password tal-ġestjoni
-  bħala `currentPassword` (`401 PASSWORD_MISMATCH` meta tkun ħażina).
-  `oidcDisablePasswordLogin` jirrifjuta l-_login_ bil-password (`POST /api/auth/login`)
-  iżda jżomm il-hash tal-password maħżun, u l-awtentikazzjoni mill-ġdid xorta tivverifika
-  `currentPassword` miegħu.
-- `corsOrigins` u `bruteForceProtection` jinsabu wkoll f'`SECURITY_IMPACTING_SETTINGS_KEYS`:
-  jekk xi wieħed minnhom isir inqas restrittiv, id-difiżi tal-login jiddgħajfu, għalhekk jeħtieġu l-istess
-  awtentikazzjoni mill-ġdid b'`currentPassword` (it-tab tas-Sigurtà titolbu) u l-importazzjoni tal-JSON
-  tneħħihom.
-- Kull ċavetta tal-politika tas-sigurtà — l-entrati ta' `SECURITY_IMPACTING_SETTINGS_KEYS`,
-  kull ċavetta `oidc*` u l-istat tas-sessjoni tad-dashboard — hija **għall-operatur biss** fuq
-  `PATCH /api/settings`: API key bl-ambitu `manage` jew access token `oma_`
-  jiġi rrifjutat b'`403` anke meta jibgħat il-`currentPassword` korrett, u r-
-  rifjut jiġi rreġistrat fl-awditjar bħala `settings.update_failed` b'`reason: OPERATOR_REQUIRED`
-  (`requireOperatorCredential()` f'`src/lib/api/operatorCredential.ts`).
-  Settings ordinarji (tema, preferenzi tal-wiri) jibqgħu jistgħu jinkitbu minn ċavetta `manage`
-  jew access token `admin`. Kull modifika ta' `/api/settings` innifsu (u ta'
-  `/api/settings/require-login`) teħtieġ ukoll l-ambitu `admin` tal-access token
-  (`ADMIN_MUTATION_EXACT_PATHS` f'`src/server/authz/accessScopes.ts`, tqabbil eżatt tal-path);
-  `GET` jibqa' `read`, u s-subroutes l-oħra ta' `/api/settings/*` (proxies,
-  defaults tal-combo, aliases tal-mudelli, kompressjoni, tindif…) iżommu l-ambitu
-  `write` dedott mill-metodu.
-- `POST /api/settings/import-json` jaqbeż dik l-awtentikazzjoni mill-ġdid, u għalhekk ineħħi kull ċavetta f'
-  `IMPORT_STRIPPED_SETTINGS_KEYS` (l-istess fajl) qabel jikteb: il-password u
-  `currentPassword`, kull entrata ta' `SECURITY_IMPACTING_SETTINGS_KEYS`, u l-
-  istat tas-sessjoni tad-dashboard (`sessionsValidAfter`, `revokedDashboardSessions`).
-  Għalhekk, l-importazzjoni ta' backup eqdem ma tistax terġa' tattiva sessjoni li tibdil
-  fil-password jew sign-out kien diġà temm.
+- Disabled sakemm `settings.oidcEnabled === true`** u** `oidcIssuer` / `oidcClientId` / `oidcClientSecret` huma kollha kkonfigurati (Settings → Auth). `GET /api/auth/oidc/login` jirritorna `400` mod ieħor.
+- `GET /api/auth/oidc/login` jiskopri ż- `authorization_endpoint` miż `/.well-known/openid-configuration` tal-emittent (taqa' lura għal `<issuer>/authorize`), jibni r-ridirezzjonar URI mit-talba deħlin (`x-forwarded-proto` -aware), u tidderieġi mill-ġdid lejn iż- IdP `state` każwali maħżun f'cookie `httpOnly` `oidc_state`.
+- `GET /api/auth/oidc/callback` jivvalida `state`, jiskambja l-kodiċi tal-awtorizzazzjoni, u jivverifika l-firma tat-token ID permezz taż JWKS tal-emittent (`jose`'s `createRemoteJWKSet`, cached per JWKS URI) b'kontrolli `issuer`/`audience`. L-ammissjoni tad-dashboard teħtieġ lista `oidcAllowedSubjects` mhux vojta, politika `oidcAdmissionClaim`, jew it-tnejn. Il-lista tas-suġġetti taqbel `sub` jew `email` biss meta `email_verified === true`. Il-politika tal-pretensjoni fakultattiva tieħu mogħdija tal-pretensjoni ID-token separata minn punti (per eżempju, `realm_access.roles`) u firxa ta 'valuri aċċettati; it-talba riżolta għandha tkun firxa ta' kordi li jkun fihom mill-inqas valur wieħed aċċettat. Jekk iż-żewġ politiki huma kkonfigurati, it-tnejn għandhom jgħaddu. Missing/malformed claims fail closed, u mingħajr ebda politika r-callback jirrifjuta l-login (`not_configured`). Konfigurazzjonijiet eżistenti tas-suġġett biss jibqgħu mhux mibdula.
+- Keycloak normalment jimmappa r-rwoli tal-isfera f'tokens ta 'aċċess, mhux neċessarjament tokens ID. Biex tirrikjedi r-rwol tar-realm `admin`, ikkonfigura protokoll mapper għal dan il-klijent li jinkludi `realm_access.roles` fil-**ID token** , imbagħad issettja `oidcAdmissionClaim` għal `{ "path": "realm_access.roles", "values": ["admin"] }`. Iċċekkja t-talba attwali tat-token tal-ID għal dan il-klijent qabel ma tippermetti l-ammissjoni tar-rwol biss; l-applikazzjoni ma taqrax ir-rwoli tat-token tal-aċċess. Ir-rifjut tat-token min-naħa tal-IdP jista’ jissupplimenta iżda ma jissostitwixxix dan il-kontroll min-naħa tal-applikazzjoni.
+- Fuq is-suċċess mints il** eżatt l-istess** 30 jum `auth_token` JWT il-kwistjonijiet tal-login tal-password (`src/app/api/auth/login/route.ts`), għalhekk il-bqija tal-pipeline tas-sessjoni tad-dashboard (awto-aġġornament, bnadar tal-cookies) ma nbidlux — OIDC biss jissostitwixxi kif il-cookie tiġi nħadmet, mhux dak li tagħti. Bidliet għal IdP roles/groups ma jinvalidawx is-sessjonijiet eżistenti OmniRoute ; il-logout, ir-rotazzjoni tal-password, jew l-iskadenza tas-sessjoni għadhom jirregolaw il-ħajja tagħhom.
+- Kull setting `oidc*` `401 PASSWORD_MISMATCH` `oidcEnabled`, `oidcDisablePasswordLogin`, `oidcIssuer`, `oidcClientId`, `oidcClientSecret`, `oidcAllowedSubjects`, `oidcAdmissionClaim`, `oidcRedirectPath`, `oidcScopes`) huwa fi `SECURITY_IMPACTING_SETTINGS_KEYS` (`src/shared/constants/securityImpactingSettings.ts`): `PATCH /api/settings` iwieġeb `400 PASSWORD_REQUIRED` sakemm il-korp ma jġorrx il-password tal-maniġment meta hija żbaljata bħala `currentPassword`. `oidcDisablePasswordLogin` jirrifjuta l-password _login_ (`POST /api/auth/login`) iżda jżomm il-hash tal-password maħżuna, u re-auth xorta jiċċekkja `currentPassword` kontriha.
+- `corsOrigins` u `bruteForceProtection` huma `SECURITY_IMPACTING_SETTINGS_KEYS` ukoll: it-tnaqqis jew idgħajjef id-difiżi tal-login, għalhekk jieħdu l-istess `currentPassword` re-auth (it-tab tas-Sigurtà titlobha) u l-importazzjoni JSON twaqqahom.
+- Kull ċavetta tal-politika tas-sigurtà — l-entrati `SECURITY_IMPACTING_SETTINGS_KEYS`, kull ċavetta `oidc*` u l-istat tas-sessjoni tad-dashboard — huwa** operatur biss** fuq `PATCH /api/settings`: ċavetta API b'ambitu ta' ġestjoni jew token ta' aċċess `oma_` tiġi rrifjutata `403` anki meta tibgħat il- `currentPassword` dritt , u r-rifjut jiġi vverifikat bħala `settings.update_failed` bi `reason: OPERATOR_REQUIRED` (`requireOperatorCredential()` `src/lib/api/operatorCredential.ts`). Is-settings ordinarji (tema, preferenzi tal-wiri) jibqgħu miktuba għal ċavetta `manage` jew token ta 'aċċess `admin`. Kull mutazzjoni ta' `/api/settings` innifsu (u ta' `/api/settings/require-login`) teħtieġ ukoll l-ambitu tat-token ta' aċċess `admin` (`ADMIN_MUTATION_EXACT_PATHS` `src/server/authz/accessScopes.ts`, match exact-path); `GET` jibqa `read`, u s-subrotot `/api/settings/*` l-oħra (proxies, defaults combo, psewdonimi tal-mudell, kompressjoni, purges...) iżommu l-ambitu `write` dedott mill-metodu.
+- `POST /api/settings/import-json` taqbeż dik ir-ri-awth, u għalhekk twaqqa' kull ċavetta `IMPORT_STRIPPED_SETTINGS_KEYS` (l-istess fajl) qabel ma tikteb: il-password u `currentPassword`, kull dħul `SECURITY_IMPACTING_SETTINGS_KEYS`, u l-istat tas-sessjoni tad-dashboard (`sessionsValidAfter`, `revokedDashboardSessions`). L-importazzjoni ta' backup eqdem għalhekk ma tistax terġa' tqajjem sessjoni li bidla fil-password jew ħruġ diġà ntemmet.
+
+#### Login TOTP b'żewġ fatturi mhux obbligatorju (#16619)
+
+Irreġistrat minn Settings → Security; mitfi sakemm l-operatur jixgħelha (`src/server/auth/dashboardMfa.ts`).
+
+- **Dak li jkopri:** login tal-password (`POST /api/auth/login`, li mbagħad jeħtieġ `POST /api/auth/mfa/verify`) u `omniroute connect` (`POST /api/cli/connect`, li jirrifjuta skambju ta' password biss u jieħu l-kodiċi bħala `totp`).
+- **Dak li ma jkoprix:** OIDC / SSO sign-in (`/api/auth/oidc/callback`) ma jitlobx għall- OmniRoute TOTP. Jiddependi fuq it-tieni fattur tal-fornitur tal-identità stess, għalhekk infurza MFA fiż IdP jekk OIDC huwa attivat.
+- **Irkupru** (apparat mitluf, ma fadal l-ebda kodiċi ta' rkupru, jew fattur li ma jistax jibqa' jiġi vverifikat, pereżempju wara li nbidel `STORAGE_ENCRYPTION_KEY` ):
+  1. Ibda mill-ġdid is-server `OMNIROUTE_DISABLE_MFA=true`.
+  2. Fuq il-host innifsu (loopback peer u loopback `Host`, bħal `http://localhost:20128`), idħol bil-password. It-tieni fattur jinqabeż għal dik l-oriġini biss; kull oriġini oħra għadha teħtieġ il-kodiċi.
+  3. F'Settings → Sigurtà → Iddiżattiva, daħħal il-password u ħalli l-kodiċi vojt. `POST /api/auth/mfa/disable` jaċċetta korp mingħajr `code` biss waqt li l-varjabbli tkun issettjata u t-talba tiġi mill-host; xorta teħtieġ is-sessjoni tad-dashboard u l-password attwali, u hija vverifikata bħala `auth.mfa.disabled` `secondFactor: "recovery_switch"`.
+  4. Itfi `OMNIROUTE_DISABLE_MFA`, ibda mill-ġdid, u erġa' irreġistra jekk meħtieġ.
 
 ## Klassijiet tar-Rotot
 
@@ -160,29 +108,29 @@ Kull klassi tar-rotta għandha politika fi `src/server/authz/policies/`:
 
 Poliza ta suċċess tirritorna `AuthSubject` ma `kind ∈ { client_api_key, dashboard_session, management_key, anonymous, sso_user }`. Maniġers downstream jistgħu jaqrawha permezz ta' `assertAuth(request, "CLIENT_API")` `src/server/authz/assertAuth.ts` minflok ma jerġgħu jħaddmu l-loġika tal-awtentikazzjoni.
 
-## Lista ta’ Rotot Pubbliċi
+## Lista tar-Rotot Pubbliċi
 
-`src/shared/constants/publicApiRoutes.ts` hija l-lista espliċita ta’ permessi:
+`src/shared/constants/publicApiRoutes.ts` hija l-lista ta' permessi espliċita:
 
-Il-lista hija maqsuma skont il-**forma**, u din il-qasma hija essenzjali (GHSA-74g9-q8f6-793h): prefiss jitqabbel permezz ta’ `startsWith()`, għalhekk jaqbel ukoll ma’ kull mogħdija biswitu li jkollha l-istess karattri inizjali.
-Meta `/api/usage/om-usage` intuża bħala prefiss, dan immarka `/api/usage/om-usage<anything>` bħala PUBBLIKU, u Next jirriżolvi dan għal `/api/usage/[connectionId]` — handler mingħajr awtentikazzjoni tiegħu stess.
+Il-lista hija maqsuma minn** forma** , u l-qasma hija li ġġorr it-tagħbija (GHSA-74g9-q8f6-793h): prefiss huwa mqabbel ma ' `startsWith()`, għalhekk jaqbel ukoll ma' kull mogħdija adjaċenti li taqsam il-karattri ewlenin tagħha. `/api/usage/om-usage` bħala prefiss immarkat `/api/usage/om-usage<anything>` PUBLIC, u Sussegwentement isolvi li biex `/api/usage/[connectionId]` — handler mingħajr awtorizzazzjoni tiegħu stess.
 
 ```ts
-// Sottosiġar ġenwini. Kull entrata TRID tispiċċa b’"/" (ivverifikat minn test tal-unità).
+// Genuine subtrees. Every entry MUST end in "/" (asserted by a unit test).
 PUBLIC_API_ROUTE_PREFIXES = [
   "/api/auth/oidc/",
-  "/api/v1/", // ittrattat bħala CLIENT_API fi classify, mhux bħala "pubbliku mingħajr awtentikazzjoni"
+  "/api/v1/", // treated as CLIENT_API in classify, not as "no-auth public"
   "/api/oauth/",
   "/api/codex/connect/",
   "/api/telegram/",
   "/api/cursor-cli/",
 ];
 
-// Rotot individwali, imqabbla B'MOD EŻATT (bi jew mingħajr slash finali).
+// Single routes, matched EXACTLY (with or without a trailing slash).
 PUBLIC_API_ROUTES_EXACT = new Set([
   "/api/auth/login",
   "/api/auth/logout",
   "/api/auth/status",
+  "/api/auth/mfa/verify", // login step 2 for opt-in TOTP; needs the MFA-pending cookie
   "/api/init",
   "/api/sync/bundle",
   "/api/cli/connect",
@@ -190,20 +138,20 @@ PUBLIC_API_ROUTES_EXACT = new Set([
   "/api/skills/collect/chaos",
 ]);
 
-// Rotot individwali li jinqraw biss u li jieħdu wkoll ir-rilassament tal-oriġini CORS.
+// Read-only single routes that also take the CORS origin relaxation.
 PUBLIC_READONLY_CORS_API_ROUTES = [
   "/api/health/ping",
   "/api/monitoring/health",
   "/api/settings/require-login",
 ];
 
-// Rotta individwali li tinqara biss MINGĦAJR ir-rilassament CORS.
+// Read-only single route WITHOUT the CORS relaxation.
 PUBLIC_READONLY_API_ROUTES_EXACT = new Set(["/api/health"]);
 
 PUBLIC_READONLY_METHODS = new Set(["GET", "HEAD", "OPTIONS"]);
 ```
 
-Ir-rotot li jinqraw biss huma pubbliċi **biss** għal metodi sikuri. Nota: `classifyRoute()` jeskludi `/api/v1/*` u `/api/v1beta/*` mill-każ awtomatiku PUBLIC — dawn huma dejjem `CLIENT_API`, sabiex il-politika taċ-ċavetta Bearer tibqa’ tapplika.
+Ir-rotot li jinqraw biss huma pubbliċi** biss** għal metodi sikuri. Nota: `classifyRoute()` jeskludi `/api/v1/*` u `/api/v1beta/*` miż- PUBLIC fall-through — dawk huma dejjem `CLIENT_API` għalhekk il-politika Bearer-key għadha tapplika.
 
 ## Kif Iżżid Rotta Ġdida
 

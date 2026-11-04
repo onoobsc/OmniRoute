@@ -43,37 +43,35 @@ omniroute configure codex                # ← remote catalog එකෙන් lo
 
 ---
 
-## සම්බන්ධ වීම
+## සම්බන්ධ වෙමින්
 
-### Management password එක සමඟ (bootstrap)
+### කළමනාකරණ මුරපදය සමඟ (බූට්ස්ට්‍රැප්)
 
 ```bash
 omniroute connect 192.168.0.15
-# http://192.168.0.15:20128 සඳහා management password එක: ********
-# ✔ http://192.168.0.15:20128 වෙත සම්බන්ධ විය — context '192.168.0.15' (scope: admin)
+# Management password for http://192.168.0.15:20128: ********
+# ✔ Connected to http://192.168.0.15:20128 — context '192.168.0.15' (scope: admin)
 ```
 
-Password flow එක පෙරනිමියෙන් **admin** token එකක් නිකුත් කරයි (password එක ඔබ සතුව ඇති බැවින්,
-ඔබට දැනටමත් සම්පූර්ණ පාලනය ඇත). `--scope` සමඟ scope එක සීමා කරන්න:
+මුරපදය ප්‍රවාහය mints an** පරිපාලක** පෙරනිමියෙන් ටෝකනය (ඔබ මුරපදය තබා ඇත, එබැවින් ඔබට දැනටමත් සම්පූර්ණ පාලනය ඇත). `--scope` සමඟ ඩවුන්ස්කෝප්:
 
 ```bash
 omniroute connect 192.168.0.15 --scope write
 ```
 
-විකල්ප: `--port <p>` (host එකේ port එකක් නොමැති විට), `--name <ctx>` (context නාමය),
-`--scope read|write|admin`. සම්පූර්ණ URL එකක් වෙනස් නොකර භාවිත කරයි:
-`omniroute connect https://omni.example.com`.
+විකල්ප: `--port <p>` (ධාරකයට කිසිවක් නොමැති විට), `--name <ctx>` (සන්දර්භය නම), `--scope read|write|admin`. සම්පූර්ණ URL එකක් ලෙස ගෞරව කරනු ලැබේ: `omniroute connect https://omni.example.com`.
 
-### කලින් ජනනය කළ token එකක් සමඟ
+සේවාදායකයේ උපකරණ පුවරුව ද්වි-සාධක සත්‍යාපනය සක්‍රීය කර ඇති විට (සැකසීම් → ආරක්ෂාව), මුරපදය පමණක් ප්‍රතික්ෂේප කරනු ලැබේ: CLI පසුව සත්‍යාපන යෙදුමෙන් (හෝ ප්‍රතිසාධන කේතයක්) කේතය ඉල්ලා සිටී. අන්තර්ක්‍රියාකාරී නොවන භාවිතය සඳහා `--totp <code>` සමඟ එය ඉදිරියට ගෙන යන්න.
 
-Dashboard එකේදී (හෝ `omniroute tokens create` සමඟ) scope කළ token එකක් ජනනය කර
-එය paste කරන්න — password එකක් අවශ්ය නොවේ:
+### පෙර-ජනනය කරන ලද ටෝකනයක් සමඟ
+
+උපකරණ පුවරුවේ (හෝ `omniroute tokens create` සමඟ) විෂය පථය සහිත ටෝකනයක් ජනනය කර මුරපදයක් අවශ්‍ය නොවන පරිදි — අලවන්න:
 
 ```bash
 omniroute connect 192.168.0.15 --key oma_live_xxxxxxxx
 ```
 
-CLI එක `GET /api/cli/whoami` හරහා එය වලංගු කර active context එක ලෙස සුරකියි.
+CLI එය `GET /api/cli/whoami` හරහා වලංගු කර එය සක්‍රීය සන්දර්භය ලෙස සුරකියි.
 
 ---
 
@@ -439,14 +437,14 @@ omniroute contexts remove 192-168-0-15 --yes   # දේශීය සන්දර
 
 ---
 
-## API අන්ත ලක්ෂ්ය (යොමුව)
+## API අන්ත ලක්ෂ්‍ය (යොමු)
 
-| ක්රමය  | මාර්ගය                | සත්යාපනය        | විෂය පථය                    |
-| ------ | --------------------- | --------------- | --------------------------- |
-| POST   | `/api/cli/connect`    | කළමනාකරණ මුරපදය | — (පොදු, මුරපදයෙන් ආරක්ෂිත) |
-| GET    | `/api/cli/whoami`     | ප්රවේශ ටෝකනය    | read                        |
-| GET    | `/api/cli/tokens`     | ප්රවේශ ටෝකනය    | admin                       |
-| POST   | `/api/cli/tokens`     | ප්රවේශ ටෝකනය    | admin                       |
-| DELETE | `/api/cli/tokens/:id` | ප්රවේශ ටෝකනය    | admin                       |
+| ක්රමය  | මාර්ගය                | Aut                         | විෂය පථය             |
+| ------ | --------------------- | --------------------------- | -------------------- |
+| POST   | `/api/cli/connect`    | මුරපදය; 2FA ක්‍රියාත්මක නම් | — (පොදු, මුරපද සහිත) |
+| GET    | `/api/cli/whoami`     | ප්රවේශ ටෝකනය                | කියෙව්වා             |
+| GET    | `/api/cli/tokens`     | ප්රවේශ ටෝකනය                | පරිපාලක              |
+| POST   | `/api/cli/tokens`     | ප්රවේශ ටෝකනය                | පරිපාලක              |
+| DELETE | `/api/cli/tokens/:id` | ප්රවේශ ටෝකනය                | පරිපාලක              |
 
-සම්පූර්ණ schemas සඳහා [openapi.yaml](../openapi.yaml) බලන්න.
+සම්පූර්ණ යෝජනා ක්‍රම සඳහා [openapi.yaml](../openapi.yaml) බලන්න.

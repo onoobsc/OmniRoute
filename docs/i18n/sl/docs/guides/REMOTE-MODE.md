@@ -44,37 +44,35 @@ vaš prenosnik                            oddaljeni OmniRoute (VPS)
 
 ---
 
-## Vzpostavljanje povezave
+## Povezovanje
 
-### Z geslom za upravljanje (začetna nastavitev)
+### Z geslom za upravljanje (bootstrap)
 
 ```bash
 omniroute connect 192.168.0.15
-# Geslo za upravljanje za http://192.168.0.15:20128: ********
-# ✔ Povezava z http://192.168.0.15:20128 je vzpostavljena — kontekst '192.168.0.15' (obseg: admin)
+# Management password for http://192.168.0.15:20128: ********
+# ✔ Connected to http://192.168.0.15:20128 — context '192.168.0.15' (scope: admin)
 ```
 
-Potek z geslom privzeto izda žeton **admin** (ker imate geslo,
-že imate popoln nadzor). Obseg omejite z `--scope`:
+Pretok gesel kuje an** admin** privzeto žeton (geslo imate, tako da že imate popoln nadzor). Downscope z `--scope`:
 
 ```bash
 omniroute connect 192.168.0.15 --scope write
 ```
 
-Možnosti: `--port <p>` (ko gostitelj nima navedenih vrat), `--name <ctx>` (ime konteksta),
-`--scope read|write|admin`. Celoten URL se uporabi nespremenjen:
-`omniroute connect https://omni.example.com`.
+Možnosti: `--port <p>` (če gostitelj nima nobenega), `--name <ctx>` (ime konteksta), `--scope read|write|admin`. Celoten URL je spoštovan tak, kot je: `omniroute connect https://omni.example.com`.
+
+Ko ima strežnik omogočeno dvostopenjsko preverjanje pristnosti na nadzorni plošči (Nastavitve → Varnost), je samo geslo zavrnjeno: CLI nato zahteva kodo iz aplikacije za preverjanje pristnosti (ali obnovitveno kodo). Predajte ga z `--totp <code>` za neinteraktivno uporabo.
 
 ### Z vnaprej ustvarjenim žetonom
 
-V nadzorni plošči (ali z `omniroute tokens create`) ustvarite žeton z določenim obsegom in
-ga prilepite — geslo ni potrebno:
+Ustvarite žeton z obsegom na nadzorni plošči (ali z `omniroute tokens create`) in ga prilepite — ni potrebno geslo:
 
 ```bash
 omniroute connect 192.168.0.15 --key oma_live_xxxxxxxx
 ```
 
-CLI ga preveri prek `GET /api/cli/whoami` in shrani kot aktivni kontekst.
+CLI ga potrdi prek `GET /api/cli/whoami` in ga shrani kot aktivni kontekst.
 
 ---
 
@@ -411,14 +409,14 @@ omniroute contexts remove 192-168-0-15 --yes   # odstrani lokalni kontekst (tudi
 
 ---
 
-## Končne točke API (referenca)
+## končne točke API (referenca)
 
-| Metoda | Pot                   | Preverjanje pristnosti | Obseg                         |
-| ------ | --------------------- | ---------------------- | ----------------------------- |
-| POST   | `/api/cli/connect`    | geslo za upravljanje   | — (javno, zaščiteno z geslom) |
-| GET    | `/api/cli/whoami`     | žeton za dostop        | branje                        |
-| GET    | `/api/cli/tokens`     | žeton za dostop        | skrbništvo                    |
-| POST   | `/api/cli/tokens`     | žeton za dostop        | skrbništvo                    |
-| DELETE | `/api/cli/tokens/:id` | žeton za dostop        | skrbništvo                    |
+| Metoda | Pot                   | Auth                        | Področje uporabe    |
+| ------ | --------------------- | --------------------------- | ------------------- |
+| POST   | `/api/cli/connect`    | geslo; 2FA, če je vklopljen | — (javno, z geslom) |
+| GET    | `/api/cli/whoami`     | dostopni žeton              | prebrati            |
+| GET    | `/api/cli/tokens`     | dostopni žeton              | admin               |
+| POST   | `/api/cli/tokens`     | dostopni žeton              | admin               |
+| DELETE | `/api/cli/tokens/:id` | dostopni žeton              | admin               |
 
-Za celotne sheme glejte [openapi.yaml](../openapi.yaml).
+Glejte [openapi.yaml](../openapi.yaml) za celotne sheme.

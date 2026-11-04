@@ -44,37 +44,35 @@ Twój laptop                              zdalny OmniRoute (VPS)
 
 ---
 
-## Łączenie
+## Złączony
 
-### Za pomocą hasła zarządzania (konfiguracja początkowa)
+### Z hasłem zarządzającym (bootstrap)
 
 ```bash
 omniroute connect 192.168.0.15
-# Hasło zarządzania dla http://192.168.0.15:20128: ********
-# ✔ Połączono z http://192.168.0.15:20128 — kontekst „192.168.0.15” (zakres: admin)
+# Management password for http://192.168.0.15:20128: ********
+# ✔ Connected to http://192.168.0.15:20128 — context '192.168.0.15' (scope: admin)
 ```
 
-Przepływ wykorzystujący hasło domyślnie generuje token **admin** (skoro masz hasło,
-masz już pełną kontrolę). Ogranicz zakres za pomocą `--scope`:
+Przepływ hasła jest miętowy** administrator** token domyślnie (posiadasz hasło, więc masz już pełną kontrolę). Downscope z `--scope`:
 
 ```bash
 omniroute connect 192.168.0.15 --scope write
 ```
 
-Opcje: `--port <p>` (gdy host nie zawiera portu), `--name <ctx>` (nazwa kontekstu),
-`--scope read|write|admin`. Pełny adres URL jest używany bez zmian:
-`omniroute connect https://omni.example.com`.
+Opcje: `--port <p>` (jeśli host nie ma żadnego), `--name <ctx>` (nazwa kontekstowa), `--scope read|write|admin`. Pełne URL jest honorowane w niezmienionej postaci: `omniroute connect https://omni.example.com`.
 
-### Za pomocą wcześniej wygenerowanego tokenu
+Gdy serwer ma włączone uwierzytelnianie dwuskładnikowe w panelu kontrolnym (Ustawienia → Security), samo hasło jest odrzucane: CLI następnie prosi o kod z aplikacji uwierzytelniającej (lub kod odzyskiwania). Podaj to z góry za pomocą `--totp <code>` do użytku nieinteraktywnego.
 
-Wygeneruj token z określonym zakresem w panelu administracyjnym (lub za pomocą `omniroute tokens create`) i
-wklej go — hasło nie jest potrzebne:
+### Z wstępnie wygenerowanym tokenem
+
+Wygeneruj token o określonym zasięgu na pulpicie nawigacyjnym (lub za pomocą `omniroute tokens create`) i wklej go — bez konieczności podawania hasła:
 
 ```bash
 omniroute connect 192.168.0.15 --key oma_live_xxxxxxxx
 ```
 
-CLI weryfikuje go za pomocą `GET /api/cli/whoami` i zapisuje jako aktywny kontekst.
+CLI sprawdza to poprzez `GET /api/cli/whoami` i zapisuje jako aktywny kontekst.
 
 ---
 
@@ -453,14 +451,14 @@ omniroute contexts remove 192-168-0-15 --yes   # usuń lokalny kontekst (nawet j
 
 ---
 
-## Endpointy API (dokumentacja)
+## punkty końcowe API (odniesienie)
 
-| Metoda | Trasa                 | Uwierzytelnianie  | Zakres                          |
-| ------ | --------------------- | ----------------- | ------------------------------- |
-| POST   | `/api/cli/connect`    | hasło zarządzania | — (publiczny, chroniony hasłem) |
-| GET    | `/api/cli/whoami`     | token dostępu     | odczyt                          |
-| GET    | `/api/cli/tokens`     | token dostępu     | administrator                   |
-| POST   | `/api/cli/tokens`     | token dostępu     | administrator                   |
-| DELETE | `/api/cli/tokens/:id` | token dostępu     | administrator                   |
+| Metoda | Trasa                 | Autoryt                         | Zakres                          |
+| ------ | --------------------- | ------------------------------- | ------------------------------- |
+| POST   | `/api/cli/connect`    | hasło; 2FA, jeśli jest włączone | — (publiczny, chroniony hasłem) |
+| GET    | `/api/cli/whoami`     | token dostępu                   | Czytać                          |
+| GET    | `/api/cli/tokens`     | token dostępu                   | administrator                   |
+| POST   | `/api/cli/tokens`     | token dostępu                   | administrator                   |
+| DELETE | `/api/cli/tokens/:id` | token dostępu                   | administrator                   |
 
-Pełne schematy znajdują się w pliku [openapi.yaml](../openapi.yaml).
+Zobacz [openapi.yaml](../openapi.yaml), aby zapoznać się z pełnymi schematami.

@@ -44,37 +44,35 @@ váš notebook                             vzdialený OmniRoute (VPS)
 
 ---
 
-## Pripojenie
+## Pripája sa
 
-### Pomocou hesla na správu (úvodné nastavenie)
+### S heslom pre správu (bootstrap)
 
 ```bash
 omniroute connect 192.168.0.15
-# Heslo na správu pre http://192.168.0.15:20128: ********
-# ✔ Pripojené k http://192.168.0.15:20128 — kontext „192.168.0.15“ (rozsah: admin)
+# Management password for http://192.168.0.15:20128: ********
+# ✔ Connected to http://192.168.0.15:20128 — context '192.168.0.15' (scope: admin)
 ```
 
-Postup s heslom predvolene vydá token s rozsahom **admin** (máte heslo, takže
-už máte úplnú kontrolu). Rozsah obmedzíte pomocou `--scope`:
+Heslo flow razítka an** admin** token štandardne (heslo držíte, takže už máte plnú kontrolu). Downscope s `--scope`:
 
 ```bash
 omniroute connect 192.168.0.15 --scope write
 ```
 
-Možnosti: `--port <p>` (ak hostiteľ neobsahuje port), `--name <ctx>` (názov kontextu),
-`--scope read|write|admin`. Úplná URL sa použije bez zmien:
-`omniroute connect https://omni.example.com`.
+Možnosti: `--port <p>` (keď hostiteľ nemá žiadne), `--name <ctx>` (kontextový názov), `--scope read|write|admin`. Celé URL sa ctí tak, ako je: `omniroute connect https://omni.example.com`.
 
-### Pomocou vopred vygenerovaného tokenu
+Keď má server povolenú dvojfaktorovú autentifikáciu dashboardu (Nastavenia → Security), zamietne sa iba heslo: CLI si potom vypýta kód z overovacej aplikácie (alebo kód na obnovenie). Pre neinteraktívne použitie ho odovzdajte dopredu so `--totp <code>`.
 
-Vygenerujte token s obmedzeným rozsahom v ovládacom paneli (alebo pomocou `omniroute tokens create`) a
-vložte ho — heslo nie je potrebné:
+### S vopred vygenerovaným tokenom
+
+Vygenerujte token s rozsahom na informačnom paneli (alebo pomocou `omniroute tokens create`) a vložte ho — bez potreby hesla:
 
 ```bash
 omniroute connect 192.168.0.15 --key oma_live_xxxxxxxx
 ```
 
-CLI ho overí prostredníctvom `GET /api/cli/whoami` a uloží ho ako aktívny kontext.
+CLI ho overí cez `GET /api/cli/whoami` a uloží ho ako aktívny kontext.
 
 ---
 
@@ -434,14 +432,14 @@ omniroute contexts remove 192-168-0-15 --yes   # odstráni lokálny kontext (aj 
 
 ---
 
-## Koncové body API (referencia)
+## koncové body API (referenčné)
 
-| Metóda | Trasa                 | Autentifikácia   | Rozsah                       |
-| ------ | --------------------- | ---------------- | ---------------------------- |
-| POST   | `/api/cli/connect`    | heslo na správu  | — (verejné, chránené heslom) |
-| GET    | `/api/cli/whoami`     | prístupový token | čítanie                      |
-| GET    | `/api/cli/tokens`     | prístupový token | správca                      |
-| POST   | `/api/cli/tokens`     | prístupový token | správca                      |
-| DELETE | `/api/cli/tokens/:id` | prístupový token | správca                      |
+| Metóda | Trasa                 | Auth                      | Rozsah                       |
+| ------ | --------------------- | ------------------------- | ---------------------------- |
+| POST   | `/api/cli/connect`    | heslo; 2FA, ak je zapnuté | — (verejné, chránené heslom) |
+| GET    | `/api/cli/whoami`     | prístupový token          | čítať                        |
+| GET    | `/api/cli/tokens`     | prístupový token          | admin                        |
+| POST   | `/api/cli/tokens`     | prístupový token          | admin                        |
+| DELETE | `/api/cli/tokens/:id` | prístupový token          | admin                        |
 
-Úplné schémy nájdete v súbore [openapi.yaml](../openapi.yaml).
+Úplné schémy nájdete [openapi.yaml](../openapi.yaml).

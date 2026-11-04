@@ -40,37 +40,35 @@ noutbukingiz                            masofaviy OmniRoute (VPS)
 
 ---
 
-## Ulanish
+## Ulanmoqda
 
-### Boshqaruv paroli bilan (dastlabki sozlash)
+### Boshqaruv paroli bilan (bootstrap)
 
 ```bash
 omniroute connect 192.168.0.15
-# http://192.168.0.15:20128 uchun boshqaruv paroli: ********
-# ✔ http://192.168.0.15:20128 manziliga ulandi — kontekst: '192.168.0.15' (qamrov: admin)
+# Management password for http://192.168.0.15:20128: ********
+# ✔ Connected to http://192.168.0.15:20128 — context '192.168.0.15' (scope: admin)
 ```
 
-Parol orqali ulanish jarayoni standart holatda **admin** tokenini yaratadi (parol sizda ekan, demak
-allaqachon toʻliq boshqaruvga egasiz). Qamrovni `--scope` bilan kamaytiring:
+Parol oqimi mints an** admin** sukut bo'yicha token (siz parolni ushlab turasiz, shuning uchun siz allaqachon to'liq nazoratga egasiz). `--scope` bilan pastga qarash:
 
 ```bash
 omniroute connect 192.168.0.15 --scope write
 ```
 
-Parametrlar: `--port <p>` (host’da port koʻrsatilmagan boʻlsa), `--name <ctx>` (kontekst nomi),
-`--scope read|write|admin`. Toʻliq URL oʻzgartirilmasdan ishlatiladi:
-`omniroute connect https://omni.example.com`.
+Variantlar: `--port <p>` (xostda hech kim bo'lmasa), `--name <ctx>` (kontekst nomi), `--scope read|write|admin`. To'liq URL avvalgidek hurmat qilinadi: `omniroute connect https://omni.example.com`.
+
+Agar serverda asboblar panelida ikki faktorli autentifikatsiya yoqilgan bo'lsa (Settings → Security), faqat parol rad etiladi: keyin CLI autentifikatsiya dasturidan kodni (yoki tiklash kodini) so'raydi. Interaktiv bo'lmagan foydalanish uchun uni `--totp <code>` bilan oldinga o'tkazing.
 
 ### Oldindan yaratilgan token bilan
 
-Boshqaruv panelida (yoki `omniroute tokens create` yordamida) qamrovli token yarating va
-uni kiriting — parol talab qilinmaydi:
+Boshqaruv panelida (yoki `omniroute tokens create` bilan) miqyosli token yarating va uni — parol talab qilmasdan joylashtiring:
 
 ```bash
 omniroute connect 192.168.0.15 --key oma_live_xxxxxxxx
 ```
 
-CLI uni `GET /api/cli/whoami` orqali tekshiradi va faol kontekst sifatida saqlaydi.
+CLI uni `GET /api/cli/whoami` orqali tasdiqlaydi va uni faol kontekst sifatida saqlaydi.
 
 ---
 
@@ -434,14 +432,14 @@ omniroute contexts remove 192-168-0-15 --yes   # mahalliy kontekstni olib tashla
 
 ---
 
-## API endpointlari (ma’lumotnoma)
+## API so'nggi nuqtalari (ma'lumotnoma)
 
-| Usul   | Yo‘nalish             | Autentifikatsiya | Ruxsat doirasi                      |
-| ------ | --------------------- | ---------------- | ----------------------------------- |
-| POST   | `/api/cli/connect`    | boshqaruv paroli | — (ochiq, parol bilan himoyalangan) |
-| GET    | `/api/cli/whoami`     | kirish tokeni    | o‘qish                              |
-| GET    | `/api/cli/tokens`     | kirish tokeni    | administrator                       |
-| POST   | `/api/cli/tokens`     | kirish tokeni    | administrator                       |
-| DELETE | `/api/cli/tokens/:id` | kirish tokeni    | administrator                       |
+| Usul   | Marshrut              | Avtor                            | Qo'llash doirasi                      |
+| ------ | --------------------- | -------------------------------- | ------------------------------------- |
+| POST   | `/api/cli/connect`    | parol; Agar yoqilgan bo'lsa, 2FA | — (ommaviy, parol bilan himoyalangan) |
+| GET    | `/api/cli/whoami`     | kirish belgisi                   | o'qing                                |
+| GET    | `/api/cli/tokens`     | kirish belgisi                   | admin                                 |
+| POST   | `/api/cli/tokens`     | kirish belgisi                   | admin                                 |
+| DELETE | `/api/cli/tokens/:id` | kirish belgisi                   | admin                                 |
 
-To‘liq sxemalar uchun [openapi.yaml](../openapi.yaml) fayliga qarang.
+To'liq sxemalar uchun [openapi.yaml](../openapi.yaml) qarang.

@@ -44,37 +44,35 @@ dein Laptop                               entfernter OmniRoute-Server (VPS)
 
 ---
 
-## Verbindung herstellen
+## Verbinden
 
-### Mit dem Verwaltungspasswort (Bootstrap)
+### Mit dem Management-Passwort (Bootstrap)
 
 ```bash
 omniroute connect 192.168.0.15
-# Verwaltungspasswort für http://192.168.0.15:20128: ********
-# ✔ Verbunden mit http://192.168.0.15:20128 — Kontext '192.168.0.15' (Berechtigungsbereich: admin)
+# Management password for http://192.168.0.15:20128: ********
+# ✔ Connected to http://192.168.0.15:20128 — context '192.168.0.15' (scope: admin)
 ```
 
-Der Passwortablauf stellt standardmäßig ein **admin**-Token aus (da du das Passwort
-besitzt, hast du bereits vollständige Kontrolle). Schränke den Berechtigungsbereich mit `--scope` ein:
+Der Passwortfluss prägt ein** Administrator** Token standardmäßig (Sie besitzen das Passwort, sodass Sie bereits die volle Kontrolle haben). Downscope mit `--scope`:
 
 ```bash
 omniroute connect 192.168.0.15 --scope write
 ```
 
-Optionen: `--port <p>` (wenn der Host keinen Port enthält), `--name <ctx>` (Kontextname),
-`--scope read|write|admin`. Eine vollständige URL wird unverändert übernommen:
-`omniroute connect https://omni.example.com`.
+Optionen: `--port <p>` (wenn der Host keinen hat), `--name <ctx>` (Kontextname), `--scope read|write|admin`. Ein vollständiger URL wird unverändert berücksichtigt: `omniroute connect https://omni.example.com`.
 
-### Mit einem zuvor generierten Token
+Wenn auf dem Server die Zwei-Faktor-Authentifizierung im Dashboard aktiviert ist (Einstellungen → Sicherheit), wird nur das Passwort abgelehnt: Der CLI fragt dann nach dem Code von der Authentifizierungs-App (oder einem Wiederherstellungscode). Geben Sie es im Voraus mit `--totp <code>` weiter, damit es nicht interaktiv genutzt werden kann.
 
-Generiere im Dashboard (oder mit `omniroute tokens create`) ein bereichsbeschränktes Token und
-füge es ein — kein Passwort erforderlich:
+### Mit einem vorgenerierten Token
+
+Generieren Sie im Dashboard (oder mit `omniroute tokens create`) ein bereichsbezogenes Token und fügen Sie es — ein, kein Passwort erforderlich:
 
 ```bash
 omniroute connect 192.168.0.15 --key oma_live_xxxxxxxx
 ```
 
-Die CLI validiert es über `GET /api/cli/whoami` und speichert es als aktiven Kontext.
+Der CLI validiert es über `GET /api/cli/whoami` und speichert es als aktiven Kontext.
 
 ---
 
@@ -449,14 +447,14 @@ omniroute contexts remove 192-168-0-15 --yes   # lokalen Kontext löschen (selbs
 
 ---
 
-## API-Endpunkte (Referenz)
+## API Endpunkte (Referenz)
 
-| Methode | Route                 | Authentifizierung   | Berechtigungsumfang               |
-| ------- | --------------------- | ------------------- | --------------------------------- |
-| POST    | `/api/cli/connect`    | Verwaltungspasswort | — (öffentlich, passwortgeschützt) |
-| GET     | `/api/cli/whoami`     | Zugriffstoken       | Lesen                             |
-| GET     | `/api/cli/tokens`     | Zugriffstoken       | Administration                    |
-| POST    | `/api/cli/tokens`     | Zugriffstoken       | Administration                    |
-| DELETE  | `/api/cli/tokens/:id` | Zugriffstoken       | Administration                    |
+| Verfahren | Route                 | Auth                           | Umfang                            |
+| --------- | --------------------- | ------------------------------ | --------------------------------- |
+| POST      | `/api/cli/connect`    | Passwort; 2FA, falls aktiviert | — (öffentlich, passwortgeschützt) |
+| GET       | `/api/cli/whoami`     | Zugriffstoken                  | lesen                             |
+| GET       | `/api/cli/tokens`     | Zugriffstoken                  | Administrator                     |
+| POST      | `/api/cli/tokens`     | Zugriffstoken                  | Administrator                     |
+| DELETE    | `/api/cli/tokens/:id` | Zugriffstoken                  | Administrator                     |
 
-Die vollständigen Schemas finden Sie in [openapi.yaml](../openapi.yaml).
+Vollständige Schemata finden Sie unter [openapi.yaml](../openapi.yaml).

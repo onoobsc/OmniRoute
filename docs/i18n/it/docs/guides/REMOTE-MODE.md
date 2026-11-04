@@ -50,31 +50,29 @@ il tuo laptop                            OmniRoute remoto (VPS)
 
 ```bash
 omniroute connect 192.168.0.15
-# Password di gestione per http://192.168.0.15:20128: ********
-# ✔ Connessione a http://192.168.0.15:20128 riuscita — contesto '192.168.0.15' (ambito: admin)
+# Management password for http://192.168.0.15:20128: ********
+# ✔ Connected to http://192.168.0.15:20128 — context '192.168.0.15' (scope: admin)
 ```
 
-Il flusso con password genera per impostazione predefinita un token **admin** (se possiedi la password,
-hai già il controllo completo). Riduci l'ambito con `--scope`:
+Il flusso delle password conia un** amministratore** token per impostazione predefinita (hai la password, quindi hai già il pieno controllo). Downscope con `--scope`:
 
 ```bash
 omniroute connect 192.168.0.15 --scope write
 ```
 
-Opzioni: `--port <p>` (quando l'host non include una porta), `--name <ctx>` (nome del contesto),
-`--scope read|write|admin`. Un URL completo viene rispettato così com'è:
-`omniroute connect https://omni.example.com`.
+Opzioni: `--port <p>` (quando l'host non ne ha), `--name <ctx>` (nome del contesto), `--scope read|write|admin`. Uno URL completo viene onorato così com'è: `omniroute connect https://omni.example.com`.
 
-### Con un token pre-generato
+Quando sul server è abilitata l'autenticazione a due fattori della dashboard (Impostazioni → Sicurezza), viene rifiutata solo la password: CLI chiede poi il codice all'app di autenticazione (o un codice di ripristino). Passalo in anticipo con `--totp <code>` per un uso non interattivo.
 
-Genera un token con ambito definito nella dashboard (oppure con `omniroute tokens create`) e
-incollalo: non è necessaria alcuna password.
+### Con un token pregenerato
+
+Genera un token con ambito nella dashboard (o con `omniroute tokens create`) e incollalo — senza password necessaria:
 
 ```bash
 omniroute connect 192.168.0.15 --key oma_live_xxxxxxxx
 ```
 
-La CLI lo convalida tramite `GET /api/cli/whoami` e lo salva come contesto attivo.
+CLI lo convalida tramite `GET /api/cli/whoami` e lo salva come contesto attivo.
 
 ---
 
@@ -445,14 +443,14 @@ omniroute contexts remove 192-168-0-15 --yes   # elimina il contesto locale (anc
 
 ---
 
-## Endpoint API (riferimento)
+## endpoint API (riferimento)
 
-| Metodo | Route                 | Autenticazione       | Ambito                             |
-| ------ | --------------------- | -------------------- | ---------------------------------- |
-| POST   | `/api/cli/connect`    | password di gestione | — (pubblico, protetto da password) |
-| GET    | `/api/cli/whoami`     | token di accesso     | lettura                            |
-| GET    | `/api/cli/tokens`     | token di accesso     | amministrazione                    |
-| POST   | `/api/cli/tokens`     | token di accesso     | amministrazione                    |
-| DELETE | `/api/cli/tokens/:id` | token di accesso     | amministrazione                    |
+| Metodo | Itinerario            | Aut                     | Ambito                             |
+| ------ | --------------------- | ----------------------- | ---------------------------------- |
+| POST   | `/api/cli/connect`    | password; 2FA se attivo | — (pubblico, protetto da password) |
+| GET    | `/api/cli/whoami`     | token di accesso        | Leggere                            |
+| GET    | `/api/cli/tokens`     | token di accesso        | amministratore                     |
+| POST   | `/api/cli/tokens`     | token di accesso        | amministratore                     |
+| DELETE | `/api/cli/tokens/:id` | token di accesso        | amministratore                     |
 
-Consultare [openapi.yaml](../openapi.yaml) per gli schemi completi.
+Vedi [openapi.yaml](../openapi.yaml) per gli schemi completi.

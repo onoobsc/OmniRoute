@@ -46,35 +46,33 @@ kwamfutar tafi-da-gidanka                 OmniRoute na nesa (VPS)
 
 ## Haɗawa
 
-### Da kalmar sirrin gudanarwa (bootstrap)
+### Tare da kalmar sirrin gudanarwa (bootstrap)
 
 ```bash
 omniroute connect 192.168.0.15
-# Kalmar sirrin gudanarwa ta http://192.168.0.15:20128: ********
-# ✔ An haɗa da http://192.168.0.15:20128 — context '192.168.0.15' (scope: admin)
+# Management password for http://192.168.0.15:20128: ********
+# ✔ Connected to http://192.168.0.15:20128 — context '192.168.0.15' (scope: admin)
 ```
 
-Tsarin kalmar sirri yana ƙirƙirar token na **admin** ta tsohuwa (tun da kana da kalmar sirrin,
-to kana da cikakken iko). Rage scope da `--scope`:
+Da kalmar wucewa ta mints an** admin** alama ta tsohuwa (kuna riƙe kalmar sirri, don haka kuna da cikakken iko). Downscope tare da `--scope`:
 
 ```bash
 omniroute connect 192.168.0.15 --scope write
 ```
 
-Zaɓuɓɓuka: `--port <p>` (idan host ɗin ba shi da port), `--name <ctx>` (sunan context),
-`--scope read|write|admin`. Ana amfani da cikakken URL yadda yake:
-`omniroute connect https://omni.example.com`.
+Zaɓuɓɓuka: `--port <p>` (lokacin da mai watsa shiri ba shi da kowa), `--name <ctx>` (sunan yanayi), `--scope read|write|admin`. Ana girmama cikakken URL kamar yadda: `omniroute connect https://omni.example.com`.
 
-### Da token da aka riga aka ƙirƙira
+Lokacin da uwar garken ke da dashboard tantance abubuwa biyu (Settings → Security), kalmar sirri kadai ba a ƙi: CLI ɗin sai ya nemi lambar daga app ɗin mai tabbatarwa (ko lambar dawowa). Sanya shi gaba tare da `--totp <code>` don amfani mara amfani.
 
-Ƙirƙiri token mai iyakancewar izini a dashboard (ko da `omniroute tokens create`) sannan
-ka liƙa shi — ba a buƙatar kalmar sirri:
+### Tare da alamar da aka riga aka ƙirƙira
+
+Ƙirƙirar alama mai iyaka a cikin dashboard (ko tare da `omniroute tokens create`) kuma liƙa shi — babu kalmar sirri da ake buƙata:
 
 ```bash
 omniroute connect 192.168.0.15 --key oma_live_xxxxxxxx
 ```
 
-CLI yana tabbatar da ingancinsa ta `GET /api/cli/whoami` sannan ya adana shi a matsayin context mai aiki.
+CLI yana inganta shi ta hanyar `GET /api/cli/whoami` kuma yana adana shi azaman mahallin aiki.
 
 ---
 
@@ -429,14 +427,14 @@ omniroute contexts remove 192-168-0-15 --yes   # cire local context (ko da yana 
 
 ---
 
-## Wuraren ƙarshen API (manazarta)
+## API karshen maki (bayani)
 
-| Hanya  | Route                 | Tantancewa              | Iyaka                                     |
-| ------ | --------------------- | ----------------------- | ----------------------------------------- |
-| POST   | `/api/cli/connect`    | kalmar sirrin gudanarwa | — (na jama'a, an killace da kalmar sirri) |
-| GET    | `/api/cli/whoami`     | token na samun dama     | karantawa                                 |
-| GET    | `/api/cli/tokens`     | token na samun dama     | gudanarwa                                 |
-| POST   | `/api/cli/tokens`     | token na samun dama     | gudanarwa                                 |
-| DELETE | `/api/cli/tokens/:id` | token na samun dama     | gudanarwa                                 |
+| Hanya  | Hanya                 | Gaskiya                | Iyakar                   |
+| ------ | --------------------- | ---------------------- | ------------------------ |
+| POST   | `/api/cli/connect`    | kalmar sirri; 2FA idan | — (jama'a, kalmar sirri) |
+| GET    | `/api/cli/whoami`     | alamar shiga           | karanta                  |
+| GET    | `/api/cli/tokens`     | alamar shiga           | admin                    |
+| POST   | `/api/cli/tokens`     | alamar shiga           | admin                    |
+| DELETE | `/api/cli/tokens/:id` | alamar shiga           | admin                    |
 
-Duba [openapi.yaml](../openapi.yaml) don cikakkun tsare-tsare.
+Duba [openapi.yaml](../openapi.yaml) don cikakken tsari.

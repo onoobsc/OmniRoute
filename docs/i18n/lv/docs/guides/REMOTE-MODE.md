@@ -46,35 +46,33 @@ jūsu klēpjdators                         attālais OmniRoute (VPS)
 
 ## Savienojuma izveide
 
-### Ar pārvaldības paroli (sākotnējā iestatīšana)
+### Ar pārvaldības paroli (bootstrap)
 
 ```bash
 omniroute connect 192.168.0.15
-# Pārvaldības parole serverim http://192.168.0.15:20128: ********
-# ✔ Savienots ar http://192.168.0.15:20128 — konteksts '192.168.0.15' (tvērums: admin)
+# Management password for http://192.168.0.15:20128: ********
+# ✔ Connected to http://192.168.0.15:20128 — context '192.168.0.15' (scope: admin)
 ```
 
-Paroles plūsma pēc noklusējuma izveido **admin** pilnvaru (jums ir parole, tātad
-jums jau ir pilna kontrole). Samaziniet tvērumu ar `--scope`:
+Paroles plūsma mints an** admin** marķieris pēc noklusējuma (jūs turat paroli, tāpēc jums jau ir pilnīga kontrole). Samazināšanās ar `--scope`:
 
 ```bash
 omniroute connect 192.168.0.15 --scope write
 ```
 
-Opcijas: `--port <p>` (ja resursdatoram nav norādīts ports), `--name <ctx>` (konteksta nosaukums),
-`--scope read|write|admin`. Pilns URL tiek izmantots tieši tā, kā norādīts:
-`omniroute connect https://omni.example.com`.
+Opcijas: `--port <p>` (ja saimniekdatoram tāda nav), `--name <ctx>` (konteksta nosaukums), `--scope read|write|admin`. Pilns URL tiek ievērots tāds, kāds tas ir: `omniroute connect https://omni.example.com`.
 
-### Ar iepriekš ģenerētu pilnvaru
+Ja serverī ir iespējota informācijas paneļa divu faktoru autentifikācija (Settings → Security), parole tiek atteikta: CLI pēc tam pieprasa kodu no autentifikācijas lietotnes (vai atkopšanas kodu). Nododiet to priekšā ar `--totp <code>`, lai to izmantotu neinteraktīvi.
 
-Ģenerējiet tvēruma pilnvaru informācijas panelī (vai ar `omniroute tokens create`) un
-ielīmējiet to — parole nav nepieciešama:
+### Ar iepriekš ģenerētu marķieri
+
+Ģenerējiet tvēruma marķieri informācijas panelī (vai ar `omniroute tokens create`) un ielīmējiet to — bez paroles:
 
 ```bash
 omniroute connect 192.168.0.15 --key oma_live_xxxxxxxx
 ```
 
-CLI to pārbauda, izmantojot `GET /api/cli/whoami`, un saglabā kā aktīvo kontekstu.
+CLI to apstiprina, izmantojot `GET /api/cli/whoami`, un saglabā to kā aktīvo kontekstu.
 
 ---
 
@@ -437,14 +435,14 @@ omniroute contexts remove 192-168-0-15 --yes   # noņem lokālo kontekstu (pat j
 
 ---
 
-## API galapunkti (uzziņai)
+## API galapunkti (atsauce)
 
-| Metode | Maršruts              | Autentifikācija    | Tvērums                            |
-| ------ | --------------------- | ------------------ | ---------------------------------- |
-| POST   | `/api/cli/connect`    | pārvaldības parole | — (publisks, aizsargāts ar paroli) |
-| GET    | `/api/cli/whoami`     | piekļuves tokens   | lasīšana                           |
-| GET    | `/api/cli/tokens`     | piekļuves tokens   | administrēšana                     |
-| POST   | `/api/cli/tokens`     | piekļuves tokens   | administrēšana                     |
-| DELETE | `/api/cli/tokens/:id` | piekļuves tokens   | administrēšana                     |
+| Metode | Maršruts              | Auth                     | Darbības joma           |
+| ------ | --------------------- | ------------------------ | ----------------------- |
+| POST   | `/api/cli/connect`    | parole; 2FA, ja ieslēgts | — (publisks, ar paroli) |
+| GET    | `/api/cli/whoami`     | piekļuves marķieris      | lasīt                   |
+| GET    | `/api/cli/tokens`     | piekļuves marķieris      | admin                   |
+| POST   | `/api/cli/tokens`     | piekļuves marķieris      | admin                   |
+| DELETE | `/api/cli/tokens/:id` | piekļuves marķieris      | admin                   |
 
-Pilnas shēmas skatiet failā [openapi.yaml](../openapi.yaml).
+Pilnas shēmas skatiet [openapi.yaml](../openapi.yaml).

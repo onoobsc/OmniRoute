@@ -44,37 +44,35 @@ iyong laptop                             remote OmniRoute (VPS)
 
 ---
 
-## Pagkonekta
+## Kumokonekta
 
-### Gamit ang management password (bootstrap)
+### Gamit ang password ng pamamahala (bootstrap)
 
 ```bash
 omniroute connect 192.168.0.15
-# Management password para sa http://192.168.0.15:20128: ********
-# ✔ Nakakonekta sa http://192.168.0.15:20128 — konteksto '192.168.0.15' (saklaw: admin)
+# Management password for http://192.168.0.15:20128: ********
+# ✔ Connected to http://192.168.0.15:20128 — context '192.168.0.15' (scope: admin)
 ```
 
-Ang password flow ay lumilikha ng **admin** token bilang default (hawak mo ang password, kaya
-mayroon ka nang ganap na kontrol). Bawasan ang saklaw gamit ang `--scope`:
+Ang daloy ng password ay mints an** admin** token bilang default (hahawakan mo ang password, kaya mayroon ka nang ganap na kontrol). Downscope na may `--scope`:
 
 ```bash
 omniroute connect 192.168.0.15 --scope write
 ```
 
-Mga opsyon: `--port <p>` (kapag walang port ang host), `--name <ctx>` (pangalan ng konteksto),
-`--scope read|write|admin`. Ginagamit nang walang pagbabago ang buong URL:
-`omniroute connect https://omni.example.com`.
+Mga Pagpipilian: `--port <p>` (kapag wala ang host), `--name <ctx>` (pangalan ng konteksto), `--scope read|write|admin`. Ang isang buong URL ay pinarangalan bilang-ay: `omniroute connect https://omni.example.com`.
 
-### Gamit ang paunang ginawang token
+Kapag pinagana ng server ang dashboard na two-factor authentication (Mga Setting → Security), ang password lang ay tatanggihan: ang CLI ay humihingi ng code mula sa authenticator app (o isang recovery code). Ipasa ito sa harap gamit `--totp <code>` para sa hindi interactive na paggamit.
 
-Gumawa ng token na may saklaw sa dashboard (o gamit ang `omniroute tokens create`) at
-i-paste ito — hindi kailangan ng password:
+### Gamit ang isang paunang nabuong token
+
+Bumuo ng scoped token sa dashboard (o may `omniroute tokens create`) at i-paste ito — walang password na kailangan:
 
 ```bash
 omniroute connect 192.168.0.15 --key oma_live_xxxxxxxx
 ```
 
-Bine-validate ito ng CLI sa pamamagitan ng `GET /api/cli/whoami` at sine-save bilang aktibong konteksto.
+Pinapatunayan ito ng CLI sa pamamagitan ng `GET /api/cli/whoami` at sine-save ito bilang aktibong konteksto.
 
 ---
 
@@ -435,14 +433,14 @@ omniroute contexts remove 192-168-0-15 --yes   # alisin ang lokal na context (ka
 
 ---
 
-## Mga API endpoint (sanggunian)
+## API endpoints (reference)
 
-| Paraan | Ruta                  | Awtorisasyon           | Saklaw                            |
-| ------ | --------------------- | ---------------------- | --------------------------------- |
-| POST   | `/api/cli/connect`    | password sa pamamahala | — (pampubliko, may password gate) |
-| GET    | `/api/cli/whoami`     | access token           | pagbasa                           |
-| GET    | `/api/cli/tokens`     | access token           | admin                             |
-| POST   | `/api/cli/tokens`     | access token           | admin                             |
-| DELETE | `/api/cli/tokens/:id` | access token           | admin                             |
+| Pamamaraan | Ruta                  | Awth                       | Saklaw                             |
+| ---------- | --------------------- | -------------------------- | ---------------------------------- |
+| POST       | `/api/cli/connect`    | password; 2FA kung naka-on | — (pampubliko, may password-gated) |
+| GET        | `/api/cli/whoami`     | access token               | basahin                            |
+| GET        | `/api/cli/tokens`     | access token               | admin                              |
+| POST       | `/api/cli/tokens`     | access token               | admin                              |
+| DELETE     | `/api/cli/tokens/:id` | access token               | admin                              |
 
-Tingnan ang [openapi.yaml](../openapi.yaml) para sa mga kumpletong schema.
+Tingnan [openapi.yaml](../openapi.yaml) para sa buong schema.

@@ -21,19 +21,19 @@
 
 <div align="center">
 
-## 💰 ~1.62B ටෝකන / මාසිකව තෙවන පාර්ශවීය නොමිලේ මට්ටම් හරහා
+## 💰 ~ 1.62B ටෝකන / තුන්වන පාර්ශ්ව නිදහස් ස්ථර හරහා මාසය
 
 </div>
 
-> **ඔබේම සපයන්නන්ගේ ගිණුම් ගෙන එන්න.** මෙය වෙන වෙනම සුදුසුකම් ලැබූ තෙවන පාර්ශවීය නොමිලේ මට්ටම් හරහා අනුමානිත එකතුවකි, OmniRoute වෙතින් ලබාදෙන ටෝකන ප්රදානයක් නොවේ. ලියාපදිංචි වන්න, අවශ්ය නම් අක්තපත්ර ලබාගන්න, සහ ඔබට භාවිතා කළ හැකි සපයන්නන් සම්බන්ධ කරන්න; සෑම සපයන්නෙකුම තම සීමා, ලබාදීම සහ නියමයන් පාලනය කරයි.
+> **ඔබේම සැපයුම්කරුවන්ගේ ගිණුම් රැගෙන එන්න.** මෙය OmniRoute වෙතින් ටෝකන් ප්‍රදානයක් නොව වෙන වෙනම සුදුසුකම් ලබන තෙවන පාර්ශවීය නිදහස් ස්ථර හරහා ඇස්තමේන්තුගත එකතුවකි. ලියාපදිංචි වන්න, අවශ්‍ය විට අක්තපත්‍ර ලබා ගන්න, සහ ඔබට භාවිතා කළ හැකි සපයන්නන් සම්බන්ධ කරන්න; එක් එක් සැපයුම්කරු එහි සීමාවන්, ලබා ගත හැකි බව සහ නියමයන් පාලනය කරයි.
 >
-> නොමිලේ මට්ටම් අතින් එකතු කිරීම වේදනාකාරීයි — SDK දහස් ගණනක්, අනුපාතික සීමා දහස් ගණනක්, සහ ඔබට ඇත්තටම තිබෙන ප්රමාණය ගැන කිසිදු අදහසක් නැහැ. OmniRoute විසින් **34 නැවත නැවත පාවිච්චි කළ හැකි pool යතුරු හරහා 485 නොමිලේ මට්ටම් ඇතුළත් කිරීම්** නාමාවලියට එක් කරයි සහ **පොසිටිව් මාසික අයවැය පළකර ඇති pool 17ක් සහ මොඩලය අනුව Groq සීමා පහක්** මත පදනම්ව ටෝකන ප්රධාන සංඛ්යාව ගණනය කරයි, හවුල් pool එකකට එක වරක් පමණක් ගණනය කරයි. ප්රාදේශීය හැඳුනුම් පරීක්ෂාවෙන් පසුව පමණක් විවෘත වන කොටස් (අද: ModelScope) වෙනම පෙන්වයි, +~6Mක් ප්රාදේශීය හැඳුනුම් සත්යාපනයෙන් පසු, සහ කිසිවිටෙකත් ප්රධාන සංඛ්යාවට එකතු නොකරයි. ප්රතිඵලය පුවරුවේ දිස්වෙයි (`/dashboard/free-tiers`).
+> අතින් නිදහස් ස්ථර ගොඩගැසීම වේදනාකාරී වේ — දුසිම් SDKs, දුසිම් ගනනක් අනුපාත සීමාවන්, සහ ඔබට ඇත්තටම කොපමණ තිබේද යන්න ගැන අදහසක් නැත. OmniRoute නාමාවලි** පුනරාවර්තන තටාක යතුරු 34ක් හරහා නිදහස් ස්ථර ඇතුළත් කිරීම් 484ක්** සහ සිට ටෝකන් සිරස්තලය ගණනය කරයි** ප්‍රකාශිත ධනාත්මක මාසික අයවැයක් සහිත සංචිත 17ක් සහ එක් මාදිලියකට Groq කැප් පහක්** , බෙදාගත් සංචිතය මගින් අනුපිටපත් කර ඇත. කලාපීය අනන්‍යතා පරීක්‍ෂණයකින් පසුව පමණක් විවෘත වන කෝටා (අද: ModelScope) වෙන් වෙන් වශයෙන් පෙන්වනු ලැබේ, කලාපීය අනන්‍යතා සත්‍යාපනය පිටුපසින් +~ 6M, සහ කිසි විටෙක සිරස්තලයට සාරාංශ නොකෙරේ. ප්‍රතිඵලය උපකරණ පුවරුවේ දෘශ්‍යමානව පවතී (`/dashboard/free-tiers`).
 
-<img src="./docs/diagrams/free-tier-budget.svg" width="100%" alt="OmniRoute නොමිලේ මට්ටම් අයවැය කාඩ්පත: මාසිකව ~1.62B නොමිලේ ටෝකන ස්ථාවරව, ලියාපදිංචි වීමේ ණය සමඟ පළමු මාසයේදී ~2.22B දක්වා, pool යතුරු 34ක් හරහා ලේඛනය කළ නොමිලේ මට්ටම් ඇතුළත් කිරීම් 485ක් එකම අවසන් ලක්ෂ්යයකට. අවංක pool එකතු කිරීමේ ගණිතය — සෑම හවුල් pool එකක්ම එක වරක් ගණනය කරයි, පොසිටිව් මාසික ටෝකන අයවැය පළකර ඇති pool 17ක් සහ මොඩලය අනුව Groq සීමා පහක් ඇතුළුව; සපයන්නන් 12ක් නියමයන් අවදානම් නාමාවලියෙන් "ඉවතලන්න" ලෙස සලකුණු කර ඇත, ඔබ තීරණය කරන්න. අයවැය තීරුවේ Mistral 1B, Nara 210M, LLM7 150M, xKiro 150M, Groq 30M (මොඩලය අනුව සීමා පහක්) සහ කුඩා pool, පළමු මාසයේ ලියාපදිංචි ණය සහ ස්ථිරව නොමිලේ ටෝකන සීමාවක් නැති සපයන්නන් වෙනම පෙන්වයි, එය කිසිවිටෙකත් ප්රධාන සංඛ්යාව වැඩි නොකරයි. /dashboard/free-tiers හි සජීවී භාවිතා/ඉතිරි ප්රමාණය."/>
+<img src="./docs/diagrams/free-tier-budget.svg" width="100%" alt="OmniRoute free-tier budget card: ~1.62B free tokens per month steady, up to ~2.22B in the first month with signup credits, from 34 documented recurring pool keys covering 484 cataloged free-tier entries behind one endpoint. Honest pool-deduped math — each shared pool counted once, including 17 recurring pools with a published positive monthly token budget plus five per-model Groq caps; 12 providers are marked avoid in the terms-risk catalog so you decide. Budget bar includes Mistral 1B, Nara 210M, LLM7 150M, xKiro 150M, Groq 30M (five per-model caps) and smaller pools, plus first-month signup credits and permanently-free no-token-cap providers surfaced separately so they never inflate the headline. Live used/remaining on /dashboard/free-tiers."/>
 
-> සජීවී `/dashboard/free-tiers` පිටුවේ සජීවී සාරාංශය. සම්පූර්ණ ක්රමවේදය (pool එකතු කිරීම, ණය මට්ටම්, සපයන්නන්ගේ නියමයන්): **[docs/reference/FREE_TIERS.md](docs/reference/FREE_TIERS.md)**.
+> සජීවී `/dashboard/free-tiers` පිටුවේ සජීවිකරණ සාරාංශය. සම්පූර්ණ ක්‍රමවේදය (තටාක ඉවත් කිරීම, ණය මට්ටම්, සැපයුම්කරු නියමයන්):** [docs/reference/FREE_TIERS.md](docs/reference/FREE_TIERS.md)** .
 >
-> <sub>මෙම සංඛ්යාවන් සෑම සති දෙකකට වරක් සජීවී නාමාවලියට අනුව නැවත පරීක්ෂා කරයි සහ **දෙපැත්තටම වෙනස් වේ** — සපයන්නෙකු නොමිලේ මට්ටම අවසන් කරයි නම් සංඛ්යාව අඩුවෙයි; නව එකක් එක්වෙයි නම් එය ඉහළ යයි. අපි නාමාවලියෙන් සැබෑවටම ගණනය කර ඇති දේ පමණක් පළ කරමු, කිසිවිටෙකත් වටකර වැඩි කළ හොඳම අවස්ථාවක් නොවේ.</sub>
+> <sub> මෙම සංඛ්‍යා සජීවී නාමාවලියට එරෙහිව සති දෙකකට වරක් නැවත විගණනය කෙරේ** දෙපැත්තටම යන්න** — සපයන්නා නිදහස් ස්ථරයක් අවසන් කරන අතර අංකය පහත වැටේ; අලුත් එකක් ගොඩබසින අතර එය නගිනවා. අපි නාමාවලිය ඇත්ත වශයෙන්ම ගණනය කරන දේ ප්‍රකාශයට පත් කරන්නෙමු, කිසි විටෙකත් වටකුරු හොඳම අවස්ථාවක් නොවේ.</sub>
 
 <br/>
 
@@ -41,29 +41,23 @@
 
 <h3>
 
-⭐ OMNIROUTE ඔබට මුදල් ඉතිරි කර ගැනීමට සහ ඔබේ වැඩ පහසු කර ගැනීමට උපකාරී වුණා නම් repo එකට තරු දෙන්න.
+⭐ ඔබට මුදල් ඉතිරි කර ගැනීමට සහ ඔබේ වැඩ පහසු කර ගැනීමට OMNIROUTE උපකාර වූවා නම්, repo තරු ලකුණු කරන්න.
 
 </h3>
 
-[![Stars](https://img.shields.io/github/stars/diegosouzapw/OmniRoute?style=social)](https://github.com/diegosouzapw/OmniRoute)
+[![තරු](https://img.shields.io/github/stars/diegosouzapw/OmniRoute?style=social) ](https://github.com/diegosouzapw/OmniRoute)
 <a href="https://trendshift.io/repositories/23589" target="_blank"><img src="https://trendshift.io/api/badge/repositories/23589" alt="diegosouzapw%2FOmniRoute | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
-[![Star History Rank](https://api.star-history.com/badge?repo=diegosouzapw/OmniRoute&theme=dark)](https://www.star-history.com/diegosouzapw/omniroute)
-[![olud.ai](https://olud.ai/badge.php?tool=diegosouzapw-omniroute)](https://olud.ai/project/diegosouzapw-omniroute.html)
+[![තරු ඉතිහාස ශ්‍රේණිගත කිරීම](https://api.star-history.com/badge?repo=diegosouzapw/OmniRoute&theme=dark) ](https://www.star-history.com/diegosouzapw/omniroute) [![olud.ai](https://olud.ai/badge.php?tool=diegosouzapw-omniroute) ](https://olud.ai/project/diegosouzapw-omniroute.html)
 
-### 💬 ප්රජාවට එකතු වන්න
+### 💬 ප්රජාවට සම්බන්ධ වන්න
 
-**👋 නඩත්තුකරු අනුගමනය කරන්න — නව සපයන්නන්, නිකුතු සහ උපදෙස් පළමුව ලබාගන්න:**
+**👋 නඩත්තු කරන්නා අනුගමනය කරන්න — නව සපයන්නන්, නිකුතු සහ ඉඟි පළමුව ලබා ගන්න:**
 
-[![Follow Diego on LinkedIn](https://img.shields.io/badge/Follow_Diego_on-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/diegosouzapw/)
-[![Follow @diegosouzapw on GitHub](https://img.shields.io/github/followers/diegosouzapw?style=for-the-badge&logo=github&logoColor=white&label=Follow%20on%20GitHub&color=181717)](https://github.com/diegosouzapw)
+[![ LinkedIn මත Diego අනුගමනය කරන්න](https://img.shields.io/badge/Follow_Diego_on-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white) ](https://www.linkedin.com/in/diegosouzapw/) [![ GitHub මත @diegosouzapw අනුගමනය කරන්න](https://img.shields.io/github/followers/diegosouzapw?style=for-the-badge&logo=github&logoColor=white&label=Follow%20on%20GitHub&color=181717) ](https://github.com/diegosouzapw)
 
-[![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/U47eFqAXCn)
-[![Telegram](https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/omnirouteOficial)
-[![WhatsApp Global](https://img.shields.io/badge/WhatsApp_Global-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/FvuCbrpZmQ6I85n2vW5QIC?s=cl&p=a&mlu=4)
-[![WhatsApp Brasil](https://img.shields.io/badge/WhatsApp_Brasil-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/KWgatljAjmbELQory59Oti?s=cl&p=a&mlu=4)
-[![Website](https://img.shields.io/badge/Website-omniroute.online-blue?logo=google-chrome&logoColor=white)](https://omniroute.online)
+[![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/U47eFqAXCn) [![Telegram](https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/omnirouteOficial) [![WhatsApp Global](https://img.shields.io/badge/WhatsApp_Global-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/FvuCbrpZmQ6I85n2vW5QIC?s=cl&p=a&mlu=4) [![WhatsApp Brasil](https://img.shields.io/badge/WhatsApp_Brasil-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/KWgatljAjmbELQory59Oti?s=cl&p=a&mlu=4) [![Website](https://img.shields.io/badge/Website-omniroute.online-blue?logo=google-chrome&logoColor=white)](https://omniroute.online)
 
-**ප්රශ්න, සපයන්නන්ගේ උපදෙස්, මාර්ගසටහන සහ සහාය → [Discord](https://discord.gg/U47eFqAXCn) · [Telegram](https://t.me/omnirouteOficial) · WhatsApp [🌍 ගෝලීය](https://chat.whatsapp.com/FvuCbrpZmQ6I85n2vW5QIC?s=cl&p=a&mlu=4) / [🇧🇷 බ්රසීලය](https://chat.whatsapp.com/KWgatljAjmbELQory59Oti?s=cl&p=a&mlu=4) / [Portal](https://portal.sthub.com.br/communities/groups/st-hub/channels/Omniroute-World-8kRjmK)**
+**ප්‍රශ්න, සැපයුම්කරු ඉඟි, මාර්ග සිතියම සහ සහාය → [Discord](https://discord.gg/U47eFqAXCn) · [Telegram](https://t.me/omnirouteOficial) · WhatsApp [🌍 Global](https://chat.whatsapp.com/FvuCbrpZmQ6I85n2vW5QIC?s=cl&p=a&mlu=4) / [🇧🇷 Brasil](https://chat.whatsapp.com/KWgatljAjmbELQory59Oti?s=cl&p=a&mlu=4) / [Portal](https://portal.sthub.com.br/communities/groups/st-hub/channels/Omniroute-World-8kRjmK)**
 
 <br/>
 
@@ -1285,28 +1279,28 @@ Dashboard රහිත, headless runtime එකක් සඳහා Docker `base`
 <br/>
 <div align="center">
 
-## 🛠️ තාක්ෂණික ස්ටැක්
+## 🛠️ Tech Stack
 
 </div>
 
 <table>
-  <tr><th align="left">ස්තරය</th><th align="left">තාක්ෂණය</th></tr>
-  <tr><td nowrap><b>ධාවන පරිසරය</b></td><td>Node.js 22.x / 24.x LTS — <code>&gt;=22.22.2 &lt;23 || &gt;=24.0.0 &lt;27</code></td></tr>
-  <tr><td nowrap><b>භාෂාව</b></td><td>TypeScript 6.0 — <code>src/</code> සහ <code>open-sse/</code> පුරා <b>100% TypeScript</b> (v2.0 සිට core තුළ <code>any</code> ශුන්යයි)</td></tr>
+  <tr><th align="left">ස්ථරය</th><th align="left">තාක්ෂණය</th></tr>
+  <tr><td nowrap><b>ධාවන කාලය</b></td><td>Node.js 22.x / 24.x LTS — <code>&gt;=22.22.2 &lt;23 || &gt;=24.0.0 &lt;27</code></td></tr>
+  <tr><td nowrap><b>භාෂාව</b></td><td>TypeScript 6.0 — <b>100% TypeScript</b> <code>src/</code> සහ <code>open-sse/</code> හරහා (v2.0 සිට හරයේ ශුන්‍ය <code>any</code> )</td></tr>
   <tr><td nowrap><b>රාමුව</b></td><td>Next.js 16 + React 19 + Tailwind CSS 4</td></tr>
-  <tr><td nowrap><b>දත්ත සමුදාය</b></td><td>better-sqlite3 (SQLite, WAL journaling) + LowDB (JSON legacy) — domain මොඩියුල 147ක්, migrations 222ක්</td></tr>
-  <tr><td nowrap><b>මතකය</b></td><td>SQLite FTS5 full-text + int8-quantized vector embeddings, typed decay</td></tr>
-  <tr><td nowrap><b>ස්කීමා</b></td><td>Zod 4 — MCP tool I/O validation + API contracts</td></tr>
+  <tr><td nowrap><b>දත්ත සමුදාය</b></td><td>better-sqlite3 (SQLite, WAL journaling) + LowDB (JSON උරුමය) — වසම් මොඩියුල 147, සංක්‍රමණ 222</td></tr>
+  <tr><td nowrap><b>මතකය</b></td><td>SQLite FTS5 සම්පූර්ණ පෙළ + int8-quantized දෛශික කාවැද්දීම, ටයිප් කළ ක්ෂය</td></tr>
+  <tr><td nowrap><b>යෝජනා ක්රම</b></td><td>Zod 4 — MCP මෙවලම I/O වලංගු කිරීම + API ගිවිසුම්</td></tr>
   <tr><td nowrap><b>ප්රොටෝකෝල</b></td><td>MCP (stdio / HTTP / SSE) + A2A v0.3 (JSON-RPC 2.0 + SSE)</td></tr>
-  <tr><td nowrap><b>ස්ට්රීම් කිරීම</b></td><td>Server-Sent Events (SSE) + WebSocket bridge (<code>/v1/ws</code>)</td></tr>
-  <tr><td nowrap><b>සම්පීඩනය</b></td><td>එන්ජින් 12ක pipeline — RTK, Caveman, LLMLingua-2 (MobileBERT ONNX), GCF, OmniGlyph</td></tr>
-  <tr><td nowrap><b>සත්යාපනය සහ ආරක්ෂාව</b></td><td>OAuth 2.0 (PKCE) + JWT + API Keys + MCP scoped auth · AES-256-GCM at rest · DOMPurify</td></tr>
-  <tr><td nowrap><b>අප්රකටභාවය</b></td><td>wreq-js — JA3 / JA4 TLS fingerprint impersonation, මට්ටම් 3ක proxy</td></tr>
-  <tr><td nowrap><b>ප්රතිරෝධී හැකියාව</b></td><td>Circuit breaker, exponential backoff, anti-thundering-herd, auto-combo self-healing</td></tr>
-  <tr><td nowrap><b>ලොග්කරණය</b></td><td>pino — request context සහිත ව්යුහගත JSON logs</td></tr>
-  <tr><td nowrap><b>පරීක්ෂණ</b></td><td>Node.js test runner + Vitest — tracked test files 8,400කට අධික ප්රමාණයක් පුරා <b>static test declarations 60,000කට අධිකයි</b> (unit, integration, E2E, security, ecosystem)</td></tr>
-  <tr><td nowrap><b>වේදිකා</b></td><td>Desktop (Electron) · Android (Termux) · PWA (ඕනෑම browser එකක්)</td></tr>
-  <tr><td nowrap><b>CI/CD</b></td><td>GitHub Actions — release කිරීමේදී ස්වයංක්රීය npm publish + Docker Hub</td></tr>
+  <tr><td nowrap><b>ප්‍රවාහය</b></td><td>සේවාදායකය-යවන ලද සිදුවීම් (SSE) + WebSocket පාලම (<code>/v1/ws</code>)</td></tr>
+  <tr><td nowrap><b>සම්පීඩනය</b></td><td>12-එන්ජින් නල මාර්ගය — RTK, Caveman, LLMLingua-2 (MobileBERT ONNX), GCF, OmniGlyph</td></tr>
+  <tr><td nowrap><b>Auth &amp; ආරක්ෂාව</b></td><td>OAuth 2.0 (PKCE) + JWT + API යතුරු + MCP විෂය පථය auth · AES-256-GCM විවේකයෙන් · DOMPurify</td></tr>
+  <tr><td nowrap><b>රහසිගතව</b></td><td>wreq-js — JA3 / JA4 TLS ඇඟිලි සලකුණු අනුකරණය, 3-මට්ටමේ ප්‍රොක්සි</td></tr>
+  <tr><td nowrap><b>ඔරොත්තු දීමේ හැකියාව</b></td><td>පරිපථ කඩනය, ඝාතීය පසුබෑම, ප්‍රති-ගිගුරුම්-රංචුව, ස්වයං-සංයෝජන ස්වයං-සුව කිරීම</td></tr>
+  <tr><td nowrap><b>ලොග් කිරීම</b></td><td>pino — ව්‍යුහගත JSON logs with request සන්දර්භය</td></tr>
+  <tr><td nowrap><b>පරීක්ෂා කිරීම</b></td><td>Node.js පරීක්ෂණ ධාවකයා + Vitest — <b>60,000 + ස්ථිතික පරීක්ෂණ ප්‍රකාශන</b> 8,400 + ලුහුබැඳ ගිය පරීක්ෂණ ගොනු හරහා (ඒකකය, ඒකාබද්ධ කිරීම, E2E, ආරක්ෂාව, පරිසර පද්ධතිය)</td></tr>
+  <tr><td nowrap><b>වේදිකා</b></td><td>වැඩතලය (Electron) · Android (Termux) · PWA (ඕනෑම බ්‍රවුසරයක්)</td></tr>
+  <tr><td nowrap><b>CI/CD</b></td><td>GitHub ක්‍රියා — ස්වයංක්‍රීය npm මුදා හැරීමේදී + Docker Hub ප්‍රකාශනය කරන්න</td></tr>
   <tr><td nowrap><b>සබැඳි</b></td><td><a href="https://omniroute.online">වෙබ් අඩවිය</a> · <a href="https://www.npmjs.com/package/omniroute">npm</a> · <a href="https://hub.docker.com/r/diegosouzapw/omniroute">Docker Hub</a></td></tr>
 </table>
 
@@ -1322,69 +1316,69 @@ Dashboard රහිත, headless runtime එකක් සඳහා Docker `base`
 
 <table>
   <tr><th align="left">ලේඛනය</th><th align="left">විස්තරය</th></tr>
-  <tr><td nowrap><b><a href="docs/guides/USER_GUIDE.md">පරිශීලක මාර්ගෝපදේශය</a></b></td><td>Providers, combos, CLI ඒකාබද්ධ කිරීම, deployment</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/SETUP_GUIDE.md">සැකසුම් මාර්ගෝපදේශය</a></b></td><td>සම්පූර්ණ ස්ථාපන ක්රම, CLI මෙවලම් සැකසුම්, protocol සැකසුම, timeout සුසර කිරීම</td></tr>
-  <tr><td nowrap><b><a href="docs/reference/CLI-TOOLS.md">CLI මෙවලම් මාර්ගෝපදේශය</a></b></td><td>Claude Code, Codex, Cursor, Cline, OpenClaw, Kilo, Copilot සඳහා එක් එක් මෙවලම් සැකසුම</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/REMOTE-MODE.md">දුරස්ථ මාදිලිය</a></b></td><td>scope කළ access tokens භාවිතයෙන් ඔබේ laptop CLI හරහා දුරස්ථ OmniRoute (VPS) පාලනය කිරීම</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/CLAUDE-CODE-CONFIGURATION.md">Claude Code සැකසුම</a></b></td><td><code>launch</code> + එක් එක් model profiles සමඟ Claude Code OmniRoute (local/remote) වෙත යොමු කිරීම</td></tr>
-  <tr><td nowrap><b><a href="README.md#-quick-start">ඉක්මන් ආරම්භය</a></b></td><td>පියවර 3ක ස්ථාපනය → සම්බන්ධ කිරීම → සැකසීම</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/USER_GUIDE.md">පරිශීලක මාර්ගෝපදේශය</a></b></td><td>සපයන්නන්, සංයෝජන, CLI ඒකාබද්ධ කිරීම, යෙදවීම</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/SETUP_GUIDE.md">සැකසුම් මාර්ගෝපදේශය</a></b></td><td>සම්පූර්ණ ස්ථාපන ක්‍රම, CLI මෙවලම් වින්‍යාස, ප්‍රොටෝකෝල සැකසුම, කල් ඉකුත්වීම සුසර කිරීම</td></tr>
+  <tr><td nowrap><b><a href="docs/reference/CLI-TOOLS.md">CLI මෙවලම් මාර්ගෝපදේශය</a></b></td><td>Claude කේතය, Codex, Cursor, Cline, OpenClaw, Kilo, Copilot සඳහා එක් මෙවලමක් සැකසීම</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/REMOTE-MODE.md">දුරස්ථ මාදිලිය</a></b></td><td>දුරස්ථ OmniRoute (VPS) ඔබේ ලැප්ටොප් CLI වෙතින් විෂය පථ ප්‍රවේශ ටෝකන හරහා ධාවනය කරන්න</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/CLAUDE-CODE-CONFIGURATION.md">Claude කේත වින්‍යාසය</a></b></td><td>OmniRoute (local/remote) හි Claude කේතය ලක්ෂ්‍ය <code>launch</code> + එක් මාදිලියේ පැතිකඩ සමඟ</td></tr>
+  <tr><td nowrap><b><a href="README.md#-quick-start">ඉක්මන් ආරම්භය</a></b></td><td>3-පියවර ස්ථාපනය → සම්බන්ධ කිරීම → වින්‍යාස කිරීම</td></tr>
 </table>
 
-### 🔧 මෙහෙයුම් සහ Deployment
+### 🔧 මෙහෙයුම් සහ යෙදවීම
 
 <table>
   <tr><th align="left">ලේඛනය</th><th align="left">විස්තරය</th></tr>
-  <tr><td nowrap><b><a href="docs/guides/DOCKER_GUIDE.md">Docker මාර්ගෝපදේශය</a></b></td><td>Docker run, Compose profiles, Caddy HTTPS, tunnels, image tags</td></tr>
-  <tr><td nowrap><b><a href="contrib/podman/README.md">Podman මාර්ගෝපදේශය</a></b></td><td>Quadlet systemd ඒකාබද්ධ කිරීම, podman-compose, SELinux</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/VM_DEPLOYMENT_GUIDE.md">VM Deployment</a></b></td><td>සම්පූර්ණ මාර්ගෝපදේශය: VM + nginx + Cloudflare සැකසුම</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/FLY_IO_DEPLOYMENT_GUIDE.md">Fly.io Deployment</a></b></td><td>ස්ථිර storage සමඟ Fly.io වෙත deploy කිරීම</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/TERMUX_GUIDE.md">Termux මාර්ගෝපදේශය</a></b></td><td>Termux හරහා Android මත OmniRoute ධාවනය කිරීම</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/PWA_GUIDE.md">PWA මාර්ගෝපදේශය</a></b></td><td>Progressive Web App ස්ථාපනය, caching, architecture</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/UNINSTALL.md">Uninstall මාර්ගෝපදේශය</a></b></td><td>සියලුම ස්ථාපන ක්රම සඳහා පිරිසිදු ඉවත් කිරීම</td></tr>
-  <tr><td nowrap><b><a href="docs/reference/ENVIRONMENT.md">Environment සැකසුම</a></b></td><td>සම්පූර්ණ <code>.env</code> variables සහ references</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/DOCKER_GUIDE.md">Docker මාර්ගෝපදේශය</a></b></td><td>Docker ධාවනය, පැතිකඩ රචනා කරන්න, Caddy HTTPS, උමං මාර්ග, රූප ටැග්</td></tr>
+  <tr><td nowrap><b><a href="contrib/podman/README.md">පොඩ්මන් මාර්ගෝපදේශය</a></b></td><td>Quadlet systemd අනුකලනය, podman-compose, SELinux</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/VM_DEPLOYMENT_GUIDE.md">VM යෙදවීම</a></b></td><td>සම්පූර්ණ මාර්ගෝපදේශය: VM + nginx + Cloudflare සැකසුම</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/FLY_IO_DEPLOYMENT_GUIDE.md">Fly.io යෙදවීම</a></b></td><td>ස්ථිර ගබඩාව සමඟ Fly.io වෙත යොදවන්න</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/TERMUX_GUIDE.md">Termux මාර්ගෝපදේශය</a></b></td><td>Termux හරහා Android මත OmniRoute ධාවනය කරන්න</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/PWA_GUIDE.md">PWA මාර්ගෝපදේශය</a></b></td><td>ප්‍රගතිශීලී වෙබ් යෙදුම් ස්ථාපනය, හැඹිලිගත කිරීම, ගෘහ නිර්මාණ ශිල්පය</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/UNINSTALL.md">අස්ථාපනය කිරීමේ මාර්ගෝපදේශය</a></b></td><td>සියලුම ස්ථාපන ක්රම සඳහා පිරිසිදු ඉවත් කිරීම</td></tr>
+  <tr><td nowrap><b><a href="docs/reference/ENVIRONMENT.md">පරිසර වින්යාසය</a></b></td><td><code>.env</code> විචල්‍යයන් සහ යොමු කිරීම් සම්පූර්ණ කරන්න</td></tr>
 </table>
 
-### 🧠 විශේෂාංග සහ Architecture
+### 🧠 විශේෂාංග සහ ගෘහ නිර්මාණ ශිල්පය
 
 <table>
   <tr><th align="left">ලේඛනය</th><th align="left">විස්තරය</th></tr>
-  <tr><td nowrap><b><a href="docs/architecture/ARCHITECTURE.md">Architecture</a></b></td><td>පද්ධති architecture, data flow සහ අභ්යන්තර ක්රියාකාරීත්වය</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_GUIDE.md">Compression මාර්ගෝපදේශය</a></b></td><td>විකල්ප 7ක pipeline: off / lite / standard / aggressive / ultra / RTK / stacked</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/RTK_COMPRESSION.md">RTK Compression</a></b></td><td>Command-output compression, filters, trust, verify, raw-output recovery</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_ENGINES.md">Compression Engines</a></b></td><td>Caveman, RTK, stacked pipelines, dashboard/API/MCP surfaces</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_RULES_FORMAT.md">Compression Rules Format</a></b></td><td>Caveman සහ RTK filters සඳහා JSON rule-pack schemas</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_LANGUAGE_PACKS.md">Compression Language Packs</a></b></td><td>භාෂා හඳුනාගැනීම සහ Caveman rule-pack නිර්මාණය</td></tr>
-  <tr><td nowrap><b><a href="docs/architecture/RESILIENCE_GUIDE.md">Resilience මාර්ගෝපදේශය</a></b></td><td>Circuit breakers, cooldowns, queue, anti-thundering herd, TLS spoofing</td></tr>
-  <tr><td nowrap><b><a href="docs/routing/AUTO-COMBO.md">Auto-Combo Engine</a></b></td><td>සාධක 16ක scoring, mode packs, self-healing</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/PROXY_GUIDE.md">Proxy මාර්ගෝපදේශය</a></b></td><td>මට්ටම් 3ක proxy පද්ධතිය, 1proxy marketplace, registry CRUD</td></tr>
-  <tr><td nowrap><b><a href="docs/reference/FREE_TIERS.md">නොමිලේ Tiers</a></b></td><td>ඒකාබද්ධ directory: ලේඛනගත recurring pools 34ක් / catalog කළ free-tier entries 485ක්</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/FEATURES.md">විශේෂාංග Gallery</a></b></td><td>screenshots සමඟ දෘශ්ය dashboard සංචාරය</td></tr>
-  <tr><td nowrap><b><a href="docs/architecture/CODEBASE_DOCUMENTATION.md">Codebase Documentation</a></b></td><td>ආරම්භකයන්ට පහසු codebase walkthrough</td></tr>
+  <tr><td nowrap><b><a href="docs/architecture/ARCHITECTURE.md">ගෘහ නිර්මාණ ශිල්පය</a></b></td><td>පද්ධති ගෘහ නිර්මාණ ශිල්පය, දත්ත ප්රවාහය සහ අභ්යන්තර</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_GUIDE.md">සම්පීඩන මාර්ගෝපදේශය</a></b></td><td>7-විකල්ප නල මාර්ගය: off / lite / standard / aggressive / ultra / RTK / stacked</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/RTK_COMPRESSION.md">RTK සම්පීඩනය</a></b></td><td>විධාන-ප්‍රතිදාන සම්පීඩනය, පෙරහන්, විශ්වාසය, සත්‍යාපනය, අමු-ප්‍රතිදාන ප්‍රතිසාධනය</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_ENGINES.md">සම්පීඩන එන්ජින්</a></b></td><td>Caveman, RTK, ගොඩගැසූ නල මාර්ග, dashboard/API/MCP මතුපිට</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_RULES_FORMAT.md">සම්පීඩන රීති ආකෘතිය</a></b></td><td>Caveman සහ RTK පෙරහන් සඳහාJSON rule-pack schemas</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_LANGUAGE_PACKS.md">සම්පීඩන භාෂා ඇසුරුම්</a></b></td><td>භාෂාව හඳුනාගැනීම සහ Caveman රීති ඇසුරුම් කතුකරණය</td></tr>
+  <tr><td nowrap><b><a href="docs/architecture/RESILIENCE_GUIDE.md">ඔරොත්තු දීමේ මාර්ගෝපදේශය</a></b></td><td>Circuit Breakers, cooldowns, පෝලිම්, ගිගුරුම් නාශක රංචුව, TLS spoofing</td></tr>
+  <tr><td nowrap><b><a href="docs/routing/AUTO-COMBO.md">ස්වයංක්‍රීය සංයුක්ත එන්ජිම</a></b></td><td>16-සාධක ලකුණු කිරීම, මාදිලි ඇසුරුම්, ස්වයං-සුව කිරීම</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/PROXY_GUIDE.md">ප්‍රොක්සි මාර්ගෝපදේශය</a></b></td><td>3-මට්ටමේ ප්‍රොක්සි පද්ධතිය, 1ප්‍රොක්සි වෙළඳපොළ, රෙජිස්ට්‍රි CRUD</td></tr>
+  <tr><td nowrap><b><a href="docs/reference/FREE_TIERS.md">නිදහස් ස්ථර</a></b></td><td>ඒකාබද්ධ නාමාවලිය: ලේඛනගත පුනරාවර්තන සංචිත 34 / නාමාවලි 484 නිදහස් ස්ථර ඇතුළත් කිරීම්</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/FEATURES.md">විශේෂාංග ගැලරිය</a></b></td><td>තිරපිටපත් සහිත දෘශ්‍ය උපකරණ පුවරු සංචාරය</td></tr>
+  <tr><td nowrap><b><a href="docs/architecture/CODEBASE_DOCUMENTATION.md">කේත පදනම ලේඛනගත කිරීම</a></b></td><td>ආරම්භක-හිතකාමී කේත පදනම ඇවිදීම</td></tr>
 </table>
 
-### 🤖 Protocols සහ APIs
+### 🤖 ප්‍රොටෝකෝල සහ APIs
 
 <table>
   <tr><th align="left">ලේඛනය</th><th align="left">විස්තරය</th></tr>
-  <tr><td nowrap><b><a href="docs/reference/API_REFERENCE.md">API Reference</a></b></td><td>උදාහරණ සමඟ සියලුම endpoints</td></tr>
-  <tr><td nowrap><b><a href="docs/openapi.yaml">OpenAPI Spec</a></b></td><td>OpenAPI 3.0 specification</td></tr>
-  <tr><td nowrap><b><a href="open-sse/mcp-server/README.md">MCP Server</a></b></td><td>MCP tools 110ක්, IDE configs, Python/TS/Go clients</td></tr>
-  <tr><td nowrap><b><a href="docs/frameworks/MCP-SERVER.md">MCP Server මාර්ගෝපදේශය</a></b></td><td>MCP ස්ථාපනය, transports සහ tool reference</td></tr>
-  <tr><td nowrap><b><a href="src/lib/a2a/README.md">A2A Server</a></b></td><td>JSON-RPC 2.0 protocol, skills, streaming, task mgmt</td></tr>
-  <tr><td nowrap><b><a href="docs/frameworks/A2A-SERVER.md">A2A Server මාර්ගෝපදේශය</a></b></td><td>A2A agent card, tasks, skills සහ streaming</td></tr>
+  <tr><td nowrap><b><a href="docs/reference/API_REFERENCE.md">API යොමුව</a></b></td><td>උදාහරණ සහිත සියලුම අවසාන ලක්ෂ්‍ය</td></tr>
+  <tr><td nowrap><b><a href="docs/openapi.yaml">OpenAPI පිරිවිතර</a></b></td><td>OpenAPI 3.0 පිරිවිතර</td></tr>
+  <tr><td nowrap><b><a href="open-sse/mcp-server/README.md">MCP සේවාදායකය</a></b></td><td>110 MCP මෙවලම්, IDE configs, Python/TS/Go සේවාලාභීන්</td></tr>
+  <tr><td nowrap><b><a href="docs/frameworks/MCP-SERVER.md">MCP සේවාදායක මාර්ගෝපදේශය</a></b></td><td>MCP ස්ථාපනය, ප්රවාහනය සහ මෙවලම් යොමු කිරීම</td></tr>
+  <tr><td nowrap><b><a href="src/lib/a2a/README.md">A2A සේවාදායකය</a></b></td><td>JSON-RPC 2.0 ප්‍රොටෝකෝලය, කුසලතා, ප්‍රවාහය, කාර්ය mgmt</td></tr>
+  <tr><td nowrap><b><a href="docs/frameworks/A2A-SERVER.md">A2A සේවාදායක මාර්ගෝපදේශය</a></b></td><td>A2A නියෝජිත කාඩ්පත, කාර්යයන්, කුසලතා සහ ප්‍රවාහය</td></tr>
 </table>
 
-### 📋 ව්යාපෘතිය සහ ගුණාත්මකභාවය
+### 📋 ව්‍යාපෘතිය සහ ගුණාත්මකභාවය
 
 <table>
   <tr><th align="left">ලේඛනය</th><th align="left">විස්තරය</th></tr>
-  <tr><td nowrap><b><a href="CONTRIBUTING.md">දායක වීම</a></b></td><td>සංවර්ධන සැකසුම සහ මාර්ගෝපදේශ</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/BRANCHING_MODEL.md">ශාඛාකරණ සහ නිකුතු ආකෘතිය</a></b></td><td>PR ඉලක්ක කරන්නේ කොතැනටද (<code>release/*</code>), <code>main</code> සහ ටැග්වල අර්ථය කුමක්ද</td></tr>
-  <tr><td nowrap><b><a href="CHANGELOG.md">වෙනස්කම් ලේඛනය</a></b></td><td>එක් එක් අනුවාදයට අදාළ සම්පූර්ණ නිකුතු ඉතිහාසය</td></tr>
+  <tr><td nowrap><b><a href="CONTRIBUTING.md">දායක වෙනවා</a></b></td><td>සංවර්ධන සැකසුම සහ මාර්ගෝපදේශ</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/BRANCHING_MODEL.md">ශාඛා කිරීම සහ නිකුත් කිරීමේ ආකෘතිය</a></b></td><td>PRs ඉලක්කය (<code>release/*</code>), <code>main</code> සහ ටැග් යන්නෙන් අදහස් කරන්නේ කුමක්ද?</td></tr>
+  <tr><td nowrap><b><a href="CHANGELOG.md">චේන්ජ්ලොග්</a></b></td><td>සම්පූර්ණ අනුවාද නිකුත් කිරීමේ ඉතිහාසය</td></tr>
   <tr><td nowrap><b><a href="SECURITY.md">ආරක්ෂක ප්රතිපත්තිය</a></b></td><td>අවදානම් වාර්තා කිරීම සහ ආරක්ෂක භාවිතයන්</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/I18N.md">i18n මාර්ගෝපදේශය</a></b></td><td>භාෂා 67ක් සඳහා සහාය, පරිවර්තන කාර්ය ප්රවාහය, RTL</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/RELEASE_CHECKLIST.md">නිකුතු පරීක්ෂණ ලැයිස්තුව</a></b></td><td>නිකුතුවට පෙර වලංගුකරණ පියවර</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/COVERAGE_PLAN.md">ආවරණ සැලැස්ම</a></b></td><td>ලුහුබැඳ ඇති පරීක්ෂණ ගොනු 8,400කට වැඩි ප්රමාණයක් පුරා ඇති ස්ථිතික පරීක්ෂණ ප්රකාශන 60,000කට වැඩි ප්රමාණයක් සඳහා පරීක්ෂණ ආවරණ උපායමාර්ගය</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/I18N.md">i18n මාර්ගෝපදේශය</a></b></td><td>67-භාෂා සහාය, පරිවර්තන කාර්ය ප්රවාහය, RTL</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/RELEASE_CHECKLIST.md">පිරික්සුම් ලැයිස්තුව නිකුත් කරන්න</a></b></td><td>පූර්ව නිකුතුව වලංගු කිරීමේ පියවර</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/COVERAGE_PLAN.md">ආවරණ සැලැස්ම</a></b></td><td>8,400 + ලුහුබැඳ ගිය පරීක්ෂණ ගොනු හරහා 60,000 + ස්ථිතික පරීක්ෂණ ප්‍රකාශ සඳහා පරීක්ෂණ ආවරණ උපාය මාර්ගය</td></tr>
 </table>
 
 <br/>
@@ -1393,12 +1387,12 @@ Dashboard රහිත, headless runtime එකක් සඳහා Docker `base`
 
 # ⭐ ඉහළම දායකයින්
 
-> OmniRoute හැඩගැසී ඇත්තේ උද්යෝගිමත් විවෘත මූලාශ්ර ප්රජාවක් විසිනි. මෙම පුද්ගලයන් ව්යාපෘතියේ ගුණාත්මකභාවය, ස්ථාවරත්වය සහ ව්යාප්තියට සෘජුවම බලපාන විශිෂ්ට දායකත්වයන් ලබා දී ඇත. **ඔබට ස්තුතියි.**
+> OmniRoute හැඩගස්වා ඇත්තේ උද්යෝගිමත් විවෘත මූලාශ්‍ර ප්‍රජාවක් විසිනි. මෙම පුද්ගලයින් ව්‍යාපෘතියේ ගුණාත්මකභාවය, ස්ථාවරත්වය සහ ප්‍රවේශයට සෘජුවම බලපාන සුවිශේෂී දායකත්වයක් ලබා දී ඇත.** ඔයාට ස්තූතියි.**
 
-### ඒකාබද්ධ කළ pull request අනුව බාහිර දායකයින්
+### ඒකාබද්ධ ඇදීමේ ඉල්ලීම් මගින් බාහිර දායකයින්
 
 <table>
-  <tr><th align="center">ශ්රේණිය</th><th align="left">දායකයා</th><th align="center">ඒකාබද්ධ කළ PR</th><th align="right">~වෙනස් කළ පේළි</th></tr>
+  <tr><th align="center">ශ්රේණිගත කරන්න</th><th align="left">දායකයා</th><th align="center">PRs ඒකාබද්ධ කරන ලදී</th><th align="right">~ වෙනස් කළ රේඛා</th></tr>
   <tr><td align="center">1</td><td align="left"><a href="https://github.com/maxmad64bis"><b>maxmad64bis</b></a></td><td align="center">418</td><td align="right">25,367,739</td></tr>
   <tr><td align="center">2</td><td align="left"><a href="https://github.com/HouMinXi"><b>HouMinXi</b></a></td><td align="center">295</td><td align="right">13,557,796</td></tr>
   <tr><td align="center">3</td><td align="left"><a href="https://github.com/pacocartones"><b>pacocartones</b></a></td><td align="center">222</td><td align="right">81,551</td></tr>
@@ -1408,8 +1402,8 @@ Dashboard රහිත, headless runtime එකක් සඳහා Docker `base`
   <tr><td align="center">7</td><td align="left"><a href="https://github.com/KooshaPari"><b>KooshaPari</b></a></td><td align="center">151</td><td align="right">5,972,314</td></tr>
   <tr><td align="center">8</td><td align="left"><a href="https://github.com/rdself"><b>rdself</b></a></td><td align="center">145</td><td align="right">80,663</td></tr>
   <tr><td align="center">9</td><td align="left"><a href="https://github.com/RaviTharuma"><b>RaviTharuma</b></a></td><td align="center">123</td><td align="right">500,065</td></tr>
-  <tr><td align="center">10</td><td align="left"><a href="https://github.com/herjarsa"><b>herjarsa</b></a></td><td align="center">88</td><td align="right">230,872</td></tr>
-  <tr><td align="center">11</td><td align="left"><a href="https://github.com/hartmark"><b>hartmark</b></a></td><td align="center">85</td><td align="right">2,849,623</td></tr>
+  <tr><td align="center">10</td><td align="left"><a href="https://github.com/herjarsa"><b>හර්ජර්සා</b></a></td><td align="center">88</td><td align="right">230,872</td></tr>
+  <tr><td align="center">11</td><td align="left"><a href="https://github.com/hartmark"><b>හාර්ට්මාර්ක්</b></a></td><td align="center">85</td><td align="right">2,849,623</td></tr>
   <tr><td align="center">12</td><td align="left"><a href="https://github.com/jonlwheat2-gif"><b>jonlwheat2-gif</b></a></td><td align="center">68</td><td align="right">69,097</td></tr>
   <tr><td align="center">13</td><td align="left"><a href="https://github.com/artickc"><b>artickc</b></a></td><td align="center">62</td><td align="right">43,502</td></tr>
   <tr><td align="center">14</td><td align="left"><a href="https://github.com/xiaoyaner0201"><b>xiaoyaner0201</b></a></td><td align="center">59</td><td align="right">126,220</td></tr>
@@ -1421,104 +1415,104 @@ Dashboard රහිත, headless runtime එකක් සඳහා Docker `base`
   <tr><td align="center">19</td><td align="left"><a href="https://github.com/QuangBlue"><b>QuangBlue</b></a></td><td align="center">43</td><td align="right">13,112</td></tr>
 </table>
 
-<sub>සංගණනය 2026-11-03 03:01:19 UTC දින සජීවී <code>release/v3.8.53</code> tip <code>05bc048d6c</code> සමඟ සිදු කරන ලදී. පිටු වශයෙන් බෙදා ඇති GitHub GraphQL සංගණනයේ ඒකාබද්ධ කළ PR 9,947ක් අඩංගු වේ: repository හිමිකරු විසින් 4,130ක්, Dependabot විසින් 240ක්, වෙනත් bots/apps විසින් 6ක් සහ <b>වෙනස් දායකයින් 883 දෙනෙකුගෙන් බාහිර PR 5,571ක්</b>. “වෙනස් කළ පේළි” යනු GitHub එකතු කිරීම් + මකාදැමීම් වන අතර ජනනය කළ ගොනු, lockfiles, catalogs, පරිවර්තන සහ ලේඛන ද ඇතුළත් වේ; එය ලියා ඇති LOC නොව වෙනස්කම් ප්රමාණයයි. PR 53ක් GitHub diff පේළි 500,000කට වැඩි බව වාර්තා කරයි (උදාහරණයක් ලෙස #13399, තනි provider එකතු කිරීමක්, වෙනස් කළ ගොනු 2,347ක් ලැයිස්තුගත කරයි), එමඟින් ඉහත එකතුවල කිහිපයක් අසාමාන්ය ලෙස වැඩි වේ. සමාන අගයන් එකට ශ්රේණිගත කර ඇත.</sub>
+<sub>සජීවී <code>release/v3.8.53</code> ඉඟිය <code>05bc048d6c</code> සමඟ 2026-11-03 03:01:19 UTC ගන්නා ලද සංගණනය . පිටුගත GitHub GraphQL සංගණනයේ 9,947 ඒකාබද්ධ PRs අඩංගු වේ : 4,130 ගබඩා හිමිකරු විසින්, 240 Dependabot විසින්, 6 වෙනත් bots/apps විසින් , සහ <b>වෙනස් දායකයින් 883 දෙනෙකුගෙන් බාහිර PRs 5,571</b>. "වෙනස් කළ රේඛා" යනු GitHub එකතු කිරීම් + මකාදැමීම් වන අතර ජනනය කරන ලද ගොනු, අගුළු ගොනු, නාමාවලි, පරිවර්තන සහ ලේඛන ඇතුළත් වේ; එය කර්තෘ LOC නොවේ, churn වේ. 53 PRs වාර්තාව GitHub රේඛා 500,000 ට වඩා වෙනස් වේ (උදාහරණයක් ලෙස #13399, තනි සැපයුම්කරු එකතු කිරීම, වෙනස් කළ ගොනු 2,347 ලැයිස්තුගත කරයි), එය ඉහත එකතුව කිහිපයක් පුම්බා ඇත. බැඳීම් එකට ශ්‍රේණිගත කර ඇත.</sub>
 
-### GitHub වෙත ආරෝපිත commits
+### GitHub-ආරෝපණය කළ කැපවීම්
 
 <table>
   <tr>
     <td align="center" width="160">
       <a href="https://github.com/maxmad64bis">
         <img src="https://github.com/maxmad64bis.png" width="40" style="border-radius:50%" alt="Dizzle"/><br/>
-        <b>Dizzle</b>
+        <b>කරකැවිල්ල</b>
       </a><br/>
-      <sub>🥇 GitHub වෙත ආරෝපිත commits 418ක්</sub>
+      <sub>🥇 418 GitHub-ආරෝපණය කළ කැපවීම්</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/HouMinXi">
         <img src="https://github.com/HouMinXi.png" width="40" style="border-radius:50%" alt="Bob.Hou"/><br/>
         <b>Bob.Hou</b>
       </a><br/>
-      <sub>🥈 GitHub වෙත ආරෝපිත commits 294ක්</sub>
+      <sub>🥈 294 GitHub-ආරෝපණය කළ කැපවීම්</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/oyi77">
         <img src="https://github.com/oyi77.png" width="40" style="border-radius:50%" alt="Paijo"/><br/>
-        <b>Paijo</b>
+        <b>පයිජෝ</b>
       </a><br/>
-      <sub>🥉 GitHub වෙත ආරෝපිත commits 229ක්</sub>
+      <sub>🥉 229 GitHub-ආරෝපණය කළ කැපවීම්</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/pacocartones">
         <img src="https://github.com/pacocartones.png" width="40" style="border-radius:50%" alt="Paco Cartones"/><br/>
         <b>Paco Cartones</b>
       </a><br/>
-      <sub>🏅 GitHub වෙත ආරෝපිත commits 222ක්</sub>
+      <sub>🏅 222 GitHub-ආරෝපණය කළ කැපවීම්</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/backryun">
         <img src="https://github.com/backryun.png" width="40" style="border-radius:50%" alt="backryun"/><br/>
         <b>backryun</b>
       </a><br/>
-      <sub>🏅 GitHub වෙත ආරෝපිත commits 202ක්</sub>
+      <sub>🏅 202 GitHub-ආරෝපණය කළ කැපවීම්</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/JxnLexn">
         <img src="https://github.com/JxnLexn.png" width="40" style="border-radius:50%" alt="Jan Leon"/><br/>
-        <b>Jan Leon</b>
+        <b>ජෑන් ලියොන්</b>
       </a><br/>
-      <sub>🏅 GitHub වෙත ආරෝපිත commits 134ක්</sub>
+      <sub>🏅 134 GitHub-ආරෝපණය කළ කැපවීම්</sub>
     </td>
   </tr>
   <tr>
     <td align="center" width="160">
       <a href="https://github.com/RaviTharuma">
         <img src="https://github.com/RaviTharuma.png" width="40" style="border-radius:50%" alt="Ravi Tharuma"/><br/>
-        <b>Ravi Tharuma</b>
+        <b>රවි තරුම</b>
       </a><br/>
-      <sub>🏅 GitHub වෙත ආරෝපිත commits 126ක්</sub>
+      <sub>🏅 126 GitHub-ආරෝපණය කළ කැපවීම්</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/hartmark">
         <img src="https://github.com/hartmark.png" width="40" style="border-radius:50%" alt="Markus Hartung"/><br/>
         <b>Markus Hartung</b>
       </a><br/>
-      <sub>🏅 GitHub වෙත ආරෝපිත commits 115ක්</sub>
+      <sub>🏅 115 GitHub-ආරෝපණය කළ කැපවීම්</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/rdself">
         <img src="https://github.com/rdself.png" width="40" style="border-radius:50%" alt="Randi"/><br/>
-        <b>Randi</b>
+        <b>රන්දි</b>
       </a><br/>
-      <sub>🏅 GitHub වෙත ආරෝපිත commits 108ක්</sub>
+      <sub>🏅 108 GitHub-ආරෝපණය කළ කැපවීම්</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/christopher-s">
         <img src="https://github.com/christopher-s.png" width="40" style="border-radius:50%" alt="Chris"/><br/>
-        <b>Chris</b>
+        <b>ක්රිස්</b>
       </a><br/>
-      <sub>🏅 GitHub වෙත ආරෝපිත commits 70ක්</sub>
+      <sub>🏅 70 GitHub-ආරෝපණය කළ කැපවීම්</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/jonlwheat2-gif">
         <img src="https://github.com/jonlwheat2-gif.png" width="40" style="border-radius:50%" alt="WebPerson"/><br/>
         <b>WebPerson</b>
       </a><br/>
-      <sub>🏅 GitHub වෙත ආරෝපිත commits 68ක්</sub>
+      <sub>🏅 68 GitHub-ආරෝපණය කළ කැපවීම්</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/KooshaPari">
         <img src="https://github.com/KooshaPari.png" width="40" style="border-radius:50%" alt="Koosha Paridehpour"/><br/>
         <b>Koosha Paridehpour</b>
       </a><br/>
-      <sub>🏅 GitHub වෙත ආරෝපිත commits 68ක්</sub>
+      <sub>🏅 68 GitHub-ආරෝපණය කළ කැපවීම්</sub>
     </td>
   </tr>
 </table>
 
-<sub>2026-11-03 02:09:16 UTC වන විට නැවත පරීක්ෂා කරන ලදී: පෙරනිමි <code>release/v3.8.53</code> ශාඛාව සඳහා repository Contributors API මඟින් වාර්තා කළ GitHub වෙත ආරෝපිත commits. API මඟින් අනන්යතා 903ක් (පරිශීලකයන් 429ක්, bots 2ක්, anonymous 472ක්) ආපසු ලබා දී ඇත; මෙම වගුවෙන් maintainer, bots සහ anonymous identities ඉවත් කර ඇති අතර තරඟකාරී සමාන ස්ථාන රඳවා ඇත. මෙය ඉහත merged-PR ශ්රේණිගත කිරීමෙන් මෙන්ම පහත Git-metadata census එකෙන්ද වෙනස් වේ.</sub>
+<sub>2026-11-03 02:09:16 UTC හිදී නැවත පරීක්ෂා කරන ලදී : <code>release/v3.8.53</code> පෙරනිමි ශාඛාව සඳහා දායකයින් API ගබඩාව විසින් වාර්තා කරන ලද GitHub-ආරෝපණය කළ කැපවීම්. API විසින් අනන්‍යතා 903 ක් ආපසු ලබා දෙන ලදී (පරිශීලකයින් 429 ක්, බොට් 2 ක්, නිර්නාමික 472 ක්); මෙම වගුව නඩත්තු කරන්නා, බොට්ස් සහ නිර්නාමික අනන්‍යතා බැහැර කර තරඟ සබඳතා රඳවා ගනී. එය ඉහත ඒකාබද්ධ-PR ශ්‍රේණිගත කිරීම සහ පහත Git-metadata සංගණනය යන දෙකෙන්ම වෙනස් වේ.</sub>
 
-> 🙏 මෙම දායකයන්ගේ විශේෂාංග, දෝෂ නිවැරදි කිරීම් සහ යටිතල පහසුකම් වැඩිදියුණු කිරීම්, OmniRoute විශ්වසනීය හා විශේෂාංගවලින් සපිරි එකක් බවට පත් කරන දෙයෙහි **මූලික කොටසකි**. සෑම pull request එකක්ම, සෑම test case එකක්ම සහ සෑම i18n translation file එකක්ම වැදගත් වේ. විවෘත මූලාශ්රය ගොඩනඟන්නේ ඔවුන් වැනි පුද්ගලයන් විසිනි.
+> 🙏 මෙම දායකයින්ගේ විශේෂාංග, දෝෂ නිවැරදි කිරීම් සහ යටිතල පහසුකම් වැඩිදියුණු කිරීම්** මූලික කොටස** OmniRoute විශ්වාසදායක සහ විශේෂාංග-පොහොසත් කරන දේ. සෑම ඇදීමේ ඉල්ලීමක්ම, සෑම පරීක්ෂණ නඩුවක්ම සහ සෑම i18n පරිවර්තන ගොනුවක්ම වැදගත් වේ. විවෘත මූලාශ්‍ර ගොඩනඟන්නේ ඔවුන් වැනි අය විසිනි.
 
 </div>
 

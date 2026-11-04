@@ -43,37 +43,35 @@ omniroute configure codex                # ← 원격 카탈로그를 바탕으�
 
 ---
 
-## 연결하기
+## 연결 중
 
 ### 관리 비밀번호 사용(부트스트랩)
 
 ```bash
 omniroute connect 192.168.0.15
-# http://192.168.0.15:20128의 관리 비밀번호: ********
-# ✔ http://192.168.0.15:20128에 연결됨 — 컨텍스트 '192.168.0.15'(범위: admin)
+# Management password for http://192.168.0.15:20128: ********
+# ✔ Connected to http://192.168.0.15:20128 — context '192.168.0.15' (scope: admin)
 ```
 
-비밀번호 흐름은 기본적으로 **admin** 토큰을 발급합니다(비밀번호를 보유하고 있으므로
-이미 모든 권한이 있습니다). `--scope`로 더 낮은 범위를 지정할 수 있습니다.
+비밀번호 흐름은** 관리자** 기본적으로 토큰입니다(비밀번호를 보유하고 있으므로 이미 모든 권한을 보유하고 있습니다). `--scope` 사용한 다운스코프:
 
 ```bash
 omniroute connect 192.168.0.15 --scope write
 ```
 
-옵션: `--port <p>`(호스트에 포트가 없는 경우), `--name <ctx>`(컨텍스트 이름),
-`--scope read|write|admin`. 전체 URL은 입력한 그대로 사용됩니다:
-`omniroute connect https://omni.example.com`.
+옵션: `--port <p>` (호스트에 아무것도 없는 경우), `--name <ctx>` (컨텍스트 이름), `--scope read|write|admin`. 전체 URL 있는 그대로 인정됩니다: `omniroute connect https://omni.example.com`.
 
-### 미리 생성된 토큰 사용
+서버에 대시보드 2단계 인증이 활성화된 경우( → 보안 설정) 비밀번호만 거부됩니다. 그런 다음 CLI 는 인증 앱의 코드(또는 복구 코드)를 요청합니다. 비대화형 사용을 위해 `--totp <code>` 사용하여 앞쪽으로 전달합니다.
 
-대시보드에서 또는 `omniroute tokens create`를 사용해 범위가 지정된 토큰을 생성한 후
-붙여 넣으세요. 비밀번호는 필요하지 않습니다.
+### 사전 생성된 토큰 사용
+
+대시보드에서(또는 `omniroute tokens create` 사용하여) 범위가 지정된 토큰을 생성하고 — 에 붙여넣습니다. 비밀번호는 필요하지 않습니다.
 
 ```bash
 omniroute connect 192.168.0.15 --key oma_live_xxxxxxxx
 ```
 
-CLI는 `GET /api/cli/whoami`를 통해 토큰을 검증한 후 활성 컨텍스트로 저장합니다.
+CLI `GET /api/cli/whoami` 통해 이를 검증하고 활성 컨텍스트로 저장합니다.
 
 ---
 
@@ -411,12 +409,12 @@ omniroute contexts remove 192-168-0-15 --yes   # 로컬 컨텍스트 삭제(활�
 
 ## API 엔드포인트(참조)
 
-| 메서드 | 경로                  | 인증          | 범위                        |
-| ------ | --------------------- | ------------- | --------------------------- |
-| POST   | `/api/cli/connect`    | 관리 비밀번호 | — (공개, 비밀번호로 보호됨) |
-| GET    | `/api/cli/whoami`     | 액세스 토큰   | 읽기                        |
-| GET    | `/api/cli/tokens`     | 액세스 토큰   | 관리자                      |
-| POST   | `/api/cli/tokens`     | 액세스 토큰   | 관리자                      |
-| DELETE | `/api/cli/tokens/:id` | 액세스 토큰   | 관리자                      |
+| 방법   | 노선                  | 인증                           | 범위                    |
+| ------ | --------------------- | ------------------------------ | ----------------------- |
+| POST   | `/api/cli/connect`    | 비밀번호; 2FA가 켜져 있는 경우 | — (공개, 비밀번호 제한) |
+| GET    | `/api/cli/whoami`     | 액세스 토큰                    | 읽다                    |
+| GET    | `/api/cli/tokens`     | 액세스 토큰                    | 관리자                  |
+| POST   | `/api/cli/tokens`     | 액세스 토큰                    | 관리자                  |
+| DELETE | `/api/cli/tokens/:id` | 액세스 토큰                    | 관리자                  |
 
-전체 스키마는 [openapi.yaml](../openapi.yaml)을 참조하세요.
+전체 스키마는 [openapi.yaml](../openapi.yaml) 참조하세요.

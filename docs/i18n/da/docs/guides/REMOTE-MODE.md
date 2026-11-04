@@ -44,37 +44,35 @@ din bærbare computer                     ekstern OmniRoute (VPS)
 
 ---
 
-## Opret forbindelse
+## Forbinder
 
 ### Med administrationsadgangskoden (bootstrap)
 
 ```bash
 omniroute connect 192.168.0.15
-# Administrationsadgangskode til http://192.168.0.15:20128: ********
-# ✔ Forbundet til http://192.168.0.15:20128 — kontekst '192.168.0.15' (omfang: admin)
+# Management password for http://192.168.0.15:20128: ********
+# ✔ Connected to http://192.168.0.15:20128 — context '192.168.0.15' (scope: admin)
 ```
 
-Adgangskodeflowet udsteder som standard et **admin**-token (du har adgangskoden, så
-du har allerede fuld kontrol). Begræns omfanget med `--scope`:
+Adgangskoden flow præger en** admin** token som standard (du har adgangskoden, så du allerede har fuld kontrol). Downscope med `--scope`:
 
 ```bash
 omniroute connect 192.168.0.15 --scope write
 ```
 
-Valgmuligheder: `--port <p>` (når værten ikke har nogen port), `--name <ctx>` (kontekstnavn),
-`--scope read|write|admin`. En fuld URL anvendes, som den er:
-`omniroute connect https://omni.example.com`.
+Valgmuligheder: `--port <p>` (når værten ikke har nogen), `--name <ctx>` (kontekstnavn), `--scope read|write|admin`. En fuld URL honoreres som den er: `omniroute connect https://omni.example.com`.
 
-### Med et forhåndsgenereret token
+Når serveren har dashboard to-faktor autentificering aktiveret (Settings → Security), bliver adgangskoden alene afvist: CLI beder derefter om koden fra autentificeringsappen (eller en gendannelseskode). Send det foran med `--totp <code>` til ikke-interaktiv brug.
 
-Generér et afgrænset token i kontrolpanelet (eller med `omniroute tokens create`), og
-indsæt det — der kræves ingen adgangskode:
+### Med et forudgenereret token
+
+Generer et scoped token i dashboardet (eller med `omniroute tokens create`), og indsæt det — uden at have brug for adgangskode:
 
 ```bash
 omniroute connect 192.168.0.15 --key oma_live_xxxxxxxx
 ```
 
-CLI'en validerer det via `GET /api/cli/whoami` og gemmer det som den aktive kontekst.
+CLI validerer det via `GET /api/cli/whoami` og gemmer det som den aktive kontekst.
 
 ---
 
@@ -451,14 +449,14 @@ omniroute contexts remove 192-168-0-15 --yes   # slet den lokale kontekst (selv 
 
 ---
 
-## API-slutpunkter (reference)
+## API endepunkter (reference)
 
-| Metode | Rute                  | Godkendelse            | Omfang                               |
-| ------ | --------------------- | ---------------------- | ------------------------------------ |
-| POST   | `/api/cli/connect`    | administrationskodeord | — (offentlig, beskyttet med kodeord) |
-| GET    | `/api/cli/whoami`     | adgangstoken           | læse                                 |
-| GET    | `/api/cli/tokens`     | adgangstoken           | administrator                        |
-| POST   | `/api/cli/tokens`     | adgangstoken           | administrator                        |
-| DELETE | `/api/cli/tokens/:id` | adgangstoken           | administrator                        |
+| Metode | Rute                  | Auth                     | Omfang                           |
+| ------ | --------------------- | ------------------------ | -------------------------------- |
+| POST   | `/api/cli/connect`    | adgangskode; 2FA hvis på | — (offentlig, adgangskodelukket) |
+| GET    | `/api/cli/whoami`     | adgangstoken             | læse                             |
+| GET    | `/api/cli/tokens`     | adgangstoken             | admin                            |
+| POST   | `/api/cli/tokens`     | adgangstoken             | admin                            |
+| DELETE | `/api/cli/tokens/:id` | adgangstoken             | admin                            |
 
-Se [openapi.yaml](../openapi.yaml) for de komplette skemaer.
+Se [openapi.yaml](../openapi.yaml) for fulde skemaer.

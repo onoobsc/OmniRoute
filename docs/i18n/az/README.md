@@ -21,19 +21,19 @@
 
 <div align="center">
 
-## 💰 ~1.62Milyard Token / Ay Üçüncü Tərəf Pulsuz Paketlərdə
+## 💰 ~ 1.62B Tokenlər / Ayda Üçüncü Tərəfin Pulsuz Səviyyələri üzrə
 
 </div>
 
-> **Öz provayder hesablarınızı gətirin.** Bu, ayrı-ayrı uyğun üçüncü tərəf pulsuz paketləri üzrə təxmini cəmdir, OmniRoute tərəfindən verilən token deyil. Qeydiyyatdan keçin, lazım olduqda etimadnamə əldə edin və istifadə edə biləcəyiniz provayderləri qoşun; hər bir provayder öz limitlərini, əlçatanlığını və şərtlərini idarə edir.
+> **Öz provayder hesablarınızı gətirin.** Bu, OmniRoute tərəfindən verilən qrant deyil, ayrıca uyğun üçüncü tərəf pulsuz səviyyələri üzrə təxmin edilən məcmudur. Qeydiyyatdan keçin, lazım olduqda etimadnaməsini əldə edin və istifadə edə biləcəyiniz provayderləri birləşdirin; hər bir provayder öz limitlərinə, mövcudluğuna və şərtlərinə nəzarət edir.
 >
-> Pulsuz paketləri əl ilə toplamaq əziyyətlidir — onlarla SDK, onlarla sürət limiti və əslində nə qədəriniz qaldığını bilmirsiniz. OmniRoute **485 pulsuz paket qeydini 34 təkrarlanan hovuz açarı üzrə** kataloqlaşdırır və token başlığını **17 aylıq müsbət token büdcəsi dərc olunan hovuz və beş model üzrə Groq limiti** əsasında, paylaşılmış hovuzlar üzrə təkrarlanmadan hesablayır. Yalnız regional şəxsiyyət yoxlamasından sonra açılan kvotalar (bu gün: ModelScope) ayrıca göstərilir, +~6M regional şəxsiyyət yoxlamasından sonra, və heç vaxt başlığa əlavə edilmir. Nəticə paneldə görünür (`/dashboard/free-tiers`).
+> Pulsuz pillələri əl ilə yığmaq ağrılı — onlarla SDKs, onlarla tarif limiti və əslində nə qədər pulunuz olduğunu bilmirsiniz. OmniRoute kataloqları** 34 təkrarlanan hovuz açarı üzrə 484 pulsuz səviyyəli giriş** və token başlığını hesablayır** Yayımlanmış müsbət aylıq büdcə və hər model üçün beş Groq həddi olan 17 hovuz** , paylaşılan hovuz tərəfindən təkrarlanır. Yalnız regional şəxsiyyət yoxlanışından sonra açılan kvotalar (bu gün: ModelScope) ayrı göstərilir, +~ 6M regional identifikasiyanın arxasındadır və heç vaxt başlığa daxil edilmir. Nəticə tablosunda görünən qalır (`/dashboard/free-tiers`).
 
-<img src="./docs/diagrams/free-tier-budget.svg" width="100%" alt="OmniRoute pulsuz paket büdcə kartı: ~1.62Milyard pulsuz token hər ay sabit, qeydiyyat bonusları ilə ilk ayda ~2.22Milyarda qədər, 34 sənədləşdirilmiş təkrarlanan hovuz açarı və 485 kataloqlaşdırılmış pulsuz paket qeydini bir endpoint arxasında əhatə edir. Dürüst hovuz-təkrarlanmayan hesab — hər paylaşılmış hovuz bir dəfə sayılır, o cümlədən 17 təkrarlanan hovuz aylıq müsbət token büdcəsi ilə və beş model üzrə Groq limiti; 12 provayder şərtlər-risk kataloqunda çəkinmək üçün işarələnib, qərarı siz verirsiniz. Büdcə çubuğuna Mistral 1M, Nara 210M, LLM7 150M, xKiro 150M, Groq 30M (beş model üzrə limitlər) və kiçik hovuzlar daxildir, əlavə olaraq ilk ay qeydiyyat bonusları və daimi pulsuz, token limiti olmayan provayderlər ayrıca göstərilir ki, başlığı şişirtməsin. Canlı istifadə olunan/qalan `/dashboard/free-tiers`-də."/>
+<img src="./docs/diagrams/free-tier-budget.svg" width="100%" alt="OmniRoute free-tier budget card: ~1.62B free tokens per month steady, up to ~2.22B in the first month with signup credits, from 34 documented recurring pool keys covering 484 cataloged free-tier entries behind one endpoint. Honest pool-deduped math — each shared pool counted once, including 17 recurring pools with a published positive monthly token budget plus five per-model Groq caps; 12 providers are marked avoid in the terms-risk catalog so you decide. Budget bar includes Mistral 1B, Nara 210M, LLM7 150M, xKiro 150M, Groq 30M (five per-model caps) and smaller pools, plus first-month signup credits and permanently-free no-token-cap providers surfaced separately so they never inflate the headline. Live used/remaining on /dashboard/free-tiers."/>
 
-> Canlı `/dashboard/free-tiers` səhifəsinin animasiyalı xülasəsi. Tam metodologiya (hovuz təkrarlanmaması, kredit paketləri, provayder şərtləri): **[docs/reference/FREE_TIERS.md](docs/reference/FREE_TIERS.md)**.
+> Canlı `/dashboard/free-tiers` səhifəsinin animasiya xülasəsi. Tam metodologiya (pool dedupe, kredit səviyyələri, provayder şərtləri):** [docs/reference/FREE_TIERS.md](docs/reference/FREE_TIERS.md)** .
 >
-> <sub>Bu rəqəmlər hər iki həftədən bir canlı kataloqla yenidən yoxlanılır və **hər iki istiqamətdə dəyişir** — bir provayder pulsuz paketini dayandırır və rəqəm azalır; yenisi əlavə olunur və artır. Biz kataloqda həqiqətən hesablananı dərc edirik, heç vaxt yuvarlaqlaşdırılmış ən yaxşı variantı yox.</sub>
+> <sub> Bu rəqəmlər hər iki həftədən bir canlı kataloqa qarşı yenidən yoxlanılır və** hər iki tərəfə hərəkət edin** — provayder pulsuz səviyyəni bitirir və sayı azalır; yenisi enir və o dırmaşır. Biz kataloqun həqiqətən hesabladığını dərc edirik, heç vaxt yuvarlaqlaşdırılmış ən yaxşı hal deyil.</sub>
 
 <br/>
 
@@ -41,29 +41,23 @@
 
 <h3>
 
-⭐ Əgər OMNIROUTE sizə pulunuza qənaət etməyə və işinizi asanlaşdırmağa kömək edibsə, repoya ulduz verin.
+⭐ Əgər OMNIROUTE sizə pula qənaət etməyə və işinizi asanlaşdırmağa kömək edibsə, repoya ulduz qoyun.
 
 </h3>
 
-[![Stars](https://img.shields.io/github/stars/diegosouzapw/OmniRoute?style=social)](https://github.com/diegosouzapw/OmniRoute)
+[![Ulduzlar](https://img.shields.io/github/stars/diegosouzapw/OmniRoute?style=social) ](https://github.com/diegosouzapw/OmniRoute)
 <a href="https://trendshift.io/repositories/23589" target="_blank"><img src="https://trendshift.io/api/badge/repositories/23589" alt="diegosouzapw%2FOmniRoute | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
-[![Star History Rank](https://api.star-history.com/badge?repo=diegosouzapw/OmniRoute&theme=dark)](https://www.star-history.com/diegosouzapw/omniroute)
-[![olud.ai](https://olud.ai/badge.php?tool=diegosouzapw-omniroute)](https://olud.ai/project/diegosouzapw-omniroute.html)
+[![Ulduz Tarixi Sıralaması](https://api.star-history.com/badge?repo=diegosouzapw/OmniRoute&theme=dark) ](https://www.star-history.com/diegosouzapw/omniroute) [![olud.ai](https://olud.ai/badge.php?tool=diegosouzapw-omniroute) ](https://olud.ai/project/diegosouzapw-omniroute.html)
 
-### 💬 İcma ilə qoşulun
+### 💬 İcmaya qoşulun
 
-**👋 Tərtibatçını izləyin — yeni provayderlər, buraxılışlar və məsləhətləri ilk əldə edin:**
+**👋 Baxıcını izləyin — əvvəlcə yeni provayderlər, buraxılışlar və məsləhətlər əldə edin:**
 
-[![Follow Diego on LinkedIn](https://img.shields.io/badge/Follow_Diego_on-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/diegosouzapw/)
-[![Follow @diegosouzapw on GitHub](https://img.shields.io/github/followers/diegosouzapw?style=for-the-badge&logo=github&logoColor=white&label=Follow%20on%20GitHub&color=181717)](https://github.com/diegosouzapw)
+[![Dieqonu LinkedIn-da izləyin](https://img.shields.io/badge/Follow_Diego_on-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white) ](https://www.linkedin.com/in/diegosouzapw/) [![ GitHub də @diegosouzapw-u izləyin](https://img.shields.io/github/followers/diegosouzapw?style=for-the-badge&logo=github&logoColor=white&label=Follow%20on%20GitHub&color=181717) ](https://github.com/diegosouzapw)
 
-[![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/U47eFqAXCn)
-[![Telegram](https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/omnirouteOficial)
-[![WhatsApp Global](https://img.shields.io/badge/WhatsApp_Global-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/FvuCbrpZmQ6I85n2vW5QIC?s=cl&p=a&mlu=4)
-[![WhatsApp Brasil](https://img.shields.io/badge/WhatsApp_Brasil-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/KWgatljAjmbELQory59Oti?s=cl&p=a&mlu=4)
-[![Website](https://img.shields.io/badge/Website-omniroute.online-blue?logo=google-chrome&logoColor=white)](https://omniroute.online)
+[![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white) ](https://discord.gg/U47eFqAXCn) [![Telegram](https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white) ](https://t.me/omnirouteOficial) [![WhatsApp Qlobal](https://img.shields.io/badge/WhatsApp_Global-25D366?style=for-the-badge&logo=whatsapp&logoColor=white) ](https://chat.whatsapp.com/FvuCbrpZmQ6I85n2vW5QIC?s=cl&p=a&mlu=4) [![WhatsApp Brasil](https://img.shields.io/badge/WhatsApp_Brasil-25D366?style=for-the-badge&logo=whatsapp&logoColor=white) ](https://chat.whatsapp.com/KWgatljAjmbELQory59Oti?s=cl&p=a&mlu=4) [![Vebsayt](https://img.shields.io/badge/Website-omniroute.online-blue?logo=google-chrome&logoColor=white) ](https://omniroute.online)
 
-**Suallar, provayder məsləhətləri, yol xəritəsi və dəstək → [Discord](https://discord.gg/U47eFqAXCn) · [Telegram](https://t.me/omnirouteOficial) · WhatsApp [🌍 Qlobal](https://chat.whatsapp.com/FvuCbrpZmQ6I85n2vW5QIC?s=cl&p=a&mlu=4) / [🇧🇷 Braziliya](https://chat.whatsapp.com/KWgatljAjmbELQory59Oti?s=cl&p=a&mlu=4) / [Portal](https://portal.sthub.com.br/communities/groups/st-hub/channels/Omniroute-World-8kRjmK)**
+**Suallar, provayder məsləhətləri, yol xəritəsi və dəstək → [Discord](https://discord.gg/U47eFqAXCn) · [Telegram](https://t.me/omnirouteOficial) · WhatsApp [🌍 Global](https://chat.whatsapp.com/FvuCbrpZmQ6I85n2vW5QIC?s=cl&p=a&mlu=4) / [🇧🇷 Brasil](https://chat.whatsapp.com/KWgatljAjmbELQory59Oti?s=cl&p=a&mlu=4) / [Portal](https://portal.sthub.com.br/communities/groups/st-hub/channels/Omniroute-World-8kRjmK)**
 
 <br/>
 
@@ -1285,240 +1279,240 @@ bir portda təqdim olunur, buna görə hazırda ayrıca yalnız CLI üçün pake
 <br/>
 <div align="center">
 
-## 🛠️ Texnologiya yığını
+## 🛠️ Tech Stack
 
 </div>
 
 <table>
-  <tr><th align="left">Səviyyə</th><th align="left">Texnologiya</th></tr>
-  <tr><td nowrap><b>İşləmə mühiti</b></td><td>Node.js 22.x / 24.x LTS — <code>&gt;=22.22.2 &lt;23 || &gt;=24.0.0 &lt;27</code></td></tr>
-  <tr><td nowrap><b>Dil</b></td><td>TypeScript 6.0 — <code>src/</code> və <code>open-sse/</code> üzrə <b>100% TypeScript</b> (<code>any</code> olmadan, v2.0-dan etibarən nüvədə sıfır)</td></tr>
-  <tr><td nowrap><b>Freymvork</b></td><td>Next.js 16 + React 19 + Tailwind CSS 4</td></tr>
-  <tr><td nowrap><b>Verilənlər bazası</b></td><td>better-sqlite3 (SQLite, WAL jurnallaşdırması) + LowDB (JSON köhnə sistemi) — 147 domen modulu, 222 miqrasiya</td></tr>
-  <tr><td nowrap><b>Yaddaş</b></td><td>SQLite FTS5 tam mətn axtarışı + int8-kəmiyyətləşdirilmiş vektor embedding-ləri, tipləndirilmiş zəifləmə</td></tr>
-  <tr><td nowrap><b>Sxemlər</b></td><td>Zod 4 — MCP alətləri üçün giriş/çıxış yoxlaması + API müqavilələri</td></tr>
+  <tr><th align="left">Qat</th><th align="left">Texnologiya</th></tr>
+  <tr><td nowrap><b>İcra müddəti</b></td><td>Node.js 22.x / 24.x LTS — <code>&gt;=22.22.2 &lt;23 || &gt;=24.0.0 &lt;27</code></td></tr>
+  <tr><td nowrap><b>Dil</b></td><td>TypeScript 6.0 — <b>100% TypeScript</b> <code>src/</code> və <code>open-sse/</code> üzrə (v2.0-dan bəri nüvədə sıfır <code>any</code> )</td></tr>
+  <tr><td nowrap><b>Çərçivə</b></td><td>Next.js 16 + React 19 + Tailwind CSS 4</td></tr>
+  <tr><td nowrap><b>Verilənlər bazası</b></td><td>better-sqlite3 (SQLite, WAL journaling) + LowDB (JSON legacy) — 147 domen modulu, 222 köçürmə</td></tr>
+  <tr><td nowrap><b>Yaddaş</b></td><td>SQLite FTS5 tam mətn + int8-quantized vektor əlavələri, çap edilmiş çürümə</td></tr>
+  <tr><td nowrap><b>Sxemlər</b></td><td>Zod 4 — MCP alət I/O doğrulama + API müqavilələri</td></tr>
   <tr><td nowrap><b>Protokollar</b></td><td>MCP (stdio / HTTP / SSE) + A2A v0.3 (JSON-RPC 2.0 + SSE)</td></tr>
-  <tr><td nowrap><b>Axınlaşdırma</b></td><td>Server tərəfindən göndərilən hadisələr (SSE) + WebSocket körpüsü (<code>/v1/ws</code>)</td></tr>
-  <tr><td nowrap><b>Sıxışdırma</b></td><td>12 mühərrikli konveyer — RTK, Caveman, LLMLingua-2 (MobileBERT ONNX), GCF, OmniGlyph</td></tr>
-  <tr><td nowrap><b>Autentifikasiya və təhlükəsizlik</b></td><td>OAuth 2.0 (PKCE) + JWT + API açarları + MCP əhatə dairəli autentifikasiya · Saxlanılan məlumatlar üçün AES-256-GCM · DOMPurify</td></tr>
+  <tr><td nowrap><b>Axın</b></td><td>Server tərəfindən Göndərilən Hadisələr (SSE) + WebSocket körpüsü (<code>/v1/ws</code>)</td></tr>
+  <tr><td nowrap><b>Sıxılma</b></td><td>12 mühərrikli boru kəməri — RTK, Caveman, LLMLingua-2 (MobileBERT ONNX), GCF, OmniGlyph</td></tr>
+  <tr><td nowrap><b>Auth &amp; təhlükəsizlik</b></td><td>OAuth 2.0 (PKCE) + JWT + API + MCP əhatəli auth · AES-256-GCM istirahətdə · DOMPurify</td></tr>
   <tr><td nowrap><b>Gizlilik</b></td><td>wreq-js — JA3 / JA4 TLS barmaq izi təqlidi, 3 səviyyəli proksi</td></tr>
-  <tr><td nowrap><b>Davamlılıq</b></td><td>Qısaqapanma qoruyucusu, eksponensial geriçəkilmə, izdiham effektinə qarşı qoruma, avtomatik kombinə edilmiş özünübərpa</td></tr>
-  <tr><td nowrap><b>Jurnallaşdırma</b></td><td>pino — sorğu konteksti ilə strukturlaşdırılmış JSON jurnalları</td></tr>
-  <tr><td nowrap><b>Testləşdirmə</b></td><td>Node.js test icraçısı + Vitest — 8 400-dən çox izlənən test faylı üzrə <b>60 000-dən çox statik test elanı</b> (vahid, inteqrasiya, E2E, təhlükəsizlik, ekosistem)</td></tr>
-  <tr><td nowrap><b>Platformalar</b></td><td>Masaüstü (Electron) · Android (Termux) · PWA (istənilən brauzer)</td></tr>
-  <tr><td nowrap><b>CI/CD</b></td><td>GitHub Actions — buraxılış zamanı avtomatik npm nəşri + Docker Hub</td></tr>
-  <tr><td nowrap><b>Keçidlər</b></td><td><a href="https://omniroute.online">Vebsayt</a> · <a href="https://www.npmjs.com/package/omniroute">npm</a> · <a href="https://hub.docker.com/r/diegosouzapw/omniroute">Docker Hub</a></td></tr>
+  <tr><td nowrap><b>Dözümlülük</b></td><td>Devre açarı, eksponensial geriləmə, ildırım əleyhinə sürüsü, avtomatik kombo özünü sağaltma</td></tr>
+  <tr><td nowrap><b>Giriş</b></td><td>sorğu konteksti ilə pino — strukturlaşdırılmış JSON qeydləri</td></tr>
+  <tr><td nowrap><b>Test</b></td><td>Node.js test runner + Vitest — <b>60,000 + statik test bəyannaməsi</b> 8,400 + izlənilən test faylları arasında (vahid, inteqrasiya, E2E, təhlükəsizlik, ekosistem)</td></tr>
+  <tr><td nowrap><b>Platformalar</b></td><td>İş masası (Electron) · Android (Termux) · PWA (istənilən brauzer)</td></tr>
+  <tr><td nowrap><b>CI/CD</b></td><td>GitHub Actions — auto npm nəşr + Docker Hub buraxılışda</td></tr>
+  <tr><td nowrap><b>Bağlantılar</b></td><td><a href="https://omniroute.online">Veb sayt</a> · <a href="https://www.npmjs.com/package/omniroute">npm</a> · <a href="https://hub.docker.com/r/diegosouzapw/omniroute">Docker Hub</a></td></tr>
 </table>
 
 <div align="center">
 
 <br/>
 
-## 📖 Sənədləşmə
+## 📖 Sənədləri
 
 </div>
 
-### 📘 Başlanğıc
+### 📘 Başlarkən
 
 <table>
   <tr><th align="left">Sənəd</th><th align="left">Təsvir</th></tr>
   <tr><td nowrap><b><a href="docs/guides/USER_GUIDE.md">İstifadəçi təlimatı</a></b></td><td>Provayderlər, kombinasiyalar, CLI inteqrasiyası, yerləşdirmə</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/SETUP_GUIDE.md">Quraşdırma təlimatı</a></b></td><td>Tam quraşdırma üsulları, CLI alət konfiqurasiyaları, protokol quraşdırması, vaxt aşımı tənzimləməsi</td></tr>
-  <tr><td nowrap><b><a href="docs/reference/CLI-TOOLS.md">CLI alətləri təlimatı</a></b></td><td>Claude Code, Codex, Cursor, Cline, OpenClaw, Kilo, Copilot üçün alətə uyğun quraşdırma</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/REMOTE-MODE.md">Uzaq rejim</a></b></td><td>Əhatə dairəsi məhdud giriş tokenləri vasitəsilə laptopunuzdakı CLI-dan uzaq OmniRoute-u (VPS) idarə edin</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/CLAUDE-CODE-CONFIGURATION.md">Claude Code konfiqurasiyası</a></b></td><td><code>launch</code> + hər model üçün profillərlə Claude Code-u OmniRoute-a (lokal/uzaq) yönləndirin</td></tr>
-  <tr><td nowrap><b><a href="README.md#-quick-start">Sürətli başlanğıc</a></b></td><td>3 addımda quraşdırma → qoşulma → konfiqurasiya</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/SETUP_GUIDE.md">Quraşdırma Bələdçisi</a></b></td><td>Tam quraşdırma metodları, CLI alət konfiqurasiyaları, protokolun qurulması, vaxt aşımı tənzimləməsi</td></tr>
+  <tr><td nowrap><b><a href="docs/reference/CLI-TOOLS.md">CLI Alətlər Bələdçisi</a></b></td><td>Claude Kodu, Codex, Cursor, Cline, OpenClaw, Kilo, Copilot üçün alət başına quraşdırma</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/REMOTE-MODE.md">Uzaqdan idarəetmə rejimi</a></b></td><td>Genişlənmiş giriş nişanları vasitəsilə laptop CLI -dən uzaqdan OmniRoute (VPS) sürün</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/CLAUDE-CODE-CONFIGURATION.md">Claude Kodu Konfiqurasiyası</a></b></td><td><code>launch</code> model profilləri ilə OmniRoute (local/remote) + Claude Kodu nöqtəsi</td></tr>
+  <tr><td nowrap><b><a href="README.md#-quick-start">Tez Başlanğıc</a></b></td><td>3-addım quraşdırma → connect → konfiqurasiya</td></tr>
 </table>
 
-### 🔧 Əməliyyatlar və yerləşdirmə
+### 🔧 Əməliyyatlar və Yerləşdirmə
 
 <table>
   <tr><th align="left">Sənəd</th><th align="left">Təsvir</th></tr>
-  <tr><td nowrap><b><a href="docs/guides/DOCKER_GUIDE.md">Docker təlimatı</a></b></td><td>Docker-un işə salınması, Compose profilləri, Caddy HTTPS, tunellər, imic teqləri</td></tr>
-  <tr><td nowrap><b><a href="contrib/podman/README.md">Podman təlimatı</a></b></td><td>Quadlet systemd inteqrasiyası, podman-compose, SELinux</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/VM_DEPLOYMENT_GUIDE.md">VM yerləşdirməsi</a></b></td><td>Tam təlimat: VM + nginx + Cloudflare quraşdırması</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/FLY_IO_DEPLOYMENT_GUIDE.md">Fly.io yerləşdirməsi</a></b></td><td>Davamlı yaddaşla Fly.io-a yerləşdirmə</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/TERMUX_GUIDE.md">Termux təlimatı</a></b></td><td>OmniRoute-u Android-də Termux vasitəsilə işə salın</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/PWA_GUIDE.md">PWA təlimatı</a></b></td><td>Progressive Web App quraşdırılması, keşləmə, arxitektura</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/UNINSTALL.md">Silinmə təlimatı</a></b></td><td>Bütün quraşdırma üsulları üçün tam silinmə</td></tr>
-  <tr><td nowrap><b><a href="docs/reference/ENVIRONMENT.md">Mühit konfiqurasiyası</a></b></td><td><code>.env</code> dəyişənləri və istinadlarının tam siyahısı</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/DOCKER_GUIDE.md">Docker bələdçisi</a></b></td><td>Docker run, Profillər yaradın, Caddy HTTPS, tunellər, şəkil teqləri</td></tr>
+  <tr><td nowrap><b><a href="contrib/podman/README.md">Podman bələdçisi</a></b></td><td>Quadlet systemd inteqrasiyası, podman-compose, SELinux</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/VM_DEPLOYMENT_GUIDE.md">VM Yerləşdirmə</a></b></td><td>Tam bələdçi: VM + nginx + Cloudflare quraşdırma</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/FLY_IO_DEPLOYMENT_GUIDE.md">Fly.io Yerləşdirmə</a></b></td><td>Davamlı yaddaşla Fly.io-da yerləşdirin</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/TERMUX_GUIDE.md">Termux bələdçisi</a></b></td><td>Termux vasitəsilə Android-də OmniRoute işə salın</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/PWA_GUIDE.md">PWA bələdçisi</a></b></td><td>Progressive Web App quraşdırma, keşləmə, arxitektura</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/UNINSTALL.md">Silinmə Bələdçisi</a></b></td><td>Bütün quraşdırma üsulları üçün təmiz silmə</td></tr>
+  <tr><td nowrap><b><a href="docs/reference/ENVIRONMENT.md">Ətraf Mühit Konfiqurasiyası</a></b></td><td>Tam <code>.env</code> dəyişənləri və istinadlar</td></tr>
 </table>
 
-### 🧠 Funksiyalar və arxitektura
+### 🧠 Xüsusiyyətlər və Arxitektura
 
 <table>
   <tr><th align="left">Sənəd</th><th align="left">Təsvir</th></tr>
-  <tr><td nowrap><b><a href="docs/architecture/ARCHITECTURE.md">Arxitektura</a></b></td><td>Sistem arxitekturası, məlumat axını və daxili mexanizmlər</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_GUIDE.md">Sıxışdırma təlimatı</a></b></td><td>7 seçimli konveyer: söndürülmüş / lite / standart / aqressiv / ultra / RTK / yığılmış</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/RTK_COMPRESSION.md">RTK sıxışdırması</a></b></td><td>Əmr çıxışının sıxışdırılması, filtrlər, etibar, yoxlama, xam çıxışın bərpası</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_ENGINES.md">Sıxışdırma mühərrikləri</a></b></td><td>Caveman, RTK, yığılmış konveyerlər, idarə paneli/API/MCP interfeysləri</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_RULES_FORMAT.md">Sıxışdırma qaydalarının formatı</a></b></td><td>Caveman və RTK filtrləri üçün JSON qayda paketi sxemləri</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_LANGUAGE_PACKS.md">Sıxışdırma dil paketləri</a></b></td><td>Dilin aşkarlanması və Caveman qayda paketlərinin hazırlanması</td></tr>
-  <tr><td nowrap><b><a href="docs/architecture/RESILIENCE_GUIDE.md">Dayanıqlılıq təlimatı</a></b></td><td>Qısaqapanma açarları, soyuma müddətləri, növbə, kütləvi sorğuların qarşısının alınması, TLS saxtalaşdırması</td></tr>
-  <tr><td nowrap><b><a href="docs/routing/AUTO-COMBO.md">Avtomatik kombinasiya mühərriki</a></b></td><td>16 amilli qiymətləndirmə, rejim paketləri, özünü bərpa</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/PROXY_GUIDE.md">Proksi təlimatı</a></b></td><td>3 səviyyəli proksi sistemi, 1proxy marketpleysi, reyestrin CRUD əməliyyatları</td></tr>
-  <tr><td nowrap><b><a href="docs/reference/FREE_TIERS.md">Pulsuz səviyyələr</a></b></td><td>Birləşdirilmiş kataloq: sənədləşdirilmiş 34 təkrarlanan hovuz / kataloqlaşdırılmış 485 pulsuz səviyyə girişi</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/FEATURES.md">Funksiyalar qalereyası</a></b></td><td>Ekran görüntüləri ilə vizual idarə panelinə baxış</td></tr>
-  <tr><td nowrap><b><a href="docs/architecture/CODEBASE_DOCUMENTATION.md">Kod bazasının sənədləşməsi</a></b></td><td>Başlanğıc səviyyəsi üçün uyğun kod bazasına baxış</td></tr>
+  <tr><td nowrap><b><a href="docs/architecture/ARCHITECTURE.md">Memarlıq</a></b></td><td>Sistem arxitekturası, məlumat axını və daxili elementlər</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_GUIDE.md">Sıxılma təlimatı</a></b></td><td>7 variantlı boru kəməri: off / lite / standart / aqressiv / ultra / RTK / yığılmış</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/RTK_COMPRESSION.md">RTK sıxılma</a></b></td><td>Komanda-çıxış sıxılma, filtrlər, etibar, doğrulama, xam-çıxış bərpası</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_ENGINES.md">Sıxılma Mühərrikləri</a></b></td><td>Caveman, RTK, yığılmış boru kəmərləri, dashboard/API/MCP səthlər</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_RULES_FORMAT.md">Sıxılma qaydaları formatı</a></b></td><td>Caveman və RTK filtrləri üçün JSON qayda paketi sxemləri</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_LANGUAGE_PACKS.md">Sıxılma Dil Paketləri</a></b></td><td>Dil aşkarlanması və Caveman qayda paketinin müəllifi</td></tr>
+  <tr><td nowrap><b><a href="docs/architecture/RESILIENCE_GUIDE.md">Dözümlülük Bələdçisi</a></b></td><td>Devre açarları, soyuducular, növbə, ildırım əleyhinə sürü, TLS saxtakarlığı</td></tr>
+  <tr><td nowrap><b><a href="docs/routing/AUTO-COMBO.md">Avtomatik Kombo Mühərrik</a></b></td><td>16 faktorlu qiymətləndirmə, rejim paketləri, özünü sağaltma</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/PROXY_GUIDE.md">Proksi bələdçi</a></b></td><td>3 səviyyəli proxy sistemi, 1 proksi bazarı, CRUD reyestr</td></tr>
+  <tr><td nowrap><b><a href="docs/reference/FREE_TIERS.md">Pulsuz pillələr</a></b></td><td>Konsolidə edilmiş kataloq: 34 sənədləşdirilmiş təkrarlanan hovuz / 484 kataloqlaşdırılmış pulsuz səviyyəli giriş</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/FEATURES.md">Xüsusiyyətlər Qalereyası</a></b></td><td>Ekran görüntüləri ilə vizual tablosuna tur</td></tr>
+  <tr><td nowrap><b><a href="docs/architecture/CODEBASE_DOCUMENTATION.md">Kod Bazasının Sənədləşdirilməsi</a></b></td><td>Başlanğıclar üçün uyğun kod bazası yolu</td></tr>
 </table>
 
-### 🤖 Protokollar və API-lər
+### 🤖 Protokolları və APIs
 
 <table>
   <tr><th align="left">Sənəd</th><th align="left">Təsvir</th></tr>
-  <tr><td nowrap><b><a href="docs/reference/API_REFERENCE.md">API arayışı</a></b></td><td>Nümunələrlə bütün son nöqtələr</td></tr>
-  <tr><td nowrap><b><a href="docs/openapi.yaml">OpenAPI spesifikasiyası</a></b></td><td>OpenAPI 3.0 spesifikasiyası</td></tr>
-  <tr><td nowrap><b><a href="open-sse/mcp-server/README.md">MCP serveri</a></b></td><td>110 MCP aləti, IDE konfiqurasiyaları, Python/TS/Go klientləri</td></tr>
-  <tr><td nowrap><b><a href="docs/frameworks/MCP-SERVER.md">MCP serveri təlimatı</a></b></td><td>MCP quraşdırılması, nəqliyyat vasitələri və alət arayışı</td></tr>
-  <tr><td nowrap><b><a href="src/lib/a2a/README.md">A2A serveri</a></b></td><td>JSON-RPC 2.0 protokolu, bacarıqlar, axın, tapşırıqların idarə edilməsi</td></tr>
-  <tr><td nowrap><b><a href="docs/frameworks/A2A-SERVER.md">A2A serveri təlimatı</a></b></td><td>A2A agent kartı, tapşırıqlar, bacarıqlar və axın</td></tr>
+  <tr><td nowrap><b><a href="docs/reference/API_REFERENCE.md">API İstinad</a></b></td><td>Nümunələr ilə bütün son nöqtələr</td></tr>
+  <tr><td nowrap><b><a href="docs/openapi.yaml">OpenAPI Spec</a></b></td><td>OpenAPI 3.0 spesifikasiyası</td></tr>
+  <tr><td nowrap><b><a href="open-sse/mcp-server/README.md">MCP Server</a></b></td><td>110 MCP alətləri, IDE konfiqurasiyaları, Python/TS/Go müştəriləri</td></tr>
+  <tr><td nowrap><b><a href="docs/frameworks/MCP-SERVER.md">MCP Server Bələdçisi</a></b></td><td>MCP quraşdırılması, nəqli və alət arayışı</td></tr>
+  <tr><td nowrap><b><a href="src/lib/a2a/README.md">A2A Server</a></b></td><td>JSON-RPC 2.0 protokolu, bacarıqlar, axın, tapşırıq idarəsi</td></tr>
+  <tr><td nowrap><b><a href="docs/frameworks/A2A-SERVER.md">A2A Server Bələdçisi</a></b></td><td>A2A agent kartı, tapşırıqlar, bacarıqlar və axın</td></tr>
 </table>
 
-### 📋 Layihə və keyfiyyət
+### 📋 Layihəsi və Keyfiyyət
 
 <table>
   <tr><th align="left">Sənəd</th><th align="left">Təsvir</th></tr>
-  <tr><td nowrap><b><a href="CONTRIBUTING.md">Töhfə vermə</a></b></td><td>İnkişaf mühiti və təlimatlar</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/BRANCHING_MODEL.md">Budaqlanma və buraxılış modeli</a></b></td><td>PR-lərin hədəfləndiyi yer (<code>release/*</code>), <code>main</code> və teqlərin nə demək olduğu</td></tr>
-  <tr><td nowrap><b><a href="CHANGELOG.md">Dəyişikliklər jurnalı</a></b></td><td>Versiyalar üzrə tam buraxılış tarixçəsi</td></tr>
-  <tr><td nowrap><b><a href="SECURITY.md">Təhlükəsizlik siyasəti</a></b></td><td>Zəifliklərin bildirilməsi və təhlükəsizlik praktikaları</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/I18N.md">i18n təlimatı</a></b></td><td>67 dil dəstəyi, tərcümə iş axını, RTL</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/RELEASE_CHECKLIST.md">Buraxılış yoxlama siyahısı</a></b></td><td>Buraxılışdan əvvəl yoxlama mərhələləri</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/COVERAGE_PLAN.md">Əhatə planı</a></b></td><td>8,400-dən çox izlənilən test faylında 60,000-dən çox statik test deklarasiyası üçün test əhatəsi strategiyası</td></tr>
+  <tr><td nowrap><b><a href="CONTRIBUTING.md">Töhfə vermək</a></b></td><td>İnkişafın qurulması və təlimatları</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/BRANCHING_MODEL.md">Budaqlanma və Buraxılış Modeli</a></b></td><td>Harada PRs hədəfi (<code>release/*</code>), <code>main</code> və teqlər nə deməkdir</td></tr>
+  <tr><td nowrap><b><a href="CHANGELOG.md">Dəyişikliklər jurnalı</a></b></td><td>Tam versiyanın buraxılış tarixçəsi</td></tr>
+  <tr><td nowrap><b><a href="SECURITY.md">Təhlükəsizlik Siyasəti</a></b></td><td>Zəiflik barədə hesabat və təhlükəsizlik təcrübələri</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/I18N.md">i18n Bələdçisi</a></b></td><td>67 dil dəstəyi, tərcümə iş axını, RTL</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/RELEASE_CHECKLIST.md">Buraxılış Yoxlama Siyahısı</a></b></td><td>Buraxılışdan əvvəl doğrulama addımları</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/COVERAGE_PLAN.md">Əhatə Planı</a></b></td><td>8,400 + izlənilən test faylları üzrə 60,000 + statik test bəyannaməsi üçün sınaq əhatə dairəsi strategiyası</td></tr>
 </table>
 
 <br/>
 
 <div align="center">
 
-# ⭐ Əsas töhfəçilər
+# ⭐ Ən Yaxşı İştirakçılar
 
-> OmniRoute həvəsli açıq mənbə icması tərəfindən formalaşdırılır. Bu şəxslər layihənin keyfiyyətinə, sabitliyinə və əhatə dairəsinə birbaşa təsir edən müstəsna töhfələr veriblər. **Təşəkkür edirik.**
+> OmniRoute ehtiraslı açıq mənbə icması tərəfindən formalaşır. Bu şəxslər layihənin keyfiyyətinə, sabitliyinə və əhatə dairəsinə birbaşa təsir edən müstəsna töhfələr veriblər.** təşəkkür edirəm.**
 
-### Birləşdirilmiş pull request-lərə görə xarici töhfəçilər
+### Birləşdirilmiş çəkmə sorğuları ilə xarici töhfəçilər
 
 <table>
-  <tr><th align="center">Reytinq</th><th align="left">Töhfəçi</th><th align="center">Birləşdirilmiş PR-lər</th><th align="right">~Dəyişdirilmiş sətirlər</th></tr>
+  <tr><th align="center">Rütbə</th><th align="left">Töhfəçi</th><th align="center">Birləşdirilmiş PRs</th><th align="right">~ Dəyişən xətlər</th></tr>
   <tr><td align="center">1</td><td align="left"><a href="https://github.com/maxmad64bis"><b>maxmad64bis</b></a></td><td align="center">418</td><td align="right">25,367,739</td></tr>
   <tr><td align="center">2</td><td align="left"><a href="https://github.com/HouMinXi"><b>HouMinXi</b></a></td><td align="center">295</td><td align="right">13,557,796</td></tr>
-  <tr><td align="center">3</td><td align="left"><a href="https://github.com/pacocartones"><b>pacocartones</b></a></td><td align="center">222</td><td align="right">81,551</td></tr>
+  <tr><td align="center">3</td><td align="left"><a href="https://github.com/pacocartones"><b>pakokartonlar</b></a></td><td align="center">222</td><td align="right">81,551</td></tr>
   <tr><td align="center">4</td><td align="left"><a href="https://github.com/backryun"><b>backryun</b></a></td><td align="center">210</td><td align="right">270,562</td></tr>
   <tr><td align="center">5</td><td align="left"><a href="https://github.com/JxnLexn"><b>JxnLexn</b></a></td><td align="center">198</td><td align="right">3,570,623</td></tr>
   <tr><td align="center">6</td><td align="left"><a href="https://github.com/oyi77"><b>oyi77</b></a></td><td align="center">190</td><td align="right">411,243</td></tr>
   <tr><td align="center">7</td><td align="left"><a href="https://github.com/KooshaPari"><b>KooshaPari</b></a></td><td align="center">151</td><td align="right">5,972,314</td></tr>
-  <tr><td align="center">8</td><td align="left"><a href="https://github.com/rdself"><b>rdself</b></a></td><td align="center">145</td><td align="right">80,663</td></tr>
+  <tr><td align="center">8</td><td align="left"><a href="https://github.com/rdself"><b>rd özü</b></a></td><td align="center">145</td><td align="right">80,663</td></tr>
   <tr><td align="center">9</td><td align="left"><a href="https://github.com/RaviTharuma"><b>RaviTharuma</b></a></td><td align="center">123</td><td align="right">500,065</td></tr>
   <tr><td align="center">10</td><td align="left"><a href="https://github.com/herjarsa"><b>herjarsa</b></a></td><td align="center">88</td><td align="right">230,872</td></tr>
   <tr><td align="center">11</td><td align="left"><a href="https://github.com/hartmark"><b>hartmark</b></a></td><td align="center">85</td><td align="right">2,849,623</td></tr>
   <tr><td align="center">12</td><td align="left"><a href="https://github.com/jonlwheat2-gif"><b>jonlwheat2-gif</b></a></td><td align="center">68</td><td align="right">69,097</td></tr>
-  <tr><td align="center">13</td><td align="left"><a href="https://github.com/artickc"><b>artickc</b></a></td><td align="center">62</td><td align="right">43,502</td></tr>
+  <tr><td align="center">13</td><td align="left"><a href="https://github.com/artickc"><b>məqaləc</b></a></td><td align="center">62</td><td align="right">43,502</td></tr>
   <tr><td align="center">14</td><td align="left"><a href="https://github.com/xiaoyaner0201"><b>xiaoyaner0201</b></a></td><td align="center">59</td><td align="right">126,220</td></tr>
-  <tr><td align="center">15</td><td align="left"><a href="https://github.com/chirag127"><b>chirag127</b></a></td><td align="center">52</td><td align="right">6,661</td></tr>
+  <tr><td align="center">15</td><td align="left"><a href="https://github.com/chirag127"><b>çiraq127</b></a></td><td align="center">52</td><td align="right">6,661</td></tr>
   <tr><td align="center">16</td><td align="left"><a href="https://github.com/xz-dev"><b>xz-dev</b></a></td><td align="center">50</td><td align="right">245,976</td></tr>
-  <tr><td align="center">17</td><td align="left"><a href="https://github.com/woodsonl"><b>woodsonl</b></a></td><td align="center">48</td><td align="right">811,771</td></tr>
+  <tr><td align="center">17</td><td align="left"><a href="https://github.com/woodsonl"><b>Woodsonl</b></a></td><td align="center">48</td><td align="right">811,771</td></tr>
   <tr><td align="center">18</td><td align="left"><a href="https://github.com/rqzbeh"><b>rqzbeh</b></a></td><td align="center">46</td><td align="right">151,229</td></tr>
   <tr><td align="center">19</td><td align="left"><a href="https://github.com/MumuTW"><b>MumuTW</b></a></td><td align="center">43</td><td align="right">28,166</td></tr>
   <tr><td align="center">19</td><td align="left"><a href="https://github.com/QuangBlue"><b>QuangBlue</b></a></td><td align="center">43</td><td align="right">13,112</td></tr>
 </table>
 
-<sub>Siyahıyaalma 2026-11-03 03:01:19 UTC tarixində canlı <code>release/v3.8.53</code> ucu <code>05bc048d6c</code> ilə aparılıb. Səhifələnmiş GitHub GraphQL siyahıyaalması 9,947 birləşdirilmiş PR ehtiva edir: 4,130-u repozitoriya sahibinə, 240-ı Dependabot-a, 6-sı digər botlara/tətbiqlərə və <b>5,571-i 883 fərqli töhfəçidən olan xarici PR-lərə</b> aiddir. “Dəyişdirilmiş sətirlər” GitHub əlavələri + silinmələridir və yaradılmış faylları, lockfile-ları, kataloqları, tərcümələri və sənədləri əhatə edir; bu, müəllif tərəfindən yazılmış LOC deyil, dəyişiklik həcmini göstərir. 53 PR GitHub diff-lərində 500,000-dən çox sətir göstərir (məsələn, tək provayder əlavəsi olan #13399 2,347 dəyişdirilmiş fayl sadalayır), bu da yuxarıdakı bir neçə ümumi göstəricini şişirdir. Eyni nəticə əldə edənlər birlikdə sıralanır.</sub>
+<sub>Siyahıyaalma aparıldı 2026-11-03 03:01:19 UTC canlı <code>release/v3.8.53</code> tip <code>05bc048d6c</code> ilə. Səhifələnmiş GitHub GraphQL siyahıyaalınması 9,947 birləşdirilmiş PRs dən ibarətdir: 4,130-u depo sahibi, 240-ı Dependabot, 6-sı digər bots/apps və <b>883 fərqli ianəçidən 5,571 xarici PRs</b>. “Dəyişdirilmiş sətirlər” GitHub əlavələri + silinmələridir və yaradılan fayllar, kilid faylları, kataloqlar, tərcümələr və sənədləri ehtiva edir; bu LOC müəllifi deyil, chrn edir. 53 PRs hesabat GitHub 500,000 sətirdən yuxarı fərqlənir (məsələn, #13399, tək provayder əlavəsi, 2,347 dəyişdirilmiş faylı siyahıya alır), bu da yuxarıdakı bir neçə cəmi şişirdir. Bağlar birlikdə sıralanır.</sub>
 
-### GitHub-a aid edilən commit-lər
+### GitHub atributlu öhdəliklər
 
 <table>
   <tr>
     <td align="center" width="160">
       <a href="https://github.com/maxmad64bis">
         <img src="https://github.com/maxmad64bis.png" width="40" style="border-radius:50%" alt="Dizzle"/><br/>
-        <b>Dizzle</b>
+        <b>Baş döndərmək</b>
       </a><br/>
-      <sub>🥇 GitHub-aid edilən 418 töhfə</sub>
+      <sub>🥇 418 GitHub atributlu öhdəliklər</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/HouMinXi">
         <img src="https://github.com/HouMinXi.png" width="40" style="border-radius:50%" alt="Bob.Hou"/><br/>
         <b>Bob.Hou</b>
       </a><br/>
-      <sub>🥈 GitHub-aid edilən 294 töhfə</sub>
+      <sub>🥈 294 GitHub atributlu öhdəliklər</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/oyi77">
         <img src="https://github.com/oyi77.png" width="40" style="border-radius:50%" alt="Paijo"/><br/>
         <b>Paijo</b>
       </a><br/>
-      <sub>🥉 GitHub-aid edilən 229 töhfə</sub>
+      <sub>🥉 229 GitHub atributlu öhdəliklər</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/pacocartones">
         <img src="https://github.com/pacocartones.png" width="40" style="border-radius:50%" alt="Paco Cartones"/><br/>
         <b>Paco Cartones</b>
       </a><br/>
-      <sub>🏅 GitHub-aid edilən 222 töhfə</sub>
+      <sub>🏅 222 GitHub atributlu öhdəliklər</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/backryun">
         <img src="https://github.com/backryun.png" width="40" style="border-radius:50%" alt="backryun"/><br/>
         <b>backryun</b>
       </a><br/>
-      <sub>🏅 GitHub-aid edilən 202 töhfə</sub>
+      <sub>🏅 202 GitHub atributlu öhdəliklər</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/JxnLexn">
         <img src="https://github.com/JxnLexn.png" width="40" style="border-radius:50%" alt="Jan Leon"/><br/>
-        <b>Jan Leon</b>
+        <b>Yan Leon</b>
       </a><br/>
-      <sub>🏅 GitHub-aid edilən 134 töhfə</sub>
+      <sub>🏅 134 GitHub atributlu öhdəliklər</sub>
     </td>
   </tr>
   <tr>
     <td align="center" width="160">
       <a href="https://github.com/RaviTharuma">
         <img src="https://github.com/RaviTharuma.png" width="40" style="border-radius:50%" alt="Ravi Tharuma"/><br/>
-        <b>Ravi Tharuma</b>
+        <b>Ravi Taruma</b>
       </a><br/>
-      <sub>🏅 GitHub-aid edilən 126 töhfə</sub>
+      <sub>🏅 126 GitHub atributlu öhdəliklər</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/hartmark">
         <img src="https://github.com/hartmark.png" width="40" style="border-radius:50%" alt="Markus Hartung"/><br/>
-        <b>Markus Hartung</b>
+        <b>Markus Hartunq</b>
       </a><br/>
-      <sub>🏅 GitHub-aid edilən 115 töhfə</sub>
+      <sub>🏅 115 GitHub atributlu öhdəliklər</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/rdself">
         <img src="https://github.com/rdself.png" width="40" style="border-radius:50%" alt="Randi"/><br/>
         <b>Randi</b>
       </a><br/>
-      <sub>🏅 GitHub-aid edilən 108 töhfə</sub>
+      <sub>🏅 108 GitHub atributlu öhdəliklər</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/christopher-s">
         <img src="https://github.com/christopher-s.png" width="40" style="border-radius:50%" alt="Chris"/><br/>
         <b>Chris</b>
       </a><br/>
-      <sub>🏅 GitHub-aid edilən 70 töhfə</sub>
+      <sub>🏅 70 GitHub atributlu öhdəliklər</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/jonlwheat2-gif">
         <img src="https://github.com/jonlwheat2-gif.png" width="40" style="border-radius:50%" alt="WebPerson"/><br/>
         <b>WebPerson</b>
       </a><br/>
-      <sub>🏅 GitHub-aid edilən 68 töhfə</sub>
+      <sub>🏅 68 GitHub atributlu öhdəliklər</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/KooshaPari">
         <img src="https://github.com/KooshaPari.png" width="40" style="border-radius:50%" alt="Koosha Paridehpour"/><br/>
         <b>Koosha Paridehpour</b>
       </a><br/>
-      <sub>🏅 GitHub-aid edilən 68 töhfə</sub>
+      <sub>🏅 68 GitHub atributlu öhdəliklər</sub>
     </td>
   </tr>
 </table>
 
-<sub>2026-11-03 02:09:16 UTC tarixində yenidən yoxlanılıb: GitHub-aid edilən töhfələr repozitoriyanın Contributors API-si tərəfindən <code>release/v3.8.53</code> əsas budağı üçün bildirilib. API 903 identiklik qaytardı (429 istifadəçi, 2 bot, 472 anonim); bu cədvəl texniki xidmətçini, botları və anonim identiklikləri istisna edir və müsabiqədəki bərabər nəticələri saxlayır. Bu göstərici həm yuxarıdakı birləşdirilmiş PR reytinqindən, həm də aşağıdakı Git-metadatası siyahıyaalınmasından fərqlənir.</sub>
+<sub>2026-11-03 02:09:16 UTC yenidən yoxlanılıb: <code>release/v3.8.53</code> defolt filialı üçün Contributors API deposu tərəfindən GitHub atributlu öhdəliklər. API 903 şəxsiyyəti qaytardı (429 istifadəçi, 2 bot, 472 anonim); bu cədvəl baxıcını, botları və anonim şəxsiyyətləri istisna edir və rəqabət əlaqələrini saxlayır. O, həm yuxarıdakı birləşmiş PR reytinqindən, həm də aşağıdakı Git-metadata siyahıyaalmasından fərqlidir.</sub>
 
-> 🙏 Bu töhfəçilərin funksiyaları, səhv düzəlişləri və infrastruktur təkmilləşdirmələri OmniRoute-u etibarlı və zəngin funksiyalı edən amillərin **əsas hissəsidir**. Hər pull request, hər test nümunəsi və hər i18n tərcümə faylı əhəmiyyətlidir. Açıq mənbə belə insanlar tərəfindən yaradılır.
+> 🙏 Bu töhfə verənlərin xüsusiyyətləri, səhv düzəlişləri və infrastruktur təkmilləşdirmələri a** əsas hissəsi** OmniRoute etibarlı və xüsusiyyətlərlə zəngin edən şeylər. Hər çəkmə sorğusu, hər test işi və hər i18n tərcümə faylı vacibdir. Açıq mənbə onlar kimi insanlar tərəfindən qurulur.
 
 </div>
 

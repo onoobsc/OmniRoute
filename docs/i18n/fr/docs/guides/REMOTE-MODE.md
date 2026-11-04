@@ -44,37 +44,35 @@ votre ordinateur portable                OmniRoute distant (VPS)
 
 ---
 
-## Connexion
+## De liaison
 
-### Avec le mot de passe de gestion (amorçage)
+### Avec le mot de passe de gestion (bootstrap)
 
 ```bash
 omniroute connect 192.168.0.15
-# Mot de passe de gestion pour http://192.168.0.15:20128: ********
-# ✔ Connecté à http://192.168.0.15:20128 — contexte '192.168.0.15' (portée : admin)
+# Management password for http://192.168.0.15:20128: ********
+# ✔ Connected to http://192.168.0.15:20128 — context '192.168.0.15' (scope: admin)
 ```
 
-Le flux par mot de passe émet par défaut un jeton **admin** (vous détenez le mot de passe, vous
-disposez donc déjà d’un contrôle total). Réduisez la portée avec `--scope` :
+Le flux de mots de passe crée un** administrateur** token par défaut (vous détenez le mot de passe, vous avez donc déjà le contrôle total). Downscope avec `--scope`:
 
 ```bash
 omniroute connect 192.168.0.15 --scope write
 ```
 
-Options : `--port <p>` (lorsque l’hôte n’en spécifie aucun), `--name <ctx>` (nom du contexte),
-`--scope read|write|admin`. Une URL complète est respectée telle quelle :
-`omniroute connect https://omni.example.com`.
+Options : `--port <p>` (lorsque l'hôte n'en a pas), `--name <ctx>` (nom du contexte), `--scope read|write|admin`. Un URL complet est honoré tel quel : `omniroute connect https://omni.example.com`.
 
-### Avec un jeton généré au préalable
+Lorsque le serveur a activé l'authentification à deux facteurs sur le tableau de bord (Paramètres → Security), le mot de passe seul est refusé : le CLI demande alors le code à l'application d'authentification (ou un code de récupération). Passez-le dès le départ avec `--totp <code>` pour une utilisation non interactive.
 
-Générez un jeton doté d’une portée dans le tableau de bord (ou avec `omniroute tokens create`) et
-collez-le — aucun mot de passe n’est nécessaire :
+### Avec un token pré-généré
+
+Générez un jeton étendu dans le tableau de bord (ou avec `omniroute tokens create`) et collez-le — sans mot de passe :
 
 ```bash
 omniroute connect 192.168.0.15 --key oma_live_xxxxxxxx
 ```
 
-La CLI le valide via `GET /api/cli/whoami` et l’enregistre comme contexte actif.
+Le CLI le valide via `GET /api/cli/whoami` et l'enregistre comme contexte actif.
 
 ---
 
@@ -455,14 +453,14 @@ omniroute contexts remove 192-168-0-15 --yes   # supprime le contexte local (mê
 
 ---
 
-## Points de terminaison de l’API (référence)
+## points de terminaison API (référence)
 
-| Méthode | Route                 | Authentification        | Portée                               |
-| ------- | --------------------- | ----------------------- | ------------------------------------ |
-| POST    | `/api/cli/connect`    | mot de passe de gestion | — (public, protégé par mot de passe) |
-| GET     | `/api/cli/whoami`     | jeton d’accès           | lecture                              |
-| GET     | `/api/cli/tokens`     | jeton d’accès           | administration                       |
-| POST    | `/api/cli/tokens`     | jeton d’accès           | administration                       |
-| DELETE  | `/api/cli/tokens/:id` | jeton d’accès           | administration                       |
+| Méthode | Itinéraire            | Authentification            | Portée                               |
+| ------- | --------------------- | --------------------------- | ------------------------------------ |
+| POST    | `/api/cli/connect`    | mot de passe; 2FA si activé | — (public, protégé par mot de passe) |
+| GET     | `/api/cli/whoami`     | jeton d'accès               | lire                                 |
+| GET     | `/api/cli/tokens`     | jeton d'accès               | administrateur                       |
+| POST    | `/api/cli/tokens`     | jeton d'accès               | administrateur                       |
+| DELETE  | `/api/cli/tokens/:id` | jeton d'accès               | administrateur                       |
 
-Consultez [openapi.yaml](../openapi.yaml) pour les schémas complets.
+Voir [openapi.yaml](../openapi.yaml) pour les schémas complets.

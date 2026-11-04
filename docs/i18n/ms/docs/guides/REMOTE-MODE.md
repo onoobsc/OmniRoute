@@ -46,29 +46,27 @@ komputer riba anda                       OmniRoute jauh (VPS)
 
 ## Menyambung
 
-### Dengan kata laluan pengurusan (pemulaan)
+### Dengan kata laluan pengurusan (bootstrap)
 
 ```bash
 omniroute connect 192.168.0.15
-# Kata laluan pengurusan untuk http://192.168.0.15:20128: ********
-# ✔ Disambungkan ke http://192.168.0.15:20128 — konteks '192.168.0.15' (skop: admin)
+# Management password for http://192.168.0.15:20128: ********
+# ✔ Connected to http://192.168.0.15:20128 — context '192.168.0.15' (scope: admin)
 ```
 
-Aliran kata laluan menghasilkan token **admin** secara lalai (anda memiliki kata laluan tersebut,
-jadi anda sememangnya mempunyai kawalan penuh). Kecilkan skop dengan `--scope`:
+Aliran kata laluan memerlukan satu** admin** token secara lalai (anda memegang kata laluan, jadi anda sudah mempunyai kawalan penuh). Downskop dengan `--scope`:
 
 ```bash
 omniroute connect 192.168.0.15 --scope write
 ```
 
-Pilihan: `--port <p>` (apabila hos tidak mempunyai port), `--name <ctx>` (nama konteks),
-`--scope read|write|admin`. URL penuh digunakan tanpa perubahan:
-`omniroute connect https://omni.example.com`.
+Pilihan: `--port <p>` (apabila hos tiada), `--name <ctx>` (nama konteks), `--scope read|write|admin`. URL penuh dihormati apa adanya: `omniroute connect https://omni.example.com`.
 
-### Dengan token yang dijana terlebih dahulu
+Apabila pelayan telah mendayakan pengesahan dua faktor papan pemuka (Tetapan → Security), kata laluan sahaja ditolak: CLI kemudian meminta kod daripada apl pengesah (atau kod pemulihan). Hantarkannya ke hadapan dengan `--totp <code>` untuk kegunaan bukan interaktif.
 
-Jana token berskop dalam papan pemuka (atau dengan `omniroute tokens create`) dan
-tampalkannya — kata laluan tidak diperlukan:
+### Dengan token yang telah dijana sebelumnya
+
+Hasilkan token berskop dalam papan pemuka (atau dengan `omniroute tokens create`) dan tampalkannya — tanpa kata laluan diperlukan:
 
 ```bash
 omniroute connect 192.168.0.15 --key oma_live_xxxxxxxx
@@ -452,14 +450,14 @@ omniroute contexts remove 192-168-0-15 --yes   # buang konteks setempat (walaupu
 
 ---
 
-## Titik akhir API (rujukan)
+## titik akhir API (rujukan)
 
-| Kaedah | Laluan                | Pengesahan             | Skop                             |
-| ------ | --------------------- | ---------------------- | -------------------------------- |
-| POST   | `/api/cli/connect`    | kata laluan pengurusan | — (awam, dilindungi kata laluan) |
-| GET    | `/api/cli/whoami`     | token akses            | read                             |
-| GET    | `/api/cli/tokens`     | token akses            | admin                            |
-| POST   | `/api/cli/tokens`     | token akses            | admin                            |
-| DELETE | `/api/cli/tokens/:id` | token akses            | admin                            |
+| Kaedah | Laluan                | Pengesahan                       | Skop                           |
+| ------ | --------------------- | -------------------------------- | ------------------------------ |
+| POST   | `/api/cli/connect`    | kata laluan; 2FA jika dihidupkan | — (awam, berpagar kata laluan) |
+| GET    | `/api/cli/whoami`     | token akses                      | membaca                        |
+| GET    | `/api/cli/tokens`     | token akses                      | admin                          |
+| POST   | `/api/cli/tokens`     | token akses                      | admin                          |
+| DELETE | `/api/cli/tokens/:id` | token akses                      | admin                          |
 
 Lihat [openapi.yaml](../openapi.yaml) untuk skema penuh.

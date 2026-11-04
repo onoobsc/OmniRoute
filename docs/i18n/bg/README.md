@@ -21,19 +21,19 @@
 
 <div align="center">
 
-## 💰 ~1.62B токена / месец през безплатните нива на трети страни
+## 💰 ~ 1.62B жетони / месец в нива на безплатни трети страни
 
 </div>
 
-> **Използвайте собствени акаунти при доставчиците.** Това е приблизителна сума, събрана от отделно допустимите безплатни нива на трети страни, а не токен грант от OmniRoute. Регистрирайте се, вземете идентификационни данни, където е необходимо, и свържете доставчиците, които можете да използвате; всеки доставчик контролира своите лимити, наличност и условия.
+> **Донесете свои собствени акаунти на доставчик.** Това е прогнозна сума за отделно отговарящи на условията безплатни нива на трети страни, а не символично отпускане от OmniRoute. Регистрирайте се, получете идентификационни данни, когато е необходимо, и свържете доставчиците, които можете да използвате; всеки доставчик контролира своите ограничения, наличност и условия.
 >
-> Ръчното комбиниране на безплатни нива е болезнено — десетки SDK-та, десетки лимити на заявки и никаква представа колко всъщност имате. OmniRoute каталогизира **485 безплатни нива в 34 ключа за повтарящи се пулове** и изчислява токен сумата от **17 пула с публикуван положителен месечен бюджет плюс пет Groq лимита на модел**, дедуплицирани по споделен пул. Квоти, които се отварят само след регионална идентификация (днес: ModelScope), се показват отделно, +~6M след регионална верификация, и никога не се включват в основната сума. Резултатът остава видим на таблото (`/dashboard/free-tiers`).
+> Подреждането на безплатни нива на ръка е болезнено — десетки SDKs, десетки ограничения на скоростта и нямате представа колко всъщност имате. OmniRoute каталози** 484 безплатни нива на влизане в 34 повтарящи се ключа на пула** и изчислява заглавието на токена от** 17 басейна с публикуван положителен месечен бюджет плюс пет капачки Groq за всеки модел** , дедупликиран от споделения пул. Квотите, които се отварят само след регионална проверка на самоличността (днес: ModelScope), се показват отделно, +~ 6M зад регионалната проверка на самоличността и никога не се сумират в заглавието. Резултатът остава видим на таблото (`/dashboard/free-tiers`).
 
-<img src="./docs/diagrams/free-tier-budget.svg" width="100%" alt="OmniRoute карта на безплатния бюджет: ~1.62B безплатни токена месечно стабилно, до ~2.22B през първия месец с кредити при регистрация, от 34 документирани ключа за повтарящи се пулове, покриващи 485 каталогизирани безплатни нива зад един крайна точка. Честна дедупликация — всеки споделен пул се брои веднъж, включително 17 повтарящи се пула с публикуван положителен месечен токен бюджет плюс пет Groq лимита на модел; 12 доставчика са отбелязани като рискови в каталога с условия, така че вие решавате. Лентата на бюджета включва Mistral 1B, Nara 210M, LLM7 150M, xKiro 150M, Groq 30M (пет лимита на модел) и по-малки пулове, плюс кредити при регистрация за първия месец и постоянно безплатни доставчици без лимит на токени, показани отделно, за да не надуват основната сума. На живо използвано/оставащо на /dashboard/free-tiers."/>
+<img src="./docs/diagrams/free-tier-budget.svg" width="100%" alt="OmniRoute free-tier budget card: ~1.62B free tokens per month steady, up to ~2.22B in the first month with signup credits, from 34 documented recurring pool keys covering 484 cataloged free-tier entries behind one endpoint. Honest pool-deduped math — each shared pool counted once, including 17 recurring pools with a published positive monthly token budget plus five per-model Groq caps; 12 providers are marked avoid in the terms-risk catalog so you decide. Budget bar includes Mistral 1B, Nara 210M, LLM7 150M, xKiro 150M, Groq 30M (five per-model caps) and smaller pools, plus first-month signup credits and permanently-free no-token-cap providers surfaced separately so they never inflate the headline. Live used/remaining on /dashboard/free-tiers."/>
 
-> Анимирано обобщение на живата страница `/dashboard/free-tiers`. Пълна методология (дедупликация на пулове, кредитни нива, условия на доставчици): **[docs/reference/FREE_TIERS.md](docs/reference/FREE_TIERS.md)**.
+> Анимирано резюме на страницата `/dashboard/free-tiers` на живо. Пълна методология (дедупиране на пула, кредитни нива, условия на доставчик):** [docs/reference/FREE_TIERS.md](docs/reference/FREE_TIERS.md)** .
 >
-> <sub>Тези стойности се преаудитират на всеки две седмици спрямо живия каталог и **се променят и в двете посоки** — доставчик спира безплатно ниво и числото пада; появява се нов и то се покачва. Публикуваме това, което каталогът реално изчислява, никога закръглен най-добър случай.</sub>
+> <sub> Тези цифри се преразглеждат на всеки две седмици спрямо каталога на живо и** движете се в двете посоки** — доставчик прекратява безплатно ниво и броят пада; каца нов и се катери. Ние публикуваме това, което каталогът действително изчислява, никога най-добрия случай.</sub>
 
 <br/>
 
@@ -41,29 +41,23 @@
 
 <h3>
 
-⭐ Дайте звезда на репото, ако OMNIROUTE ви е помогнал да спестите пари и да улесните работата си.
+⭐ Стартирайте репото, ако OMNIROUTE ви е помогнал да спестите пари и да улесни работата ви.
 
 </h3>
 
-[![Stars](https://img.shields.io/github/stars/diegosouzapw/OmniRoute?style=social)](https://github.com/diegosouzapw/OmniRoute)
+[![Звезди](https://img.shields.io/github/stars/diegosouzapw/OmniRoute?style=social) ](https://github.com/diegosouzapw/OmniRoute)
 <a href="https://trendshift.io/repositories/23589" target="_blank"><img src="https://trendshift.io/api/badge/repositories/23589" alt="diegosouzapw%2FOmniRoute | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
-[![Star History Rank](https://api.star-history.com/badge?repo=diegosouzapw/OmniRoute&theme=dark)](https://www.star-history.com/diegosouzapw/omniroute)
-[![olud.ai](https://olud.ai/badge.php?tool=diegosouzapw-omniroute)](https://olud.ai/project/diegosouzapw-omniroute.html)
+[![Ранг в историята на звездите](https://api.star-history.com/badge?repo=diegosouzapw/OmniRoute&theme=dark) ](https://www.star-history.com/diegosouzapw/omniroute) [![olud.ai](https://olud.ai/badge.php?tool=diegosouzapw-omniroute) ](https://olud.ai/project/diegosouzapw-omniroute.html)
 
 ### 💬 Присъединете се към общността
 
-**👋 Последвайте поддръжника — първи научете за нови доставчици, версии и съвети:**
+**👋 Следвайте поддържащия — първо получете нови доставчици, версии и съвети:**
 
-[![Follow Diego on LinkedIn](https://img.shields.io/badge/Follow_Diego_on-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/diegosouzapw/)
-[![Follow @diegosouzapw on GitHub](https://img.shields.io/github/followers/diegosouzapw?style=for-the-badge&logo=github&logoColor=white&label=Follow%20on%20GitHub&color=181717)](https://github.com/diegosouzapw)
+[![Следвайте Диего в LinkedIn](https://img.shields.io/badge/Follow_Diego_on-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white) ](https://www.linkedin.com/in/diegosouzapw/) [![Следвайте @diegosouzapw в GitHub](https://img.shields.io/github/followers/diegosouzapw?style=for-the-badge&logo=github&logoColor=white&label=Follow%20on%20GitHub&color=181717) ](https://github.com/diegosouzapw)
 
-[![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/U47eFqAXCn)
-[![Telegram](https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/omnirouteOficial)
-[![WhatsApp Global](https://img.shields.io/badge/WhatsApp_Global-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/FvuCbrpZmQ6I85n2vW5QIC?s=cl&p=a&mlu=4)
-[![WhatsApp Brasil](https://img.shields.io/badge/WhatsApp_Brasil-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/KWgatljAjmbELQory59Oti?s=cl&p=a&mlu=4)
-[![Website](https://img.shields.io/badge/Website-omniroute.online-blue?logo=google-chrome&logoColor=white)](https://omniroute.online)
+[![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white) ](https://discord.gg/U47eFqAXCn) [![Telegram](https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white) ](https://t.me/omnirouteOficial) [![WhatsApp Global](https://img.shields.io/badge/WhatsApp_Global-25D366?style=for-the-badge&logo=whatsapp&logoColor=white) ](https://chat.whatsapp.com/FvuCbrpZmQ6I85n2vW5QIC?s=cl&p=a&mlu=4) [![WhatsApp Brasil](https://img.shields.io/badge/WhatsApp_Brasil-25D366?style=for-the-badge&logo=whatsapp&logoColor=white) ](https://chat.whatsapp.com/KWgatljAjmbELQory59Oti?s=cl&p=a&mlu=4) [![Уебсайт](https://img.shields.io/badge/Website-omniroute.online-blue?logo=google-chrome&logoColor=white) ](https://omniroute.online)
 
-**Въпроси, съвети за доставчици, пътна карта и поддръжка → [Discord](https://discord.gg/U47eFqAXCn) · [Telegram](https://t.me/omnirouteOficial) · WhatsApp [🌍 Глобално](https://chat.whatsapp.com/FvuCbrpZmQ6I85n2vW5QIC?s=cl&p=a&mlu=4) / [🇧🇷 Бразилия](https://chat.whatsapp.com/KWgatljAjmbELQory59Oti?s=cl&p=a&mlu=4) / [Портал](https://portal.sthub.com.br/communities/groups/st-hub/channels/Omniroute-World-8kRjmK)**
+**Въпроси, съвети на доставчика, пътна карта и поддръжка → [Discord](https://discord.gg/U47eFqAXCn) · [Telegram](https://t.me/omnirouteOficial) · WhatsApp [🌍 Global](https://chat.whatsapp.com/FvuCbrpZmQ6I85n2vW5QIC?s=cl&p=a&mlu=4) / [🇧🇷 Brasil](https://chat.whatsapp.com/KWgatljAjmbELQory59Oti?s=cl&p=a&mlu=4) / [Portal](https://portal.sthub.com.br/communities/groups/st-hub/channels/Omniroute-World-8kRjmK)**
 
 <br/>
 
@@ -1294,36 +1288,36 @@ OMNIROUTE_SKIP_POSTINSTALL=1 npm install -g omniroute   # CI=1 също го п�
 <br/>
 <div align="center">
 
-## 🛠️ Технологичен стек
+## 🛠️ технически стек
 
 </div>
 
 <table>
-  <tr><th align="left">Слой</th><th align="left">Технология</th></tr>
-  <tr><td nowrap><b>Среда за изпълнение</b></td><td>Node.js 22.x / 24.x LTS — <code>&gt;=22.22.2 &lt;23 || &gt;=24.0.0 &lt;27</code></td></tr>
-  <tr><td nowrap><b>Език</b></td><td>TypeScript 6.0 — <b>100% TypeScript</b> в <code>src/</code> и <code>open-sse/</code> (нула <code>any</code> в ядрото от v2.0)</td></tr>
-  <tr><td nowrap><b>Рамка</b></td><td>Next.js 16 + React 19 + Tailwind CSS 4</td></tr>
-  <tr><td nowrap><b>База данни</b></td><td>better-sqlite3 (SQLite, WAL журнал) + LowDB (JSON наследена) — 147 домейн модула, 222 миграции</td></tr>
-  <tr><td nowrap><b>Памет</b></td><td>Пълнотекстово търсене чрез SQLite FTS5 + векторни embeddings с int8 квантизация, типизирано затихване</td></tr>
-  <tr><td nowrap><b>Схеми</b></td><td>Zod 4 — проверка на входа/изхода на MCP инструментите + API договори</td></tr>
-  <tr><td nowrap><b>Протоколи</b></td><td>MCP (stdio / HTTP / SSE) + A2A v0.3 (JSON-RPC 2.0 + SSE)</td></tr>
-  <tr><td nowrap><b>Поточно предаване</b></td><td>Server-Sent Events (SSE) + WebSocket мост (<code>/v1/ws</code>)</td></tr>
-  <tr><td nowrap><b>Компресиране</b></td><td>12-двигателен конвейер — RTK, Caveman, LLMLingua-2 (MobileBERT ONNX), GCF, OmniGlyph</td></tr>
-  <tr><td nowrap><b>Удостоверяване и сигурност</b></td><td>OAuth 2.0 (PKCE) + JWT + API Keys + MCP удостоверяване с обхват · AES-256-GCM в покой · DOMPurify</td></tr>
-  <tr><td nowrap><b>Стелт</b></td><td>wreq-js — имитиране на JA3 / JA4 TLS отпечатък, 3-нивов прокси</td></tr>
-  <tr><td nowrap><b>Устойчивост</b></td><td>Автоматичен прекъсвач, експоненциално отстъпване, защита от thundering herd, автоматично комбинирано самовъзстановяване</td></tr>
-  <tr><td nowrap><b>Регистриране</b></td><td>pino — структурирани JSON регистри с контекст на заявката</td></tr>
-  <tr><td nowrap><b>Тестване</b></td><td>Тестов изпълнител на Node.js + Vitest — <b>над 60 000 статични декларации на тестове</b> в над 8 400 проследявани тестови файла (модулни, интеграционни, E2E, за сигурност, за екосистемата)</td></tr>
-  <tr><td nowrap><b>Платформи</b></td><td>Настолни компютри (Electron) · Android (Termux) · PWA (всеки браузър)</td></tr>
-  <tr><td nowrap><b>CI/CD</b></td><td>GitHub Actions — автоматично публикуване в npm + Docker Hub при издание</td></tr>
-  <tr><td nowrap><b>Връзки</b></td><td><a href="https://omniroute.online">Уебсайт</a> · <a href="https://www.npmjs.com/package/omniroute">npm</a> · <a href="https://hub.docker.com/r/diegosouzapw/omniroute">Docker Hub</a></td></tr>
+  <tr><th align="left">Слой</th><th align="left">технология</th></tr>
+  <tr><td nowrap><b>Време за изпълнение</b></td><td>Node.js 22.x / 24.x LTS — <code>&gt;=22.22.2 &lt;23 || &gt;=24.0.0 &lt;27</code></td></tr>
+  <tr><td nowrap><b>език</b></td><td>TypeScript 6.0 — <b>100% TypeScript</b> през <code>src/</code> и <code>open-sse/</code> (нула <code>any</code> в ядрото от v2.0)</td></tr>
+  <tr><td nowrap><b>рамка</b></td><td>Next.js 16 + React 19 + Tailwind CSS 4</td></tr>
+  <tr><td nowrap><b>База данни</b></td><td>better-sqlite3 (SQLite, WAL журналиране) + LowDB (JSON наследство) — 147 домейн модула, 222 миграции</td></tr>
+  <tr><td nowrap><b>памет</b></td><td>SQLite FTS5 пълен текст + int8-quantized векторни вграждания, въведен разпад</td></tr>
+  <tr><td nowrap><b>Схеми</b></td><td>Zod 4 — MCP инструмент I/O валидиране + API договори</td></tr>
+  <tr><td nowrap><b>протоколи</b></td><td>MCP (stdio / HTTP / SSE) + A2A v0.3 (JSON-RPC 2.0 + SSE)</td></tr>
+  <tr><td nowrap><b>Поточно предаване</b></td><td>Събития, изпратени от сървъра (SSE) + WebSocket мост (<code>/v1/ws</code>)</td></tr>
+  <tr><td nowrap><b>Компресия</b></td><td>12-двигателен тръбопровод — RTK, Caveman, LLMLingua-2 (MobileBERT ONNX), GCF, OmniGlyph</td></tr>
+  <tr><td nowrap><b>Auth &amp; сигурност</b></td><td>OAuth 2.0 (PKCE) + JWT + API Ключове + MCP удостоверяване с обхват · AES-256-GCM в покой · DOMPurify</td></tr>
+  <tr><td nowrap><b>Стелт</b></td><td>wreq-js — JA3 / JA4 TLS имитиране на пръстови отпечатъци, прокси на 3 нива</td></tr>
+  <tr><td nowrap><b>Устойчивост</b></td><td>Прекъсвач, експоненциално отдръпване, анти-гръмотевично стадо, автоматично комбинирано самолечение</td></tr>
+  <tr><td nowrap><b>Сеч</b></td><td>pino — структурирани JSON регистрационни файлове с контекст на заявка</td></tr>
+  <tr><td nowrap><b>Тестване</b></td><td>Node.js тест бегач + Vitest — <b>60 000 + статични тестови декларации</b> в 8400 + проследени тестови файла (единица, интеграция, E2E, сигурност, екосистема)</td></tr>
+  <tr><td nowrap><b>Платформи</b></td><td>Десктоп (Electron) · Android (Termux) · PWA (всеки браузър)</td></tr>
+  <tr><td nowrap><b>CI/CD</b></td><td>GitHub Действия — auto npm публикуване + Docker Hub при пускане</td></tr>
+  <tr><td nowrap><b>Връзки</b></td><td><a href="https://omniroute.online">уебсайт</a> · <a href="https://www.npmjs.com/package/omniroute">npm</a> · <a href="https://hub.docker.com/r/diegosouzapw/omniroute">Docker хъб</a></td></tr>
 </table>
 
 <div align="center">
 
 <br/>
 
-## 📖 Документация
+## 📖 документация
 
 </div>
 
@@ -1331,98 +1325,98 @@ OMNIROUTE_SKIP_POSTINSTALL=1 npm install -g omniroute   # CI=1 също го п�
 
 <table>
   <tr><th align="left">Документ</th><th align="left">Описание</th></tr>
-  <tr><td nowrap><b><a href="docs/guides/USER_GUIDE.md">Ръководство за потребителя</a></b></td><td>Доставчици, комбинации, интеграция с CLI, внедряване</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/SETUP_GUIDE.md">Ръководство за настройка</a></b></td><td>Пълни методи за инсталиране, конфигурации на CLI инструменти, настройка на протоколи, настройка на изчакванията</td></tr>
-  <tr><td nowrap><b><a href="docs/reference/CLI-TOOLS.md">Ръководство за CLI инструменти</a></b></td><td>Настройка на отделни инструменти за Claude Code, Codex, Cursor, Cline, OpenClaw, Kilo, Copilot</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/REMOTE-MODE.md">Отдалечен режим</a></b></td><td>Управление на отдалечен OmniRoute (VPS) от CLI на вашия лаптоп чрез токени за достъп с ограничен обхват</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/CLAUDE-CODE-CONFIGURATION.md">Конфигурация на Claude Code</a></b></td><td>Насочване на Claude Code към OmniRoute (локално/отдалечено) с <code>launch</code> + профили за отделни модели</td></tr>
-  <tr><td nowrap><b><a href="README.md#-quick-start">Бърз старт</a></b></td><td>Инсталиране в 3 стъпки → свързване → конфигуриране</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/USER_GUIDE.md">Ръководство за потребителя</a></b></td><td>Доставчици, комбинации, CLI интеграция, внедряване</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/SETUP_GUIDE.md">Ръководство за настройка</a></b></td><td>Пълни методи за инсталиране, конфигурации на инструмента CLI, настройка на протокола, настройка на времето за изчакване</td></tr>
+  <tr><td nowrap><b><a href="docs/reference/CLI-TOOLS.md">CLI Ръководство за инструменти</a></b></td><td>Настройка на инструмент за Claude Code, Codex, Cursor, Cline, OpenClaw, Kilo, Copilot</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/REMOTE-MODE.md">Дистанционен режим</a></b></td><td>Управлявайте отдалечен OmniRoute (VPS) от вашия лаптоп CLI чрез токени за достъп с обхват</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/CLAUDE-CODE-CONFIGURATION.md">Claude код конфигур</a></b></td><td>Насочете Claude код към OmniRoute (local/remote) с <code>launch</code> + профили на модел</td></tr>
+  <tr><td nowrap><b><a href="README.md#-quick-start">Бърз старт</a></b></td><td>Инсталиране в 3 стъпки → свържете → конфигурирайте</td></tr>
 </table>
 
-### 🔧 Операции и внедряване
+### Операции и внедряване 🔧
 
 <table>
   <tr><th align="left">Документ</th><th align="left">Описание</th></tr>
-  <tr><td nowrap><b><a href="docs/guides/DOCKER_GUIDE.md">Ръководство за Docker</a></b></td><td>Изпълнение на Docker, профили на Compose, Caddy HTTPS, тунели, тагове на образи</td></tr>
-  <tr><td nowrap><b><a href="contrib/podman/README.md">Ръководство за Podman</a></b></td><td>Интеграция с Quadlet systemd, podman-compose, SELinux</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/VM_DEPLOYMENT_GUIDE.md">Внедряване на VM</a></b></td><td>Пълно ръководство: настройка на VM + nginx + Cloudflare</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/FLY_IO_DEPLOYMENT_GUIDE.md">Внедряване във Fly.io</a></b></td><td>Внедряване във Fly.io с постоянно хранилище</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/TERMUX_GUIDE.md">Ръководство за Termux</a></b></td><td>Изпълнение на OmniRoute в Android чрез Termux</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/PWA_GUIDE.md">Ръководство за PWA</a></b></td><td>Инсталиране на прогресивно уеб приложение, кеширане, архитектура</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/UNINSTALL.md">Ръководство за деинсталиране</a></b></td><td>Пълно премахване при всички методи за инсталиране</td></tr>
-  <tr><td nowrap><b><a href="docs/reference/ENVIRONMENT.md">Конфигурация на средата</a></b></td><td>Пълни променливи и справочна информация за <code>.env</code></td></tr>
+  <tr><td nowrap><b><a href="docs/guides/DOCKER_GUIDE.md">Ръководство Docker</a></b></td><td>Docker run, съставяне на профили, Caddy HTTPS, тунели, тагове за изображения</td></tr>
+  <tr><td nowrap><b><a href="contrib/podman/README.md">Подман Ръководство</a></b></td><td>Quadlet systemd интеграция, podman-compose, SELinux</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/VM_DEPLOYMENT_GUIDE.md">Внедряване VM</a></b></td><td>Пълно ръководство: настройка VM + nginx + Cloudflare</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/FLY_IO_DEPLOYMENT_GUIDE.md">Внедряване на Fly.io</a></b></td><td>Разположете във Fly.io с постоянно съхранение</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/TERMUX_GUIDE.md">Ръководство за Termux</a></b></td><td>Стартирайте OmniRoute на Android чрез Termux</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/PWA_GUIDE.md">Ръководство PWA</a></b></td><td>Прогресивно инсталиране на уеб приложение, кеширане, архитектура</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/UNINSTALL.md">Ръководство за деинсталиране</a></b></td><td>Чисто премахване за всички методи на инсталиране</td></tr>
+  <tr><td nowrap><b><a href="docs/reference/ENVIRONMENT.md">Конфиг</a></b></td><td>Пълни <code>.env</code> променливи и препратки</td></tr>
 </table>
 
-### 🧠 Функции и архитектура
+### Функции и архитектура 🧠
 
 <table>
   <tr><th align="left">Документ</th><th align="left">Описание</th></tr>
-  <tr><td nowrap><b><a href="docs/architecture/ARCHITECTURE.md">Архитектура</a></b></td><td>Архитектура на системата, поток на данните и вътрешна реализация</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_GUIDE.md">Ръководство за компресиране</a></b></td><td>Конвейер със 7 опции: изключено / олекотено / стандартно / агресивно / ултра / RTK / комбинирано</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/RTK_COMPRESSION.md">RTK компресиране</a></b></td><td>Компресиране на изхода от команди, филтри, доверие, проверка, възстановяване на необработения изход</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_ENGINES.md">Енджини за компресиране</a></b></td><td>Caveman, RTK, комбинирани конвейери, повърхности на таблото/API/MCP</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_RULES_FORMAT.md">Формат на правилата за компресиране</a></b></td><td>Схеми на JSON пакети с правила за филтрите на Caveman и RTK</td></tr>
-  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_LANGUAGE_PACKS.md">Езикови пакети за компресиране</a></b></td><td>Откриване на език и създаване на пакети с правила за Caveman</td></tr>
-  <tr><td nowrap><b><a href="docs/architecture/RESILIENCE_GUIDE.md">Ръководство за устойчивост</a></b></td><td>Автоматични прекъсвачи, периоди на охлаждане, опашка, предотвратяване на лавинообразно натоварване, TLS spoofing</td></tr>
-  <tr><td nowrap><b><a href="docs/routing/AUTO-COMBO.md">Енджин за автоматични комбинации</a></b></td><td>Оценяване по 16 фактора, пакети за режими, самолечение</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/PROXY_GUIDE.md">Ръководство за прокси</a></b></td><td>Прокси система на 3 нива, пазар на 1proxy, CRUD операции в регистъра</td></tr>
-  <tr><td nowrap><b><a href="docs/reference/FREE_TIERS.md">Безплатни нива</a></b></td><td>Обединен указател: 34 документирани повтарящи се пула / 485 каталогизирани записа от безплатни нива</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/FEATURES.md">Галерия с функции</a></b></td><td>Визуална обиколка на таблото със снимки на екрана</td></tr>
-  <tr><td nowrap><b><a href="docs/architecture/CODEBASE_DOCUMENTATION.md">Документация на кодовата база</a></b></td><td>Преглед на кодовата база, предназначен за начинаещи</td></tr>
+  <tr><td nowrap><b><a href="docs/architecture/ARCHITECTURE.md">Архитектура</a></b></td><td>Системна архитектура, поток от данни и вътрешни елементи</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_GUIDE.md">Ръководство за компресиране</a></b></td><td>Конвейер със 7 опции: изключен / олекотен / стандартен / агресивен / ултра / RTK / подреден</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/RTK_COMPRESSION.md">RTK компресия</a></b></td><td>Компресия на команден изход, филтри, доверие, проверка, възстановяване на необработен изход</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_ENGINES.md">Двигатели с компресия</a></b></td><td>Пещерен човек, RTK, подредени тръбопроводи, dashboard/API/MCP повърхности</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_RULES_FORMAT.md">Формат на правилата за компресиране</a></b></td><td>JSON схеми на пакет правила за Caveman и RTK филтри</td></tr>
+  <tr><td nowrap><b><a href="docs/compression/COMPRESSION_LANGUAGE_PACKS.md">Езикови пакети за компресиране</a></b></td><td>Откриване на език и създаване на пакет с правила на Caveman</td></tr>
+  <tr><td nowrap><b><a href="docs/architecture/RESILIENCE_GUIDE.md">Ръководство за устойчивост</a></b></td><td>Прекъсвачи, охлаждане, опашка, анти-гръмотевично стадо, TLS спуфинг</td></tr>
+  <tr><td nowrap><b><a href="docs/routing/AUTO-COMBO.md">Автоматично комбиниран двигател</a></b></td><td>16-факторно точкуване, режимни пакети, самолечение</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/PROXY_GUIDE.md">Прокси ръководство</a></b></td><td>3-степенна прокси система, 1 прокси пазар, регистър CRUD</td></tr>
+  <tr><td nowrap><b><a href="docs/reference/FREE_TIERS.md">Безплатни нива</a></b></td><td>Консолидирана директория: 34 документирани повтарящи се пулове / 484 каталогизирани записи на безплатни нива</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/FEATURES.md">Галерия с функции</a></b></td><td>Визуална обиколка на таблото с екранни снимки</td></tr>
+  <tr><td nowrap><b><a href="docs/architecture/CODEBASE_DOCUMENTATION.md">Документация на кодовата база</a></b></td><td>Удобен за начинаещи преглед на кодовата база</td></tr>
 </table>
 
-### 🤖 Протоколи и API
+### 🤖 протоколи & APIs
 
 <table>
   <tr><th align="left">Документ</th><th align="left">Описание</th></tr>
-  <tr><td nowrap><b><a href="docs/reference/API_REFERENCE.md">Справочник за API</a></b></td><td>Всички крайни точки с примери</td></tr>
-  <tr><td nowrap><b><a href="docs/openapi.yaml">Спецификация на OpenAPI</a></b></td><td>Спецификация на OpenAPI 3.0</td></tr>
-  <tr><td nowrap><b><a href="open-sse/mcp-server/README.md">MCP сървър</a></b></td><td>110 MCP инструмента, конфигурации на IDE, клиенти за Python/TS/Go</td></tr>
-  <tr><td nowrap><b><a href="docs/frameworks/MCP-SERVER.md">Ръководство за MCP сървър</a></b></td><td>Инсталиране на MCP, транспортни механизми и справочник за инструментите</td></tr>
-  <tr><td nowrap><b><a href="src/lib/a2a/README.md">A2A сървър</a></b></td><td>Протокол JSON-RPC 2.0, умения, поточно предаване, управление на задачи</td></tr>
-  <tr><td nowrap><b><a href="docs/frameworks/A2A-SERVER.md">Ръководство за A2A сървър</a></b></td><td>Карта на A2A агента, задачи, умения и поточно предаване</td></tr>
+  <tr><td nowrap><b><a href="docs/reference/API_REFERENCE.md">справка API</a></b></td><td>Всички крайни точки с примери</td></tr>
+  <tr><td nowrap><b><a href="docs/openapi.yaml">OpenAPI Спец</a></b></td><td>OpenAPI 3.0 спецификация</td></tr>
+  <tr><td nowrap><b><a href="open-sse/mcp-server/README.md">MCP сървър</a></b></td><td>110 MCP инструмента, IDE конфигурации, Python/TS/Go клиенти</td></tr>
+  <tr><td nowrap><b><a href="docs/frameworks/MCP-SERVER.md">Ръководство за MCP сървър</a></b></td><td>MCP инсталация, транспорти и справка за инструменти</td></tr>
+  <tr><td nowrap><b><a href="src/lib/a2a/README.md">A2A сървър</a></b></td><td>JSON-RPC 2.0 протокол, умения, стрийминг, управление на задачи</td></tr>
+  <tr><td nowrap><b><a href="docs/frameworks/A2A-SERVER.md">Ръководство за A2A сървър</a></b></td><td>карта A2A агент, задачи, умения и стрийминг</td></tr>
 </table>
 
-### 📋 Проект и качество
+### 📋 проект и качество
 
 <table>
   <tr><th align="left">Документ</th><th align="left">Описание</th></tr>
-  <tr><td nowrap><b><a href="CONTRIBUTING.md">Принос</a></b></td><td>Настройка на средата за разработка и насоки</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/BRANCHING_MODEL.md">Модел на разклоняване и издания</a></b></td><td>Къде са насочени PR (<code>release/*</code>), какво означават <code>main</code> и таговете</td></tr>
-  <tr><td nowrap><b><a href="CHANGELOG.md">Дневник на промените</a></b></td><td>Пълна история на изданията по версии</td></tr>
-  <tr><td nowrap><b><a href="SECURITY.md">Политика за сигурност</a></b></td><td>Докладване на уязвимости и практики за сигурност</td></tr>
-  <tr><td nowrap><b><a href="docs/guides/I18N.md">Ръководство за i18n</a></b></td><td>Поддръжка на 67 езика, работен процес за превод, RTL</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/RELEASE_CHECKLIST.md">Контролен списък за издание</a></b></td><td>Стъпки за проверка преди издание</td></tr>
-  <tr><td nowrap><b><a href="docs/ops/COVERAGE_PLAN.md">План за покритие</a></b></td><td>Стратегия за тестово покритие на над 60 000 статични декларации на тестове в над 8 400 проследявани тестови файла</td></tr>
+  <tr><td nowrap><b><a href="CONTRIBUTING.md">Принос</a></b></td><td>Настройка и насоки за разработка</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/BRANCHING_MODEL.md">Модел на разклоняване и освобождаване</a></b></td><td>Къде е целта PRs (<code>release/*</code>), какво означават <code>main</code> и етикетите</td></tr>
+  <tr><td nowrap><b><a href="CHANGELOG.md">Дневник на промените</a></b></td><td>Пълна история на изданията за всяка версия</td></tr>
+  <tr><td nowrap><b><a href="SECURITY.md">Политика за сигурност</a></b></td><td>Отчитане на уязвимости и практики за сигурност</td></tr>
+  <tr><td nowrap><b><a href="docs/guides/I18N.md">Ръководство за i18n</a></b></td><td>Поддръжка на 67 езика, работен поток за превод, RTL</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/RELEASE_CHECKLIST.md">Контролен списък за освобождаване</a></b></td><td>Стъпки за валидиране преди пускане</td></tr>
+  <tr><td nowrap><b><a href="docs/ops/COVERAGE_PLAN.md">План за покритие</a></b></td><td>Стратегия за тестово покритие за 60 000 + статични тестови декларации в 8400 + проследени тестови файла</td></tr>
 </table>
 
 <br/>
 
 <div align="center">
 
-# ⭐ Топ сътрудници
+# ⭐ Най-активни участници
 
-> OmniRoute е изграден от страстна общност с отворен код. Тези хора са направили изключителен принос, който пряко влияе върху качеството, стабилността и обхвата на проекта. **Благодарим ви.**
+> OmniRoute е оформен от страстна общност с отворен код. Тези хора са направили изключителен принос, който пряко влияе върху качеството, стабилността и обхвата на проекта.** благодаря**
 
-### Външни сътрудници според обединените pull заявки
+### Външни сътрудници чрез обединени заявки за изтегляне
 
 <table>
-  <tr><th align="center">Място</th><th align="left">Сътрудник</th><th align="center">Обединени PR</th><th align="right">~Променени редове</th></tr>
+  <tr><th align="center">Ранг</th><th align="left">Сътрудник</th><th align="center">Обединени PRs</th><th align="right">~ Променени линии</th></tr>
   <tr><td align="center">1</td><td align="left"><a href="https://github.com/maxmad64bis"><b>maxmad64bis</b></a></td><td align="center">418</td><td align="right">25,367,739</td></tr>
   <tr><td align="center">2</td><td align="left"><a href="https://github.com/HouMinXi"><b>HouMinXi</b></a></td><td align="center">295</td><td align="right">13,557,796</td></tr>
-  <tr><td align="center">3</td><td align="left"><a href="https://github.com/pacocartones"><b>pacocartones</b></a></td><td align="center">222</td><td align="right">81,551</td></tr>
-  <tr><td align="center">4</td><td align="left"><a href="https://github.com/backryun"><b>backryun</b></a></td><td align="center">210</td><td align="right">270,562</td></tr>
+  <tr><td align="center">3</td><td align="left"><a href="https://github.com/pacocartones"><b>пакокартони</b></a></td><td align="center">222</td><td align="right">81,551</td></tr>
+  <tr><td align="center">4</td><td align="left"><a href="https://github.com/backryun"><b>бекрюн</b></a></td><td align="center">210</td><td align="right">270,562</td></tr>
   <tr><td align="center">5</td><td align="left"><a href="https://github.com/JxnLexn"><b>JxnLexn</b></a></td><td align="center">198</td><td align="right">3,570,623</td></tr>
   <tr><td align="center">6</td><td align="left"><a href="https://github.com/oyi77"><b>oyi77</b></a></td><td align="center">190</td><td align="right">411,243</td></tr>
   <tr><td align="center">7</td><td align="left"><a href="https://github.com/KooshaPari"><b>KooshaPari</b></a></td><td align="center">151</td><td align="right">5,972,314</td></tr>
   <tr><td align="center">8</td><td align="left"><a href="https://github.com/rdself"><b>rdself</b></a></td><td align="center">145</td><td align="right">80,663</td></tr>
   <tr><td align="center">9</td><td align="left"><a href="https://github.com/RaviTharuma"><b>RaviTharuma</b></a></td><td align="center">123</td><td align="right">500,065</td></tr>
   <tr><td align="center">10</td><td align="left"><a href="https://github.com/herjarsa"><b>herjarsa</b></a></td><td align="center">88</td><td align="right">230,872</td></tr>
-  <tr><td align="center">11</td><td align="left"><a href="https://github.com/hartmark"><b>hartmark</b></a></td><td align="center">85</td><td align="right">2,849,623</td></tr>
+  <tr><td align="center">11</td><td align="left"><a href="https://github.com/hartmark"><b>бележник</b></a></td><td align="center">85</td><td align="right">2,849,623</td></tr>
   <tr><td align="center">12</td><td align="left"><a href="https://github.com/jonlwheat2-gif"><b>jonlwheat2-gif</b></a></td><td align="center">68</td><td align="right">69,097</td></tr>
   <tr><td align="center">13</td><td align="left"><a href="https://github.com/artickc"><b>artickc</b></a></td><td align="center">62</td><td align="right">43,502</td></tr>
   <tr><td align="center">14</td><td align="left"><a href="https://github.com/xiaoyaner0201"><b>xiaoyaner0201</b></a></td><td align="center">59</td><td align="right">126,220</td></tr>
-  <tr><td align="center">15</td><td align="left"><a href="https://github.com/chirag127"><b>chirag127</b></a></td><td align="center">52</td><td align="right">6,661</td></tr>
+  <tr><td align="center">15</td><td align="left"><a href="https://github.com/chirag127"><b>чираг127</b></a></td><td align="center">52</td><td align="right">6,661</td></tr>
   <tr><td align="center">16</td><td align="left"><a href="https://github.com/xz-dev"><b>xz-dev</b></a></td><td align="center">50</td><td align="right">245,976</td></tr>
   <tr><td align="center">17</td><td align="left"><a href="https://github.com/woodsonl"><b>woodsonl</b></a></td><td align="center">48</td><td align="right">811,771</td></tr>
   <tr><td align="center">18</td><td align="left"><a href="https://github.com/rqzbeh"><b>rqzbeh</b></a></td><td align="center">46</td><td align="right">151,229</td></tr>
@@ -1430,104 +1424,104 @@ OMNIROUTE_SKIP_POSTINSTALL=1 npm install -g omniroute   # CI=1 също го п�
   <tr><td align="center">19</td><td align="left"><a href="https://github.com/QuangBlue"><b>QuangBlue</b></a></td><td align="center">43</td><td align="right">13,112</td></tr>
 </table>
 
-<sub>Преброяването е извършено на 2026-11-03 03:01:19 UTC с актуалния връх на <code>release/v3.8.53</code> — <code>05bc048d6c</code>. Страницираното преброяване чрез GitHub GraphQL съдържа 9 947 обединени PR: 4 130 от собственика на хранилището, 240 от Dependabot, 6 от други ботове/приложения и <b>5 571 външни PR от 883 различни сътрудници</b>. „Променени редове“ представлява сборът от добавянията и изтриванията в GitHub и включва генерирани файлове, lock файлове, каталози, преводи и документация; това е обемът на промените, а не авторският брой редове код. 53 PR отчитат разлики в GitHub над 500 000 реда (например #13399, едно добавяне на доставчик, съдържа 2 347 променени файла), което увеличава няколко от горните стойности. При равенство местата са еднакви.</sub>
+<sub>Преброяването е извършено 2026-11-03 03:01:19 UTC със съвет на живо <code>release/v3.8.53</code> <code>05bc048d6c</code>. Пагинираното GitHub GraphQL преброяване съдържа 9947 обединени PRs: 4130 от собственика на хранилището, 240 от Dependabot, 6 от други bots/apps и <b>5571 външни PRs от 883 отделни участници</b>. „Променени редове“ е GitHub добавки + изтривания и включва генерирани файлове, заключващи файлове, каталози, преводи и документация; това е churn, не е автор LOC. 53 PRs отчет GitHub diffs над 500 000 реда (например #13399, добавяне на един доставчик, изброява 2347 променени файла), което увеличава няколко общи суми по-горе. Връзките се класират заедно.</sub>
 
-### Комити, приписани от GitHub
+### Комити, приписани на GitHub
 
 <table>
   <tr>
     <td align="center" width="160">
       <a href="https://github.com/maxmad64bis">
         <img src="https://github.com/maxmad64bis.png" width="40" style="border-radius:50%" alt="Dizzle"/><br/>
-        <b>Dizzle</b>
+        <b>Замайване</b>
       </a><br/>
-      <sub>🥇 418 комита, приписани към GitHub</sub>
+      <sub>🥇 418 Приписвани на GitHub ангажименти</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/HouMinXi">
         <img src="https://github.com/HouMinXi.png" width="40" style="border-radius:50%" alt="Bob.Hou"/><br/>
-        <b>Bob.Hou</b>
+        <b>Боб Хоу</b>
       </a><br/>
-      <sub>🥈 294 комита, приписани към GitHub</sub>
+      <sub>🥈 294 ангажименти, приписани на GitHub</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/oyi77">
         <img src="https://github.com/oyi77.png" width="40" style="border-radius:50%" alt="Paijo"/><br/>
-        <b>Paijo</b>
+        <b>Пайо</b>
       </a><br/>
-      <sub>🥉 229 комита, приписани към GitHub</sub>
+      <sub>🥉 229 ангажименти, приписани на GitHub</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/pacocartones">
         <img src="https://github.com/pacocartones.png" width="40" style="border-radius:50%" alt="Paco Cartones"/><br/>
-        <b>Paco Cartones</b>
+        <b>Пако Картонес</b>
       </a><br/>
-      <sub>🏅 222 комита, приписани към GitHub</sub>
+      <sub>🏅 222 ангажименти, приписани на GitHub</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/backryun">
         <img src="https://github.com/backryun.png" width="40" style="border-radius:50%" alt="backryun"/><br/>
-        <b>backryun</b>
+        <b>бекрюн</b>
       </a><br/>
-      <sub>🏅 202 комита, приписани към GitHub</sub>
+      <sub>🏅 202 ангажименти, приписани на GitHub</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/JxnLexn">
         <img src="https://github.com/JxnLexn.png" width="40" style="border-radius:50%" alt="Jan Leon"/><br/>
-        <b>Jan Leon</b>
+        <b>Ян Леон</b>
       </a><br/>
-      <sub>🏅 134 комита, приписани към GitHub</sub>
+      <sub>🏅 134 приписани на GitHub ангажименти</sub>
     </td>
   </tr>
   <tr>
     <td align="center" width="160">
       <a href="https://github.com/RaviTharuma">
         <img src="https://github.com/RaviTharuma.png" width="40" style="border-radius:50%" alt="Ravi Tharuma"/><br/>
-        <b>Ravi Tharuma</b>
+        <b>Рави Тарума</b>
       </a><br/>
-      <sub>🏅 126 комита, приписани към GitHub</sub>
+      <sub>🏅 126 ангажименти, приписани на GitHub</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/hartmark">
         <img src="https://github.com/hartmark.png" width="40" style="border-radius:50%" alt="Markus Hartung"/><br/>
-        <b>Markus Hartung</b>
+        <b>Маркус Хартунг</b>
       </a><br/>
-      <sub>🏅 115 комита, приписани към GitHub</sub>
+      <sub>🏅 115 ангажименти, приписани на GitHub</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/rdself">
         <img src="https://github.com/rdself.png" width="40" style="border-radius:50%" alt="Randi"/><br/>
-        <b>Randi</b>
+        <b>Ранди</b>
       </a><br/>
-      <sub>🏅 108 комита, приписани към GitHub</sub>
+      <sub>🏅 108 ангажименти, приписани на GitHub</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/christopher-s">
         <img src="https://github.com/christopher-s.png" width="40" style="border-radius:50%" alt="Chris"/><br/>
-        <b>Chris</b>
+        <b>Крис</b>
       </a><br/>
-      <sub>🏅 70 комита, приписани към GitHub</sub>
+      <sub>🏅 70 приписани на GitHub ангажименти</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/jonlwheat2-gif">
         <img src="https://github.com/jonlwheat2-gif.png" width="40" style="border-radius:50%" alt="WebPerson"/><br/>
         <b>WebPerson</b>
       </a><br/>
-      <sub>🏅 68 комита, приписани към GitHub</sub>
+      <sub>🏅 68 ангажименти, приписани на GitHub</sub>
     </td>
     <td align="center" width="160">
       <a href="https://github.com/KooshaPari">
         <img src="https://github.com/KooshaPari.png" width="40" style="border-radius:50%" alt="Koosha Paridehpour"/><br/>
-        <b>Koosha Paridehpour</b>
+        <b>Куша Паридепур</b>
       </a><br/>
-      <sub>🏅 68 комита, приписани към GitHub</sub>
+      <sub>🏅 68 ангажименти, приписани на GitHub</sub>
     </td>
   </tr>
 </table>
 
-<sub>Проверено повторно на 2026-11-03 02:09:16 UTC: комити, приписани към GitHub, отчетени от API на Contributors на хранилището за клона по подразбиране <code>release/v3.8.53</code>. API върна 903 самоличности (429 потребители, 2 бота, 472 анонимни); тази таблица изключва поддържащия проекта, ботовете и анонимните самоличности и запазва равенствата в класирането. Тя се различава както от класирането по обединени PR по-горе, така и от преброяването на Git метаданните по-долу.</sub>
+<sub>Повторна проверка на 2026-11-03 02:09:16 UTC: Приписвани на GitHub ангажименти, отчетени от сътрудниците на хранилището API за клона по подразбиране <code>release/v3.8.53</code>. API върна 903 самоличности (429 потребители, 2 бота, 472 анонимни); тази таблица изключва поддържащия, ботовете и анонимните самоличности и запазва връзките на конкуренцията. Той се различава както от обединената PR класация по-горе, така и от преброяването на Git-метаданни по-долу.</sub>
 
-> 🙏 Функциите, корекциите на грешки и инфраструктурните подобрения на тези сътрудници са **основна част** от това, което прави OmniRoute надежден и богат на функции. Всеки pull request, всеки тестов случай и всеки i18n преводачески файл имат значение. Отвореният код се създава от хора като тях.
+> 🙏 Функциите на тези участници, корекциите на грешки и подобренията на инфраструктурата са a** основна част** какво прави OmniRoute надежден и богат на функции. Всяка заявка за изтегляне, всеки тестов случай и всеки файл за превод на i18n са от значение. Отвореният код е създаден от хора като тях.
 
 </div>
 

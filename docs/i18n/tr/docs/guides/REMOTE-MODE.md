@@ -43,37 +43,35 @@ dizüstü bilgisayarınız                   uzak OmniRoute (VPS)
 
 ---
 
-## Bağlanma
+## Bağlanıyor
 
-### Yönetim parolasıyla (ilk kurulum)
+### Yönetim şifresi ile (önyükleme)
 
 ```bash
 omniroute connect 192.168.0.15
-# http://192.168.0.15:20128 için yönetim parolası: ********
-# ✔ http://192.168.0.15:20128 adresine bağlanıldı — bağlam '192.168.0.15' (kapsam: admin)
+# Management password for http://192.168.0.15:20128: ********
+# ✔ Connected to http://192.168.0.15:20128 — context '192.168.0.15' (scope: admin)
 ```
 
-Parola akışı varsayılan olarak bir **admin** token'ı oluşturur (parola sizde olduğundan
-zaten tam denetime sahipsiniz). Kapsamı `--scope` ile daraltın:
+Parola akışı bir** yönetici** token varsayılan olarak (şifre sizde olduğundan tam kontrole sahipsiniz). `--scope` ile aşağı kapsam:
 
 ```bash
 omniroute connect 192.168.0.15 --scope write
 ```
 
-Seçenekler: `--port <p>` (ana bilgisayarda port belirtilmediğinde), `--name <ctx>` (bağlam adı),
-`--scope read|write|admin`. Tam URL olduğu gibi kullanılır:
-`omniroute connect https://omni.example.com`.
+Seçenekler: `--port <p>` (ana makinede hiçbiri bulunmadığında), `--name <ctx>` (bağlam adı), `--scope read|write|admin`. Tam bir URL olduğu gibi kabul edilir: `omniroute connect https://omni.example.com`.
 
-### Önceden oluşturulmuş bir token ile
+Sunucuda kontrol panelinde iki faktörlü kimlik doğrulama etkinleştirildiğinde (Ayarlar → Güvenliği), yalnızca şifre reddedilir: CLI daha sonra kimlik doğrulayıcı uygulamasından kodu (veya bir kurtarma kodunu) ister. Etkileşimli olmayan kullanım için bunu `--totp <code>` ile önceden iletin.
 
-Kontrol panelinde (veya `omniroute tokens create` ile) kapsamlandırılmış bir token oluşturup
-yapıştırın — parola gerekmez:
+### Önceden oluşturulmuş bir jetonla
+
+Kontrol panelinde (veya `omniroute tokens create` ile) kapsamlı bir belirteç oluşturun ve bunu şifreye gerek kalmadan — yapıştırın:
 
 ```bash
 omniroute connect 192.168.0.15 --key oma_live_xxxxxxxx
 ```
 
-CLI, token'ı `GET /api/cli/whoami` aracılığıyla doğrular ve etkin bağlam olarak kaydeder.
+CLI bunu `GET /api/cli/whoami` aracılığıyla doğrular ve aktif bağlam olarak kaydeder.
 
 ---
 
@@ -434,12 +432,12 @@ omniroute contexts remove 192-168-0-15 --yes   # yerel bağlamı siler (etkin ol
 
 ## API uç noktaları (referans)
 
-| Yöntem | Rota                  | Kimlik doğrulama | Kapsam                            |
-| ------ | --------------------- | ---------------- | --------------------------------- |
-| POST   | `/api/cli/connect`    | yönetim parolası | — (herkese açık, parola korumalı) |
-| GET    | `/api/cli/whoami`     | erişim token'ı   | okuma                             |
-| GET    | `/api/cli/tokens`     | erişim token'ı   | yönetici                          |
-| POST   | `/api/cli/tokens`     | erişim token'ı   | yönetici                          |
-| DELETE | `/api/cli/tokens/:id` | erişim token'ı   | yönetici                          |
+| Yöntem | Rota                  | Yetki             | Kapsam             |
+| ------ | --------------------- | ----------------- | ------------------ |
+| POST   | `/api/cli/connect`    | şifre; 2FA açıksa | — (genel, şifreli) |
+| GET    | `/api/cli/whoami`     | erişim belirteci  | Okumak             |
+| GET    | `/api/cli/tokens`     | erişim belirteci  | yönetici           |
+| POST   | `/api/cli/tokens`     | erişim belirteci  | yönetici           |
+| DELETE | `/api/cli/tokens/:id` | erişim belirteci  | yönetici           |
 
-Tüm şemalar için [openapi.yaml](../openapi.yaml) dosyasına bakın.
+Tam şemalar için [openapi.yaml](../openapi.yaml) bakın.

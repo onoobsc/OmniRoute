@@ -13,104 +13,59 @@ OmniRoute 具有一個路由感知授權管道，用於把關每個 API 請求�
 
 > 來源：[diagrams/authz-pipeline.mmd](../diagrams/authz-pipeline.mmd)
 
-## 兩種驗證模式
+## 兩種認證模式
 
-### 1. API 金鑰（Bearer）
+### API密鑰（承載）
 
-用於與 OpenAI/Anthropic/Gemini 相容的用戶端 API，以及少數管理路由（當金鑰具有 `manage` 範圍時）。
+當金鑰具有`manage`範圍時，用於OpenAI/Anthropic/Gemini-compatible客戶端APIs和一些管理路由。
 
 ```
 Authorization: Bearer <api-key>
 ```
 
-由 `src/sse/services/auth.ts` 中的 `isValidApiKey()` / `extractApiKey()` 驗證，並透過 `src/shared/utils/apiAuth.ts` 重新匯出。驗證器也接受 `OMNIROUTE_API_KEY` / `ROUTER_API_KEY` 環境變數作為持久性的直通金鑰（議題 #1350）。
+由`src/sse/services/auth.ts`中的`isValidApiKey()` / `extractApiKey()`驗證並透過`src/shared/utils/apiAuth.ts`重新導出。驗證器也接受`OMNIROUTE_API_KEY` / `ROUTER_API_KEY`環境變數作為持久直通金鑰（問題#1350）。
 
-### 2. 儀表板工作階段（auth_token Cookie）
+### 2. 儀表板會話（auth_token cookie）
 
-用於儀表板頁面與管理員操作。
+用於儀表板頁面和管理操作。
 
 ```
 Cookie: auth_token=<JWT signed with JWT_SECRET>
 ```
 
-只有在 JWT 驗證通過且帶有 `authenticated: true` 時，Cookie 才會被視為工作階段
-（`src/shared/utils/dashboardSessionToken.ts` → `verifyDashboardSessionToken`）。所有
-使用此 Cookie 的元件（儀表板路由守衛（`isDashboardSessionAuthenticated()`）、授權管線重新整理、WebSocket 交握、即時
-伺服器、`/api/settings/require-login`、`/api/auth/status`）都會經過該輔助函式。
-此外也存在其他以 `JWT_SECRET` 簽署的 JWT——Cursor CLI 直通機制會為金鑰持有者簽發
-`iss "omniroute" / aud "cursor-cli"` 權杖——但它們絕不會被視為工作階段
-（#13298）。
+只有當JWT驗證時cookie才是會話**和**攜帶`authenticated: true` (`src/shared/utils/dashboardSessionToken.ts` → `verifyDashboardSessionToken`)。 cookie 的每個使用者（儀表板路由保護 (`isDashboardSessionAuthenticated()`)、authz 管道刷新、 WebSocket握手、即時伺服器、 `/api/settings/require-login`、 `/api/auth/status`）都會經過此幫助程式。其他使用`JWT_SECRET`簽名的JWTs存在— Cursor CLI直通為密鑰持有者—鑄造`iss "omniroute" / aud "cursor-cli"`代幣，且絕不是會話 (#13298)。
 
-由 `src/shared/utils/apiAuth.ts` 中的 `isDashboardSessionAuthenticated()` 驗證。當 JWT 的 30 天有效期剩餘不到 7 天時，管線會自動重新整理 JWT。
+由`isDashboardSessionAuthenticated()`在`src/shared/utils/apiAuth.ts`驗證。當管道的 30 天生命週期只剩下不到 7 天時，管道會自動刷新JWT 。
 
-工作階段也可能在 30 天有效期結束前終止，因為每個簽發器都會經過 `mintDashboardSessionToken`（包含簽發時間 `iat` 和識別碼 `jti`），而驗證器會檢查兩項設定：`sessionsValidAfter`，此設定會在密碼變更時更新，使此前簽發的所有工作階段都無法再通過驗證（變更密碼的瀏覽器會取得新的 Cookie）；以及 `revokedDashboardSessions`，`POST /api/auth/logout` 會將已登出工作階段的 `jti` 加入其中。由較舊版本簽發的工作階段不包含這兩項宣告，且在第一次變更密碼前仍維持有效。若無法讀取設定，則不信任該工作階段。
+會話也可以在 30 天結束之前結束，因為每個鑄幣者都會經過`mintDashboardSessionToken` （發佈時間`iat`和 id `jti`），並且驗證者會檢查兩個設定： `sessionsValidAfter`，由密碼更改設置，以便在停止驗證之前發出的每個會話（更改密碼的瀏覽器會獲得一個新的 cookie），以及`revokedDashboardSessions`，其中的`POST /api/auth/logout` `jti`將添加到最終的刪除階段。由舊版本建立的會話不包含任何聲明，並且在第一次密碼變更之前保持有效。如果無法讀取設置，則會話不可信。
 
-部分管理路由接受**任一**模式：Cookie，或當 API 金鑰具有 `manage`（或 `admin`）範圍時使用 `Bearer <key>`。這使 v3.8 中新增的「可透過 API 呼叫進行設定」工作流程得以實現。
+一些管理路線接受**任何一個**模式：當API鍵具有`manage` （或`admin`）範圍時，cookie OR `Bearer <key>` 。這就是啟用 v3.8 中新增的「可透過API呼叫配置」工作流程的原因。
 
-#### 選用的 OIDC 登入閘門（#6973）
+#### 可選的OIDC登入門 (#6973)
 
-儀表板管理員登入除了預設的密碼登入外，也支援**選擇啟用**的 OIDC（OpenID Connect）流程——密碼登入永遠不會被移除，只會增加另一種登入方式：
+儀表板管理員登入也支持**選擇加入**OIDC (OpenID Connect) 與預設密碼登入一起流動—密碼登入永遠不會被刪除，只會被補充：
 
-- 除非 `settings.oidcEnabled === true` **且** `oidcIssuer` /
-  `oidcClientId` / `oidcClientSecret` 均已設定（設定 → 驗證），否則停用。
-  若不符合條件，`GET /api/auth/oidc/login` 會回傳 `400`。
-- `GET /api/auth/oidc/login` 會從發行者的
-  `/.well-known/openid-configuration` 探索 `authorization_endpoint`（若無法取得，
-  則退回使用 `<issuer>/authorize`），根據傳入的請求建立重新導向 URI
-  （支援 `x-forwarded-proto`），然後將使用者重新導向至 IdP，並把隨機產生的
-  `state` 儲存在 `httpOnly` 的 `oidc_state` Cookie 中。
-- `GET /api/auth/oidc/callback` 會驗證 `state`、交換授權碼，並透過發行者的
-  JWKS 驗證 ID 權杖的簽章（使用 `jose` 的 `createRemoteJWKSet`，依每個 JWKS URI
-  快取），同時檢查 `issuer`/`audience`。若要獲准進入儀表板，必須設定非空的
-  `oidcAllowedSubjects` 清單、`oidcAdmissionClaim` 原則，或兩者皆設定。只有在
-  `email_verified === true` 時，主體清單才會比對 `sub` 或 `email`。選用的宣告
-  原則會採用以點號分隔的 ID 權杖宣告路徑（例如 `realm_access.roles`）以及一組
-  可接受值的陣列；解析出的宣告必須是字串陣列，且至少包含一個可接受值。若同時
-  設定兩種原則，則兩者都必須通過。缺少宣告或宣告格式錯誤時會採取封閉式失敗，
-  而且若兩種原則皆未設定，回呼會拒絕登入（`not_configured`）。現有僅設定主體
-  的組態會繼續維持原有行為。
-- Keycloak 通常會將領域角色對應至存取權杖，而不一定是 ID 權杖。若要要求領域角色
-  `admin`，請為此用戶端設定通訊協定對應程式，將 `realm_access.roles` 包含在其
-  **ID 權杖**中，然後將 `oidcAdmissionClaim` 設定為
-  `{ "path": "realm_access.roles", "values": ["admin"] }`。啟用僅限角色的准入機制
-  之前，請先檢查此用戶端實際的 ID 權杖宣告；應用程式不會讀取存取權杖中的角色。
-  IdP 端的權杖拒絕機制可以作為補充，但不能取代此應用程式端的檢查。
-- 成功後，它會簽發與密碼登入所簽發的 **完全相同**、有效期為 30 天的
-  `auth_token` JWT（`src/app/api/auth/login/route.ts`），因此儀表板工作階段流程
-  的其餘部分（自動重新整理、Cookie 旗標）維持不變——OIDC 只會取代 Cookie 的
-  簽發方式，不會改變其授予的權限。IdP 角色／群組的變更不會使現有 OmniRoute
-  工作階段失效；其生命週期仍由登出、密碼輪替或工作階段到期所控制。
-- 每個 `oidc*` 設定（`oidcEnabled`、`oidcDisablePasswordLogin`、
-  `oidcIssuer`、`oidcClientId`、`oidcClientSecret`、`oidcAllowedSubjects`、
-  `oidcAdmissionClaim`、`oidcRedirectPath`、`oidcScopes`）都位於
-  `SECURITY_IMPACTING_SETTINGS_KEYS`
-  （`src/shared/constants/securityImpactingSettings.ts`）中：除非要求本文攜帶
-  管理密碼作為 `currentPassword`，否則 `PATCH /api/settings` 會回應
-  `400 PASSWORD_REQUIRED`（密碼錯誤時則為 `401 PASSWORD_MISMATCH`）。
-  `oidcDisablePasswordLogin` 會拒絕密碼_登入_（`POST /api/auth/login`），
-  但仍會保留已儲存的密碼雜湊，而且重新驗證仍會以該雜湊檢查
-  `currentPassword`。
-- `corsOrigins` 和 `bruteForceProtection` 也位於
-  `SECURITY_IMPACTING_SETTINGS_KEYS` 中：放寬任一設定都會削弱登入防禦，因此
-  它們需要使用相同的 `currentPassword` 重新驗證（「安全性」分頁會要求輸入），
-  而 JSON 匯入會移除這些設定。
-- 每個安全性原則鍵——`SECURITY_IMPACTING_SETTINGS_KEYS` 中的項目、
-  每個 `oidc*` 鍵以及儀表板工作階段狀態——在 `PATCH /api/settings` 上都
-  **僅限操作員**：具有 `manage` 範圍的 API 金鑰或 `oma_` 存取權杖，即使傳送正確的
-  `currentPassword` 也會遭到 `403` 拒絕，而且拒絕事件會以
-  `settings.update_failed` 進行稽核，並包含 `reason: OPERATOR_REQUIRED`
-  （`src/lib/api/operatorCredential.ts` 中的 `requireOperatorCredential()`）。
-  一般設定（佈景主題、顯示偏好設定）仍可由 `manage` 金鑰或 `admin` 存取權杖寫入。
-  `/api/settings` 本身（以及 `/api/settings/require-login`）的每次變更也都需要
-  `admin` 存取權杖範圍（`src/server/authz/accessScopes.ts` 中的
-  `ADMIN_MUTATION_EXACT_PATHS`，採用完全路徑比對）；`GET` 仍使用 `read`，而其他
-  `/api/settings/*` 子路由（代理、組合預設值、模型別名、壓縮、清除等）則保留
-  依方法推斷的 `write` 範圍。
-- `POST /api/settings/import-json` 會略過該重新驗證，因此在寫入之前，會移除
-  `IMPORT_STRIPPED_SETTINGS_KEYS`（同一檔案）中的每個鍵：密碼和
-  `currentPassword`、`SECURITY_IMPACTING_SETTINGS_KEYS` 中的每個項目，以及
-  儀表板工作階段狀態（`sessionsValidAfter`、`revokedDashboardSessions`）。
-  因此，匯入較舊的備份無法恢復已因密碼變更或登出而終止的工作階段。
+- 禁用，除非`settings.oidcEnabled === true`**和**`oidcIssuer` / `oidcClientId` / `oidcClientSecret`皆已配置（設定→ Auth）。否則`GET /api/auth/oidc/login`返回`400` 。
+- `GET /api/auth/oidc/login`從發行者的`/.well-known/openid-configuration`中發現`authorization_endpoint` （回退到`<issuer>/authorize`），根據傳入請求 (`x-forwarded-proto` -aware) 建構重定向URI ，並使用儲存在`httpOnly` `oidc_state` cookie 中的隨機`state`重定向到IdP 。
+- `GET /api/auth/oidc/callback`驗證`state`，交換授權碼，並透過發行者的JWKS （`jose`的`createRemoteJWKSet`，根據JWKS URI快取）和`issuer`/`audience`檢查來驗證ID令牌的簽章。儀表板准入需要非空`oidcAllowedSubjects`列表、 `oidcAdmissionClaim`策略或兩者。只有當`email_verified === true`時，主題清單才會符合`sub`或`email` 。可選的宣告策略採用點分隔的 ID 令牌宣告路徑（例如`realm_access.roles`）和接受值的陣列；已解決的宣告必須是包含至少一個接受值的字串陣列。如果配置了兩個策略，則兩個策略都必須通過。 Missing/malformed聲明失敗關閉，如果沒有任何策略，回呼將拒絕登入 (`not_configured`)。現有的僅主題配置繼續保持不變。
+- Keycloak 通常將領域角色對應到存取令牌，不一定是ID令牌。要需要領域角色`admin`，請為此客戶端配置協定映射器，其中包含`realm_access.roles`**ID代幣**，然後將`oidcAdmissionClaim`設定為`{ "path": "realm_access.roles", "values": ["admin"] }`。在啟用僅角色准入之前，檢查該客戶端的實際 ID 令牌聲明；應用程式不會讀取存取令牌角色。 IdP 端令牌拒絕可以補充但不能取代此應用程式端檢查。
+- 成功後，它會鑄成**完全相同**30 天`auth_token` JWT密碼登入問題 (`src/app/api/auth/login/route.ts`)，因此儀表板會話管道的其餘部分（自動刷新、cookie 標誌）保持不變— OIDC僅取代 cookie 的產生方式，而不是它授予的內容。對IdP roles/groups更改不會使現有OmniRoute會話失效；註銷、密碼輪換或會話過期仍然控制著它們的生命週期。
+- 每個`oidc*`設定（`oidcEnabled`、 `oidcDisablePasswordLogin`、 `oidcIssuer`、 `oidcClientId`、 `oidcClientSecret`、 `oidcAllowedSubjects`、 `oidcAdmissionClaim`、 `oidcRedirectPath`、 `oidcScopes`）都在`SECURITY_IMPACTING_SETTINGS_KEYS` (`src/shared/constants/securityImpactingSettings.ts`) 中： `PATCH /api/settings`回答`400 PASSWORD_REQUIRED`除非主體攜帶管理密碼為`currentPassword` （錯誤時為`401 PASSWORD_MISMATCH` ）。 `oidcDisablePasswordLogin`拒絕密碼_login_ (`POST /api/auth/login`)，但保留儲存的密碼哈希，並且重新驗證仍會檢查`currentPassword` 。
+- `corsOrigins`和`bruteForceProtection`也在`SECURITY_IMPACTING_SETTINGS_KEYS`中：放鬆會削弱登入防禦，因此它們會採用相同的`currentPassword`重新驗證（「安全性」標籤要求這樣做），並且JSON匯入會刪除它們。
+- 每個安全性策略金鑰— `SECURITY_IMPACTING_SETTINGS_KEYS`條目、每個`oidc*`鑰和儀表板會話狀態—是**限運營商**在`PATCH /api/settings`上：管理範圍的API金鑰或`oma_`存取權杖即使發送正確的`currentPassword`也會被`403`拒絕，並且拒絕將被審核為`settings.update_failed`和`reason: OPERATOR_REQUIRED` （ `src/lib/api/operatorCredential.ts`中的`requireOperatorCredential()` ）。 `manage`密鑰或`admin`存取權杖的普通設定（主題、顯示首選項）保持可寫入。 `/api/settings`本身（和`/api/settings/require-login`）的每個突變也需要`admin`存取令牌範圍（ `src/server/authz/accessScopes.ts`中的`ADMIN_MUTATION_EXACT_PATHS` ，精確路徑匹配）； `GET`保留`read`推斷的`/api/settings/*`子路由（代理、組合預設值、模型別名、壓縮、清除...）保留方法推斷的`write`範圍。
+- `POST /api/settings/import-json`會跳過重新驗證，因此它會在寫入之前刪除`IMPORT_STRIPPED_SETTINGS_KEYS` （同一檔案）中的每個金鑰：密碼和`currentPassword`、每個`SECURITY_IMPACTING_SETTINGS_KEYS`條目以及儀表板會話狀態（`sessionsValidAfter`、 `revokedDashboardSessions`）。因此，匯入較舊的備份無法恢復密碼變更或登出已結束的會話。
+
+#### 可選的TOTP雙重登入 (#16619)
+
+從設定→ Security 註冊；關閉直到操作員將其開啟（`src/server/auth/dashboardMfa.ts`）。
+
+- **它涵蓋的內容：**密碼登入（`POST /api/auth/login`，然後需要`POST /api/auth/mfa/verify`）和`omniroute connect` （`POST /api/cli/connect`，拒絕僅密碼交換並將代碼作為`totp`）。
+- **它不涵蓋的內容：** OIDC / SSO登入 (`/api/auth/oidc/callback`) 不要求提供OmniRoute TOTP。它依賴於身分提供者自己的第二個因素，因此如果啟用了OIDC ，則在IdP中強制執行MFA 。
+- **恢復**（遺失設備、沒有留下恢復代碼或無法再驗證的因素，例如在`STORAGE_ENCRYPTION_KEY`更改後）：
+  1. 使用`OMNIROUTE_DISABLE_MFA=true`重新啟動伺服器。
+  2. 在主機本身（環回對等點和環回`Host`，例如`http://localhost:20128`）上，使用密碼登入。僅針對該原點跳過第二個因素；所有其他來源仍然需要該程式碼。
+  3. 在「設定→安全性→停用」中，輸入密碼並將代碼留空。只有當設定了變數且請求來自主機時， `POST /api/auth/mfa/disable`才接受不帶`code`的主體；它仍然需要儀表板會話和當前密碼，並被審核為`auth.mfa.disabled`和`secondFactor: "recovery_switch"`。
+  4. 取消設定`OMNIROUTE_DISABLE_MFA`，重新啟動，然後根據需要再次註冊。
 
 ## 路由類別
 
@@ -153,31 +108,29 @@ Incoming request → src/proxy.ts
 
 成功的策略會回到`AuthSubject`和`kind ∈ { client_api_key, dashboard_session, management_key, anonymous, sso_user }`。下游處理程序可以透過`src/server/authz/assertAuth.ts`中的`assertAuth(request, "CLIENT_API")`讀取它，而不是重新運行身份驗證邏輯。
 
-## 公開路由清單
+## 公共路線列表
 
-`src/shared/constants/publicApiRoutes.ts` 是明確的允許清單：
+`src/shared/constants/publicApiRoutes.ts`是明確允許列表：
 
-此清單依照**形狀**拆分，而這項拆分至關重要（GHSA-74g9-q8f6-793h）：前綴會使用
-`startsWith()` 進行比對，因此也會比對所有開頭字元相同的相鄰路徑。
-將 `/api/usage/om-usage` 作為前綴，會把 `/api/usage/om-usage<anything>` 標記為公開，而 Next 會將其解析至
-`/api/usage/[connectionId]`——一個本身沒有驗證機制的處理常式。
+此列表分為**形狀**，且分割是承載的（GHSA-74g9-q8f6-793h）：前綴與`startsWith()`匹配，因此它也匹配共享其前導字元的每個相鄰路徑。 `/api/usage/om-usage`作為標記為`/api/usage/om-usage<anything>` PUBLIC前綴，Next 將其解析為`/api/usage/[connectionId]` —一個沒有自己的身份驗證的處理程序。
 
 ```ts
-// 真正的子樹。每個項目都必須以 "/" 結尾（由單元測試斷言）。
+// Genuine subtrees. Every entry MUST end in "/" (asserted by a unit test).
 PUBLIC_API_ROUTE_PREFIXES = [
   "/api/auth/oidc/",
-  "/api/v1/", // 在 classify 中視為 CLIENT_API，而非「無需驗證的公開路由」
+  "/api/v1/", // treated as CLIENT_API in classify, not as "no-auth public"
   "/api/oauth/",
   "/api/codex/connect/",
   "/api/telegram/",
   "/api/cursor-cli/",
 ];
 
-// 單一路由，採用完全比對（無論是否有結尾斜線）。
+// Single routes, matched EXACTLY (with or without a trailing slash).
 PUBLIC_API_ROUTES_EXACT = new Set([
   "/api/auth/login",
   "/api/auth/logout",
   "/api/auth/status",
+  "/api/auth/mfa/verify", // login step 2 for opt-in TOTP; needs the MFA-pending cookie
   "/api/init",
   "/api/sync/bundle",
   "/api/cli/connect",
@@ -185,20 +138,20 @@ PUBLIC_API_ROUTES_EXACT = new Set([
   "/api/skills/collect/chaos",
 ]);
 
-// 唯讀的單一路由，也套用 CORS 來源限制放寬。
+// Read-only single routes that also take the CORS origin relaxation.
 PUBLIC_READONLY_CORS_API_ROUTES = [
   "/api/health/ping",
   "/api/monitoring/health",
   "/api/settings/require-login",
 ];
 
-// 不套用 CORS 限制放寬的唯讀單一路由。
+// Read-only single route WITHOUT the CORS relaxation.
 PUBLIC_READONLY_API_ROUTES_EXACT = new Set(["/api/health"]);
 
 PUBLIC_READONLY_METHODS = new Set(["GET", "HEAD", "OPTIONS"]);
 ```
 
-唯讀路由**僅**在使用安全方法時才是公開的。請注意：`classifyRoute()` 會將 `/api/v1/*` 和 `/api/v1beta/*` 排除在 PUBLIC 後備分類之外——這些路由一律為 `CLIENT_API`，因此仍會套用 Bearer 金鑰政策。
+只讀路由是公開的**僅有的**以獲得安全的方法。注意： `classifyRoute()`從PUBLIC失敗的—中排除`/api/v1/*`和`/api/v1beta/*`它們總是`CLIENT_API`因此承載金鑰策略仍然適用。
 
 ## 新增路由
 

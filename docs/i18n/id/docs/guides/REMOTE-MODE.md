@@ -50,25 +50,23 @@ laptop Anda                              OmniRoute jarak jauh (VPS)
 
 ```bash
 omniroute connect 192.168.0.15
-# Kata sandi manajemen untuk http://192.168.0.15:20128: ********
-# ✔ Terhubung ke http://192.168.0.15:20128 — konteks '192.168.0.15' (cakupan: admin)
+# Management password for http://192.168.0.15:20128: ********
+# ✔ Connected to http://192.168.0.15:20128 — context '192.168.0.15' (scope: admin)
 ```
 
-Alur kata sandi secara default membuat token **admin** (Anda memiliki kata sandinya, sehingga
-Anda sudah memiliki kontrol penuh). Batasi cakupannya dengan `--scope`:
+Aliran kata sandi mencetak an** admin** token secara default (Anda memegang kata sandi, jadi Anda sudah memiliki kendali penuh). Downscope dengan `--scope`:
 
 ```bash
 omniroute connect 192.168.0.15 --scope write
 ```
 
-Opsi: `--port <p>` (ketika host tidak menyertakan port), `--name <ctx>` (nama konteks),
-`--scope read|write|admin`. URL lengkap digunakan apa adanya:
-`omniroute connect https://omni.example.com`.
+Opsi: `--port <p>` (jika host tidak memilikinya), `--name <ctx>` (nama konteks), `--scope read|write|admin`. URL penuh dihormati apa adanya: `omniroute connect https://omni.example.com`.
 
-### Dengan token yang telah dibuat sebelumnya
+Ketika server mengaktifkan otentikasi dua faktor dasbor (Pengaturan → Keamanan), kata sandi saja ditolak: CLI kemudian meminta kode dari aplikasi pengautentikasi (atau kode pemulihan). Sebarkan terlebih dahulu dengan `--totp <code>` untuk penggunaan non-interaktif.
 
-Buat token dengan cakupan tertentu di dasbor (atau dengan `omniroute tokens create`), lalu
-tempelkan token tersebut — tidak memerlukan kata sandi:
+### Dengan token yang sudah dibuat sebelumnya
+
+Hasilkan token cakupan di dasbor (atau dengan `omniroute tokens create`) dan tempelkan — tanpa perlu kata sandi:
 
 ```bash
 omniroute connect 192.168.0.15 --key oma_live_xxxxxxxx
@@ -433,14 +431,14 @@ omniroute contexts remove 192-168-0-15 --yes   # hapus konteks lokal (meskipun a
 
 ---
 
-## Endpoint API (referensi)
+## titik akhir API (referensi)
 
-| Metode | Rute                  | Autentikasi          | Cakupan                           |
-| ------ | --------------------- | -------------------- | --------------------------------- |
-| POST   | `/api/cli/connect`    | kata sandi manajemen | — (publik, dilindungi kata sandi) |
-| GET    | `/api/cli/whoami`     | token akses          | baca                              |
-| GET    | `/api/cli/tokens`     | token akses          | admin                             |
-| POST   | `/api/cli/tokens`     | token akses          | admin                             |
-| DELETE | `/api/cli/tokens/:id` | token akses          | admin                             |
+| Metode | Rute                  | Penulis                    | Cakupan                         |
+| ------ | --------------------- | -------------------------- | ------------------------------- |
+| POST   | `/api/cli/connect`    | kata sandi; 2FA jika aktif | — (publik, berpagar kata sandi) |
+| GET    | `/api/cli/whoami`     | token akses                | membaca                         |
+| GET    | `/api/cli/tokens`     | token akses                | admin                           |
+| POST   | `/api/cli/tokens`     | token akses                | admin                           |
+| DELETE | `/api/cli/tokens/:id` | token akses                | admin                           |
 
 Lihat [openapi.yaml](../openapi.yaml) untuk skema lengkap.
